@@ -15,6 +15,7 @@
  */
 package fr.centralesupelec.csd.java.impl;
 
+import com.github.javaparser.ast.Node;
 import fr.centralesupelec.csd.java.Comment;
 import fr.centralesupelec.csd.java.JavaNode;
 import fr.centralesupelec.csd.java.JavaPackage;
@@ -27,6 +28,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -45,6 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.centralesupelec.csd.java.impl.JavaNodeImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.JavaNodeImpl#getOrphanComments <em>Orphan Comments</em>}</li>
+ *   <li>{@link fr.centralesupelec.csd.java.impl.JavaNodeImpl#getJavaParserObject <em>Java Parser Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +72,16 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @ordered
      */
     protected EList< Comment > orphanComments;
+
+    /**
+     * The cached value of the '{@link #getJavaParserObject() <em>Java Parser Object</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getJavaParserObject()
+     * @generated
+     * @ordered
+     */
+    protected Node javaParserObject;
 
     /**
      * <!-- begin-user-doc -->
@@ -161,6 +174,48 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     @Override
+    public Node getJavaParserObject() {
+        if( javaParserObject != null && ( ( EObject ) javaParserObject ).eIsProxy() ) {
+            InternalEObject oldJavaParserObject = ( InternalEObject ) javaParserObject;
+            javaParserObject = ( Node ) eResolveProxy( oldJavaParserObject );
+            if( javaParserObject != oldJavaParserObject ) {
+                if( eNotificationRequired() )
+                    eNotify( new ENotificationImpl( this, Notification.RESOLVE,
+                            JavaPackage.JAVA_NODE__JAVA_PARSER_OBJECT, oldJavaParserObject, javaParserObject ) );
+            }
+        }
+        return javaParserObject;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Node basicGetJavaParserObject() {
+        return javaParserObject;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setJavaParserObject( Node newJavaParserObject ) {
+        Node oldJavaParserObject = javaParserObject;
+        javaParserObject = newJavaParserObject;
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.JAVA_NODE__JAVA_PARSER_OBJECT,
+                    oldJavaParserObject, javaParserObject ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case JavaPackage.JAVA_NODE__COMMENT:
@@ -183,6 +238,9 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
             return getComment();
         case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
             return getOrphanComments();
+        case JavaPackage.JAVA_NODE__JAVA_PARSER_OBJECT:
+            if( resolve ) return getJavaParserObject();
+            return basicGetJavaParserObject();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -203,6 +261,9 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
             getOrphanComments().clear();
             getOrphanComments().addAll( ( Collection< ? extends Comment > ) newValue );
             return;
+        case JavaPackage.JAVA_NODE__JAVA_PARSER_OBJECT:
+            setJavaParserObject( ( Node ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -221,6 +282,9 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
         case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
             getOrphanComments().clear();
             return;
+        case JavaPackage.JAVA_NODE__JAVA_PARSER_OBJECT:
+            setJavaParserObject( ( Node ) null );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -237,6 +301,8 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
             return comment != null;
         case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
             return orphanComments != null && !orphanComments.isEmpty();
+        case JavaPackage.JAVA_NODE__JAVA_PARSER_OBJECT:
+            return javaParserObject != null;
         }
         return super.eIsSet( featureID );
     }

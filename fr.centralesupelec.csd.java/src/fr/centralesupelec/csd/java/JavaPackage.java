@@ -99,13 +99,22 @@ public interface JavaPackage extends EPackage {
     int JAVA_NODE__ORPHAN_COMMENTS = 1;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_NODE__JAVA_PARSER_OBJECT = 2;
+
+    /**
      * The number of structural features of the '<em>Node</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int JAVA_NODE_FEATURE_COUNT = 2;
+    int JAVA_NODE_FEATURE_COUNT = 3;
 
     /**
      * The number of operations of the '<em>Node</em>' class.
@@ -143,6 +152,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ARRAY_CREATION_LEVEL__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_CREATION_LEVEL__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -207,6 +225,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int COMPILATION_UNIT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPILATION_UNIT__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Package Declaration</b></em>' containment reference.
@@ -291,6 +318,15 @@ public interface JavaPackage extends EPackage {
     int IMPORT_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPORT_DECLARATION__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -364,6 +400,15 @@ public interface JavaPackage extends EPackage {
     int PACKAGE_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE_DECLARATION__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -428,6 +473,15 @@ public interface JavaPackage extends EPackage {
     int BODY_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BODY_DECLARATION__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -481,6 +535,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int TYPE_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_DECLARATION__JAVA_PARSER_OBJECT = BODY_DECLARATION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -608,6 +671,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ANNOTATION_DECLARATION__ORPHAN_COMMENTS = TYPE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_DECLARATION__JAVA_PARSER_OBJECT = TYPE_DECLARATION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -746,6 +818,15 @@ public interface JavaPackage extends EPackage {
     int ANNOTATION_MEMBER_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_MEMBER_DECLARATION__JAVA_PARSER_OBJECT = BODY_DECLARATION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -853,6 +934,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CALLABLE_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CALLABLE_DECLARATION__JAVA_PARSER_OBJECT = BODY_DECLARATION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1025,6 +1115,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CLASS_OR_INTERFACE_DECLARATION__ORPHAN_COMMENTS = TYPE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_OR_INTERFACE_DECLARATION__JAVA_PARSER_OBJECT = TYPE_DECLARATION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1208,6 +1307,15 @@ public interface JavaPackage extends EPackage {
     int CONSTRUCTOR_DECLARATION__ORPHAN_COMMENTS = CALLABLE_DECLARATION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONSTRUCTOR_DECLARATION__JAVA_PARSER_OBJECT = CALLABLE_DECLARATION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1389,6 +1497,15 @@ public interface JavaPackage extends EPackage {
     int ENUM_CONSTANT_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_CONSTANT_DECLARATION__JAVA_PARSER_OBJECT = BODY_DECLARATION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1469,6 +1586,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ENUM_DECLARATION__ORPHAN_COMMENTS = TYPE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_DECLARATION__JAVA_PARSER_OBJECT = TYPE_DECLARATION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1616,6 +1742,15 @@ public interface JavaPackage extends EPackage {
     int FIELD_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_DECLARATION__JAVA_PARSER_OBJECT = BODY_DECLARATION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1752,6 +1887,15 @@ public interface JavaPackage extends EPackage {
     int INITIALIZER_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INITIALIZER_DECLARATION__JAVA_PARSER_OBJECT = BODY_DECLARATION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1823,6 +1967,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int METHOD_DECLARATION__ORPHAN_COMMENTS = CALLABLE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_DECLARATION__JAVA_PARSER_OBJECT = CALLABLE_DECLARATION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -2042,6 +2195,15 @@ public interface JavaPackage extends EPackage {
     int PARAMETER__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PARAMETER__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2151,6 +2313,15 @@ public interface JavaPackage extends EPackage {
     int RECEIVER_PARAMETER__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RECEIVER_PARAMETER__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2222,6 +2393,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int VARIABLE_DECLARATOR__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_DECLARATOR__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2297,6 +2477,15 @@ public interface JavaPackage extends EPackage {
     int COMMENT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMENT__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2350,6 +2539,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int BLOCK_COMMENT__ORPHAN_COMMENTS = COMMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BLOCK_COMMENT__JAVA_PARSER_OBJECT = COMMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -2407,6 +2605,15 @@ public interface JavaPackage extends EPackage {
     int JAVADOC_COMMENT__ORPHAN_COMMENTS = COMMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVADOC_COMMENT__JAVA_PARSER_OBJECT = COMMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2460,6 +2667,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int LINE_COMMENT__ORPHAN_COMMENTS = COMMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE_COMMENT__JAVA_PARSER_OBJECT = COMMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -2517,6 +2733,15 @@ public interface JavaPackage extends EPackage {
     int EXPRESSION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPRESSION__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Expression</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2561,6 +2786,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ANNOTATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -2616,6 +2850,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ARRAY_ACCESS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_ACCESS_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -2680,6 +2923,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ARRAY_CREATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_CREATION_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Levels</b></em>' containment reference list.
@@ -2755,6 +3007,15 @@ public interface JavaPackage extends EPackage {
     int ARRAY_INITIALIZER_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_INITIALIZER_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Values</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2808,6 +3069,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ASSIGN_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSIGN_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -2883,6 +3153,15 @@ public interface JavaPackage extends EPackage {
     int BINARY_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BINARY_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Left</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2956,6 +3235,15 @@ public interface JavaPackage extends EPackage {
     int LITERAL_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LITERAL_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Literal Expr</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3000,6 +3288,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int BOOLEAN_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_EXPR__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BOOLEAN_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_EXPR__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3055,6 +3352,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CAST_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CAST_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -3121,6 +3427,15 @@ public interface JavaPackage extends EPackage {
     int LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS = LITERAL_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT = LITERAL_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3174,6 +3489,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CHAR_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3231,6 +3555,15 @@ public interface JavaPackage extends EPackage {
     int CLASS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3284,6 +3617,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CONDITIONAL_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -3359,6 +3701,15 @@ public interface JavaPackage extends EPackage {
     int DOUBLE_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOUBLE_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3414,6 +3765,15 @@ public interface JavaPackage extends EPackage {
     int ENCLOSED_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENCLOSED_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Inner</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3467,6 +3827,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int FIELD_ACCESS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_ACCESS_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -3542,6 +3911,15 @@ public interface JavaPackage extends EPackage {
     int INSTANCE_OF_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INSTANCE_OF_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3615,6 +3993,15 @@ public interface JavaPackage extends EPackage {
     int INTEGER_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTEGER_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3668,6 +4055,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int LAMBDA_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LAMBDA_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -3743,6 +4139,15 @@ public interface JavaPackage extends EPackage {
     int LONG_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LONG_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3798,6 +4203,15 @@ public interface JavaPackage extends EPackage {
     int MARKER_ANNOTATION_EXPR__ORPHAN_COMMENTS = ANNOTATION_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MARKER_ANNOTATION_EXPR__JAVA_PARSER_OBJECT = ANNOTATION_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3851,6 +4265,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int MEMBER_VALUE_PAIR__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MEMBER_VALUE_PAIR__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -3915,6 +4338,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int METHOD_CALL_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_CALL_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
@@ -3999,6 +4431,15 @@ public interface JavaPackage extends EPackage {
     int METHOD_REFERENCE_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_REFERENCE_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4072,6 +4513,15 @@ public interface JavaPackage extends EPackage {
     int NAME__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Identifier</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4136,6 +4586,15 @@ public interface JavaPackage extends EPackage {
     int NAME_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4189,6 +4648,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int NORMAL_ANNOTATION_EXPR__ORPHAN_COMMENTS = ANNOTATION_EXPR__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NORMAL_ANNOTATION_EXPR__JAVA_PARSER_OBJECT = ANNOTATION_EXPR__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -4255,6 +4723,15 @@ public interface JavaPackage extends EPackage {
     int NULL_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NULL_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Null Literal Expr</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4299,6 +4776,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int OBJECT_CREATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OBJECT_CREATION_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
@@ -4392,6 +4878,15 @@ public interface JavaPackage extends EPackage {
     int PATTERN_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PATTERN_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4456,6 +4951,15 @@ public interface JavaPackage extends EPackage {
     int SIMPLE_NAME__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIMPLE_NAME__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Identifier</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4509,6 +5013,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int SINGLE_MEMBER_ANNOTATION_EXPR__ORPHAN_COMMENTS = ANNOTATION_EXPR__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SINGLE_MEMBER_ANNOTATION_EXPR__JAVA_PARSER_OBJECT = ANNOTATION_EXPR__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -4575,6 +5088,15 @@ public interface JavaPackage extends EPackage {
     int STRING_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int STRING_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4630,6 +5152,15 @@ public interface JavaPackage extends EPackage {
     int SUPER_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUPER_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4683,6 +5214,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int SWITCH_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Selector</b></em>' containment reference.
@@ -4749,6 +5289,15 @@ public interface JavaPackage extends EPackage {
     int TEXT_BLOCK_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT_BLOCK_LITERAL_EXPR__JAVA_PARSER_OBJECT = LITERAL_STRING_VALUE_EXPR__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4802,6 +5351,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int THIS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int THIS_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Type Name</b></em>' containment reference.
@@ -4859,6 +5417,15 @@ public interface JavaPackage extends EPackage {
     int TYPE_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4912,6 +5479,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int UNARY_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNARY_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -4976,6 +5552,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int VARIABLE_DECLARATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_DECLARATION_EXPR__JAVA_PARSER_OBJECT = EXPRESSION__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -5060,6 +5645,15 @@ public interface JavaPackage extends EPackage {
     int MODULE_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_DECLARATION__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5142,6 +5736,15 @@ public interface JavaPackage extends EPackage {
     int MODULE_DIRECTIVE__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_DIRECTIVE__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Module Directive</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5186,6 +5789,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int MODULE_EXPORTS_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_EXPORTS_DIRECTIVE__JAVA_PARSER_OBJECT = MODULE_DIRECTIVE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -5252,6 +5864,15 @@ public interface JavaPackage extends EPackage {
     int MODULE_OPENS_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_OPENS_DIRECTIVE__JAVA_PARSER_OBJECT = MODULE_DIRECTIVE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5316,6 +5937,15 @@ public interface JavaPackage extends EPackage {
     int MODULE_PROVIDES_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_PROVIDES_DIRECTIVE__JAVA_PARSER_OBJECT = MODULE_DIRECTIVE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5378,6 +6008,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int MODULE_REQUIRES_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_REQUIRES_DIRECTIVE__JAVA_PARSER_OBJECT = MODULE_DIRECTIVE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -5460,6 +6099,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int MODULE_USES_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_USES_DIRECTIVE__JAVA_PARSER_OBJECT = MODULE_DIRECTIVE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -7123,6 +7771,15 @@ public interface JavaPackage extends EPackage {
     int STATEMENT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int STATEMENT__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Statement</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7167,6 +7824,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ASSERT_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSERT_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Check</b></em>' containment reference.
@@ -7233,6 +7899,15 @@ public interface JavaPackage extends EPackage {
     int BLOCK_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BLOCK_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Statements</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7288,6 +7963,15 @@ public interface JavaPackage extends EPackage {
     int BREAK_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BREAK_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7341,6 +8025,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CATCH_CLAUSE__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CATCH_CLAUSE__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -7407,6 +8100,15 @@ public interface JavaPackage extends EPackage {
     int CONTINUE_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTINUE_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7460,6 +8162,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int DO_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -7526,6 +8237,15 @@ public interface JavaPackage extends EPackage {
     int EMPTY_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EMPTY_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Empty Stmt</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7570,6 +8290,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int EXPLICIT_CONSTRUCTOR_INVOCATION_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPLICIT_CONSTRUCTOR_INVOCATION_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
@@ -7654,6 +8383,15 @@ public interface JavaPackage extends EPackage {
     int EXPRESSION_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPRESSION_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7707,6 +8445,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int FOR_EACH_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FOR_EACH_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -7780,6 +8527,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int FOR_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FOR_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -7864,6 +8620,15 @@ public interface JavaPackage extends EPackage {
     int IF_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IF_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Condition</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7937,6 +8702,15 @@ public interface JavaPackage extends EPackage {
     int LABELED_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LABELED_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8001,6 +8775,15 @@ public interface JavaPackage extends EPackage {
     int LOCAL_CLASS_DECLARATION_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOCAL_CLASS_DECLARATION_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Class Declaration</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8056,6 +8839,15 @@ public interface JavaPackage extends EPackage {
     int RETURN_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RETURN_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8109,6 +8901,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int SWITCH_ENTRY__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_ENTRY__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -8184,6 +8985,15 @@ public interface JavaPackage extends EPackage {
     int SWITCH_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Selector</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8246,6 +9056,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int SYNCHRONIZED_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SYNCHRONIZED_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -8312,6 +9131,15 @@ public interface JavaPackage extends EPackage {
     int THROW_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int THROW_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8365,6 +9193,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int TRY_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRY_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -8449,6 +9286,15 @@ public interface JavaPackage extends EPackage {
     int WHILE_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WHILE_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8513,6 +9359,15 @@ public interface JavaPackage extends EPackage {
     int YIELD_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int YIELD_STMT__JAVA_PARSER_OBJECT = STATEMENT__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8568,6 +9423,15 @@ public interface JavaPackage extends EPackage {
     int TYPE__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE__JAVA_PARSER_OBJECT = JAVA_NODE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8614,6 +9478,15 @@ public interface JavaPackage extends EPackage {
     int REFERENCE_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REFERENCE_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Reference Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8658,6 +9531,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int ARRAY_TYPE__ORPHAN_COMMENTS = REFERENCE_TYPE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_TYPE__JAVA_PARSER_OBJECT = REFERENCE_TYPE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -8731,6 +9613,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int CLASS_OR_INTERFACE_TYPE__ORPHAN_COMMENTS = REFERENCE_TYPE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_OR_INTERFACE_TYPE__JAVA_PARSER_OBJECT = REFERENCE_TYPE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -8815,6 +9706,15 @@ public interface JavaPackage extends EPackage {
     int INTERSECTION_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERSECTION_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8879,6 +9779,15 @@ public interface JavaPackage extends EPackage {
     int PRIMITIVE_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIMITIVE_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8941,6 +9850,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int TYPE_PARAMETER__ORPHAN_COMMENTS = REFERENCE_TYPE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_PARAMETER__JAVA_PARSER_OBJECT = REFERENCE_TYPE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -9016,6 +9934,15 @@ public interface JavaPackage extends EPackage {
     int UNION_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNION_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9080,6 +10007,15 @@ public interface JavaPackage extends EPackage {
     int UNKNOWN_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNKNOWN_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Unknown Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9126,6 +10062,15 @@ public interface JavaPackage extends EPackage {
     int VAR_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAR_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The number of structural features of the '<em>Var Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9170,6 +10115,15 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
     int VOID_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOID_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
 
     /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -9227,6 +10181,15 @@ public interface JavaPackage extends EPackage {
     int WILDCARD_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
 
     /**
+     * The feature id for the '<em><b>Java Parser Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WILDCARD_TYPE__JAVA_PARSER_OBJECT = TYPE__JAVA_PARSER_OBJECT;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9272,6 +10235,34 @@ public interface JavaPackage extends EPackage {
     int WILDCARD_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link com.github.javaparser.ast.Node <em>Parser Object</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.github.javaparser.ast.Node
+     * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getJavaParserObject()
+     * @generated
+     */
+    int JAVA_PARSER_OBJECT = 147;
+
+    /**
+     * The number of structural features of the '<em>Parser Object</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_PARSER_OBJECT_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Parser Object</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_PARSER_OBJECT_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.ModifierKeyword <em>Modifier Keyword</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9279,7 +10270,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getModifierKeyword()
      * @generated
      */
-    int MODIFIER_KEYWORD = 147;
+    int MODIFIER_KEYWORD = 148;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.AssignOperator <em>Assign Operator</em>}' enum.
@@ -9289,7 +10280,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getAssignOperator()
      * @generated
      */
-    int ASSIGN_OPERATOR = 148;
+    int ASSIGN_OPERATOR = 149;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.BinaryOperator <em>Binary Operator</em>}' enum.
@@ -9299,7 +10290,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getBinaryOperator()
      * @generated
      */
-    int BINARY_OPERATOR = 149;
+    int BINARY_OPERATOR = 150;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.UnaryOperator <em>Unary Operator</em>}' enum.
@@ -9309,7 +10300,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getUnaryOperator()
      * @generated
      */
-    int UNARY_OPERATOR = 150;
+    int UNARY_OPERATOR = 151;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.SwitchEntryType <em>Switch Entry Type</em>}' enum.
@@ -9319,7 +10310,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getSwitchEntryType()
      * @generated
      */
-    int SWITCH_ENTRY_TYPE = 151;
+    int SWITCH_ENTRY_TYPE = 152;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.ArrayTypeOrigin <em>Array Type Origin</em>}' enum.
@@ -9329,7 +10320,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getArrayTypeOrigin()
      * @generated
      */
-    int ARRAY_TYPE_ORIGIN = 152;
+    int ARRAY_TYPE_ORIGIN = 153;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.Primitive <em>Primitive</em>}' enum.
@@ -9339,7 +10330,7 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getPrimitive()
      * @generated
      */
-    int PRIMITIVE = 153;
+    int PRIMITIVE = 154;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.csd.java.JavaNode <em>Node</em>}'.
@@ -9372,6 +10363,17 @@ public interface JavaPackage extends EPackage {
      * @generated
      */
     EReference getJavaNode_OrphanComments();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.csd.java.JavaNode#getJavaParserObject <em>Java Parser Object</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Java Parser Object</em>'.
+     * @see fr.centralesupelec.csd.java.JavaNode#getJavaParserObject()
+     * @see #getJavaNode()
+     * @generated
+     */
+    EReference getJavaNode_JavaParserObject();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.csd.java.ArrayCreationLevel <em>Array Creation Level</em>}'.
@@ -12088,6 +13090,17 @@ public interface JavaPackage extends EPackage {
     EReference getWildcardType_SuperType();
 
     /**
+     * Returns the meta object for class '{@link com.github.javaparser.ast.Node <em>Parser Object</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Parser Object</em>'.
+     * @see com.github.javaparser.ast.Node
+     * @model instanceClass="com.github.javaparser.ast.Node"
+     * @generated
+     */
+    EClass getJavaParserObject();
+
+    /**
      * Returns the meta object for enum '{@link fr.centralesupelec.csd.java.ModifierKeyword <em>Modifier Keyword</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12205,6 +13218,14 @@ public interface JavaPackage extends EPackage {
          * @generated
          */
         EReference JAVA_NODE__ORPHAN_COMMENTS = eINSTANCE.getJavaNode_OrphanComments();
+
+        /**
+         * The meta object literal for the '<em><b>Java Parser Object</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference JAVA_NODE__JAVA_PARSER_OBJECT = eINSTANCE.getJavaNode_JavaParserObject();
 
         /**
          * The meta object literal for the '{@link fr.centralesupelec.csd.java.impl.ArrayCreationLevelImpl <em>Array Creation Level</em>}' class.
@@ -14582,6 +15603,16 @@ public interface JavaPackage extends EPackage {
          * @generated
          */
         EReference WILDCARD_TYPE__SUPER_TYPE = eINSTANCE.getWildcardType_SuperType();
+
+        /**
+         * The meta object literal for the '{@link com.github.javaparser.ast.Node <em>Parser Object</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see com.github.javaparser.ast.Node
+         * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getJavaParserObject()
+         * @generated
+         */
+        EClass JAVA_PARSER_OBJECT = eINSTANCE.getJavaParserObject();
 
         /**
          * The meta object literal for the '{@link fr.centralesupelec.csd.java.ModifierKeyword <em>Modifier Keyword</em>}' enum.

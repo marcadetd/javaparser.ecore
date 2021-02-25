@@ -90,6 +90,7 @@ public class CreateJavaModel {
         public ArrayCreationLevel visit( com.github.javaparser.ast.ArrayCreationLevel javaParserObject, JavaFactory factory ) {
 
             ArrayCreationLevel ecoreObject = factory.createArrayCreationLevel();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -113,6 +114,7 @@ public class CreateJavaModel {
         public CompilationUnit visit( com.github.javaparser.ast.CompilationUnit javaParserObject, JavaFactory factory ) {
 
             CompilationUnit ecoreObject = factory.createCompilationUnit();
+            ecoreObject.setJavaParserObject( javaParserObject );
 
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -150,6 +152,7 @@ public class CreateJavaModel {
         public ImportDeclaration visit( com.github.javaparser.ast.ImportDeclaration javaParserObject, JavaFactory factory ) {
 
             ImportDeclaration ecoreObject = factory.createImportDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
 
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -200,6 +203,7 @@ public class CreateJavaModel {
         public PackageDeclaration visit( com.github.javaparser.ast.PackageDeclaration javaParserObject, JavaFactory factory ) {
 
             PackageDeclaration ecoreObject = factory.createPackageDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
 
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -221,6 +225,7 @@ public class CreateJavaModel {
         public AnnotationDeclaration visit( com.github.javaparser.ast.body.AnnotationDeclaration javaParserObject, JavaFactory factory ) {
 
             AnnotationDeclaration ecoreObject = factory.createAnnotationDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends TypeDeclaration
             new TypeDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -239,6 +244,7 @@ public class CreateJavaModel {
         public AnnotationMemberDeclaration visit( com.github.javaparser.ast.body.AnnotationMemberDeclaration javaParserObject, JavaFactory factory ) {
 
             AnnotationMemberDeclaration ecoreObject = factory.createAnnotationMemberDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends BodyDeclaration
             new BodyDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -316,17 +322,15 @@ public class CreateJavaModel {
 
         public CallableDeclaration visit( com.github.javaparser.ast.body.CallableDeclaration< ? > javaParserObject, JavaFactory factory ) {
 
-            CallableDeclaration ecoreObject = null;
-            
             if( javaParserObject instanceof com.github.javaparser.ast.body.ConstructorDeclaration ) {
-                ecoreObject = new ConstructorDeclarationVisitor().visit(( com.github.javaparser.ast.body.ConstructorDeclaration ) javaParserObject, factory );
+                return new ConstructorDeclarationVisitor().visit(( com.github.javaparser.ast.body.ConstructorDeclaration ) javaParserObject, factory );
             }
             
             if( javaParserObject instanceof com.github.javaparser.ast.body.MethodDeclaration ) {
-                ecoreObject = new MethodDeclarationVisitor().visit(( com.github.javaparser.ast.body.MethodDeclaration ) javaParserObject, factory );
+                return new MethodDeclarationVisitor().visit(( com.github.javaparser.ast.body.MethodDeclaration ) javaParserObject, factory );
             }
 
-            return ecoreObject;
+            return null;
         }
         
         public CallableDeclaration collect( com.github.javaparser.ast.body.CallableDeclaration< ? > javaParserObject, JavaFactory factory, CallableDeclaration ecoreObject ) {
@@ -383,6 +387,7 @@ public class CreateJavaModel {
         public ClassOrInterfaceDeclaration visit( com.github.javaparser.ast.body.ClassOrInterfaceDeclaration javaParserObject, JavaFactory factory ) {
 
             ClassOrInterfaceDeclaration ecoreObject = factory.createClassOrInterfaceDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends TypeDeclaration
             new TypeDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -416,6 +421,7 @@ public class CreateJavaModel {
         public ConstructorDeclaration visit( com.github.javaparser.ast.body.ConstructorDeclaration javaParserObject, JavaFactory factory ) {
 
             ConstructorDeclaration ecoreObject = factory.createConstructorDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends CallableDeclaration
             new CallableDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -452,6 +458,7 @@ public class CreateJavaModel {
         public EnumConstantDeclaration visit( com.github.javaparser.ast.body.EnumConstantDeclaration javaParserObject, JavaFactory factory ) {
 
             EnumConstantDeclaration ecoreObject = factory.createEnumConstantDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends BodyDeclaration
             new BodyDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -481,6 +488,7 @@ public class CreateJavaModel {
         public EnumDeclaration visit( com.github.javaparser.ast.body.EnumDeclaration javaParserObject, JavaFactory factory ) {
 
             EnumDeclaration ecoreObject = factory.createEnumDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends TypeDeclaration
             new TypeDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -504,6 +512,7 @@ public class CreateJavaModel {
         public FieldDeclaration visit( com.github.javaparser.ast.body.FieldDeclaration javaParserObject, JavaFactory factory ) {
 
             FieldDeclaration ecoreObject = factory.createFieldDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends BodyDeclaration
             new BodyDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -540,6 +549,7 @@ public class CreateJavaModel {
         public InitializerDeclaration visit( com.github.javaparser.ast.body.InitializerDeclaration javaParserObject, JavaFactory factory ) {
 
             InitializerDeclaration ecoreObject = factory.createInitializerDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends BodyDeclaration
             new BodyDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -564,6 +574,7 @@ public class CreateJavaModel {
         public MethodDeclaration visit( com.github.javaparser.ast.body.MethodDeclaration javaParserObject, JavaFactory factory ) {
 
             MethodDeclaration ecoreObject = factory.createMethodDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends CallableDeclaration
             new CallableDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -627,6 +638,7 @@ public class CreateJavaModel {
         public Parameter visit( com.github.javaparser.ast.body.Parameter javaParserObject, JavaFactory factory ) {
 
             Parameter ecoreObject = factory.createParameter();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -657,6 +669,7 @@ public class CreateJavaModel {
         public ReceiverParameter visit( com.github.javaparser.ast.body.ReceiverParameter javaParserObject, JavaFactory factory ) {
 
             ReceiverParameter ecoreObject = factory.createReceiverParameter();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -728,6 +741,7 @@ public class CreateJavaModel {
         public VariableDeclarator visit( com.github.javaparser.ast.body.VariableDeclarator javaParserObject, JavaFactory factory ) {
 
             VariableDeclarator ecoreObject = factory.createVariableDeclarator();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -754,6 +768,7 @@ public class CreateJavaModel {
         public BlockComment visit( com.github.javaparser.ast.comments.BlockComment javaParserObject, JavaFactory factory ) {
 
             BlockComment ecoreObject = factory.createBlockComment();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Comment
             new CommentVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -801,6 +816,7 @@ public class CreateJavaModel {
         public JavadocComment visit( com.github.javaparser.ast.comments.JavadocComment javaParserObject, JavaFactory factory ) {
 
             JavadocComment ecoreObject = factory.createJavadocComment();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Comment
             new CommentVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -816,6 +832,7 @@ public class CreateJavaModel {
         public LineComment visit( com.github.javaparser.ast.comments.LineComment javaParserObject, JavaFactory factory ) {
 
             LineComment ecoreObject = factory.createLineComment();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Comment
             new CommentVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -863,6 +880,7 @@ public class CreateJavaModel {
         public ArrayAccessExpr visit( com.github.javaparser.ast.expr.ArrayAccessExpr javaParserObject, JavaFactory factory ) {
 
             ArrayAccessExpr ecoreObject = factory.createArrayAccessExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -884,6 +902,7 @@ public class CreateJavaModel {
         public ArrayCreationExpr visit( com.github.javaparser.ast.expr.ArrayCreationExpr javaParserObject, JavaFactory factory ) {
 
             ArrayCreationExpr ecoreObject = factory.createArrayCreationExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -912,6 +931,7 @@ public class CreateJavaModel {
         public ArrayInitializerExpr visit( com.github.javaparser.ast.expr.ArrayInitializerExpr javaParserObject, JavaFactory factory ) {
 
             ArrayInitializerExpr ecoreObject = factory.createArrayInitializerExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -932,6 +952,7 @@ public class CreateJavaModel {
         public AssignExpr visit( com.github.javaparser.ast.expr.AssignExpr javaParserObject, JavaFactory factory ) {
 
             AssignExpr ecoreObject = factory.createAssignExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -971,6 +992,7 @@ public class CreateJavaModel {
         public BinaryExpr visit( com.github.javaparser.ast.expr.BinaryExpr javaParserObject, JavaFactory factory ) {
 
             BinaryExpr ecoreObject = factory.createBinaryExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1017,6 +1039,7 @@ public class CreateJavaModel {
         public BooleanLiteralExpr visit( com.github.javaparser.ast.expr.BooleanLiteralExpr javaParserObject, JavaFactory factory ) {
 
             BooleanLiteralExpr ecoreObject = factory.createBooleanLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralExpr
             new LiteralExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1035,6 +1058,7 @@ public class CreateJavaModel {
         public CastExpr visit( com.github.javaparser.ast.expr.CastExpr javaParserObject, JavaFactory factory ) {
 
             CastExpr ecoreObject = factory.createCastExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1056,6 +1080,7 @@ public class CreateJavaModel {
         public CharLiteralExpr visit( com.github.javaparser.ast.expr.CharLiteralExpr javaParserObject, JavaFactory factory ) {
 
             CharLiteralExpr ecoreObject = factory.createCharLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralStringValueExpr
             new LiteralStringValueExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1071,6 +1096,7 @@ public class CreateJavaModel {
         public ClassExpr visit( com.github.javaparser.ast.expr.ClassExpr javaParserObject, JavaFactory factory ) {
 
             ClassExpr ecoreObject = factory.createClassExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1089,6 +1115,7 @@ public class CreateJavaModel {
         public ConditionalExpr visit( com.github.javaparser.ast.expr.ConditionalExpr javaParserObject, JavaFactory factory ) {
 
             ConditionalExpr ecoreObject = factory.createConditionalExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1113,6 +1140,7 @@ public class CreateJavaModel {
         public DoubleLiteralExpr visit( com.github.javaparser.ast.expr.DoubleLiteralExpr javaParserObject, JavaFactory factory ) {
 
             DoubleLiteralExpr ecoreObject = factory.createDoubleLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralStringValueExpr
             new LiteralStringValueExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1128,6 +1156,7 @@ public class CreateJavaModel {
         public EnclosedExpr visit( com.github.javaparser.ast.expr.EnclosedExpr javaParserObject, JavaFactory factory ) {
 
             EnclosedExpr ecoreObject = factory.createEnclosedExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1275,6 +1304,7 @@ public class CreateJavaModel {
         public FieldAccessExpr visit( com.github.javaparser.ast.expr.FieldAccessExpr javaParserObject, JavaFactory factory ) {
 
             FieldAccessExpr ecoreObject = factory.createFieldAccessExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1299,6 +1329,7 @@ public class CreateJavaModel {
         public InstanceOfExpr visit( com.github.javaparser.ast.expr.InstanceOfExpr javaParserObject, JavaFactory factory ) {
 
             InstanceOfExpr ecoreObject = factory.createInstanceOfExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1325,6 +1356,7 @@ public class CreateJavaModel {
         public IntegerLiteralExpr visit( com.github.javaparser.ast.expr.IntegerLiteralExpr javaParserObject, JavaFactory factory ) {
 
             IntegerLiteralExpr ecoreObject = factory.createIntegerLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralStringValueExpr
             new LiteralStringValueExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1340,6 +1372,7 @@ public class CreateJavaModel {
         public LambdaExpr visit( com.github.javaparser.ast.expr.LambdaExpr javaParserObject, JavaFactory factory ) {
 
             LambdaExpr ecoreObject = factory.createLambdaExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1435,6 +1468,7 @@ public class CreateJavaModel {
         public LongLiteralExpr visit( com.github.javaparser.ast.expr.LongLiteralExpr javaParserObject, JavaFactory factory ) {
 
             LongLiteralExpr ecoreObject = factory.createLongLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralStringValueExpr
             new LiteralStringValueExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1450,6 +1484,7 @@ public class CreateJavaModel {
         public MarkerAnnotationExpr visit( com.github.javaparser.ast.expr.MarkerAnnotationExpr javaParserObject, JavaFactory factory ) {
 
             MarkerAnnotationExpr ecoreObject = factory.createMarkerAnnotationExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends AnnotationExpr
             new AnnotationExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1465,6 +1500,7 @@ public class CreateJavaModel {
         public MemberValuePair visit( com.github.javaparser.ast.expr.MemberValuePair javaParserObject, JavaFactory factory ) {
 
             MemberValuePair ecoreObject = factory.createMemberValuePair();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1486,6 +1522,7 @@ public class CreateJavaModel {
         public MethodCallExpr visit( com.github.javaparser.ast.expr.MethodCallExpr javaParserObject, JavaFactory factory ) {
 
             MethodCallExpr ecoreObject = factory.createMethodCallExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1513,6 +1550,7 @@ public class CreateJavaModel {
         public MethodReferenceExpr visit( com.github.javaparser.ast.expr.MethodReferenceExpr javaParserObject, JavaFactory factory ) {
 
             MethodReferenceExpr ecoreObject = factory.createMethodReferenceExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1534,6 +1572,7 @@ public class CreateJavaModel {
         public Name visit( com.github.javaparser.ast.expr.Name javaParserObject, JavaFactory factory ) {
 
             Name ecoreObject = factory.createName();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1557,6 +1596,7 @@ public class CreateJavaModel {
         public NameExpr visit( com.github.javaparser.ast.expr.NameExpr javaParserObject, JavaFactory factory ) {
 
             NameExpr ecoreObject = factory.createNameExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1575,6 +1615,7 @@ public class CreateJavaModel {
         public NormalAnnotationExpr visit( com.github.javaparser.ast.expr.NormalAnnotationExpr javaParserObject, JavaFactory factory ) {
 
             NormalAnnotationExpr ecoreObject = factory.createNormalAnnotationExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends AnnotationExpr
             new AnnotationExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1596,6 +1637,7 @@ public class CreateJavaModel {
         public NullLiteralExpr visit( com.github.javaparser.ast.expr.NullLiteralExpr javaParserObject, JavaFactory factory ) {
 
             NullLiteralExpr ecoreObject = factory.createNullLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralExpr
             new LiteralExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1611,6 +1653,7 @@ public class CreateJavaModel {
         public ObjectCreationExpr visit( com.github.javaparser.ast.expr.ObjectCreationExpr javaParserObject, JavaFactory factory ) {
 
             ObjectCreationExpr ecoreObject = factory.createObjectCreationExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1645,6 +1688,7 @@ public class CreateJavaModel {
         public PatternExpr visit( com.github.javaparser.ast.expr.PatternExpr javaParserObject, JavaFactory factory ) {
 
             PatternExpr ecoreObject = factory.createPatternExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1666,6 +1710,7 @@ public class CreateJavaModel {
         public SimpleName visit( com.github.javaparser.ast.expr.SimpleName javaParserObject, JavaFactory factory ) {
 
             SimpleName ecoreObject = factory.createSimpleName();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1684,6 +1729,7 @@ public class CreateJavaModel {
         public SingleMemberAnnotationExpr visit( com.github.javaparser.ast.expr.SingleMemberAnnotationExpr javaParserObject, JavaFactory factory ) {
 
             SingleMemberAnnotationExpr ecoreObject = factory.createSingleMemberAnnotationExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends AnnotationExpr
             new AnnotationExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1702,6 +1748,7 @@ public class CreateJavaModel {
         public StringLiteralExpr visit( com.github.javaparser.ast.expr.StringLiteralExpr javaParserObject, JavaFactory factory ) {
 
             StringLiteralExpr ecoreObject = factory.createStringLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralStringValueExpr
             new LiteralStringValueExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1717,6 +1764,7 @@ public class CreateJavaModel {
         public SuperExpr visit( com.github.javaparser.ast.expr.SuperExpr javaParserObject, JavaFactory factory ) {
 
             SuperExpr ecoreObject = factory.createSuperExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1737,6 +1785,7 @@ public class CreateJavaModel {
         public SwitchExpr visit( com.github.javaparser.ast.expr.SwitchExpr javaParserObject, JavaFactory factory ) {
 
             SwitchExpr ecoreObject = factory.createSwitchExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1755,6 +1804,7 @@ public class CreateJavaModel {
         public TextBlockLiteralExpr visit( com.github.javaparser.ast.expr.TextBlockLiteralExpr javaParserObject, JavaFactory factory ) {
 
             TextBlockLiteralExpr ecoreObject = factory.createTextBlockLiteralExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends LiteralStringValueExpr
             new LiteralStringValueExprVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1770,6 +1820,7 @@ public class CreateJavaModel {
         public ThisExpr visit( com.github.javaparser.ast.expr.ThisExpr javaParserObject, JavaFactory factory ) {
 
             ThisExpr ecoreObject = factory.createThisExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1790,6 +1841,7 @@ public class CreateJavaModel {
         public TypeExpr visit( com.github.javaparser.ast.expr.TypeExpr javaParserObject, JavaFactory factory ) {
 
             TypeExpr ecoreObject = factory.createTypeExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1808,6 +1860,7 @@ public class CreateJavaModel {
         public UnaryExpr visit( com.github.javaparser.ast.expr.UnaryExpr javaParserObject, JavaFactory factory ) {
 
             UnaryExpr ecoreObject = factory.createUnaryExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1840,6 +1893,7 @@ public class CreateJavaModel {
         public VariableDeclarationExpr visit( com.github.javaparser.ast.expr.VariableDeclarationExpr javaParserObject, JavaFactory factory ) {
 
             VariableDeclarationExpr ecoreObject = factory.createVariableDeclarationExpr();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Expression
             new ExpressionVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1864,6 +1918,7 @@ public class CreateJavaModel {
         public ModuleDeclaration visit( com.github.javaparser.ast.modules.ModuleDeclaration javaParserObject, JavaFactory factory ) {
 
             ModuleDeclaration ecoreObject = factory.createModuleDeclaration();
+            ecoreObject.setJavaParserObject( javaParserObject );
 
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1929,6 +1984,7 @@ public class CreateJavaModel {
         public ModuleExportsDirective visit( com.github.javaparser.ast.modules.ModuleExportsDirective javaParserObject, JavaFactory factory ) {
 
             ModuleExportsDirective ecoreObject = factory.createModuleExportsDirective();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends ModuleDirective
             new ModuleDirectiveVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1952,6 +2008,7 @@ public class CreateJavaModel {
         public ModuleOpensDirective visit( com.github.javaparser.ast.modules.ModuleOpensDirective javaParserObject, JavaFactory factory ) {
 
             ModuleOpensDirective ecoreObject = factory.createModuleOpensDirective();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends ModuleDirective
             new ModuleDirectiveVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1975,6 +2032,7 @@ public class CreateJavaModel {
         public ModuleProvidesDirective visit( com.github.javaparser.ast.modules.ModuleProvidesDirective javaParserObject, JavaFactory factory ) {
 
             ModuleProvidesDirective ecoreObject = factory.createModuleProvidesDirective();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends ModuleDirective
             new ModuleDirectiveVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -1998,6 +2056,7 @@ public class CreateJavaModel {
         public ModuleRequiresDirective visit( com.github.javaparser.ast.modules.ModuleRequiresDirective javaParserObject, JavaFactory factory ) {
 
             ModuleRequiresDirective ecoreObject = factory.createModuleRequiresDirective();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends ModuleDirective
             new ModuleDirectiveVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2022,6 +2081,7 @@ public class CreateJavaModel {
         public ModuleUsesDirective visit( com.github.javaparser.ast.modules.ModuleUsesDirective javaParserObject, JavaFactory factory ) {
 
             ModuleUsesDirective ecoreObject = factory.createModuleUsesDirective();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends ModuleDirective
             new ModuleDirectiveVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2546,6 +2606,7 @@ public class CreateJavaModel {
         public AssertStmt visit( com.github.javaparser.ast.stmt.AssertStmt javaParserObject, JavaFactory factory ) {
 
             AssertStmt ecoreObject = factory.createAssertStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2569,6 +2630,7 @@ public class CreateJavaModel {
         public BlockStmt visit( com.github.javaparser.ast.stmt.BlockStmt javaParserObject, JavaFactory factory ) {
 
             BlockStmt ecoreObject = factory.createBlockStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2587,6 +2649,7 @@ public class CreateJavaModel {
         public BreakStmt visit( com.github.javaparser.ast.stmt.BreakStmt javaParserObject, JavaFactory factory ) {
 
             BreakStmt ecoreObject = factory.createBreakStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2609,6 +2672,7 @@ public class CreateJavaModel {
         public CatchClause visit( com.github.javaparser.ast.stmt.CatchClause javaParserObject, JavaFactory factory ) {
 
             CatchClause ecoreObject = factory.createCatchClause();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2630,6 +2694,7 @@ public class CreateJavaModel {
         public ContinueStmt visit( com.github.javaparser.ast.stmt.ContinueStmt javaParserObject, JavaFactory factory ) {
 
             ContinueStmt ecoreObject = factory.createContinueStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2648,6 +2713,7 @@ public class CreateJavaModel {
         public DoStmt visit( com.github.javaparser.ast.stmt.DoStmt javaParserObject, JavaFactory factory ) {
 
             DoStmt ecoreObject = factory.createDoStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2669,6 +2735,7 @@ public class CreateJavaModel {
         public EmptyStmt visit( com.github.javaparser.ast.stmt.EmptyStmt javaParserObject, JavaFactory factory ) {
 
             EmptyStmt ecoreObject = factory.createEmptyStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2684,6 +2751,7 @@ public class CreateJavaModel {
         public ExplicitConstructorInvocationStmt visit( com.github.javaparser.ast.stmt.ExplicitConstructorInvocationStmt javaParserObject, JavaFactory factory ) {
 
             ExplicitConstructorInvocationStmt ecoreObject = factory.createExplicitConstructorInvocationStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2714,6 +2782,7 @@ public class CreateJavaModel {
         public ExpressionStmt visit( com.github.javaparser.ast.stmt.ExpressionStmt javaParserObject, JavaFactory factory ) {
 
             ExpressionStmt ecoreObject = factory.createExpressionStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2732,6 +2801,7 @@ public class CreateJavaModel {
         public ForEachStmt visit( com.github.javaparser.ast.stmt.ForEachStmt javaParserObject, JavaFactory factory ) {
 
             ForEachStmt ecoreObject = factory.createForEachStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2756,6 +2826,7 @@ public class CreateJavaModel {
         public ForStmt visit( com.github.javaparser.ast.stmt.ForStmt javaParserObject, JavaFactory factory ) {
 
             ForStmt ecoreObject = factory.createForStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2784,6 +2855,7 @@ public class CreateJavaModel {
         public IfStmt visit( com.github.javaparser.ast.stmt.IfStmt javaParserObject, JavaFactory factory ) {
 
             IfStmt ecoreObject = factory.createIfStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2810,6 +2882,7 @@ public class CreateJavaModel {
         public LabeledStmt visit( com.github.javaparser.ast.stmt.LabeledStmt javaParserObject, JavaFactory factory ) {
 
             LabeledStmt ecoreObject = factory.createLabeledStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2834,6 +2907,7 @@ public class CreateJavaModel {
         public LocalClassDeclarationStmt visit( com.github.javaparser.ast.stmt.LocalClassDeclarationStmt javaParserObject, JavaFactory factory ) {
 
             LocalClassDeclarationStmt ecoreObject = factory.createLocalClassDeclarationStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2852,6 +2926,7 @@ public class CreateJavaModel {
         public ReturnStmt visit( com.github.javaparser.ast.stmt.ReturnStmt javaParserObject, JavaFactory factory ) {
 
             ReturnStmt ecoreObject = factory.createReturnStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -2969,6 +3044,7 @@ public class CreateJavaModel {
         public SwitchEntry visit( com.github.javaparser.ast.stmt.SwitchEntry javaParserObject, JavaFactory factory ) {
 
             SwitchEntry ecoreObject = factory.createSwitchEntry();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // Extends Node
             new JavaNodeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3002,6 +3078,7 @@ public class CreateJavaModel {
         public SwitchStmt visit( com.github.javaparser.ast.stmt.SwitchStmt javaParserObject, JavaFactory factory ) {
 
             SwitchStmt ecoreObject = factory.createSwitchStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3020,6 +3097,7 @@ public class CreateJavaModel {
         public SynchronizedStmt visit( com.github.javaparser.ast.stmt.SynchronizedStmt javaParserObject, JavaFactory factory ) {
 
             SynchronizedStmt ecoreObject = factory.createSynchronizedStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3041,6 +3119,7 @@ public class CreateJavaModel {
         public ThrowStmt visit( com.github.javaparser.ast.stmt.ThrowStmt javaParserObject, JavaFactory factory ) {
 
             ThrowStmt ecoreObject = factory.createThrowStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3059,6 +3138,7 @@ public class CreateJavaModel {
         public TryStmt visit( com.github.javaparser.ast.stmt.TryStmt javaParserObject, JavaFactory factory ) {
 
             TryStmt ecoreObject = factory.createTryStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3089,6 +3169,7 @@ public class CreateJavaModel {
         public WhileStmt visit( com.github.javaparser.ast.stmt.WhileStmt javaParserObject, JavaFactory factory ) {
 
             WhileStmt ecoreObject = factory.createWhileStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3110,6 +3191,7 @@ public class CreateJavaModel {
         public YieldStmt visit( com.github.javaparser.ast.stmt.YieldStmt javaParserObject, JavaFactory factory ) {
 
             YieldStmt ecoreObject = factory.createYieldStmt();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Statement
             new StatementVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3128,6 +3210,7 @@ public class CreateJavaModel {
         public ArrayType visit( com.github.javaparser.ast.type.ArrayType javaParserObject, JavaFactory factory ) {
 
             ArrayType ecoreObject = factory.createArrayType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends ReferenceType
             new ReferenceTypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3155,6 +3238,7 @@ public class CreateJavaModel {
         public ClassOrInterfaceType visit( com.github.javaparser.ast.type.ClassOrInterfaceType javaParserObject, JavaFactory factory ) {
 
             ClassOrInterfaceType ecoreObject = factory.createClassOrInterfaceType();
+            ecoreObject.setJavaParserObject( javaParserObject );
 
             // extends ReferenceType
             new ReferenceTypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3184,6 +3268,7 @@ public class CreateJavaModel {
         public IntersectionType visit( com.github.javaparser.ast.type.IntersectionType javaParserObject, JavaFactory factory ) {
 
             IntersectionType ecoreObject = factory.createIntersectionType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3207,6 +3292,7 @@ public class CreateJavaModel {
         public PrimitiveType visit( com.github.javaparser.ast.type.PrimitiveType javaParserObject, JavaFactory factory ) {
 
             PrimitiveType ecoreObject = factory.createPrimitiveType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3315,6 +3401,7 @@ public class CreateJavaModel {
         public TypeParameter visit( com.github.javaparser.ast.type.TypeParameter javaParserObject, JavaFactory factory ) {
 
             TypeParameter ecoreObject = factory.createTypeParameter();
+            ecoreObject.setJavaParserObject( javaParserObject );
 
             // extends ReferenceType
             new ReferenceTypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3341,6 +3428,7 @@ public class CreateJavaModel {
         public UnionType visit( com.github.javaparser.ast.type.UnionType javaParserObject, JavaFactory factory ) {
 
             UnionType ecoreObject = factory.createUnionType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3364,6 +3452,7 @@ public class CreateJavaModel {
         public UnknownType visit( com.github.javaparser.ast.type.UnknownType javaParserObject, JavaFactory factory ) {
 
             UnknownType ecoreObject = factory.createUnknownType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3379,6 +3468,7 @@ public class CreateJavaModel {
         public VarType visit( com.github.javaparser.ast.type.VarType javaParserObject, JavaFactory factory ) {
 
             VarType ecoreObject = factory.createVarType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3394,6 +3484,7 @@ public class CreateJavaModel {
         public VoidType visit( com.github.javaparser.ast.type.VoidType javaParserObject, JavaFactory factory ) {
 
             VoidType ecoreObject = factory.createVoidType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );
@@ -3412,6 +3503,7 @@ public class CreateJavaModel {
         public WildcardType visit( com.github.javaparser.ast.type.WildcardType javaParserObject, JavaFactory factory ) {
 
             WildcardType ecoreObject = factory.createWildcardType();
+            ecoreObject.setJavaParserObject( javaParserObject );
             
             // extends Type
             new TypeVisitor().collect( javaParserObject, factory, ecoreObject );

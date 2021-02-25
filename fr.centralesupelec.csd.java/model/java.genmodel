@@ -91,6 +91,7 @@
     <genClasses image="false" ecoreClass="java.ecore#//JavaNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//JavaNode/comment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//JavaNode/orphanComments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference java.ecore#//JavaNode/javaParserObject"/>
     </genClasses>
     <genClasses ecoreClass="java.ecore#//ArrayCreationLevel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//ArrayCreationLevel/dimension"/>
@@ -441,5 +442,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//WildcardType/extendedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//WildcardType/superType"/>
     </genClasses>
+    <genClasses ecoreClass="java.ecore#//JavaParserObject"/>
   </genPackages>
 </genmodel:GenModel>

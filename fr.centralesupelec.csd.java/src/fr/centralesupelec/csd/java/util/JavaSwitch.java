@@ -15,6 +15,7 @@
  */
 package fr.centralesupelec.csd.java.util;
 
+import com.github.javaparser.ast.Node;
 import fr.centralesupelec.csd.java.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -1420,6 +1421,12 @@ public class JavaSwitch< T > extends Switch< T > {
             if( result == null ) result = caseType( wildcardType );
             if( result == null ) result = caseNodeWithAnnotations( wildcardType );
             if( result == null ) result = caseJavaNode( wildcardType );
+            if( result == null ) result = defaultCase( theEObject );
+            return result;
+        }
+        case JavaPackage.JAVA_PARSER_OBJECT: {
+            Node javaParserObject = ( Node ) theEObject;
+            T result = caseJavaParserObject( javaParserObject );
             if( result == null ) result = defaultCase( theEObject );
             return result;
         }
@@ -3630,6 +3637,21 @@ public class JavaSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseWildcardType( WildcardType object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Parser Object</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Parser Object</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseJavaParserObject( Node object ) {
         return null;
     }
 

@@ -2066,6 +2066,19 @@ public class CreateJavaModel {
 
     }
 
+    private static class NodeWithLabelVisitor extends GenericVisitorAdapter< NodeWithLabelVisitor, JavaFactory > {
+
+        public NodeWithLabel visit( com.github.javaparser.ast.nodeTypes.NodeWithOptionalLabel< ? > javaParserObject, JavaFactory factory, NodeWithLabel ecoreObject ) {
+
+            javaParserObject.getLabel().ifPresent( 
+                    la -> ecoreObject.setLabel( new SimpleNameVisitor().visit( la, factory ))
+            );
+            
+            return ecoreObject;
+        }
+
+    }
+
     private static class NodeWithMembersVisitor extends GenericVisitorAdapter< NodeWithMembers, JavaFactory > {
 
         public NodeWithMembers visit( com.github.javaparser.ast.nodeTypes.NodeWithMembers< ? > javaParserObject, JavaFactory factory, NodeWithMembers ecoreObject ) {
@@ -2246,9 +2259,9 @@ public class CreateJavaModel {
 
         public SwitchNode visit( com.github.javaparser.ast.nodeTypes.SwitchNode javaParserObject, JavaFactory factory, SwitchNode ecoreObject ) {
             
-//            javaParserObject.getEntries().forEach(
-//                    en -> ecoreObject.getEntries().add( new SwitchEntryVisitor().visit( ) )
-//            );
+            javaParserObject.getEntries().forEach(
+                    en -> ecoreObject.getEntries().add( new SwitchEntryVisitor().visit( en, factory ))
+            );
 
             return ecoreObject;
         }
@@ -2257,7 +2270,7 @@ public class CreateJavaModel {
 
     private static class NodeWithAbstractModifierVisitor extends GenericVisitorAdapter< NodeWithAbstractModifier, JavaFactory > {
 
-        public NodeWithAbstractModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithAbstractModifier javaParserObject, JavaFactory factory, NodeWithAbstractModifier ecoreObject ) {
+        public NodeWithAbstractModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithAbstractModifier< ? > javaParserObject, JavaFactory factory, NodeWithAbstractModifier ecoreObject ) {
 
             ecoreObject.setAbstract( javaParserObject.isAbstract() );
             
@@ -2268,12 +2281,16 @@ public class CreateJavaModel {
 
     private static class NodeWithAccessModifiersVisitor extends GenericVisitorAdapter< NodeWithAccessModifiers, JavaFactory > {
 
-        public NodeWithAccessModifiers visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithAccessModifiers javaParserObject, JavaFactory factory, NodeWithAccessModifiers ecoreObject ) {
+        public NodeWithAccessModifiers visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithAccessModifiers< ? > javaParserObject, JavaFactory factory, NodeWithAccessModifiers ecoreObject ) {
 
             // extends NodeWithPublicModifier
             new NodeWithPublicModifierVisitor().visit( javaParserObject, factory, ecoreObject );
-            ecoreObject.setProtected( javaParserObject.isProtected() );
-            ecoreObject.setPublic( javaParserObject.isPublic() );
+
+            // extends NodeWithPrivateModifier
+            new NodeWithPrivateModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+
+            // extends NodeWithProtectedModifier
+            new NodeWithProtectedModifierVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return null;
         }
@@ -2282,43 +2299,44 @@ public class CreateJavaModel {
 
     private static class NodeWithDefaultModifierVisitor extends GenericVisitorAdapter< NodeWithDefaultModifier, JavaFactory > {
 
-//        @Override
-//        public NodeWithDefaultModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithDefaultModifier javaParserObject, JavaFactory factory ) {
-//
-//            NodeWithDefaultModifier ecoreObject = factory.createNodeWithDefaultModifier();
-//            
-//            return null;
-//        }
+        // Does not exist in JavaParser
+        //public NodeWithDefaultModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithDefaultModifier< ? > javaParserObject, JavaFactory factory ) {
+        public NodeWithDefaultModifier visit( com.github.javaparser.ast.nodeTypes.NodeWithModifiers< ? > javaParserObject, JavaFactory factory, NodeWithDefaultModifier ecoreObject ) {
+
+            ecoreObject.setDefault( javaParserObject.hasModifier( com.github.javaparser.ast.Modifier.Keyword.DEFAULT ));
+            
+            return ecoreObject;
+        }
 
     }
 
     private static class NodeWithFinalModifierVisitor extends GenericVisitorAdapter< NodeWithFinalModifier, JavaFactory > {
 
-//        @Override
-        public NodeWithFinalModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithFinalModifier javaParserObject, JavaFactory factory, NodeWithFinalModifier ecoreObject ) {
+        public NodeWithFinalModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithFinalModifier< ? > javaParserObject, JavaFactory factory, NodeWithFinalModifier ecoreObject ) {
 
-//            NodeWithFinalModifier ecoreObject = factory.createNodeWithFinalModifier();
+            ecoreObject.setFinal( javaParserObject.isFinal() );
             
-            return null;
+            return ecoreObject;
         }
 
     }
 
     private static class NodeWithNativeModifierVisitor extends GenericVisitorAdapter< NodeWithNativeModifier, JavaFactory > {
 
-//        @Override
-//        public NodeWithNativeModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithNativeModifier javaParserObject, JavaFactory factory ) {
-//
-//            NodeWithNativeModifier ecoreObject = factory.createNodeWithNativeModifier();
-//            
-//            return null;
-//        }
+        // Does not exist in JavaParser
+        //public NodeWithNativeModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithNativeModifier javaParserObject, JavaFactory factory ) {
+        public NodeWithNativeModifier visit( com.github.javaparser.ast.nodeTypes.NodeWithModifiers< ? > javaParserObject, JavaFactory factory, NodeWithNativeModifier ecoreObject ) {
+
+            ecoreObject.setNative( javaParserObject.hasModifier( com.github.javaparser.ast.Modifier.Keyword.NATIVE ));
+            
+            return ecoreObject;
+        }
 
     }
 
     private static class NodeWithPrivateModifierVisitor extends GenericVisitorAdapter< NodeWithPrivateModifier, JavaFactory > {
 
-        public NodeWithPrivateModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithPrivateModifier javaParserObject, JavaFactory factory, NodeWithPrivateModifier ecoreObject ) {
+        public NodeWithPrivateModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithPrivateModifier< ? > javaParserObject, JavaFactory factory, NodeWithPrivateModifier ecoreObject ) {
 
             ecoreObject.setPrivate( javaParserObject.isPrivate() );
             
@@ -2329,7 +2347,7 @@ public class CreateJavaModel {
 
     private static class NodeWithProtectedModifierVisitor extends GenericVisitorAdapter< NodeWithProtectedModifier, JavaFactory > {
 
-        public NodeWithProtectedModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithProtectedModifier javaParserObject, JavaFactory factory, NodeWithProtectedModifier ecoreObject ) {
+        public NodeWithProtectedModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithProtectedModifier< ? > javaParserObject, JavaFactory factory, NodeWithProtectedModifier ecoreObject ) {
 
             ecoreObject.setProtected( javaParserObject.isProtected() );
             
@@ -2340,7 +2358,7 @@ public class CreateJavaModel {
 
     private static class NodeWithPublicModifierVisitor extends GenericVisitorAdapter< NodeWithPublicModifier, JavaFactory > {
 
-        public NodeWithPublicModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithPublicModifier javaParserObject, JavaFactory factory, NodeWithPublicModifier ecoreObject ) {
+        public NodeWithPublicModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithPublicModifier< ? > javaParserObject, JavaFactory factory, NodeWithPublicModifier ecoreObject ) {
 
             ecoreObject.setPublic( javaParserObject.isPublic() );
             
@@ -2351,73 +2369,75 @@ public class CreateJavaModel {
 
     private static class NodeWithStaticModifierVisitor extends GenericVisitorAdapter< NodeWithStaticModifier, JavaFactory > {
 
-//        @Override
-        public NodeWithStaticModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithStaticModifier javaParserObject, JavaFactory factory, NodeWithStaticModifier ecoreObject ) {
+        public NodeWithStaticModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithStaticModifier< ? > javaParserObject, JavaFactory factory, NodeWithStaticModifier ecoreObject ) {
 
-//            NodeWithStaticModifier ecoreObject = factory.createNodeWithStaticModifier();
+            ecoreObject.setStatic( javaParserObject.isStatic() );
             
-            return null;
+            return ecoreObject;
         }
 
     }
 
     private static class NodeWithSynchronizedModifierVisitor extends GenericVisitorAdapter< NodeWithSynchronizedModifier, JavaFactory > {
 
-//        @Override
-//        public NodeWithSynchronizedModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithSynchronizedModifier javaParserObject, JavaFactory factory ) {
-//
-//            NodeWithSynchronizedModifier ecoreObject = factory.createNodeWithSynchronizedModifier();
-//            
-//            return null;
-//        }
+        // Does not exist in JavaParser
+        //public NodeWithSynchronizedModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithSynchronizedModifier javaParserObject, JavaFactory factory ) {
+        public NodeWithSynchronizedModifier visit( com.github.javaparser.ast.nodeTypes.NodeWithModifiers< ? > javaParserObject, JavaFactory factory, NodeWithSynchronizedModifier ecoreObject ) {
+
+            ecoreObject.setSynchronized( javaParserObject.hasModifier( com.github.javaparser.ast.Modifier.Keyword.SYNCHRONIZED ));
+            
+            return ecoreObject;
+        }
 
     }
 
     private static class NodeWithStrictfpModifierVisitor extends GenericVisitorAdapter< NodeWithStrictfpModifier, JavaFactory > {
 
-//        @Override
-        public NodeWithStrictfpModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithStrictfpModifier javaParserObject, JavaFactory factory, NodeWithStrictfpModifier ecoreObject ) {
+        public NodeWithStrictfpModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithStrictfpModifier< ? > javaParserObject, JavaFactory factory, NodeWithStrictfpModifier ecoreObject ) {
 
-//            NodeWithStrictfpModifier ecoreObject = factory.createNodeWithStrictfpModifier();
+            ecoreObject.setStrictfp( javaParserObject.isStrictfp() );
             
-            return null;
+            return ecoreObject;
         }
 
     }
 
     private static class NodeWithTransientModifierVisitor extends GenericVisitorAdapter< NodeWithTransientModifier, JavaFactory > {
 
-//        @Override
-//        public NodeWithTransientModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithTransientModifier javaParserObject, JavaFactory factory ) {
-//
-//            NodeWithTransientModifier ecoreObject = factory.createNodeWithTransientModifier();
-//            
-//            return null;
-//        }
+        // Does not exist in JavaParser
+        //public NodeWithTransientModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithTransientModifier javaParserObject, JavaFactory factory ) {
+        public NodeWithTransientModifier visit( com.github.javaparser.ast.nodeTypes.NodeWithModifiers< ? > javaParserObject, JavaFactory factory, NodeWithTransientModifier ecoreObject ) {
+
+            ecoreObject.setTransient( javaParserObject.hasModifier( com.github.javaparser.ast.Modifier.Keyword.TRANSIENT ));
+            
+            return ecoreObject;
+        }
 
     }
 
     private static class NodeWithTransitiveModifierVisitor extends GenericVisitorAdapter< NodeWithTransitiveModifier, JavaFactory > {
 
-//        @Override
-//        public NodeWithTransitiveModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithTransitiveModifier javaParserObject, JavaFactory factory ) {
-//
-//            NodeWithTransitiveModifier ecoreObject = factory.createNodeWithTransitiveModifier();
-//            
-//            return ecoreObject;
-//        }
+        // Does not exist in JavaParser
+        //public NodeWithTransitiveModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithTransitiveModifier javaParserObject, JavaFactory factory ) {
+        public NodeWithTransitiveModifier visit( com.github.javaparser.ast.nodeTypes.NodeWithModifiers< ? > javaParserObject, JavaFactory factory, NodeWithTransitiveModifier ecoreObject ) {
+
+            ecoreObject.setTransitive( javaParserObject.hasModifier( com.github.javaparser.ast.Modifier.Keyword.TRANSITIVE ));
+            
+            return ecoreObject;
+        }
 
     }
 
     private static class NodeWithVolatileModifierVisitor extends GenericVisitorAdapter< NodeWithVolatileModifier, JavaFactory > {
 
-//        @Override
-//        public NodeWithVolatileModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithVolatileModifier javaParserObject, JavaFactory factory ) {
-//
-//            NodeWithVolatileModifier ecoreObject = factory.createNodeWithVolatileModifier();
-//            
-//            return ecoreObject;
-//        }
+        // Does not exist in JavaParser
+        //public NodeWithVolatileModifier visit( com.github.javaparser.ast.nodeTypes.modifiers.NodeWithVolatileModifier javaParserObject, JavaFactory factory ) {
+        public NodeWithVolatileModifier visit( com.github.javaparser.ast.nodeTypes.NodeWithModifiers< ? > javaParserObject, JavaFactory factory, NodeWithVolatileModifier ecoreObject ) {
+
+            ecoreObject.setVolatile( javaParserObject.hasModifier( com.github.javaparser.ast.Modifier.Keyword.VOLATILE ));
+            
+            return ecoreObject;
+        }
 
     }
 
@@ -2427,6 +2447,17 @@ public class CreateJavaModel {
         public AssertStmt visit( com.github.javaparser.ast.stmt.AssertStmt javaParserObject, JavaFactory factory ) {
 
             AssertStmt ecoreObject = factory.createAssertStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Expression check;
+            ecoreObject.setCheck( new ExpressionVisitor().visit( javaParserObject.getCheck(), factory ));
+            
+            // Expression message;
+            javaParserObject.getMessage().ifPresent(
+                    me -> ecoreObject.setMessage( new ExpressionVisitor().visit( me, factory ))
+            );
             
             return ecoreObject;
         }
@@ -2440,6 +2471,12 @@ public class CreateJavaModel {
 
             BlockStmt ecoreObject = factory.createBlockStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithStatements
+            new NodeWithStatementsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -2451,6 +2488,16 @@ public class CreateJavaModel {
         public BreakStmt visit( com.github.javaparser.ast.stmt.BreakStmt javaParserObject, JavaFactory factory ) {
 
             BreakStmt ecoreObject = factory.createBreakStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // SimpleName label;
+            // BreakStmt does not implement NodeWithOptionalLabel
+            //new NodeWithLabelVisitor().visit( javaParserObject, factory, ecoreObject );
+            javaParserObject.getLabel().ifPresent(
+                    la -> ecoreObject.setLabel( new SimpleNameVisitor().visit( la, factory ))
+            );
             
             return ecoreObject;
         }
@@ -2464,6 +2511,12 @@ public class CreateJavaModel {
 
             CatchClause ecoreObject = factory.createCatchClause();
             
+            // implements NodeWithBlockStmt
+            new NodeWithBlockStmtVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Parameter parameter;
+            ecoreObject.setParameter( new ParameterVisitor().visit( javaParserObject.getParameter(), factory ));
+            
             return ecoreObject;
         }
 
@@ -2475,6 +2528,12 @@ public class CreateJavaModel {
         public ContinueStmt visit( com.github.javaparser.ast.stmt.ContinueStmt javaParserObject, JavaFactory factory ) {
 
             ContinueStmt ecoreObject = factory.createContinueStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithOptionalLabel
+            new NodeWithLabelVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -2488,6 +2547,15 @@ public class CreateJavaModel {
 
             DoStmt ecoreObject = factory.createDoStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithBody
+            new NodeWithBodyVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithCondition
+            new NodeWithConditionVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -2499,6 +2567,9 @@ public class CreateJavaModel {
         public EmptyStmt visit( com.github.javaparser.ast.stmt.EmptyStmt javaParserObject, JavaFactory factory ) {
 
             EmptyStmt ecoreObject = factory.createEmptyStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -2512,6 +2583,24 @@ public class CreateJavaModel {
 
             ExplicitConstructorInvocationStmt ecoreObject = factory.createExplicitConstructorInvocationStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithTypeArguments
+            new NodeWithTypeArgumentsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithArguments
+            new NodeWithArgumentsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // boolean isThis;
+            ecoreObject.setIsThis( javaParserObject.isThis() );
+            
+            // Expression expression;
+            // does not implements NodeWithExpression and NodeWithOptionalExpression does not exist
+            javaParserObject.getExpression().ifPresent(
+                    ex -> ecoreObject.setExpression( new ExpressionVisitor().visit( ex, factory )) 
+            );
+            
             return ecoreObject;
         }
 
@@ -2523,6 +2612,12 @@ public class CreateJavaModel {
         public ExpressionStmt visit( com.github.javaparser.ast.stmt.ExpressionStmt javaParserObject, JavaFactory factory ) {
 
             ExpressionStmt ecoreObject = factory.createExpressionStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithExpression
+            new NodeWithExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -2536,6 +2631,18 @@ public class CreateJavaModel {
 
             ForEachStmt ecoreObject = factory.createForEachStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithBody
+            new NodeWithBodyVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // VariableDeclarationExpr variable;
+            ecoreObject.setVariable( new VariableDeclarationExprVisitor().visit( javaParserObject.getVariable(), factory ));
+            
+            // Expression iterable;
+            ecoreObject.setIterable( new ExpressionVisitor().visit( javaParserObject.getIterable(), factory ));
+            
             return ecoreObject;
         }
 
@@ -2547,6 +2654,22 @@ public class CreateJavaModel {
         public ForStmt visit( com.github.javaparser.ast.stmt.ForStmt javaParserObject, JavaFactory factory ) {
 
             ForStmt ecoreObject = factory.createForStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithBody
+            new NodeWithBodyVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Expression compare;
+            javaParserObject.getCompare().ifPresent(
+                    co -> ecoreObject.setCompare( new ExpressionVisitor().visit( co, factory )) 
+            );
+            
+            // NodeList<Expression> update;
+            javaParserObject.getUpdate().forEach(
+                    up -> ecoreObject.getUpdate().add( new ExpressionVisitor().visit( up, factory ))
+            );
             
             return ecoreObject;
         }
@@ -2560,6 +2683,20 @@ public class CreateJavaModel {
 
             IfStmt ecoreObject = factory.createIfStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithCondition
+            new NodeWithConditionVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Statement thenStmt;
+            ecoreObject.setThenStmt( new StatementVisitor().visit( javaParserObject.getThenStmt(), factory ));
+            
+            // Statement elseStmt;
+            javaParserObject.getElseStmt().ifPresent(
+                    el -> ecoreObject.setElseStmt( new StatementVisitor().visit( el, factory ))
+            );
+            
             return ecoreObject;
         }
 
@@ -2572,6 +2709,18 @@ public class CreateJavaModel {
 
             LabeledStmt ecoreObject = factory.createLabeledStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // SimpleName label;
+            // NodeWithLabel does not exist
+            //new NodeWithLabelVisitor().visit( javaParserObject, factory, ecoreObject );
+            ecoreObject.setLabel( new SimpleNameVisitor().visit( javaParserObject.getLabel(), factory ));
+            
+            // Statement statement;
+            // NodeWithStatement does not exist
+            ecoreObject.setStatement( new StatementVisitor().visit( javaParserObject.getLabel(), factory ));
+
             return ecoreObject;
         }
 
@@ -2583,6 +2732,12 @@ public class CreateJavaModel {
         public LocalClassDeclarationStmt visit( com.github.javaparser.ast.stmt.LocalClassDeclarationStmt javaParserObject, JavaFactory factory ) {
 
             LocalClassDeclarationStmt ecoreObject = factory.createLocalClassDeclarationStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // ClassOrInterfaceDeclaration classDeclaration;
+            ecoreObject.setClassDeclaration( new ClassOrInterfaceDeclarationVisitor().visit( javaParserObject.getClassDeclaration(), factory ));
             
             return ecoreObject;
         }
@@ -2596,6 +2751,14 @@ public class CreateJavaModel {
 
             ReturnStmt ecoreObject = factory.createReturnStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Expression expression;
+            javaParserObject.getExpression().ifPresent(
+                    ex -> ecoreObject.setExpression( new ExpressionVisitor().visit( ex, factory ))
+            );
+            
             return ecoreObject;
         }
 
@@ -2603,12 +2766,122 @@ public class CreateJavaModel {
 
     private static class StatementVisitor extends GenericVisitorAdapter< Statement, JavaFactory > {
 
-//        @Override
         public Statement visit( com.github.javaparser.ast.stmt.Statement javaParserObject, JavaFactory factory ) {
 
-//            Statement ecoreObject = factory.createStatement();
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.AssertStmt ) {
+                return new AssertStmtVisitor().visit( ( com.github.javaparser.ast.stmt.AssertStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.BlockStmt ) {
+                return new BlockStmtVisitor().visit( ( com.github.javaparser.ast.stmt.BlockStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.BreakStmt ) {
+                return new BreakStmtVisitor().visit( ( com.github.javaparser.ast.stmt.BreakStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ContinueStmt ) {
+                return new ContinueStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ContinueStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.DoStmt ) {
+                return new DoStmtVisitor().visit( ( com.github.javaparser.ast.stmt.DoStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.EmptyStmt ) {
+                return new EmptyStmtVisitor().visit( ( com.github.javaparser.ast.stmt.EmptyStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ExplicitConstructorInvocationStmt ) {
+                return new ExplicitConstructorInvocationStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ExplicitConstructorInvocationStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ExpressionStmt ) {
+                return new ExpressionStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ExpressionStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ForEachStmt ) {
+                return new ForEachStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ForEachStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ForStmt ) {
+                return new ForStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ForStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.IfStmt ) {
+                return new IfStmtVisitor().visit( ( com.github.javaparser.ast.stmt.IfStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.LabeledStmt ) {
+                return new LabeledStmtVisitor().visit( ( com.github.javaparser.ast.stmt.LabeledStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.LocalClassDeclarationStmt ) {
+                return new LocalClassDeclarationStmtVisitor().visit( ( com.github.javaparser.ast.stmt.LocalClassDeclarationStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.SwitchStmt ) {
+                return new SwitchStmtVisitor().visit( ( com.github.javaparser.ast.stmt.SwitchStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.SynchronizedStmt ) {
+                return new SynchronizedStmtVisitor().visit( ( com.github.javaparser.ast.stmt.SynchronizedStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ThrowStmt ) {
+                return new ThrowStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ThrowStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.TryStmt ) {
+                return new TryStmtVisitor().visit( ( com.github.javaparser.ast.stmt.TryStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.WhileStmt ) {
+                return new WhileStmtVisitor().visit( ( com.github.javaparser.ast.stmt.WhileStmt ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.YieldStmt ) {
+                return new YieldStmtVisitor().visit( ( com.github.javaparser.ast.stmt.YieldStmt ) javaParserObject, factory );
+            }
             
             return null;
+        }
+
+        public Statement visit( com.github.javaparser.ast.stmt.Statement javaParserObject, JavaFactory factory,  Statement ecoreObject ) {
+    
+            // Nothing
+            
+            return ecoreObject;
+        }
+
+    }
+
+    private static class SwitchEntryVisitor extends GenericVisitorAdapter< SwitchEntry, JavaFactory > {
+
+        @Override
+        public SwitchEntry visit( com.github.javaparser.ast.stmt.SwitchEntry javaParserObject, JavaFactory factory ) {
+
+            SwitchEntry ecoreObject = factory.createSwitchEntry();
+            
+            // implements NodeWithStatements
+            new NodeWithStatementsVisitor().visit( javaParserObject, factory, ecoreObject );
+
+            // NodeList<Expression> labels;
+            javaParserObject.getLabels().forEach(
+                    la -> ecoreObject.getLabels().add( new ExpressionVisitor().visit( la, factory ))
+            );
+            
+            // Type type;
+            ecoreObject.setType(
+                    switch( javaParserObject.getType() ) {
+                    case STATEMENT_GROUP  -> SwitchEntryType.STATEMENT_GROUP;
+                    case BLOCK            -> SwitchEntryType.BLOCK;
+                    case EXPRESSION       -> SwitchEntryType.EXPRESSION;
+                    case THROWS_STATEMENT -> SwitchEntryType.THROWS_STATEMENT;
+                    }
+            );
+            
+            return ecoreObject;
         }
 
     }
@@ -2619,6 +2892,12 @@ public class CreateJavaModel {
         public SwitchStmt visit( com.github.javaparser.ast.stmt.SwitchStmt javaParserObject, JavaFactory factory ) {
 
             SwitchStmt ecoreObject = factory.createSwitchStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements SwitchNode
+            new SwitchNodeVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -2632,6 +2911,15 @@ public class CreateJavaModel {
 
             SynchronizedStmt ecoreObject = factory.createSynchronizedStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithBlockStmt
+            new NodeWithBlockStmtVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithExpression
+            new NodeWithExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -2643,6 +2931,12 @@ public class CreateJavaModel {
         public ThrowStmt visit( com.github.javaparser.ast.stmt.ThrowStmt javaParserObject, JavaFactory factory ) {
 
             ThrowStmt ecoreObject = factory.createThrowStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithExpression
+            new NodeWithExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -2656,6 +2950,24 @@ public class CreateJavaModel {
 
             TryStmt ecoreObject = factory.createTryStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // NodeList<Expression> resources;
+            javaParserObject.getResources().forEach(
+                    re -> ecoreObject.getResources().add( new ExpressionVisitor().visit( re, factory ))
+            );
+            
+            // NodeList<CatchClause> catchClauses;
+            javaParserObject.getCatchClauses().forEach(
+                    cc -> ecoreObject.getCatchClauses().add( new CatchClauseVisitor().visit( cc, factory ))
+            );
+            
+            // BlockStmt finallyBlock;
+            javaParserObject.getFinallyBlock().ifPresent(
+                    fb -> ecoreObject.setFinallyBlock( new BlockStmtVisitor().visit( fb, factory ))
+            );
+            
             return ecoreObject;
         }
 
@@ -2668,6 +2980,15 @@ public class CreateJavaModel {
 
             WhileStmt ecoreObject = factory.createWhileStmt();
             
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithBody
+            new NodeWithBodyVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithCondition
+            new NodeWithConditionVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -2679,6 +3000,12 @@ public class CreateJavaModel {
         public YieldStmt visit( com.github.javaparser.ast.stmt.YieldStmt javaParserObject, JavaFactory factory ) {
 
             YieldStmt ecoreObject = factory.createYieldStmt();
+            
+            // extends Statement
+            new StatementVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithExpression
+            new NodeWithExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }

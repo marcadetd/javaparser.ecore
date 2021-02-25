@@ -37,7 +37,7 @@ public class CreateJavaModel {
 
     }
 
-    public Resource createJavaModel( File file ) {
+    public Resource createJavaModel( File file ) throws FileNotFoundException {
         // Create a resource set to hold the resources.
         ResourceSet resourceSet = new ResourceSetImpl();
 
@@ -50,29 +50,22 @@ public class CreateJavaModel {
         // Register the package to ensure it is available during loading.
         resourceSet.getPackageRegistry().put( JavaPackage.eNS_URI, JavaPackage.eINSTANCE );
 
-        try {
-            JavaParser javaParser = new JavaParser();
-            javaParser.getParserConfiguration().setLanguageLevel( LanguageLevel.JAVA_15 );
-            ParseResult< com.github.javaparser.ast.CompilationUnit > result = javaParser.parse( file );
-            
-            Resource resource = resourceSet.createResource ( URI.createURI( "http://csd.centralesupelec.fr/java/resource.java" ));
+        JavaParser javaParser = new JavaParser();
+        javaParser.getParserConfiguration().setLanguageLevel( LanguageLevel.JAVA_15 );
+        ParseResult< com.github.javaparser.ast.CompilationUnit > result = javaParser.parse( file );
 
-            result.ifSuccessful(
-                    cu -> {
-                        CompilationUnitVisitor cuv = new CompilationUnitVisitor();
-                        CompilationUnit compilationUnit = cuv.visit( cu, JavaFactory.eINSTANCE );
+        Resource resource = resourceSet.createResource ( URI.createURI( "http://csd.centralesupelec.fr/java/resource.java" ));
 
-                        resource.getContents().add( compilationUnit );
-                    }
-            );
-            
-            return resource;
-        }
-        catch( FileNotFoundException e ) {
-            e.printStackTrace();
-        }
-        
-        return null;
+        result.ifSuccessful(
+                cu -> {
+                    CompilationUnitVisitor cuv = new CompilationUnitVisitor();
+                    CompilationUnit compilationUnit = cuv.visit( cu, JavaFactory.eINSTANCE );
+
+                    resource.getContents().add( compilationUnit );
+                }
+        );
+
+        return resource;
     }
     
     private static class JavaNodeVisitor extends GenericVisitorAdapter< JavaNode, JavaFactory > {

@@ -18,7 +18,7 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface MemberValuePair extends NodeWithSimpleName {
+public interface MemberValuePair extends JavaNode, NodeWithSimpleName {
 	/**
      * Returns the value of the '<em><b>Value</b></em>' containment reference.
      * <!-- begin-user-doc -->

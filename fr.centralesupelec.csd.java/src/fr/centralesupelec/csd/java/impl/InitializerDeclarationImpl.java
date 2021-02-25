@@ -5,8 +5,6 @@ package fr.centralesupelec.csd.java.impl;
 import fr.centralesupelec.csd.java.BlockStmt;
 import fr.centralesupelec.csd.java.InitializerDeclaration;
 import fr.centralesupelec.csd.java.JavaPackage;
-
-import fr.centralesupelec.csd.java.JavadocComment;
 import fr.centralesupelec.csd.java.NodeWithBlockStmt;
 import fr.centralesupelec.csd.java.NodeWithJavadoc;
 import org.eclipse.emf.common.notify.Notification;
@@ -25,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.csd.java.impl.InitializerDeclarationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.InitializerDeclarationImpl#getBody <em>Body</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.InitializerDeclarationImpl#isStatic <em>Static</em>}</li>
  * </ul>
@@ -33,16 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class InitializerDeclarationImpl extends BodyDeclarationImpl implements InitializerDeclaration {
-	/**
-     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getComment()
-     * @generated
-     * @ordered
-     */
-	protected JavadocComment comment;
-
 	/**
      * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -90,51 +77,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	@Override
 	protected EClass eStaticClass() {
         return JavaPackage.Literals.INITIALIZER_DECLARATION;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public JavadocComment getComment() {
-        return comment;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public NotificationChain basicSetComment(JavadocComment newComment, NotificationChain msgs) {
-        JavadocComment oldComment = comment;
-        comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.INITIALIZER_DECLARATION__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void setComment(JavadocComment newComment) {
-        if (newComment != comment) {
-            NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.INITIALIZER_DECLARATION__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.INITIALIZER_DECLARATION__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.INITIALIZER_DECLARATION__COMMENT, newComment, newComment));
     }
 
 	/**
@@ -213,8 +155,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case JavaPackage.INITIALIZER_DECLARATION__COMMENT:
-                return basicSetComment(null, msgs);
             case JavaPackage.INITIALIZER_DECLARATION__BODY:
                 return basicSetBody(null, msgs);
         }
@@ -229,8 +169,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case JavaPackage.INITIALIZER_DECLARATION__COMMENT:
-                return getComment();
             case JavaPackage.INITIALIZER_DECLARATION__BODY:
                 return getBody();
             case JavaPackage.INITIALIZER_DECLARATION__STATIC:
@@ -247,9 +185,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	@Override
 	public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case JavaPackage.INITIALIZER_DECLARATION__COMMENT:
-                setComment((JavadocComment)newValue);
-                return;
             case JavaPackage.INITIALIZER_DECLARATION__BODY:
                 setBody((BlockStmt)newValue);
                 return;
@@ -268,9 +203,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	@Override
 	public void eUnset(int featureID) {
         switch (featureID) {
-            case JavaPackage.INITIALIZER_DECLARATION__COMMENT:
-                setComment((JavadocComment)null);
-                return;
             case JavaPackage.INITIALIZER_DECLARATION__BODY:
                 setBody((BlockStmt)null);
                 return;
@@ -289,8 +221,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	@Override
 	public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case JavaPackage.INITIALIZER_DECLARATION__COMMENT:
-                return comment != null;
             case JavaPackage.INITIALIZER_DECLARATION__BODY:
                 return body != null;
             case JavaPackage.INITIALIZER_DECLARATION__STATIC:
@@ -308,7 +238,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.INITIALIZER_DECLARATION__COMMENT: return JavaPackage.NODE_WITH_JAVADOC__COMMENT;
                 default: return -1;
             }
         }
@@ -330,7 +259,6 @@ public class InitializerDeclarationImpl extends BodyDeclarationImpl implements I
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_JAVADOC__COMMENT: return JavaPackage.INITIALIZER_DECLARATION__COMMENT;
                 default: return -1;
             }
         }

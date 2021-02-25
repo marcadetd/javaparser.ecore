@@ -5,6 +5,7 @@ package fr.centralesupelec.csd.java.impl;
 import fr.centralesupelec.csd.java.Expression;
 import fr.centralesupelec.csd.java.JavaPackage;
 import fr.centralesupelec.csd.java.NodeWithSimpleName;
+import fr.centralesupelec.csd.java.NodeWithType;
 import fr.centralesupelec.csd.java.SimpleName;
 import fr.centralesupelec.csd.java.Type;
 import fr.centralesupelec.csd.java.VariableDeclarator;
@@ -16,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class VariableDeclaratorImpl extends MinimalEObjectImpl.Container implements VariableDeclarator {
+public class VariableDeclaratorImpl extends JavaNodeImpl implements VariableDeclarator {
 	/**
      * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -321,6 +321,12 @@ public class VariableDeclaratorImpl extends MinimalEObjectImpl.Container impleme
      */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithType.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.VARIABLE_DECLARATOR__TYPE: return JavaPackage.NODE_WITH_TYPE__TYPE;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithSimpleName.class) {
             switch (derivedFeatureID) {
                 case JavaPackage.VARIABLE_DECLARATOR__NAME: return JavaPackage.NODE_WITH_SIMPLE_NAME__NAME;
@@ -337,6 +343,12 @@ public class VariableDeclaratorImpl extends MinimalEObjectImpl.Container impleme
      */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithType.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_TYPE__TYPE: return JavaPackage.VARIABLE_DECLARATOR__TYPE;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithSimpleName.class) {
             switch (baseFeatureID) {
                 case JavaPackage.NODE_WITH_SIMPLE_NAME__NAME: return JavaPackage.VARIABLE_DECLARATOR__NAME;

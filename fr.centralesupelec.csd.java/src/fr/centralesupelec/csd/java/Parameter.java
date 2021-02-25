@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Parameter extends NodeWithType<Type>, NodeWithAnnotations, NodeWithSimpleName, NodeWithFinalModifier {
+public interface Parameter extends JavaNode, NodeWithType<Type>, NodeWithAnnotations, NodeWithSimpleName, NodeWithFinalModifier {
 	/**
      * Returns the value of the '<em><b>Var Args</b></em>' attribute.
      * <!-- begin-user-doc -->

@@ -7,8 +7,6 @@ import fr.centralesupelec.csd.java.JavaPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Expression</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression {
+public abstract class ExpressionImpl extends JavaNodeImpl implements Expression {
 	/**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

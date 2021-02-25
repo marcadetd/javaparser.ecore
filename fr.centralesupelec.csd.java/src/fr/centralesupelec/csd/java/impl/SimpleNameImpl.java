@@ -3,6 +3,7 @@
 package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.JavaPackage;
+import fr.centralesupelec.csd.java.NodeWithIdentifier;
 import fr.centralesupelec.csd.java.SimpleName;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -10,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class SimpleNameImpl extends MinimalEObjectImpl.Container implements SimpleName {
+public class SimpleNameImpl extends JavaNodeImpl implements SimpleName {
 	/**
      * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -147,6 +147,38 @@ public class SimpleNameImpl extends MinimalEObjectImpl.Container implements Simp
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithIdentifier.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.SIMPLE_NAME__IDENTIFIER: return JavaPackage.NODE_WITH_IDENTIFIER__IDENTIFIER;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithIdentifier.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_IDENTIFIER__IDENTIFIER: return JavaPackage.SIMPLE_NAME__IDENTIFIER;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

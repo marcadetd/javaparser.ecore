@@ -7,6 +7,7 @@ import fr.centralesupelec.csd.java.ArrayCreationLevel;
 import fr.centralesupelec.csd.java.Expression;
 import fr.centralesupelec.csd.java.JavaPackage;
 
+import fr.centralesupelec.csd.java.NodeWithAnnotations;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,8 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ArrayCreationLevelImpl extends MinimalEObjectImpl.Container implements ArrayCreationLevel {
+public class ArrayCreationLevelImpl extends JavaNodeImpl implements ArrayCreationLevel {
 	/**
      * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -219,6 +218,38 @@ public class ArrayCreationLevelImpl extends MinimalEObjectImpl.Container impleme
                 return dimension != null;
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithAnnotations.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.ARRAY_CREATION_LEVEL__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithAnnotations.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.ARRAY_CREATION_LEVEL__ANNOTATIONS;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
 } //ArrayCreationLevelImpl

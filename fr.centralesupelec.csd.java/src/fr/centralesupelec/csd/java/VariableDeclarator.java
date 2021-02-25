@@ -18,7 +18,7 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface VariableDeclarator extends NodeWithType<Type>, NodeWithSimpleName {
+public interface VariableDeclarator extends JavaNode, NodeWithType<Type>, NodeWithSimpleName {
 	/**
      * Returns the value of the '<em><b>Initializer</b></em>' containment reference.
      * <!-- begin-user-doc -->

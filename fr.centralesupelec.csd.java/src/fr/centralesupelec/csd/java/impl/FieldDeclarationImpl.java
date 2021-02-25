@@ -4,7 +4,6 @@ package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.FieldDeclaration;
 import fr.centralesupelec.csd.java.JavaPackage;
-import fr.centralesupelec.csd.java.JavadocComment;
 import fr.centralesupelec.csd.java.ModifierKeyword;
 import fr.centralesupelec.csd.java.NodeWithAccessModifiers;
 import fr.centralesupelec.csd.java.NodeWithFinalModifier;
@@ -18,16 +17,12 @@ import fr.centralesupelec.csd.java.NodeWithVariables;
 import fr.centralesupelec.csd.java.VariableDeclarator;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -40,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#isPublic <em>Public</em>}</li>
@@ -53,16 +47,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDeclaration {
-	/**
-     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getComment()
-     * @generated
-     * @ordered
-     */
-	protected JavadocComment comment;
-
 	/**
      * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -158,51 +142,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
      * @generated
      */
 	@Override
-	public JavadocComment getComment() {
-        return comment;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public NotificationChain basicSetComment(JavadocComment newComment, NotificationChain msgs) {
-        JavadocComment oldComment = comment;
-        comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.FIELD_DECLARATION__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void setComment(JavadocComment newComment) {
-        if (newComment != comment) {
-            NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FIELD_DECLARATION__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.FIELD_DECLARATION__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.FIELD_DECLARATION__COMMENT, newComment, newComment));
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
 	public EList<ModifierKeyword> getModifiers() {
         if (modifiers == null) {
             modifiers = new EDataTypeUniqueEList<ModifierKeyword>(ModifierKeyword.class, this, JavaPackage.FIELD_DECLARATION__MODIFIERS);
@@ -231,7 +170,7 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public void setPublic(boolean newPublic) {
         // TODO: implement this method to set the 'Public' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -255,7 +194,7 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public void setPrivate(boolean newPrivate) {
         // TODO: implement this method to set the 'Private' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -279,7 +218,7 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public void setProtected(boolean newProtected) {
         // TODO: implement this method to set the 'Protected' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -303,7 +242,7 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public void setStatic(boolean newStatic) {
         // TODO: implement this method to set the 'Static' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -327,7 +266,7 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public void setFinal(boolean newFinal) {
         // TODO: implement this method to set the 'Final' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -351,8 +290,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case JavaPackage.FIELD_DECLARATION__COMMENT:
-                return basicSetComment(null, msgs);
             case JavaPackage.FIELD_DECLARATION__VARIABLES:
                 return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
         }
@@ -367,8 +304,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case JavaPackage.FIELD_DECLARATION__COMMENT:
-                return getComment();
             case JavaPackage.FIELD_DECLARATION__VARIABLES:
                 return getVariables();
             case JavaPackage.FIELD_DECLARATION__MODIFIERS:
@@ -396,9 +331,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	@Override
 	public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case JavaPackage.FIELD_DECLARATION__COMMENT:
-                setComment((JavadocComment)newValue);
-                return;
             case JavaPackage.FIELD_DECLARATION__VARIABLES:
                 getVariables().clear();
                 getVariables().addAll((Collection<? extends VariableDeclarator>)newValue);
@@ -434,9 +366,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	@Override
 	public void eUnset(int featureID) {
         switch (featureID) {
-            case JavaPackage.FIELD_DECLARATION__COMMENT:
-                setComment((JavadocComment)null);
-                return;
             case JavaPackage.FIELD_DECLARATION__VARIABLES:
                 getVariables().clear();
                 return;
@@ -470,8 +399,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	@Override
 	public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case JavaPackage.FIELD_DECLARATION__COMMENT:
-                return comment != null;
             case JavaPackage.FIELD_DECLARATION__VARIABLES:
                 return variables != null && !variables.isEmpty();
             case JavaPackage.FIELD_DECLARATION__MODIFIERS:
@@ -499,7 +426,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.FIELD_DECLARATION__COMMENT: return JavaPackage.NODE_WITH_JAVADOC__COMMENT;
                 default: return -1;
             }
         }
@@ -562,7 +488,6 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_JAVADOC__COMMENT: return JavaPackage.FIELD_DECLARATION__COMMENT;
                 default: return -1;
             }
         }

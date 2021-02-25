@@ -6,8 +6,6 @@ import fr.centralesupelec.csd.java.BodyDeclaration;
 import fr.centralesupelec.csd.java.EnumConstantDeclaration;
 import fr.centralesupelec.csd.java.Expression;
 import fr.centralesupelec.csd.java.JavaPackage;
-
-import fr.centralesupelec.csd.java.JavadocComment;
 import fr.centralesupelec.csd.java.NodeWithArguments;
 import fr.centralesupelec.csd.java.NodeWithJavadoc;
 import fr.centralesupelec.csd.java.NodeWithSimpleName;
@@ -35,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.csd.java.impl.EnumConstantDeclarationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.EnumConstantDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.EnumConstantDeclarationImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.EnumConstantDeclarationImpl#getClassBody <em>Class Body</em>}</li>
@@ -44,16 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements EnumConstantDeclaration {
-	/**
-     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getComment()
-     * @generated
-     * @ordered
-     */
-	protected JavadocComment comment;
-
 	/**
      * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -101,51 +88,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	@Override
 	protected EClass eStaticClass() {
         return JavaPackage.Literals.ENUM_CONSTANT_DECLARATION;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public JavadocComment getComment() {
-        return comment;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public NotificationChain basicSetComment(JavadocComment newComment, NotificationChain msgs) {
-        JavadocComment oldComment = comment;
-        comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void setComment(JavadocComment newComment) {
-        if (newComment != comment) {
-            NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT, newComment, newComment));
     }
 
 	/**
@@ -227,8 +169,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT:
-                return basicSetComment(null, msgs);
             case JavaPackage.ENUM_CONSTANT_DECLARATION__NAME:
                 return basicSetName(null, msgs);
             case JavaPackage.ENUM_CONSTANT_DECLARATION__ARGUMENTS:
@@ -247,8 +187,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT:
-                return getComment();
             case JavaPackage.ENUM_CONSTANT_DECLARATION__NAME:
                 return getName();
             case JavaPackage.ENUM_CONSTANT_DECLARATION__ARGUMENTS:
@@ -268,9 +206,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT:
-                setComment((JavadocComment)newValue);
-                return;
             case JavaPackage.ENUM_CONSTANT_DECLARATION__NAME:
                 setName((SimpleName)newValue);
                 return;
@@ -294,9 +229,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	@Override
 	public void eUnset(int featureID) {
         switch (featureID) {
-            case JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT:
-                setComment((JavadocComment)null);
-                return;
             case JavaPackage.ENUM_CONSTANT_DECLARATION__NAME:
                 setName((SimpleName)null);
                 return;
@@ -318,8 +250,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT:
-                return comment != null;
             case JavaPackage.ENUM_CONSTANT_DECLARATION__NAME:
                 return name != null;
             case JavaPackage.ENUM_CONSTANT_DECLARATION__ARGUMENTS:
@@ -339,7 +269,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT: return JavaPackage.NODE_WITH_JAVADOC__COMMENT;
                 default: return -1;
             }
         }
@@ -367,7 +296,6 @@ public class EnumConstantDeclarationImpl extends BodyDeclarationImpl implements 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_JAVADOC__COMMENT: return JavaPackage.ENUM_CONSTANT_DECLARATION__COMMENT;
                 default: return -1;
             }
         }

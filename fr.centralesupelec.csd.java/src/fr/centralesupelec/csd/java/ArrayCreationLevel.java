@@ -19,7 +19,7 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface ArrayCreationLevel extends NodeWithAnnotations {
+public interface ArrayCreationLevel extends JavaNode, NodeWithAnnotations {
 	/**
      * Returns the value of the '<em><b>Dimension</b></em>' containment reference.
      * <!-- begin-user-doc -->

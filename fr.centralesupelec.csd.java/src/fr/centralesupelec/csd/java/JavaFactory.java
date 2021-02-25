@@ -49,15 +49,6 @@ public interface JavaFactory extends EFactory {
 	ImportDeclaration createImportDeclaration();
 
 	/**
-     * Returns a new object of class '<em>Modifier</em>'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return a new object of class '<em>Modifier</em>'.
-     * @generated
-     */
-	Modifier createModifier();
-
-	/**
      * Returns a new object of class '<em>Package Declaration</em>'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

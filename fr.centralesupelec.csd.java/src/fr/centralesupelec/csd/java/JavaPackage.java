@@ -58,6 +58,52 @@ public interface JavaPackage extends EPackage {
 	JavaPackage eINSTANCE = fr.centralesupelec.csd.java.impl.JavaPackageImpl.init();
 
 	/**
+     * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.JavaNodeImpl <em>Node</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.csd.java.impl.JavaNodeImpl
+     * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getJavaNode()
+     * @generated
+     */
+    int JAVA_NODE = 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_NODE__COMMENT = 0;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_NODE__ORPHAN_COMMENTS = 1;
+
+    /**
+     * The number of structural features of the '<em>Node</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_NODE_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>Node</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVA_NODE_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.NodeWithAnnotations <em>Node With Annotations</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,33 +114,6 @@ public interface JavaPackage extends EPackage {
 	int NODE_WITH_ANNOTATIONS = 72;
 
 	/**
-     * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_ANNOTATIONS__ANNOTATIONS = 0;
-
-	/**
-     * The number of structural features of the '<em>Node With Annotations</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_ANNOTATIONS_FEATURE_COUNT = 1;
-
-	/**
-     * The number of operations of the '<em>Node With Annotations</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_ANNOTATIONS_OPERATION_COUNT = 0;
-
-	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.ArrayCreationLevelImpl <em>Array Creation Level</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,16 +121,34 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getArrayCreationLevel()
      * @generated
      */
-	int ARRAY_CREATION_LEVEL = 0;
+	int ARRAY_CREATION_LEVEL = 1;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_CREATION_LEVEL__COMMENT = JAVA_NODE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_CREATION_LEVEL__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int ARRAY_CREATION_LEVEL__ANNOTATIONS = NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+	int ARRAY_CREATION_LEVEL__ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Dimension</b></em>' containment reference.
@@ -120,7 +157,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ARRAY_CREATION_LEVEL__DIMENSION = NODE_WITH_ANNOTATIONS_FEATURE_COUNT + 0;
+	int ARRAY_CREATION_LEVEL__DIMENSION = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Array Creation Level</em>' class.
@@ -129,7 +166,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ARRAY_CREATION_LEVEL_FEATURE_COUNT = NODE_WITH_ANNOTATIONS_FEATURE_COUNT + 1;
+	int ARRAY_CREATION_LEVEL_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of operations of the '<em>Array Creation Level</em>' class.
@@ -138,7 +175,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ARRAY_CREATION_LEVEL_OPERATION_COUNT = NODE_WITH_ANNOTATIONS_OPERATION_COUNT + 0;
+	int ARRAY_CREATION_LEVEL_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.CompilationUnitImpl <em>Compilation Unit</em>}' class.
@@ -148,16 +185,34 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getCompilationUnit()
      * @generated
      */
-	int COMPILATION_UNIT = 1;
+	int COMPILATION_UNIT = 2;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPILATION_UNIT__COMMENT = JAVA_NODE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPILATION_UNIT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Package Declaration</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int COMPILATION_UNIT__PACKAGE_DECLARATION = 0;
+	int COMPILATION_UNIT__PACKAGE_DECLARATION = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -166,7 +221,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPILATION_UNIT__IMPORTS = 1;
+	int COMPILATION_UNIT__IMPORTS = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Types</b></em>' containment reference list.
@@ -175,7 +230,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPILATION_UNIT__TYPES = 2;
+	int COMPILATION_UNIT__TYPES = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Module</b></em>' containment reference.
@@ -184,7 +239,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPILATION_UNIT__MODULE = 3;
+	int COMPILATION_UNIT__MODULE = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The number of structural features of the '<em>Compilation Unit</em>' class.
@@ -193,7 +248,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPILATION_UNIT_FEATURE_COUNT = 4;
+	int COMPILATION_UNIT_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 4;
 
 	/**
      * The number of operations of the '<em>Compilation Unit</em>' class.
@@ -202,7 +257,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMPILATION_UNIT_OPERATION_COUNT = 0;
+	int COMPILATION_UNIT_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.NodeWithName <em>Node With Name</em>}' class.
@@ -215,33 +270,6 @@ public interface JavaPackage extends EPackage {
 	int NODE_WITH_NAME = 84;
 
 	/**
-     * The feature id for the '<em><b>Name</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_NAME__NAME = 0;
-
-	/**
-     * The number of structural features of the '<em>Node With Name</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_NAME_FEATURE_COUNT = 1;
-
-	/**
-     * The number of operations of the '<em>Node With Name</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_NAME_OPERATION_COUNT = 0;
-
-	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.ImportDeclarationImpl <em>Import Declaration</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,16 +277,34 @@ public interface JavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getImportDeclaration()
      * @generated
      */
-	int IMPORT_DECLARATION = 2;
+	int IMPORT_DECLARATION = 3;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPORT_DECLARATION__COMMENT = JAVA_NODE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPORT_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int IMPORT_DECLARATION__NAME = NODE_WITH_NAME__NAME;
+	int IMPORT_DECLARATION__NAME = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -267,7 +313,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int IMPORT_DECLARATION__STATIC = NODE_WITH_NAME_FEATURE_COUNT + 0;
+	int IMPORT_DECLARATION__STATIC = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Asterisk</b></em>' attribute.
@@ -276,7 +322,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int IMPORT_DECLARATION__ASTERISK = NODE_WITH_NAME_FEATURE_COUNT + 1;
+	int IMPORT_DECLARATION__ASTERISK = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Import Declaration</em>' class.
@@ -285,7 +331,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int IMPORT_DECLARATION_FEATURE_COUNT = NODE_WITH_NAME_FEATURE_COUNT + 2;
+	int IMPORT_DECLARATION_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The number of operations of the '<em>Import Declaration</em>' class.
@@ -294,44 +340,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int IMPORT_DECLARATION_OPERATION_COUNT = NODE_WITH_NAME_OPERATION_COUNT + 0;
-
-	/**
-     * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.ModifierImpl <em>Modifier</em>}' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see fr.centralesupelec.csd.java.impl.ModifierImpl
-     * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getModifier()
-     * @generated
-     */
-	int MODIFIER = 3;
-
-	/**
-     * The feature id for the '<em><b>Keyword</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int MODIFIER__KEYWORD = 0;
-
-	/**
-     * The number of structural features of the '<em>Modifier</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int MODIFIER_FEATURE_COUNT = 1;
-
-	/**
-     * The number of operations of the '<em>Modifier</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int MODIFIER_OPERATION_COUNT = 0;
+	int IMPORT_DECLARATION_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
@@ -344,13 +353,31 @@ public interface JavaPackage extends EPackage {
 	int PACKAGE_DECLARATION = 4;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE_DECLARATION__COMMENT = JAVA_NODE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int PACKAGE_DECLARATION__ANNOTATIONS = NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+	int PACKAGE_DECLARATION__ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -359,7 +386,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PACKAGE_DECLARATION__NAME = NODE_WITH_ANNOTATIONS_FEATURE_COUNT + 0;
+	int PACKAGE_DECLARATION__NAME = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Package Declaration</em>' class.
@@ -368,7 +395,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PACKAGE_DECLARATION_FEATURE_COUNT = NODE_WITH_ANNOTATIONS_FEATURE_COUNT + 1;
+	int PACKAGE_DECLARATION_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of operations of the '<em>Package Declaration</em>' class.
@@ -377,7 +404,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PACKAGE_DECLARATION_OPERATION_COUNT = NODE_WITH_ANNOTATIONS_OPERATION_COUNT + 0;
+	int PACKAGE_DECLARATION_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.BodyDeclarationImpl <em>Body Declaration</em>}' class.
@@ -390,13 +417,31 @@ public interface JavaPackage extends EPackage {
 	int BODY_DECLARATION = 7;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BODY_DECLARATION__COMMENT = JAVA_NODE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BODY_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int BODY_DECLARATION__ANNOTATIONS = NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+	int BODY_DECLARATION__ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of structural features of the '<em>Body Declaration</em>' class.
@@ -405,7 +450,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int BODY_DECLARATION_FEATURE_COUNT = NODE_WITH_ANNOTATIONS_FEATURE_COUNT + 0;
+	int BODY_DECLARATION_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of operations of the '<em>Body Declaration</em>' class.
@@ -414,7 +459,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int BODY_DECLARATION_OPERATION_COUNT = NODE_WITH_ANNOTATIONS_OPERATION_COUNT + 0;
+	int BODY_DECLARATION_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.TypeDeclarationImpl <em>Type Declaration</em>}' class.
@@ -427,6 +472,24 @@ public interface JavaPackage extends EPackage {
 	int TYPE_DECLARATION = 18;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int TYPE_DECLARATION__COMMENT = BODY_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -435,7 +498,7 @@ public interface JavaPackage extends EPackage {
      */
 	int TYPE_DECLARATION__ANNOTATIONS = BODY_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,22 +508,13 @@ public interface JavaPackage extends EPackage {
 	int TYPE_DECLARATION__NAME = BODY_DECLARATION_FEATURE_COUNT + 0;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int TYPE_DECLARATION__COMMENT = BODY_DECLARATION_FEATURE_COUNT + 1;
-
-	/**
      * The feature id for the '<em><b>Members</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__MEMBERS = BODY_DECLARATION_FEATURE_COUNT + 2;
+	int TYPE_DECLARATION__MEMBERS = BODY_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -469,7 +523,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 3;
+	int TYPE_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Public</b></em>' attribute.
@@ -478,7 +532,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 4;
+	int TYPE_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Private</b></em>' attribute.
@@ -487,7 +541,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__PRIVATE = BODY_DECLARATION_FEATURE_COUNT + 5;
+	int TYPE_DECLARATION__PRIVATE = BODY_DECLARATION_FEATURE_COUNT + 4;
 
 	/**
      * The feature id for the '<em><b>Protected</b></em>' attribute.
@@ -496,7 +550,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__PROTECTED = BODY_DECLARATION_FEATURE_COUNT + 6;
+	int TYPE_DECLARATION__PROTECTED = BODY_DECLARATION_FEATURE_COUNT + 5;
 
 	/**
      * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -505,7 +559,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 7;
+	int TYPE_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 6;
 
 	/**
      * The feature id for the '<em><b>Strictfp</b></em>' attribute.
@@ -514,7 +568,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION__STRICTFP = BODY_DECLARATION_FEATURE_COUNT + 8;
+	int TYPE_DECLARATION__STRICTFP = BODY_DECLARATION_FEATURE_COUNT + 7;
 
 	/**
      * The number of structural features of the '<em>Type Declaration</em>' class.
@@ -523,7 +577,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 9;
+	int TYPE_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 8;
 
 	/**
      * The number of operations of the '<em>Type Declaration</em>' class.
@@ -545,6 +599,24 @@ public interface JavaPackage extends EPackage {
 	int ANNOTATION_DECLARATION = 5;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int ANNOTATION_DECLARATION__COMMENT = TYPE_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_DECLARATION__ORPHAN_COMMENTS = TYPE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -553,7 +625,7 @@ public interface JavaPackage extends EPackage {
      */
 	int ANNOTATION_DECLARATION__ANNOTATIONS = TYPE_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,15 +633,6 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int ANNOTATION_DECLARATION__NAME = TYPE_DECLARATION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int ANNOTATION_DECLARATION__COMMENT = TYPE_DECLARATION__COMMENT;
 
 	/**
      * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -672,6 +735,24 @@ public interface JavaPackage extends EPackage {
 	int ANNOTATION_MEMBER_DECLARATION = 6;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int ANNOTATION_MEMBER_DECLARATION__COMMENT = BODY_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_MEMBER_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -681,22 +762,13 @@ public interface JavaPackage extends EPackage {
 	int ANNOTATION_MEMBER_DECLARATION__ANNOTATIONS = BODY_DECLARATION__ANNOTATIONS;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int ANNOTATION_MEMBER_DECLARATION__COMMENT = BODY_DECLARATION_FEATURE_COUNT + 0;
-
-	/**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION__NAME = BODY_DECLARATION_FEATURE_COUNT + 1;
+	int ANNOTATION_MEMBER_DECLARATION__NAME = BODY_DECLARATION_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -705,7 +777,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION__TYPE = BODY_DECLARATION_FEATURE_COUNT + 2;
+	int ANNOTATION_MEMBER_DECLARATION__TYPE = BODY_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -714,7 +786,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 3;
+	int ANNOTATION_MEMBER_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Public</b></em>' attribute.
@@ -723,7 +795,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 4;
+	int ANNOTATION_MEMBER_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -732,7 +804,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION__ABSTRACT = BODY_DECLARATION_FEATURE_COUNT + 5;
+	int ANNOTATION_MEMBER_DECLARATION__ABSTRACT = BODY_DECLARATION_FEATURE_COUNT + 4;
 
 	/**
      * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -741,7 +813,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION__DEFAULT_VALUE = BODY_DECLARATION_FEATURE_COUNT + 6;
+	int ANNOTATION_MEMBER_DECLARATION__DEFAULT_VALUE = BODY_DECLARATION_FEATURE_COUNT + 5;
 
 	/**
      * The number of structural features of the '<em>Annotation Member Declaration</em>' class.
@@ -750,7 +822,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ANNOTATION_MEMBER_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 7;
+	int ANNOTATION_MEMBER_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 6;
 
 	/**
      * The number of operations of the '<em>Annotation Member Declaration</em>' class.
@@ -772,6 +844,24 @@ public interface JavaPackage extends EPackage {
 	int CALLABLE_DECLARATION = 8;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int CALLABLE_DECLARATION__COMMENT = BODY_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CALLABLE_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -780,7 +870,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__ANNOTATIONS = BODY_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -789,7 +879,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 0;
 
-	/**
+    /**
      * The feature id for the '<em><b>Public</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -798,7 +888,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 1;
 
-	/**
+    /**
      * The feature id for the '<em><b>Private</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -807,7 +897,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__PRIVATE = BODY_DECLARATION_FEATURE_COUNT + 2;
 
-	/**
+    /**
      * The feature id for the '<em><b>Protected</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -816,7 +906,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__PROTECTED = BODY_DECLARATION_FEATURE_COUNT + 3;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -825,7 +915,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__NAME = BODY_DECLARATION_FEATURE_COUNT + 4;
 
-	/**
+    /**
      * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -834,7 +924,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__PARAMETERS = BODY_DECLARATION_FEATURE_COUNT + 5;
 
-	/**
+    /**
      * The feature id for the '<em><b>Thrown Exceptions</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -843,7 +933,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CALLABLE_DECLARATION__THROWN_EXCEPTIONS = BODY_DECLARATION_FEATURE_COUNT + 6;
 
-	/**
+    /**
      * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -853,22 +943,13 @@ public interface JavaPackage extends EPackage {
 	int CALLABLE_DECLARATION__TYPE_PARAMETERS = BODY_DECLARATION_FEATURE_COUNT + 7;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int CALLABLE_DECLARATION__COMMENT = BODY_DECLARATION_FEATURE_COUNT + 8;
-
-	/**
      * The feature id for the '<em><b>Abstract</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int CALLABLE_DECLARATION__ABSTRACT = BODY_DECLARATION_FEATURE_COUNT + 9;
+	int CALLABLE_DECLARATION__ABSTRACT = BODY_DECLARATION_FEATURE_COUNT + 8;
 
 	/**
      * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -877,7 +958,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CALLABLE_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 10;
+	int CALLABLE_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 9;
 
 	/**
      * The feature id for the '<em><b>Final</b></em>' attribute.
@@ -886,7 +967,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CALLABLE_DECLARATION__FINAL = BODY_DECLARATION_FEATURE_COUNT + 11;
+	int CALLABLE_DECLARATION__FINAL = BODY_DECLARATION_FEATURE_COUNT + 10;
 
 	/**
      * The feature id for the '<em><b>Strictfp</b></em>' attribute.
@@ -895,7 +976,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CALLABLE_DECLARATION__STRICTFP = BODY_DECLARATION_FEATURE_COUNT + 12;
+	int CALLABLE_DECLARATION__STRICTFP = BODY_DECLARATION_FEATURE_COUNT + 11;
 
 	/**
      * The feature id for the '<em><b>Receiver Parameter</b></em>' containment reference.
@@ -904,7 +985,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CALLABLE_DECLARATION__RECEIVER_PARAMETER = BODY_DECLARATION_FEATURE_COUNT + 13;
+	int CALLABLE_DECLARATION__RECEIVER_PARAMETER = BODY_DECLARATION_FEATURE_COUNT + 12;
 
 	/**
      * The number of structural features of the '<em>Callable Declaration</em>' class.
@@ -913,7 +994,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CALLABLE_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 14;
+	int CALLABLE_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 13;
 
 	/**
      * The number of operations of the '<em>Callable Declaration</em>' class.
@@ -935,6 +1016,24 @@ public interface JavaPackage extends EPackage {
 	int CLASS_OR_INTERFACE_DECLARATION = 9;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int CLASS_OR_INTERFACE_DECLARATION__COMMENT = TYPE_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_OR_INTERFACE_DECLARATION__ORPHAN_COMMENTS = TYPE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -943,7 +1042,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CLASS_OR_INTERFACE_DECLARATION__ANNOTATIONS = TYPE_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -951,15 +1050,6 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int CLASS_OR_INTERFACE_DECLARATION__NAME = TYPE_DECLARATION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int CLASS_OR_INTERFACE_DECLARATION__COMMENT = TYPE_DECLARATION__COMMENT;
 
 	/**
      * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -1107,6 +1197,24 @@ public interface JavaPackage extends EPackage {
 	int CONSTRUCTOR_DECLARATION = 10;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int CONSTRUCTOR_DECLARATION__COMMENT = CALLABLE_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONSTRUCTOR_DECLARATION__ORPHAN_COMMENTS = CALLABLE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1115,7 +1223,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__ANNOTATIONS = CALLABLE_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1124,7 +1232,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__MODIFIERS = CALLABLE_DECLARATION__MODIFIERS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Public</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1133,7 +1241,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__PUBLIC = CALLABLE_DECLARATION__PUBLIC;
 
-	/**
+    /**
      * The feature id for the '<em><b>Private</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1142,7 +1250,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__PRIVATE = CALLABLE_DECLARATION__PRIVATE;
 
-	/**
+    /**
      * The feature id for the '<em><b>Protected</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1151,7 +1259,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__PROTECTED = CALLABLE_DECLARATION__PROTECTED;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1160,7 +1268,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__NAME = CALLABLE_DECLARATION__NAME;
 
-	/**
+    /**
      * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1169,7 +1277,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__PARAMETERS = CALLABLE_DECLARATION__PARAMETERS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Thrown Exceptions</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1178,7 +1286,7 @@ public interface JavaPackage extends EPackage {
      */
 	int CONSTRUCTOR_DECLARATION__THROWN_EXCEPTIONS = CALLABLE_DECLARATION__THROWN_EXCEPTIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1186,15 +1294,6 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int CONSTRUCTOR_DECLARATION__TYPE_PARAMETERS = CALLABLE_DECLARATION__TYPE_PARAMETERS;
-
-	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int CONSTRUCTOR_DECLARATION__COMMENT = CALLABLE_DECLARATION__COMMENT;
 
 	/**
      * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -1279,6 +1378,24 @@ public interface JavaPackage extends EPackage {
 	int ENUM_CONSTANT_DECLARATION = 11;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int ENUM_CONSTANT_DECLARATION__COMMENT = BODY_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_CONSTANT_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1288,22 +1405,13 @@ public interface JavaPackage extends EPackage {
 	int ENUM_CONSTANT_DECLARATION__ANNOTATIONS = BODY_DECLARATION__ANNOTATIONS;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int ENUM_CONSTANT_DECLARATION__COMMENT = BODY_DECLARATION_FEATURE_COUNT + 0;
-
-	/**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int ENUM_CONSTANT_DECLARATION__NAME = BODY_DECLARATION_FEATURE_COUNT + 1;
+	int ENUM_CONSTANT_DECLARATION__NAME = BODY_DECLARATION_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1312,7 +1420,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ENUM_CONSTANT_DECLARATION__ARGUMENTS = BODY_DECLARATION_FEATURE_COUNT + 2;
+	int ENUM_CONSTANT_DECLARATION__ARGUMENTS = BODY_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Class Body</b></em>' containment reference list.
@@ -1321,7 +1429,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ENUM_CONSTANT_DECLARATION__CLASS_BODY = BODY_DECLARATION_FEATURE_COUNT + 3;
+	int ENUM_CONSTANT_DECLARATION__CLASS_BODY = BODY_DECLARATION_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Enum Constant Declaration</em>' class.
@@ -1330,7 +1438,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int ENUM_CONSTANT_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 4;
+	int ENUM_CONSTANT_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 3;
 
 	/**
      * The number of operations of the '<em>Enum Constant Declaration</em>' class.
@@ -1352,6 +1460,24 @@ public interface JavaPackage extends EPackage {
 	int ENUM_DECLARATION = 12;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int ENUM_DECLARATION__COMMENT = TYPE_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_DECLARATION__ORPHAN_COMMENTS = TYPE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1360,7 +1486,7 @@ public interface JavaPackage extends EPackage {
      */
 	int ENUM_DECLARATION__ANNOTATIONS = TYPE_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1368,15 +1494,6 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int ENUM_DECLARATION__NAME = TYPE_DECLARATION__NAME;
-
-	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int ENUM_DECLARATION__COMMENT = TYPE_DECLARATION__COMMENT;
 
 	/**
      * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -1488,6 +1605,24 @@ public interface JavaPackage extends EPackage {
 	int FIELD_DECLARATION = 13;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int FIELD_DECLARATION__COMMENT = BODY_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1497,22 +1632,13 @@ public interface JavaPackage extends EPackage {
 	int FIELD_DECLARATION__ANNOTATIONS = BODY_DECLARATION__ANNOTATIONS;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int FIELD_DECLARATION__COMMENT = BODY_DECLARATION_FEATURE_COUNT + 0;
-
-	/**
      * The feature id for the '<em><b>Variables</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__VARIABLES = BODY_DECLARATION_FEATURE_COUNT + 1;
+	int FIELD_DECLARATION__VARIABLES = BODY_DECLARATION_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -1521,7 +1647,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 2;
+	int FIELD_DECLARATION__MODIFIERS = BODY_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Public</b></em>' attribute.
@@ -1530,7 +1656,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 3;
+	int FIELD_DECLARATION__PUBLIC = BODY_DECLARATION_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Private</b></em>' attribute.
@@ -1539,7 +1665,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__PRIVATE = BODY_DECLARATION_FEATURE_COUNT + 4;
+	int FIELD_DECLARATION__PRIVATE = BODY_DECLARATION_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Protected</b></em>' attribute.
@@ -1548,7 +1674,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__PROTECTED = BODY_DECLARATION_FEATURE_COUNT + 5;
+	int FIELD_DECLARATION__PROTECTED = BODY_DECLARATION_FEATURE_COUNT + 4;
 
 	/**
      * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -1557,7 +1683,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 6;
+	int FIELD_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 5;
 
 	/**
      * The feature id for the '<em><b>Final</b></em>' attribute.
@@ -1566,7 +1692,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION__FINAL = BODY_DECLARATION_FEATURE_COUNT + 7;
+	int FIELD_DECLARATION__FINAL = BODY_DECLARATION_FEATURE_COUNT + 6;
 
 	/**
      * The number of structural features of the '<em>Field Declaration</em>' class.
@@ -1575,7 +1701,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int FIELD_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 8;
+	int FIELD_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 7;
 
 	/**
      * The number of operations of the '<em>Field Declaration</em>' class.
@@ -1597,6 +1723,24 @@ public interface JavaPackage extends EPackage {
 	int INITIALIZER_DECLARATION = 14;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int INITIALIZER_DECLARATION__COMMENT = BODY_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INITIALIZER_DECLARATION__ORPHAN_COMMENTS = BODY_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1606,22 +1750,13 @@ public interface JavaPackage extends EPackage {
 	int INITIALIZER_DECLARATION__ANNOTATIONS = BODY_DECLARATION__ANNOTATIONS;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int INITIALIZER_DECLARATION__COMMENT = BODY_DECLARATION_FEATURE_COUNT + 0;
-
-	/**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int INITIALIZER_DECLARATION__BODY = BODY_DECLARATION_FEATURE_COUNT + 1;
+	int INITIALIZER_DECLARATION__BODY = BODY_DECLARATION_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -1630,7 +1765,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int INITIALIZER_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 2;
+	int INITIALIZER_DECLARATION__STATIC = BODY_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Initializer Declaration</em>' class.
@@ -1639,7 +1774,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int INITIALIZER_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 3;
+	int INITIALIZER_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 2;
 
 	/**
      * The number of operations of the '<em>Initializer Declaration</em>' class.
@@ -1661,6 +1796,24 @@ public interface JavaPackage extends EPackage {
 	int METHOD_DECLARATION = 15;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int METHOD_DECLARATION__COMMENT = CALLABLE_DECLARATION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_DECLARATION__ORPHAN_COMMENTS = CALLABLE_DECLARATION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1669,7 +1822,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__ANNOTATIONS = CALLABLE_DECLARATION__ANNOTATIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1678,7 +1831,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__MODIFIERS = CALLABLE_DECLARATION__MODIFIERS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Public</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1687,7 +1840,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__PUBLIC = CALLABLE_DECLARATION__PUBLIC;
 
-	/**
+    /**
      * The feature id for the '<em><b>Private</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1696,7 +1849,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__PRIVATE = CALLABLE_DECLARATION__PRIVATE;
 
-	/**
+    /**
      * The feature id for the '<em><b>Protected</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1705,7 +1858,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__PROTECTED = CALLABLE_DECLARATION__PROTECTED;
 
-	/**
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1714,7 +1867,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__NAME = CALLABLE_DECLARATION__NAME;
 
-	/**
+    /**
      * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1723,7 +1876,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__PARAMETERS = CALLABLE_DECLARATION__PARAMETERS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Thrown Exceptions</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1732,7 +1885,7 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_DECLARATION__THROWN_EXCEPTIONS = CALLABLE_DECLARATION__THROWN_EXCEPTIONS;
 
-	/**
+    /**
      * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1740,15 +1893,6 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int METHOD_DECLARATION__TYPE_PARAMETERS = CALLABLE_DECLARATION__TYPE_PARAMETERS;
-
-	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int METHOD_DECLARATION__COMMENT = CALLABLE_DECLARATION__COMMENT;
 
 	/**
      * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -1869,6 +2013,24 @@ public interface JavaPackage extends EPackage {
 	int PARAMETER = 16;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PARAMETER__COMMENT = JAVA_NODE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PARAMETER__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.ReceiverParameterImpl <em>Receiver Parameter</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2585,34 +2747,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NODE_WITH_TYPE__TYPE = 0;
-
-	/**
-     * The number of structural features of the '<em>Node With Type</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_TYPE_FEATURE_COUNT = 1;
-
-	/**
-     * The number of operations of the '<em>Node With Type</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_TYPE_OPERATION_COUNT = 0;
-
-	/**
-     * The feature id for the '<em><b>Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int PARAMETER__TYPE = NODE_WITH_TYPE__TYPE;
+	int PARAMETER__TYPE = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -2621,7 +2756,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER__ANNOTATIONS = NODE_WITH_TYPE_FEATURE_COUNT + 0;
+	int PARAMETER__ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -2630,7 +2765,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER__NAME = NODE_WITH_TYPE_FEATURE_COUNT + 1;
+	int PARAMETER__NAME = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -2639,7 +2774,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER__MODIFIERS = NODE_WITH_TYPE_FEATURE_COUNT + 2;
+	int PARAMETER__MODIFIERS = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The feature id for the '<em><b>Final</b></em>' attribute.
@@ -2648,7 +2783,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER__FINAL = NODE_WITH_TYPE_FEATURE_COUNT + 3;
+	int PARAMETER__FINAL = JAVA_NODE_FEATURE_COUNT + 4;
 
 	/**
      * The feature id for the '<em><b>Var Args</b></em>' attribute.
@@ -2657,7 +2792,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER__VAR_ARGS = NODE_WITH_TYPE_FEATURE_COUNT + 4;
+	int PARAMETER__VAR_ARGS = JAVA_NODE_FEATURE_COUNT + 5;
 
 	/**
      * The feature id for the '<em><b>Var Args Annotations</b></em>' containment reference list.
@@ -2666,7 +2801,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER__VAR_ARGS_ANNOTATIONS = NODE_WITH_TYPE_FEATURE_COUNT + 5;
+	int PARAMETER__VAR_ARGS_ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 6;
 
 	/**
      * The number of structural features of the '<em>Parameter</em>' class.
@@ -2675,7 +2810,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER_FEATURE_COUNT = NODE_WITH_TYPE_FEATURE_COUNT + 6;
+	int PARAMETER_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 7;
 
 	/**
      * The number of operations of the '<em>Parameter</em>' class.
@@ -2684,16 +2819,34 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int PARAMETER_OPERATION_COUNT = NODE_WITH_TYPE_OPERATION_COUNT + 0;
+	int PARAMETER_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RECEIVER_PARAMETER__COMMENT = JAVA_NODE__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RECEIVER_PARAMETER__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int RECEIVER_PARAMETER__TYPE = NODE_WITH_TYPE__TYPE;
+	int RECEIVER_PARAMETER__TYPE = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -2702,7 +2855,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int RECEIVER_PARAMETER__ANNOTATIONS = NODE_WITH_TYPE_FEATURE_COUNT + 0;
+	int RECEIVER_PARAMETER__ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -2711,7 +2864,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int RECEIVER_PARAMETER__NAME = NODE_WITH_TYPE_FEATURE_COUNT + 1;
+	int RECEIVER_PARAMETER__NAME = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Receiver Parameter</em>' class.
@@ -2720,7 +2873,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int RECEIVER_PARAMETER_FEATURE_COUNT = NODE_WITH_TYPE_FEATURE_COUNT + 2;
+	int RECEIVER_PARAMETER_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The number of operations of the '<em>Receiver Parameter</em>' class.
@@ -2729,16 +2882,34 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int RECEIVER_PARAMETER_OPERATION_COUNT = NODE_WITH_TYPE_OPERATION_COUNT + 0;
+	int RECEIVER_PARAMETER_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_DECLARATOR__COMMENT = JAVA_NODE__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_DECLARATOR__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int VARIABLE_DECLARATOR__TYPE = NODE_WITH_TYPE__TYPE;
+	int VARIABLE_DECLARATOR__TYPE = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -2747,7 +2918,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int VARIABLE_DECLARATOR__NAME = NODE_WITH_TYPE_FEATURE_COUNT + 0;
+	int VARIABLE_DECLARATOR__NAME = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Initializer</b></em>' containment reference.
@@ -2756,7 +2927,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int VARIABLE_DECLARATOR__INITIALIZER = NODE_WITH_TYPE_FEATURE_COUNT + 1;
+	int VARIABLE_DECLARATOR__INITIALIZER = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Variable Declarator</em>' class.
@@ -2765,7 +2936,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int VARIABLE_DECLARATOR_FEATURE_COUNT = NODE_WITH_TYPE_FEATURE_COUNT + 2;
+	int VARIABLE_DECLARATOR_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The number of operations of the '<em>Variable Declarator</em>' class.
@@ -2774,16 +2945,34 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int VARIABLE_DECLARATOR_OPERATION_COUNT = NODE_WITH_TYPE_OPERATION_COUNT + 0;
+	int VARIABLE_DECLARATOR_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMENT__COMMENT = JAVA_NODE__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMENT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int COMMENT__CONTENT = 0;
+	int COMMENT__CONTENT = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of structural features of the '<em>Comment</em>' class.
@@ -2792,7 +2981,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMMENT_FEATURE_COUNT = 1;
+	int COMMENT_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of operations of the '<em>Comment</em>' class.
@@ -2801,9 +2990,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int COMMENT_OPERATION_COUNT = 0;
+	int COMMENT_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BLOCK_COMMENT__COMMENT = COMMENT__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BLOCK_COMMENT__ORPHAN_COMMENTS = COMMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2830,7 +3037,25 @@ public interface JavaPackage extends EPackage {
      */
 	int BLOCK_COMMENT_OPERATION_COUNT = COMMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVADOC_COMMENT__COMMENT = COMMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int JAVADOC_COMMENT__ORPHAN_COMMENTS = COMMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2857,7 +3082,25 @@ public interface JavaPackage extends EPackage {
      */
 	int JAVADOC_COMMENT_OPERATION_COUNT = COMMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE_COMMENT__COMMENT = COMMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE_COMMENT__ORPHAN_COMMENTS = COMMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2884,14 +3127,32 @@ public interface JavaPackage extends EPackage {
      */
 	int LINE_COMMENT_OPERATION_COUNT = COMMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPRESSION__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPRESSION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Expression</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int EXPRESSION_FEATURE_COUNT = 0;
+	int EXPRESSION_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of operations of the '<em>Expression</em>' class.
@@ -2900,9 +3161,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int EXPRESSION_OPERATION_COUNT = 0;
+	int EXPRESSION_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_EXPR__COMMENT = EXPRESSION__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANNOTATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2929,7 +3208,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ANNOTATION_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_ACCESS_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_ACCESS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2965,7 +3262,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ARRAY_ACCESS_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_CREATION_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_CREATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Levels</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3010,7 +3325,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ARRAY_CREATION_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_INITIALIZER_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_INITIALIZER_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Values</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3037,7 +3370,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ARRAY_INITIALIZER_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSIGN_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSIGN_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Target</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3082,7 +3433,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ASSIGN_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BINARY_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BINARY_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Left</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3127,7 +3496,25 @@ public interface JavaPackage extends EPackage {
      */
 	int BINARY_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LITERAL_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LITERAL_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Literal Expr</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3145,7 +3532,25 @@ public interface JavaPackage extends EPackage {
      */
 	int LITERAL_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BOOLEAN_LITERAL_EXPR__COMMENT = LITERAL_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BOOLEAN_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3172,7 +3577,25 @@ public interface JavaPackage extends EPackage {
      */
 	int BOOLEAN_LITERAL_EXPR_OPERATION_COUNT = LITERAL_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CAST_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CAST_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3208,7 +3631,25 @@ public interface JavaPackage extends EPackage {
      */
 	int CAST_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LITERAL_STRING_VALUE_EXPR__COMMENT = LITERAL_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS = LITERAL_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3235,7 +3676,25 @@ public interface JavaPackage extends EPackage {
      */
 	int LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT = LITERAL_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR_LITERAL_EXPR__COMMENT = LITERAL_STRING_VALUE_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHAR_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3262,7 +3721,25 @@ public interface JavaPackage extends EPackage {
      */
 	int CHAR_LITERAL_EXPR_OPERATION_COUNT = LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3289,7 +3766,25 @@ public interface JavaPackage extends EPackage {
      */
 	int CLASS_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDITIONAL_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Condition</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3334,7 +3829,25 @@ public interface JavaPackage extends EPackage {
      */
 	int CONDITIONAL_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOUBLE_LITERAL_EXPR__COMMENT = LITERAL_STRING_VALUE_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOUBLE_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3361,7 +3874,25 @@ public interface JavaPackage extends EPackage {
      */
 	int DOUBLE_LITERAL_EXPR_OPERATION_COUNT = LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENCLOSED_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENCLOSED_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Inner</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3388,7 +3919,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ENCLOSED_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_ACCESS_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_ACCESS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3433,7 +3982,25 @@ public interface JavaPackage extends EPackage {
      */
 	int FIELD_ACCESS_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INSTANCE_OF_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INSTANCE_OF_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3478,7 +4045,25 @@ public interface JavaPackage extends EPackage {
      */
 	int INSTANCE_OF_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTEGER_LITERAL_EXPR__COMMENT = LITERAL_STRING_VALUE_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTEGER_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3505,7 +4090,25 @@ public interface JavaPackage extends EPackage {
      */
 	int INTEGER_LITERAL_EXPR_OPERATION_COUNT = LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LAMBDA_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LAMBDA_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3550,7 +4153,25 @@ public interface JavaPackage extends EPackage {
      */
 	int LAMBDA_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LONG_LITERAL_EXPR__COMMENT = LITERAL_STRING_VALUE_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LONG_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3577,7 +4198,25 @@ public interface JavaPackage extends EPackage {
      */
 	int LONG_LITERAL_EXPR_OPERATION_COUNT = LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MARKER_ANNOTATION_EXPR__COMMENT = ANNOTATION_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MARKER_ANNOTATION_EXPR__ORPHAN_COMMENTS = ANNOTATION_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3604,7 +4243,25 @@ public interface JavaPackage extends EPackage {
      */
 	int MARKER_ANNOTATION_EXPR_OPERATION_COUNT = ANNOTATION_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MEMBER_VALUE_PAIR__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MEMBER_VALUE_PAIR__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.SimpleNameImpl <em>Simple Name</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3631,34 +4288,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NODE_WITH_SIMPLE_NAME__NAME = 0;
-
-	/**
-     * The number of structural features of the '<em>Node With Simple Name</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_SIMPLE_NAME_FEATURE_COUNT = 1;
-
-	/**
-     * The number of operations of the '<em>Node With Simple Name</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_SIMPLE_NAME_OPERATION_COUNT = 0;
-
-	/**
-     * The feature id for the '<em><b>Name</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int MEMBER_VALUE_PAIR__NAME = NODE_WITH_SIMPLE_NAME__NAME;
+	int MEMBER_VALUE_PAIR__NAME = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -3667,7 +4297,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEMBER_VALUE_PAIR__VALUE = NODE_WITH_SIMPLE_NAME_FEATURE_COUNT + 0;
+	int MEMBER_VALUE_PAIR__VALUE = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Member Value Pair</em>' class.
@@ -3676,7 +4306,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEMBER_VALUE_PAIR_FEATURE_COUNT = NODE_WITH_SIMPLE_NAME_FEATURE_COUNT + 1;
+	int MEMBER_VALUE_PAIR_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of operations of the '<em>Member Value Pair</em>' class.
@@ -3685,9 +4315,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MEMBER_VALUE_PAIR_OPERATION_COUNT = NODE_WITH_SIMPLE_NAME_OPERATION_COUNT + 0;
+	int MEMBER_VALUE_PAIR_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_CALL_EXPR__COMMENT = EXPRESSION__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_CALL_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3741,7 +4389,25 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_CALL_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_REFERENCE_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METHOD_REFERENCE_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3786,41 +4452,32 @@ public interface JavaPackage extends EPackage {
      */
 	int METHOD_REFERENCE_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Identifier</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NODE_WITH_IDENTIFIER__IDENTIFIER = 0;
-
-	/**
-     * The number of structural features of the '<em>Node With Identifier</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_IDENTIFIER_FEATURE_COUNT = 1;
-
-	/**
-     * The number of operations of the '<em>Node With Identifier</em>' class.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_IDENTIFIER_OPERATION_COUNT = 0;
-
-	/**
-     * The feature id for the '<em><b>Identifier</b></em>' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NAME__IDENTIFIER = NODE_WITH_IDENTIFIER__IDENTIFIER;
+	int NAME__IDENTIFIER = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Qualifier</b></em>' containment reference.
@@ -3829,7 +4486,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NAME__QUALIFIER = NODE_WITH_IDENTIFIER_FEATURE_COUNT + 0;
+	int NAME__QUALIFIER = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Name</em>' class.
@@ -3838,7 +4495,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NAME_FEATURE_COUNT = NODE_WITH_IDENTIFIER_FEATURE_COUNT + 1;
+	int NAME_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of operations of the '<em>Name</em>' class.
@@ -3847,9 +4504,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int NAME_OPERATION_COUNT = NODE_WITH_IDENTIFIER_OPERATION_COUNT + 0;
+	int NAME_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_EXPR__COMMENT = EXPRESSION__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3876,7 +4551,25 @@ public interface JavaPackage extends EPackage {
      */
 	int NAME_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NORMAL_ANNOTATION_EXPR__COMMENT = ANNOTATION_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NORMAL_ANNOTATION_EXPR__ORPHAN_COMMENTS = ANNOTATION_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3912,7 +4605,25 @@ public interface JavaPackage extends EPackage {
      */
 	int NORMAL_ANNOTATION_EXPR_OPERATION_COUNT = ANNOTATION_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NULL_LITERAL_EXPR__COMMENT = LITERAL_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NULL_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Null Literal Expr</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3930,7 +4641,25 @@ public interface JavaPackage extends EPackage {
      */
 	int NULL_LITERAL_EXPR_OPERATION_COUNT = LITERAL_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OBJECT_CREATION_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OBJECT_CREATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3993,7 +4722,25 @@ public interface JavaPackage extends EPackage {
      */
 	int OBJECT_CREATION_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PATTERN_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PATTERN_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4029,14 +4776,32 @@ public interface JavaPackage extends EPackage {
      */
 	int PATTERN_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIMPLE_NAME__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIMPLE_NAME__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Identifier</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int SIMPLE_NAME__IDENTIFIER = NODE_WITH_IDENTIFIER__IDENTIFIER;
+	int SIMPLE_NAME__IDENTIFIER = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of structural features of the '<em>Simple Name</em>' class.
@@ -4045,7 +4810,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int SIMPLE_NAME_FEATURE_COUNT = NODE_WITH_IDENTIFIER_FEATURE_COUNT + 0;
+	int SIMPLE_NAME_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of operations of the '<em>Simple Name</em>' class.
@@ -4054,9 +4819,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int SIMPLE_NAME_OPERATION_COUNT = NODE_WITH_IDENTIFIER_OPERATION_COUNT + 0;
+	int SIMPLE_NAME_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SINGLE_MEMBER_ANNOTATION_EXPR__COMMENT = ANNOTATION_EXPR__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SINGLE_MEMBER_ANNOTATION_EXPR__ORPHAN_COMMENTS = ANNOTATION_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4092,7 +4875,25 @@ public interface JavaPackage extends EPackage {
      */
 	int SINGLE_MEMBER_ANNOTATION_EXPR_OPERATION_COUNT = ANNOTATION_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int STRING_LITERAL_EXPR__COMMENT = LITERAL_STRING_VALUE_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int STRING_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4118,6 +4919,24 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int STRING_LITERAL_EXPR_OPERATION_COUNT = LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUPER_EXPR__COMMENT = EXPRESSION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUPER_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
 
     /**
      * The feature id for the '<em><b>Type Name</b></em>' containment reference.
@@ -4146,7 +4965,25 @@ public interface JavaPackage extends EPackage {
      */
 	int SUPER_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Selector</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4182,7 +5019,25 @@ public interface JavaPackage extends EPackage {
      */
 	int SWITCH_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT_BLOCK_LITERAL_EXPR__COMMENT = LITERAL_STRING_VALUE_EXPR__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT_BLOCK_LITERAL_EXPR__ORPHAN_COMMENTS = LITERAL_STRING_VALUE_EXPR__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4209,7 +5064,25 @@ public interface JavaPackage extends EPackage {
      */
 	int TEXT_BLOCK_LITERAL_EXPR_OPERATION_COUNT = LITERAL_STRING_VALUE_EXPR_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int THIS_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int THIS_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4236,7 +5109,25 @@ public interface JavaPackage extends EPackage {
      */
 	int THIS_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4344,6 +5235,24 @@ public interface JavaPackage extends EPackage {
 	int UNARY_EXPR = 63;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNARY_EXPR__COMMENT = EXPRESSION__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNARY_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.TypeParameterImpl <em>Type Parameter</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4559,7 +5468,25 @@ public interface JavaPackage extends EPackage {
      */
 	int UNARY_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_DECLARATION_EXPR__COMMENT = EXPRESSION__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_DECLARATION_EXPR__ORPHAN_COMMENTS = EXPRESSION__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4613,14 +5540,32 @@ public interface JavaPackage extends EPackage {
      */
 	int VARIABLE_DECLARATION_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_DECLARATION__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_DECLARATION__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int MODULE_DECLARATION__NAME = NODE_WITH_NAME__NAME;
+	int MODULE_DECLARATION__NAME = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -4629,7 +5574,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MODULE_DECLARATION__ANNOTATIONS = NODE_WITH_NAME_FEATURE_COUNT + 0;
+	int MODULE_DECLARATION__ANNOTATIONS = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Open</b></em>' attribute.
@@ -4638,7 +5583,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MODULE_DECLARATION__OPEN = NODE_WITH_NAME_FEATURE_COUNT + 1;
+	int MODULE_DECLARATION__OPEN = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The feature id for the '<em><b>Directives</b></em>' containment reference list.
@@ -4647,7 +5592,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MODULE_DECLARATION__DIRECTIVES = NODE_WITH_NAME_FEATURE_COUNT + 2;
+	int MODULE_DECLARATION__DIRECTIVES = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The number of structural features of the '<em>Module Declaration</em>' class.
@@ -4656,7 +5601,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MODULE_DECLARATION_FEATURE_COUNT = NODE_WITH_NAME_FEATURE_COUNT + 3;
+	int MODULE_DECLARATION_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 4;
 
 	/**
      * The number of operations of the '<em>Module Declaration</em>' class.
@@ -4665,16 +5610,34 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MODULE_DECLARATION_OPERATION_COUNT = NODE_WITH_NAME_OPERATION_COUNT + 0;
+	int MODULE_DECLARATION_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_DIRECTIVE__COMMENT = JAVA_NODE__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_DIRECTIVE__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Module Directive</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int MODULE_DIRECTIVE_FEATURE_COUNT = 0;
+	int MODULE_DIRECTIVE_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of operations of the '<em>Module Directive</em>' class.
@@ -4683,9 +5646,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int MODULE_DIRECTIVE_OPERATION_COUNT = 0;
+	int MODULE_DIRECTIVE_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_EXPORTS_DIRECTIVE__COMMENT = MODULE_DIRECTIVE__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_EXPORTS_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4721,7 +5702,25 @@ public interface JavaPackage extends EPackage {
      */
 	int MODULE_EXPORTS_DIRECTIVE_OPERATION_COUNT = MODULE_DIRECTIVE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_OPENS_DIRECTIVE__COMMENT = MODULE_DIRECTIVE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_OPENS_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4757,7 +5756,25 @@ public interface JavaPackage extends EPackage {
      */
 	int MODULE_OPENS_DIRECTIVE_OPERATION_COUNT = MODULE_DIRECTIVE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_PROVIDES_DIRECTIVE__COMMENT = MODULE_DIRECTIVE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_PROVIDES_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4793,7 +5810,25 @@ public interface JavaPackage extends EPackage {
      */
 	int MODULE_PROVIDES_DIRECTIVE_OPERATION_COUNT = MODULE_DIRECTIVE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_REQUIRES_DIRECTIVE__COMMENT = MODULE_DIRECTIVE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_REQUIRES_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4838,7 +5873,25 @@ public interface JavaPackage extends EPackage {
      */
 	int MODULE_REQUIRES_DIRECTIVE_OPERATION_COUNT = MODULE_DIRECTIVE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_USES_DIRECTIVE__COMMENT = MODULE_DIRECTIVE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_USES_DIRECTIVE__ORPHAN_COMMENTS = MODULE_DIRECTIVE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4864,6 +5917,33 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int MODULE_USES_DIRECTIVE_OPERATION_COUNT = MODULE_DIRECTIVE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_ANNOTATIONS__ANNOTATIONS = 0;
+
+    /**
+     * The number of structural features of the '<em>Node With Annotations</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_ANNOTATIONS_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Node With Annotations</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_ANNOTATIONS_OPERATION_COUNT = 0;
 
 	/**
      * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -5027,6 +6107,33 @@ public interface JavaPackage extends EPackage {
      */
 	int NODE_WITH_EXTENDS_OPERATION_COUNT = 0;
 
+    /**
+     * The feature id for the '<em><b>Identifier</b></em>' attribute.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_IDENTIFIER__IDENTIFIER = 0;
+
+    /**
+     * The number of structural features of the '<em>Node With Identifier</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_IDENTIFIER_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Node With Identifier</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_IDENTIFIER_OPERATION_COUNT = 0;
+
 	/**
      * The feature id for the '<em><b>Implemented Types</b></em>' containment reference list.
      * <!-- begin-user-doc -->
@@ -5055,22 +6162,13 @@ public interface JavaPackage extends EPackage {
 	int NODE_WITH_IMPLEMENTS_OPERATION_COUNT = 0;
 
 	/**
-     * The feature id for the '<em><b>Comment</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-	int NODE_WITH_JAVADOC__COMMENT = 0;
-
-	/**
      * The number of structural features of the '<em>Node With Javadoc</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NODE_WITH_JAVADOC_FEATURE_COUNT = 1;
+	int NODE_WITH_JAVADOC_FEATURE_COUNT = 0;
 
 	/**
      * The number of operations of the '<em>Node With Javadoc</em>' class.
@@ -5134,6 +6232,33 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int NODE_WITH_MODIFIERS_OPERATION_COUNT = 0;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_NAME__NAME = 0;
+
+    /**
+     * The number of structural features of the '<em>Node With Name</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_NAME_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Node With Name</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_NAME_OPERATION_COUNT = 0;
 
 	/**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
@@ -5234,6 +6359,33 @@ public interface JavaPackage extends EPackage {
      */
 	int NODE_WITH_SCOPE_OPERATION_COUNT = 0;
 
+    /**
+     * The feature id for the '<em><b>Name</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_SIMPLE_NAME__NAME = 0;
+
+    /**
+     * The number of structural features of the '<em>Node With Simple Name</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_SIMPLE_NAME_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Node With Simple Name</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_SIMPLE_NAME_OPERATION_COUNT = 0;
+
 	/**
      * The feature id for the '<em><b>Statements</b></em>' containment reference list.
      * <!-- begin-user-doc -->
@@ -5305,6 +6457,33 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int NODE_WITH_TOKEN_RANGE_OPERATION_COUNT = 0;
+
+    /**
+     * The feature id for the '<em><b>Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_TYPE__TYPE = 0;
+
+    /**
+     * The number of structural features of the '<em>Node With Type</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Node With Type</em>' class.
+     * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+	int NODE_WITH_TYPE_OPERATION_COUNT = 0;
 
 	/**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
@@ -5945,7 +7124,25 @@ public interface JavaPackage extends EPackage {
      */
 	int NODE_WITH_VOLATILE_MODIFIER_OPERATION_COUNT = NODE_WITH_MODIFIERS_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int STATEMENT__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int STATEMENT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.ArrayTypeImpl <em>Array Type</em>}' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6172,7 +7369,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int STATEMENT_FEATURE_COUNT = 0;
+	int STATEMENT_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of operations of the '<em>Statement</em>' class.
@@ -6181,9 +7378,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int STATEMENT_OPERATION_COUNT = 0;
+	int STATEMENT_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSERT_STMT__COMMENT = STATEMENT__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSERT_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Check</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6219,7 +7434,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ASSERT_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BLOCK_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BLOCK_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Statements</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6246,7 +7479,25 @@ public interface JavaPackage extends EPackage {
      */
 	int BLOCK_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BREAK_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BREAK_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6273,14 +7524,32 @@ public interface JavaPackage extends EPackage {
      */
 	int BREAK_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CATCH_CLAUSE__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CATCH_CLAUSE__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int CATCH_CLAUSE__BODY = NODE_WITH_BLOCK_STMT__BODY;
+	int CATCH_CLAUSE__BODY = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -6289,7 +7558,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CATCH_CLAUSE__PARAMETER = NODE_WITH_BLOCK_STMT_FEATURE_COUNT + 0;
+	int CATCH_CLAUSE__PARAMETER = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The number of structural features of the '<em>Catch Clause</em>' class.
@@ -6298,7 +7567,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CATCH_CLAUSE_FEATURE_COUNT = NODE_WITH_BLOCK_STMT_FEATURE_COUNT + 1;
+	int CATCH_CLAUSE_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of operations of the '<em>Catch Clause</em>' class.
@@ -6307,9 +7576,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int CATCH_CLAUSE_OPERATION_COUNT = NODE_WITH_BLOCK_STMT_OPERATION_COUNT + 0;
+	int CATCH_CLAUSE_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTINUE_STMT__COMMENT = STATEMENT__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTINUE_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6336,7 +7623,25 @@ public interface JavaPackage extends EPackage {
      */
 	int CONTINUE_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6372,7 +7677,25 @@ public interface JavaPackage extends EPackage {
      */
 	int DO_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EMPTY_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EMPTY_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Empty Stmt</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6390,7 +7713,25 @@ public interface JavaPackage extends EPackage {
      */
 	int EMPTY_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPLICIT_CONSTRUCTOR_INVOCATION_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPLICIT_CONSTRUCTOR_INVOCATION_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Type Arguments</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6444,7 +7785,25 @@ public interface JavaPackage extends EPackage {
      */
 	int EXPLICIT_CONSTRUCTOR_INVOCATION_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPRESSION_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXPRESSION_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6471,7 +7830,25 @@ public interface JavaPackage extends EPackage {
      */
 	int EXPRESSION_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FOR_EACH_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FOR_EACH_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6516,7 +7893,25 @@ public interface JavaPackage extends EPackage {
      */
 	int FOR_EACH_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FOR_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FOR_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6570,7 +7965,25 @@ public interface JavaPackage extends EPackage {
      */
 	int FOR_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IF_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IF_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Condition</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6615,7 +8028,25 @@ public interface JavaPackage extends EPackage {
      */
 	int IF_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LABELED_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LABELED_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Label</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6651,7 +8082,25 @@ public interface JavaPackage extends EPackage {
      */
 	int LABELED_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOCAL_CLASS_DECLARATION_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOCAL_CLASS_DECLARATION_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Class Declaration</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6678,7 +8127,25 @@ public interface JavaPackage extends EPackage {
      */
 	int LOCAL_CLASS_DECLARATION_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RETURN_STMT__COMMENT = STATEMENT__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RETURN_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6705,14 +8172,32 @@ public interface JavaPackage extends EPackage {
      */
 	int RETURN_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_ENTRY__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_ENTRY__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Statements</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int SWITCH_ENTRY__STATEMENTS = NODE_WITH_STATEMENTS__STATEMENTS;
+	int SWITCH_ENTRY__STATEMENTS = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -6721,7 +8206,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int SWITCH_ENTRY__LABELS = NODE_WITH_STATEMENTS_FEATURE_COUNT + 0;
+	int SWITCH_ENTRY__LABELS = JAVA_NODE_FEATURE_COUNT + 1;
 
 	/**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -6730,7 +8215,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int SWITCH_ENTRY__TYPE = NODE_WITH_STATEMENTS_FEATURE_COUNT + 1;
+	int SWITCH_ENTRY__TYPE = JAVA_NODE_FEATURE_COUNT + 2;
 
 	/**
      * The number of structural features of the '<em>Switch Entry</em>' class.
@@ -6739,7 +8224,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int SWITCH_ENTRY_FEATURE_COUNT = NODE_WITH_STATEMENTS_FEATURE_COUNT + 2;
+	int SWITCH_ENTRY_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 3;
 
 	/**
      * The number of operations of the '<em>Switch Entry</em>' class.
@@ -6748,7 +8233,7 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int SWITCH_ENTRY_OPERATION_COUNT = NODE_WITH_STATEMENTS_OPERATION_COUNT + 0;
+	int SWITCH_ENTRY_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
 	/**
      * The meta object id for the '{@link fr.centralesupelec.csd.java.impl.SwitchStmtImpl <em>Switch Stmt</em>}' class.
@@ -6761,6 +8246,24 @@ public interface JavaPackage extends EPackage {
 	int SWITCH_STMT = 129;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_STMT__COMMENT = STATEMENT__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SWITCH_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Selector</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6807,6 +8310,24 @@ public interface JavaPackage extends EPackage {
 	int SYNCHRONIZED_STMT = 130;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SYNCHRONIZED_STMT__COMMENT = STATEMENT__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SYNCHRONIZED_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6853,6 +8374,24 @@ public interface JavaPackage extends EPackage {
 	int THROW_STMT = 131;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int THROW_STMT__COMMENT = STATEMENT__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int THROW_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6890,6 +8429,24 @@ public interface JavaPackage extends EPackage {
 	int TRY_STMT = 132;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRY_STMT__COMMENT = STATEMENT__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRY_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Resources</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6954,6 +8511,24 @@ public interface JavaPackage extends EPackage {
 	int WHILE_STMT = 133;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WHILE_STMT__COMMENT = STATEMENT__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WHILE_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Body</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7000,6 +8575,24 @@ public interface JavaPackage extends EPackage {
 	int YIELD_STMT = 134;
 
 	/**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int YIELD_STMT__COMMENT = STATEMENT__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int YIELD_STMT__ORPHAN_COMMENTS = STATEMENT__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Expression</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7026,14 +8619,32 @@ public interface JavaPackage extends EPackage {
      */
 	int YIELD_STMT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE__COMMENT = JAVA_NODE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Type</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int TYPE_FEATURE_COUNT = 0;
+	int TYPE_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 0;
 
 	/**
      * The number of operations of the '<em>Type</em>' class.
@@ -7042,9 +8653,27 @@ public interface JavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-	int TYPE_OPERATION_COUNT = 0;
+	int TYPE_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REFERENCE_TYPE__COMMENT = TYPE__COMMENT;
 
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REFERENCE_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Reference Type</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7062,7 +8691,25 @@ public interface JavaPackage extends EPackage {
      */
 	int REFERENCE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_TYPE__COMMENT = REFERENCE_TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARRAY_TYPE__ORPHAN_COMMENTS = REFERENCE_TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7107,7 +8754,25 @@ public interface JavaPackage extends EPackage {
      */
 	int ARRAY_TYPE_OPERATION_COUNT = REFERENCE_TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_OR_INTERFACE_TYPE__COMMENT = REFERENCE_TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLASS_OR_INTERFACE_TYPE__ORPHAN_COMMENTS = REFERENCE_TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7161,7 +8826,25 @@ public interface JavaPackage extends EPackage {
      */
 	int CLASS_OR_INTERFACE_TYPE_OPERATION_COUNT = REFERENCE_TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERSECTION_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERSECTION_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7197,7 +8880,25 @@ public interface JavaPackage extends EPackage {
      */
 	int INTERSECTION_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIMITIVE_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIMITIVE_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7232,6 +8933,24 @@ public interface JavaPackage extends EPackage {
      * @ordered
      */
 	int PRIMITIVE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_PARAMETER__COMMENT = REFERENCE_TYPE__COMMENT;
+
+    /**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TYPE_PARAMETER__ORPHAN_COMMENTS = REFERENCE_TYPE__ORPHAN_COMMENTS;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -7278,7 +8997,25 @@ public interface JavaPackage extends EPackage {
      */
 	int TYPE_PARAMETER_OPERATION_COUNT = REFERENCE_TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNION_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNION_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7314,7 +9051,25 @@ public interface JavaPackage extends EPackage {
      */
 	int UNION_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNKNOWN_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UNKNOWN_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Unknown Type</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7332,7 +9087,25 @@ public interface JavaPackage extends EPackage {
      */
 	int UNKNOWN_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAR_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAR_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The number of structural features of the '<em>Var Type</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7350,7 +9123,25 @@ public interface JavaPackage extends EPackage {
      */
 	int VAR_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOID_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOID_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7377,7 +9168,25 @@ public interface JavaPackage extends EPackage {
      */
 	int VOID_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
+    /**
+     * The feature id for the '<em><b>Comment</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WILDCARD_TYPE__COMMENT = TYPE__COMMENT;
+
 	/**
+     * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WILDCARD_TYPE__ORPHAN_COMMENTS = TYPE__ORPHAN_COMMENTS;
+
+    /**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7601,27 +9410,6 @@ public interface JavaPackage extends EPackage {
      * @generated
      */
 	EAttribute getImportDeclaration_Asterisk();
-
-	/**
-     * Returns the meta object for class '{@link fr.centralesupelec.csd.java.Modifier <em>Modifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Modifier</em>'.
-     * @see fr.centralesupelec.csd.java.Modifier
-     * @generated
-     */
-	EClass getModifier();
-
-	/**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.csd.java.Modifier#getKeyword <em>Keyword</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Keyword</em>'.
-     * @see fr.centralesupelec.csd.java.Modifier#getKeyword()
-     * @see #getModifier()
-     * @generated
-     */
-	EAttribute getModifier_Keyword();
 
 	/**
      * Returns the meta object for class '{@link fr.centralesupelec.csd.java.PackageDeclaration <em>Package Declaration</em>}'.
@@ -8955,17 +10743,6 @@ public interface JavaPackage extends EPackage {
 	EClass getNodeWithJavadoc();
 
 	/**
-     * Returns the meta object for the containment reference '{@link fr.centralesupelec.csd.java.NodeWithJavadoc#getComment <em>Comment</em>}'.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Comment</em>'.
-     * @see fr.centralesupelec.csd.java.NodeWithJavadoc#getComment()
-     * @see #getNodeWithJavadoc()
-     * @generated
-     */
-	EReference getNodeWithJavadoc_Comment();
-
-	/**
      * Returns the meta object for class '{@link fr.centralesupelec.csd.java.NodeWithMembers <em>Node With Members</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9468,6 +11245,38 @@ public interface JavaPackage extends EPackage {
 	EReference getWildcardType_SuperType();
 
 	/**
+     * Returns the meta object for class '{@link fr.centralesupelec.csd.java.JavaNode <em>Node</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Node</em>'.
+     * @see fr.centralesupelec.csd.java.JavaNode
+     * @generated
+     */
+    EClass getJavaNode();
+
+    /**
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.csd.java.JavaNode#getComment <em>Comment</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Comment</em>'.
+     * @see fr.centralesupelec.csd.java.JavaNode#getComment()
+     * @see #getJavaNode()
+     * @generated
+     */
+    EReference getJavaNode_Comment();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.csd.java.JavaNode#getOrphanComments <em>Orphan Comments</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Orphan Comments</em>'.
+     * @see fr.centralesupelec.csd.java.JavaNode#getOrphanComments()
+     * @see #getJavaNode()
+     * @generated
+     */
+    EReference getJavaNode_OrphanComments();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.csd.java.Type <em>Type</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10419,24 +12228,6 @@ public interface JavaPackage extends EPackage {
          * @generated
          */
 		EAttribute IMPORT_DECLARATION__ASTERISK = eINSTANCE.getImportDeclaration_Asterisk();
-
-		/**
-         * The meta object literal for the '{@link fr.centralesupelec.csd.java.impl.ModifierImpl <em>Modifier</em>}' class.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @see fr.centralesupelec.csd.java.impl.ModifierImpl
-         * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getModifier()
-         * @generated
-         */
-		EClass MODIFIER = eINSTANCE.getModifier();
-
-		/**
-         * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EAttribute MODIFIER__KEYWORD = eINSTANCE.getModifier_Keyword();
 
 		/**
          * The meta object literal for the '{@link fr.centralesupelec.csd.java.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
@@ -11617,14 +13408,6 @@ public interface JavaPackage extends EPackage {
 		EClass NODE_WITH_JAVADOC = eINSTANCE.getNodeWithJavadoc();
 
 		/**
-         * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-         * @generated
-         */
-		EReference NODE_WITH_JAVADOC__COMMENT = eINSTANCE.getNodeWithJavadoc_Comment();
-
-		/**
          * The meta object literal for the '{@link fr.centralesupelec.csd.java.NodeWithMembers <em>Node With Members</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -12061,6 +13844,32 @@ public interface JavaPackage extends EPackage {
 		EReference WILDCARD_TYPE__SUPER_TYPE = eINSTANCE.getWildcardType_SuperType();
 
 		/**
+         * The meta object literal for the '{@link fr.centralesupelec.csd.java.impl.JavaNodeImpl <em>Node</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see fr.centralesupelec.csd.java.impl.JavaNodeImpl
+         * @see fr.centralesupelec.csd.java.impl.JavaPackageImpl#getJavaNode()
+         * @generated
+         */
+        EClass JAVA_NODE = eINSTANCE.getJavaNode();
+
+        /**
+         * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference JAVA_NODE__COMMENT = eINSTANCE.getJavaNode_Comment();
+
+        /**
+         * The meta object literal for the '<em><b>Orphan Comments</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference JAVA_NODE__ORPHAN_COMMENTS = eINSTANCE.getJavaNode_OrphanComments();
+
+        /**
          * The meta object literal for the '{@link fr.centralesupelec.csd.java.impl.TypeImpl <em>Type</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->

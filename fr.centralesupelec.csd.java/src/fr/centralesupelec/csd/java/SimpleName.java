@@ -13,5 +13,5 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface SimpleName extends NodeWithIdentifier {
+public interface SimpleName extends JavaNode, NodeWithIdentifier {
 } // SimpleName

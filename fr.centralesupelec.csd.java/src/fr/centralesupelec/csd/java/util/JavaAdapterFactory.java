@@ -68,6 +68,10 @@ public class JavaAdapterFactory extends AdapterFactoryImpl {
 	protected JavaSwitch<Adapter> modelSwitch =
 		new JavaSwitch<Adapter>() {
             @Override
+            public Adapter caseJavaNode(JavaNode object) {
+                return createJavaNodeAdapter();
+            }
+            @Override
             public Adapter caseArrayCreationLevel(ArrayCreationLevel object) {
                 return createArrayCreationLevelAdapter();
             }
@@ -78,10 +82,6 @@ public class JavaAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseImportDeclaration(ImportDeclaration object) {
                 return createImportDeclarationAdapter();
-            }
-            @Override
-            public Adapter caseModifier(Modifier object) {
-                return createModifierAdapter();
             }
             @Override
             public Adapter casePackageDeclaration(PackageDeclaration object) {
@@ -714,20 +714,6 @@ public class JavaAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
 	public Adapter createImportDeclarationAdapter() {
-        return null;
-    }
-
-	/**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.csd.java.Modifier <em>Modifier</em>}'.
-     * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.csd.java.Modifier
-     * @generated
-     */
-	public Adapter createModifierAdapter() {
         return null;
     }
 
@@ -2174,6 +2160,20 @@ public class JavaAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.csd.java.JavaNode <em>Node</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.csd.java.JavaNode
+     * @generated
+     */
+    public Adapter createJavaNodeAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link fr.centralesupelec.csd.java.Type <em>Type</em>}'.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;

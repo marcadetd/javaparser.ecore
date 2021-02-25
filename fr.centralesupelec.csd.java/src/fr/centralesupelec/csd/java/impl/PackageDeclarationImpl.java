@@ -5,6 +5,7 @@ package fr.centralesupelec.csd.java.impl;
 import fr.centralesupelec.csd.java.AnnotationExpr;
 import fr.centralesupelec.csd.java.JavaPackage;
 import fr.centralesupelec.csd.java.Name;
+import fr.centralesupelec.csd.java.NodeWithAnnotations;
 import fr.centralesupelec.csd.java.NodeWithName;
 import fr.centralesupelec.csd.java.PackageDeclaration;
 
@@ -19,8 +20,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PackageDeclarationImpl extends MinimalEObjectImpl.Container implements PackageDeclaration {
+public class PackageDeclarationImpl extends JavaNodeImpl implements PackageDeclaration {
 	/**
      * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -229,6 +228,12 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
      */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithAnnotations.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.PACKAGE_DECLARATION__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithName.class) {
             switch (derivedFeatureID) {
                 case JavaPackage.PACKAGE_DECLARATION__NAME: return JavaPackage.NODE_WITH_NAME__NAME;
@@ -245,6 +250,12 @@ public class PackageDeclarationImpl extends MinimalEObjectImpl.Container impleme
      */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithAnnotations.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.PACKAGE_DECLARATION__ANNOTATIONS;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithName.class) {
             switch (baseFeatureID) {
                 case JavaPackage.NODE_WITH_NAME__NAME: return JavaPackage.PACKAGE_DECLARATION__NAME;

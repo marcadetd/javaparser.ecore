@@ -2,8 +2,6 @@
  */
 package fr.centralesupelec.csd.java;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Comment</b></em>'.
@@ -20,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Comment extends EObject {
+public interface Comment extends JavaNode {
 	/**
      * Returns the value of the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->

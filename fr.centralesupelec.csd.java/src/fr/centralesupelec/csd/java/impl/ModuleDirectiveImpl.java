@@ -7,8 +7,6 @@ import fr.centralesupelec.csd.java.ModuleDirective;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Module Directive</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ModuleDirectiveImpl extends MinimalEObjectImpl.Container implements ModuleDirective {
+public abstract class ModuleDirectiveImpl extends JavaNodeImpl implements ModuleDirective {
 	/**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

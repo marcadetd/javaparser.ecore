@@ -4,6 +4,7 @@ package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.Expression;
 import fr.centralesupelec.csd.java.JavaPackage;
+import fr.centralesupelec.csd.java.NodeWithStatements;
 import fr.centralesupelec.csd.java.Statement;
 import fr.centralesupelec.csd.java.SwitchEntry;
 
@@ -16,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SwitchEntryImpl extends MinimalEObjectImpl.Container implements SwitchEntry {
+public class SwitchEntryImpl extends JavaNodeImpl implements SwitchEntry {
 	/**
      * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -239,6 +239,38 @@ public class SwitchEntryImpl extends MinimalEObjectImpl.Container implements Swi
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithStatements.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.SWITCH_ENTRY__STATEMENTS: return JavaPackage.NODE_WITH_STATEMENTS__STATEMENTS;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithStatements.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_STATEMENTS__STATEMENTS: return JavaPackage.SWITCH_ENTRY__STATEMENTS;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

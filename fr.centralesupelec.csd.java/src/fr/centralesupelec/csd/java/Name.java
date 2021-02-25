@@ -18,7 +18,7 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface Name extends NodeWithIdentifier {
+public interface Name extends JavaNode, NodeWithIdentifier {
 	/**
      * Returns the value of the '<em><b>Qualifier</b></em>' containment reference.
      * <!-- begin-user-doc -->

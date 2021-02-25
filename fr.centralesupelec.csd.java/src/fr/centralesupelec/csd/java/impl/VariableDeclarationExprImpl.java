@@ -135,7 +135,7 @@ public class VariableDeclarationExprImpl extends ExpressionImpl implements Varia
 	public void setFinal(boolean newFinal) {
         // TODO: implement this method to set the 'Final' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**

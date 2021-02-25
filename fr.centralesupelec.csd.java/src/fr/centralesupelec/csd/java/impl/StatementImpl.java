@@ -7,8 +7,6 @@ import fr.centralesupelec.csd.java.Statement;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Statement</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class StatementImpl extends MinimalEObjectImpl.Container implements Statement {
+public class StatementImpl extends JavaNodeImpl implements Statement {
 	/**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

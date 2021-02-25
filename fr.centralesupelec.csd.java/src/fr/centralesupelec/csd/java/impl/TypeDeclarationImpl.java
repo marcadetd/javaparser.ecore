@@ -4,7 +4,6 @@ package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.BodyDeclaration;
 import fr.centralesupelec.csd.java.JavaPackage;
-import fr.centralesupelec.csd.java.JavadocComment;
 import fr.centralesupelec.csd.java.ModifierKeyword;
 import fr.centralesupelec.csd.java.NodeWithAccessModifiers;
 import fr.centralesupelec.csd.java.NodeWithJavadoc;
@@ -44,7 +43,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.csd.java.impl.TypeDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.csd.java.impl.TypeDeclarationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.TypeDeclarationImpl#getMembers <em>Members</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.TypeDeclarationImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.TypeDeclarationImpl#isPublic <em>Public</em>}</li>
@@ -66,16 +64,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
      * @ordered
      */
 	protected SimpleName name;
-
-	/**
-     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getComment()
-     * @generated
-     * @ordered
-     */
-	protected JavadocComment comment;
 
 	/**
      * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
@@ -200,7 +188,7 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
 	public void setPublic(boolean newPublic) {
         // TODO: implement this method to set the 'Public' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -224,7 +212,7 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
 	public void setPrivate(boolean newPrivate) {
         // TODO: implement this method to set the 'Private' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -248,7 +236,7 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
 	public void setProtected(boolean newProtected) {
         // TODO: implement this method to set the 'Protected' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -272,7 +260,7 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
 	public void setStatic(boolean newStatic) {
         // TODO: implement this method to set the 'Static' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -296,7 +284,7 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
 	public void setStrictfp(boolean newStrictfp) {
         // TODO: implement this method to set the 'Strictfp' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -350,51 +338,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
      * @generated
      */
 	@Override
-	public JavadocComment getComment() {
-        return comment;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public NotificationChain basicSetComment(JavadocComment newComment, NotificationChain msgs) {
-        JavadocComment oldComment = comment;
-        comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.TYPE_DECLARATION__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void setComment(JavadocComment newComment) {
-        if (newComment != comment) {
-            NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TYPE_DECLARATION__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TYPE_DECLARATION__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.TYPE_DECLARATION__COMMENT, newComment, newComment));
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
 	public EList<BodyDeclaration> getMembers() {
         if (members == null) {
             members = new EObjectContainmentEList<BodyDeclaration>(BodyDeclaration.class, this, JavaPackage.TYPE_DECLARATION__MEMBERS);
@@ -412,8 +355,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
         switch (featureID) {
             case JavaPackage.TYPE_DECLARATION__NAME:
                 return basicSetName(null, msgs);
-            case JavaPackage.TYPE_DECLARATION__COMMENT:
-                return basicSetComment(null, msgs);
             case JavaPackage.TYPE_DECLARATION__MEMBERS:
                 return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
         }
@@ -430,8 +371,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
         switch (featureID) {
             case JavaPackage.TYPE_DECLARATION__NAME:
                 return getName();
-            case JavaPackage.TYPE_DECLARATION__COMMENT:
-                return getComment();
             case JavaPackage.TYPE_DECLARATION__MEMBERS:
                 return getMembers();
             case JavaPackage.TYPE_DECLARATION__MODIFIERS:
@@ -461,9 +400,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
         switch (featureID) {
             case JavaPackage.TYPE_DECLARATION__NAME:
                 setName((SimpleName)newValue);
-                return;
-            case JavaPackage.TYPE_DECLARATION__COMMENT:
-                setComment((JavadocComment)newValue);
                 return;
             case JavaPackage.TYPE_DECLARATION__MEMBERS:
                 getMembers().clear();
@@ -503,9 +439,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
             case JavaPackage.TYPE_DECLARATION__NAME:
                 setName((SimpleName)null);
                 return;
-            case JavaPackage.TYPE_DECLARATION__COMMENT:
-                setComment((JavadocComment)null);
-                return;
             case JavaPackage.TYPE_DECLARATION__MEMBERS:
                 getMembers().clear();
                 return;
@@ -541,8 +474,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
         switch (featureID) {
             case JavaPackage.TYPE_DECLARATION__NAME:
                 return name != null;
-            case JavaPackage.TYPE_DECLARATION__COMMENT:
-                return comment != null;
             case JavaPackage.TYPE_DECLARATION__MEMBERS:
                 return members != null && !members.isEmpty();
             case JavaPackage.TYPE_DECLARATION__MODIFIERS:
@@ -576,7 +507,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
         }
         if (baseClass == NodeWithJavadoc.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.TYPE_DECLARATION__COMMENT: return JavaPackage.NODE_WITH_JAVADOC__COMMENT;
                 default: return -1;
             }
         }
@@ -645,7 +575,6 @@ public abstract class TypeDeclarationImpl extends BodyDeclarationImpl implements
         }
         if (baseClass == NodeWithJavadoc.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_JAVADOC__COMMENT: return JavaPackage.TYPE_DECLARATION__COMMENT;
                 default: return -1;
             }
         }

@@ -192,7 +192,7 @@ public class ClassOrInterfaceDeclarationImpl extends TypeDeclarationImpl impleme
 	public void setAbstract(boolean newAbstract) {
         // TODO: implement this method to set the 'Abstract' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -216,7 +216,7 @@ public class ClassOrInterfaceDeclarationImpl extends TypeDeclarationImpl impleme
 	public void setFinal(boolean newFinal) {
         // TODO: implement this method to set the 'Final' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**

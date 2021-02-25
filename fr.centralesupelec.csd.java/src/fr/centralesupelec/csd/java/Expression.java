@@ -2,8 +2,6 @@
  */
 package fr.centralesupelec.csd.java;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Expression</b></em>'.
@@ -14,5 +12,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Expression extends EObject {
+public interface Expression extends JavaNode {
 } // Expression

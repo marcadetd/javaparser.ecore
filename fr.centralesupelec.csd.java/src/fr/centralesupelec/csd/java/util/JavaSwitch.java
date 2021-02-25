@@ -66,9 +66,16 @@ public class JavaSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
+            case JavaPackage.JAVA_NODE: {
+                JavaNode javaNode = (JavaNode)theEObject;
+                T result = caseJavaNode(javaNode);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case JavaPackage.ARRAY_CREATION_LEVEL: {
                 ArrayCreationLevel arrayCreationLevel = (ArrayCreationLevel)theEObject;
                 T result = caseArrayCreationLevel(arrayCreationLevel);
+                if (result == null) result = caseJavaNode(arrayCreationLevel);
                 if (result == null) result = caseNodeWithAnnotations(arrayCreationLevel);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -76,25 +83,22 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.COMPILATION_UNIT: {
                 CompilationUnit compilationUnit = (CompilationUnit)theEObject;
                 T result = caseCompilationUnit(compilationUnit);
+                if (result == null) result = caseJavaNode(compilationUnit);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.IMPORT_DECLARATION: {
                 ImportDeclaration importDeclaration = (ImportDeclaration)theEObject;
                 T result = caseImportDeclaration(importDeclaration);
+                if (result == null) result = caseJavaNode(importDeclaration);
                 if (result == null) result = caseNodeWithName(importDeclaration);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case JavaPackage.MODIFIER: {
-                Modifier modifier = (Modifier)theEObject;
-                T result = caseModifier(modifier);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.PACKAGE_DECLARATION: {
                 PackageDeclaration packageDeclaration = (PackageDeclaration)theEObject;
                 T result = casePackageDeclaration(packageDeclaration);
+                if (result == null) result = caseJavaNode(packageDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(packageDeclaration);
                 if (result == null) result = caseNodeWithName(packageDeclaration);
                 if (result == null) result = defaultCase(theEObject);
@@ -112,6 +116,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithAccessModifiers(annotationDeclaration);
                 if (result == null) result = caseNodeWithStaticModifier(annotationDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(annotationDeclaration);
+                if (result == null) result = caseJavaNode(annotationDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(annotationDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(annotationDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(annotationDeclaration);
@@ -129,6 +134,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithType(annotationMemberDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(annotationMemberDeclaration);
                 if (result == null) result = caseNodeWithAbstractModifier(annotationMemberDeclaration);
+                if (result == null) result = caseJavaNode(annotationMemberDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(annotationMemberDeclaration);
                 if (result == null) result = caseNodeWithModifiers(annotationMemberDeclaration);
                 if (result == null) result = defaultCase(theEObject);
@@ -137,6 +143,7 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.BODY_DECLARATION: {
                 BodyDeclaration bodyDeclaration = (BodyDeclaration)theEObject;
                 T result = caseBodyDeclaration(bodyDeclaration);
+                if (result == null) result = caseJavaNode(bodyDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(bodyDeclaration);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -155,6 +162,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithStaticModifier(callableDeclaration);
                 if (result == null) result = caseNodeWithFinalModifier(callableDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(callableDeclaration);
+                if (result == null) result = caseJavaNode(callableDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(callableDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(callableDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(callableDeclaration);
@@ -179,6 +187,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithAccessModifiers(classOrInterfaceDeclaration);
                 if (result == null) result = caseNodeWithStaticModifier(classOrInterfaceDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(classOrInterfaceDeclaration);
+                if (result == null) result = caseJavaNode(classOrInterfaceDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(classOrInterfaceDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(classOrInterfaceDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(classOrInterfaceDeclaration);
@@ -203,6 +212,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithStaticModifier(constructorDeclaration);
                 if (result == null) result = caseNodeWithFinalModifier(constructorDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(constructorDeclaration);
+                if (result == null) result = caseJavaNode(constructorDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(constructorDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(constructorDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(constructorDeclaration);
@@ -218,6 +228,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithJavadoc(enumConstantDeclaration);
                 if (result == null) result = caseNodeWithSimpleName(enumConstantDeclaration);
                 if (result == null) result = caseNodeWithArguments(enumConstantDeclaration);
+                if (result == null) result = caseJavaNode(enumConstantDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(enumConstantDeclaration);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -234,6 +245,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithAccessModifiers(enumDeclaration);
                 if (result == null) result = caseNodeWithStaticModifier(enumDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(enumDeclaration);
+                if (result == null) result = caseJavaNode(enumDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(enumDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(enumDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(enumDeclaration);
@@ -251,6 +263,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithAccessModifiers(fieldDeclaration);
                 if (result == null) result = caseNodeWithStaticModifier(fieldDeclaration);
                 if (result == null) result = caseNodeWithFinalModifier(fieldDeclaration);
+                if (result == null) result = caseJavaNode(fieldDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(fieldDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(fieldDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(fieldDeclaration);
@@ -265,6 +278,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseBodyDeclaration(initializerDeclaration);
                 if (result == null) result = caseNodeWithJavadoc(initializerDeclaration);
                 if (result == null) result = caseNodeWithBlockStmt(initializerDeclaration);
+                if (result == null) result = caseJavaNode(initializerDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(initializerDeclaration);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -289,6 +303,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithStaticModifier(methodDeclaration);
                 if (result == null) result = caseNodeWithFinalModifier(methodDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(methodDeclaration);
+                if (result == null) result = caseJavaNode(methodDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(methodDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(methodDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(methodDeclaration);
@@ -300,6 +315,7 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.PARAMETER: {
                 Parameter parameter = (Parameter)theEObject;
                 T result = caseParameter(parameter);
+                if (result == null) result = caseJavaNode(parameter);
                 if (result == null) result = caseNodeWithType(parameter);
                 if (result == null) result = caseNodeWithAnnotations(parameter);
                 if (result == null) result = caseNodeWithSimpleName(parameter);
@@ -311,6 +327,7 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.RECEIVER_PARAMETER: {
                 ReceiverParameter receiverParameter = (ReceiverParameter)theEObject;
                 T result = caseReceiverParameter(receiverParameter);
+                if (result == null) result = caseJavaNode(receiverParameter);
                 if (result == null) result = caseNodeWithType(receiverParameter);
                 if (result == null) result = caseNodeWithAnnotations(receiverParameter);
                 if (result == null) result = caseNodeWithName(receiverParameter);
@@ -327,6 +344,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithAccessModifiers(typeDeclaration);
                 if (result == null) result = caseNodeWithStaticModifier(typeDeclaration);
                 if (result == null) result = caseNodeWithStrictfpModifier(typeDeclaration);
+                if (result == null) result = caseJavaNode(typeDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(typeDeclaration);
                 if (result == null) result = caseNodeWithPublicModifier(typeDeclaration);
                 if (result == null) result = caseNodeWithPrivateModifier(typeDeclaration);
@@ -338,6 +356,7 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.VARIABLE_DECLARATOR: {
                 VariableDeclarator variableDeclarator = (VariableDeclarator)theEObject;
                 T result = caseVariableDeclarator(variableDeclarator);
+                if (result == null) result = caseJavaNode(variableDeclarator);
                 if (result == null) result = caseNodeWithType(variableDeclarator);
                 if (result == null) result = caseNodeWithSimpleName(variableDeclarator);
                 if (result == null) result = defaultCase(theEObject);
@@ -347,12 +366,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 BlockComment blockComment = (BlockComment)theEObject;
                 T result = caseBlockComment(blockComment);
                 if (result == null) result = caseComment(blockComment);
+                if (result == null) result = caseJavaNode(blockComment);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.COMMENT: {
                 Comment comment = (Comment)theEObject;
                 T result = caseComment(comment);
+                if (result == null) result = caseJavaNode(comment);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -360,6 +381,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 JavadocComment javadocComment = (JavadocComment)theEObject;
                 T result = caseJavadocComment(javadocComment);
                 if (result == null) result = caseComment(javadocComment);
+                if (result == null) result = caseJavaNode(javadocComment);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -367,6 +389,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 LineComment lineComment = (LineComment)theEObject;
                 T result = caseLineComment(lineComment);
                 if (result == null) result = caseComment(lineComment);
+                if (result == null) result = caseJavaNode(lineComment);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -375,6 +398,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseAnnotationExpr(annotationExpr);
                 if (result == null) result = caseExpression(annotationExpr);
                 if (result == null) result = caseNodeWithName(annotationExpr);
+                if (result == null) result = caseJavaNode(annotationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -382,6 +406,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 ArrayAccessExpr arrayAccessExpr = (ArrayAccessExpr)theEObject;
                 T result = caseArrayAccessExpr(arrayAccessExpr);
                 if (result == null) result = caseExpression(arrayAccessExpr);
+                if (result == null) result = caseJavaNode(arrayAccessExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -389,6 +414,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 ArrayCreationExpr arrayCreationExpr = (ArrayCreationExpr)theEObject;
                 T result = caseArrayCreationExpr(arrayCreationExpr);
                 if (result == null) result = caseExpression(arrayCreationExpr);
+                if (result == null) result = caseJavaNode(arrayCreationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -396,6 +422,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 ArrayInitializerExpr arrayInitializerExpr = (ArrayInitializerExpr)theEObject;
                 T result = caseArrayInitializerExpr(arrayInitializerExpr);
                 if (result == null) result = caseExpression(arrayInitializerExpr);
+                if (result == null) result = caseJavaNode(arrayInitializerExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -403,6 +430,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 AssignExpr assignExpr = (AssignExpr)theEObject;
                 T result = caseAssignExpr(assignExpr);
                 if (result == null) result = caseExpression(assignExpr);
+                if (result == null) result = caseJavaNode(assignExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -410,6 +438,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 BinaryExpr binaryExpr = (BinaryExpr)theEObject;
                 T result = caseBinaryExpr(binaryExpr);
                 if (result == null) result = caseExpression(binaryExpr);
+                if (result == null) result = caseJavaNode(binaryExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -418,6 +447,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseBooleanLiteralExpr(booleanLiteralExpr);
                 if (result == null) result = caseLiteralExpr(booleanLiteralExpr);
                 if (result == null) result = caseExpression(booleanLiteralExpr);
+                if (result == null) result = caseJavaNode(booleanLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -427,6 +457,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseExpression(castExpr);
                 if (result == null) result = caseNodeWithType(castExpr);
                 if (result == null) result = caseNodeWithExpression(castExpr);
+                if (result == null) result = caseJavaNode(castExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -436,6 +467,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseLiteralStringValueExpr(charLiteralExpr);
                 if (result == null) result = caseLiteralExpr(charLiteralExpr);
                 if (result == null) result = caseExpression(charLiteralExpr);
+                if (result == null) result = caseJavaNode(charLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -444,6 +476,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseClassExpr(classExpr);
                 if (result == null) result = caseExpression(classExpr);
                 if (result == null) result = caseNodeWithType(classExpr);
+                if (result == null) result = caseJavaNode(classExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -452,6 +485,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseConditionalExpr(conditionalExpr);
                 if (result == null) result = caseExpression(conditionalExpr);
                 if (result == null) result = caseNodeWithCondition(conditionalExpr);
+                if (result == null) result = caseJavaNode(conditionalExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -461,6 +495,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseLiteralStringValueExpr(doubleLiteralExpr);
                 if (result == null) result = caseLiteralExpr(doubleLiteralExpr);
                 if (result == null) result = caseExpression(doubleLiteralExpr);
+                if (result == null) result = caseJavaNode(doubleLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -468,12 +503,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 EnclosedExpr enclosedExpr = (EnclosedExpr)theEObject;
                 T result = caseEnclosedExpr(enclosedExpr);
                 if (result == null) result = caseExpression(enclosedExpr);
+                if (result == null) result = caseJavaNode(enclosedExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.EXPRESSION: {
                 Expression expression = (Expression)theEObject;
                 T result = caseExpression(expression);
+                if (result == null) result = caseJavaNode(expression);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -484,6 +521,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithSimpleName(fieldAccessExpr);
                 if (result == null) result = caseNodeWithTypeArguments(fieldAccessExpr);
                 if (result == null) result = caseNodeWithScope(fieldAccessExpr);
+                if (result == null) result = caseJavaNode(fieldAccessExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -493,6 +531,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseExpression(instanceOfExpr);
                 if (result == null) result = caseNodeWithType(instanceOfExpr);
                 if (result == null) result = caseNodeWithExpression(instanceOfExpr);
+                if (result == null) result = caseJavaNode(instanceOfExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -502,6 +541,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseLiteralStringValueExpr(integerLiteralExpr);
                 if (result == null) result = caseLiteralExpr(integerLiteralExpr);
                 if (result == null) result = caseExpression(integerLiteralExpr);
+                if (result == null) result = caseJavaNode(integerLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -510,6 +550,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseLambdaExpr(lambdaExpr);
                 if (result == null) result = caseExpression(lambdaExpr);
                 if (result == null) result = caseNodeWithParameters(lambdaExpr);
+                if (result == null) result = caseJavaNode(lambdaExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -517,6 +558,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 LiteralExpr literalExpr = (LiteralExpr)theEObject;
                 T result = caseLiteralExpr(literalExpr);
                 if (result == null) result = caseExpression(literalExpr);
+                if (result == null) result = caseJavaNode(literalExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -525,6 +567,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseLiteralStringValueExpr(literalStringValueExpr);
                 if (result == null) result = caseLiteralExpr(literalStringValueExpr);
                 if (result == null) result = caseExpression(literalStringValueExpr);
+                if (result == null) result = caseJavaNode(literalStringValueExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -534,6 +577,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseLiteralStringValueExpr(longLiteralExpr);
                 if (result == null) result = caseLiteralExpr(longLiteralExpr);
                 if (result == null) result = caseExpression(longLiteralExpr);
+                if (result == null) result = caseJavaNode(longLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -543,12 +587,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseAnnotationExpr(markerAnnotationExpr);
                 if (result == null) result = caseExpression(markerAnnotationExpr);
                 if (result == null) result = caseNodeWithName(markerAnnotationExpr);
+                if (result == null) result = caseJavaNode(markerAnnotationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.MEMBER_VALUE_PAIR: {
                 MemberValuePair memberValuePair = (MemberValuePair)theEObject;
                 T result = caseMemberValuePair(memberValuePair);
+                if (result == null) result = caseJavaNode(memberValuePair);
                 if (result == null) result = caseNodeWithSimpleName(memberValuePair);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -561,6 +607,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithArguments(methodCallExpr);
                 if (result == null) result = caseNodeWithSimpleName(methodCallExpr);
                 if (result == null) result = caseNodeWithScope(methodCallExpr);
+                if (result == null) result = caseJavaNode(methodCallExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -571,12 +618,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithTypeArguments(methodReferenceExpr);
                 if (result == null) result = caseNodeWithIdentifier(methodReferenceExpr);
                 if (result == null) result = caseNodeWithScope(methodReferenceExpr);
+                if (result == null) result = caseJavaNode(methodReferenceExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.NAME: {
                 Name name = (Name)theEObject;
                 T result = caseName(name);
+                if (result == null) result = caseJavaNode(name);
                 if (result == null) result = caseNodeWithIdentifier(name);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -586,6 +635,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseNameExpr(nameExpr);
                 if (result == null) result = caseExpression(nameExpr);
                 if (result == null) result = caseNodeWithSimpleName(nameExpr);
+                if (result == null) result = caseJavaNode(nameExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -595,6 +645,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseAnnotationExpr(normalAnnotationExpr);
                 if (result == null) result = caseExpression(normalAnnotationExpr);
                 if (result == null) result = caseNodeWithName(normalAnnotationExpr);
+                if (result == null) result = caseJavaNode(normalAnnotationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -603,6 +654,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseNullLiteralExpr(nullLiteralExpr);
                 if (result == null) result = caseLiteralExpr(nullLiteralExpr);
                 if (result == null) result = caseExpression(nullLiteralExpr);
+                if (result == null) result = caseJavaNode(nullLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -614,6 +666,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithType(objectCreationExpr);
                 if (result == null) result = caseNodeWithArguments(objectCreationExpr);
                 if (result == null) result = caseNodeWithScope(objectCreationExpr);
+                if (result == null) result = caseJavaNode(objectCreationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -623,12 +676,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseExpression(patternExpr);
                 if (result == null) result = caseNodeWithSimpleName(patternExpr);
                 if (result == null) result = caseNodeWithType(patternExpr);
+                if (result == null) result = caseJavaNode(patternExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.SIMPLE_NAME: {
                 SimpleName simpleName = (SimpleName)theEObject;
                 T result = caseSimpleName(simpleName);
+                if (result == null) result = caseJavaNode(simpleName);
                 if (result == null) result = caseNodeWithIdentifier(simpleName);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -639,6 +694,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseAnnotationExpr(singleMemberAnnotationExpr);
                 if (result == null) result = caseExpression(singleMemberAnnotationExpr);
                 if (result == null) result = caseNodeWithName(singleMemberAnnotationExpr);
+                if (result == null) result = caseJavaNode(singleMemberAnnotationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -648,6 +704,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseLiteralStringValueExpr(stringLiteralExpr);
                 if (result == null) result = caseLiteralExpr(stringLiteralExpr);
                 if (result == null) result = caseExpression(stringLiteralExpr);
+                if (result == null) result = caseJavaNode(stringLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -655,6 +712,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 SuperExpr superExpr = (SuperExpr)theEObject;
                 T result = caseSuperExpr(superExpr);
                 if (result == null) result = caseExpression(superExpr);
+                if (result == null) result = caseJavaNode(superExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -663,6 +721,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseSwitchExpr(switchExpr);
                 if (result == null) result = caseExpression(switchExpr);
                 if (result == null) result = caseSwitchNode(switchExpr);
+                if (result == null) result = caseJavaNode(switchExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -672,6 +731,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseLiteralStringValueExpr(textBlockLiteralExpr);
                 if (result == null) result = caseLiteralExpr(textBlockLiteralExpr);
                 if (result == null) result = caseExpression(textBlockLiteralExpr);
+                if (result == null) result = caseJavaNode(textBlockLiteralExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -679,6 +739,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 ThisExpr thisExpr = (ThisExpr)theEObject;
                 T result = caseThisExpr(thisExpr);
                 if (result == null) result = caseExpression(thisExpr);
+                if (result == null) result = caseJavaNode(thisExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -687,6 +748,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseTypeExpr(typeExpr);
                 if (result == null) result = caseExpression(typeExpr);
                 if (result == null) result = caseNodeWithType(typeExpr);
+                if (result == null) result = caseJavaNode(typeExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -695,6 +757,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseUnaryExpr(unaryExpr);
                 if (result == null) result = caseExpression(unaryExpr);
                 if (result == null) result = caseNodeWithExpression(unaryExpr);
+                if (result == null) result = caseJavaNode(unaryExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -705,6 +768,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithFinalModifier(variableDeclarationExpr);
                 if (result == null) result = caseNodeWithAnnotations(variableDeclarationExpr);
                 if (result == null) result = caseNodeWithVariables(variableDeclarationExpr);
+                if (result == null) result = caseJavaNode(variableDeclarationExpr);
                 if (result == null) result = caseNodeWithModifiers(variableDeclarationExpr);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -712,6 +776,7 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.MODULE_DECLARATION: {
                 ModuleDeclaration moduleDeclaration = (ModuleDeclaration)theEObject;
                 T result = caseModuleDeclaration(moduleDeclaration);
+                if (result == null) result = caseJavaNode(moduleDeclaration);
                 if (result == null) result = caseNodeWithName(moduleDeclaration);
                 if (result == null) result = caseNodeWithAnnotations(moduleDeclaration);
                 if (result == null) result = defaultCase(theEObject);
@@ -720,6 +785,7 @@ public class JavaSwitch<T> extends Switch<T> {
             case JavaPackage.MODULE_DIRECTIVE: {
                 ModuleDirective moduleDirective = (ModuleDirective)theEObject;
                 T result = caseModuleDirective(moduleDirective);
+                if (result == null) result = caseJavaNode(moduleDirective);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -728,6 +794,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseModuleExportsDirective(moduleExportsDirective);
                 if (result == null) result = caseModuleDirective(moduleExportsDirective);
                 if (result == null) result = caseNodeWithName(moduleExportsDirective);
+                if (result == null) result = caseJavaNode(moduleExportsDirective);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -736,6 +803,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseModuleOpensDirective(moduleOpensDirective);
                 if (result == null) result = caseModuleDirective(moduleOpensDirective);
                 if (result == null) result = caseNodeWithName(moduleOpensDirective);
+                if (result == null) result = caseJavaNode(moduleOpensDirective);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -744,6 +812,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseModuleProvidesDirective(moduleProvidesDirective);
                 if (result == null) result = caseModuleDirective(moduleProvidesDirective);
                 if (result == null) result = caseNodeWithName(moduleProvidesDirective);
+                if (result == null) result = caseJavaNode(moduleProvidesDirective);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -753,6 +822,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseModuleDirective(moduleRequiresDirective);
                 if (result == null) result = caseNodeWithStaticModifier(moduleRequiresDirective);
                 if (result == null) result = caseNodeWithName(moduleRequiresDirective);
+                if (result == null) result = caseJavaNode(moduleRequiresDirective);
                 if (result == null) result = caseNodeWithModifiers(moduleRequiresDirective);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -762,6 +832,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseModuleUsesDirective(moduleUsesDirective);
                 if (result == null) result = caseModuleDirective(moduleUsesDirective);
                 if (result == null) result = caseNodeWithName(moduleUsesDirective);
+                if (result == null) result = caseJavaNode(moduleUsesDirective);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1026,6 +1097,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 AssertStmt assertStmt = (AssertStmt)theEObject;
                 T result = caseAssertStmt(assertStmt);
                 if (result == null) result = caseStatement(assertStmt);
+                if (result == null) result = caseJavaNode(assertStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1034,6 +1106,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseBlockStmt(blockStmt);
                 if (result == null) result = caseStatement(blockStmt);
                 if (result == null) result = caseNodeWithStatements(blockStmt);
+                if (result == null) result = caseJavaNode(blockStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1042,12 +1115,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseBreakStmt(breakStmt);
                 if (result == null) result = caseStatement(breakStmt);
                 if (result == null) result = caseNodeWithLabel(breakStmt);
+                if (result == null) result = caseJavaNode(breakStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.CATCH_CLAUSE: {
                 CatchClause catchClause = (CatchClause)theEObject;
                 T result = caseCatchClause(catchClause);
+                if (result == null) result = caseJavaNode(catchClause);
                 if (result == null) result = caseNodeWithBlockStmt(catchClause);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -1057,6 +1132,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseContinueStmt(continueStmt);
                 if (result == null) result = caseStatement(continueStmt);
                 if (result == null) result = caseNodeWithLabel(continueStmt);
+                if (result == null) result = caseJavaNode(continueStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1066,6 +1142,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseStatement(doStmt);
                 if (result == null) result = caseNodeWithBody(doStmt);
                 if (result == null) result = caseNodeWithCondition(doStmt);
+                if (result == null) result = caseJavaNode(doStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1073,6 +1150,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 EmptyStmt emptyStmt = (EmptyStmt)theEObject;
                 T result = caseEmptyStmt(emptyStmt);
                 if (result == null) result = caseStatement(emptyStmt);
+                if (result == null) result = caseJavaNode(emptyStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1083,6 +1161,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithTypeArguments(explicitConstructorInvocationStmt);
                 if (result == null) result = caseNodeWithArguments(explicitConstructorInvocationStmt);
                 if (result == null) result = caseNodeWithExpression(explicitConstructorInvocationStmt);
+                if (result == null) result = caseJavaNode(explicitConstructorInvocationStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1091,6 +1170,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseExpressionStmt(expressionStmt);
                 if (result == null) result = caseStatement(expressionStmt);
                 if (result == null) result = caseNodeWithExpression(expressionStmt);
+                if (result == null) result = caseJavaNode(expressionStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1099,6 +1179,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseForEachStmt(forEachStmt);
                 if (result == null) result = caseStatement(forEachStmt);
                 if (result == null) result = caseNodeWithBody(forEachStmt);
+                if (result == null) result = caseJavaNode(forEachStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1107,6 +1188,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseForStmt(forStmt);
                 if (result == null) result = caseStatement(forStmt);
                 if (result == null) result = caseNodeWithBody(forStmt);
+                if (result == null) result = caseJavaNode(forStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1115,6 +1197,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseIfStmt(ifStmt);
                 if (result == null) result = caseStatement(ifStmt);
                 if (result == null) result = caseNodeWithCondition(ifStmt);
+                if (result == null) result = caseJavaNode(ifStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1123,6 +1206,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseLabeledStmt(labeledStmt);
                 if (result == null) result = caseStatement(labeledStmt);
                 if (result == null) result = caseNodeWithLabel(labeledStmt);
+                if (result == null) result = caseJavaNode(labeledStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1130,6 +1214,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 LocalClassDeclarationStmt localClassDeclarationStmt = (LocalClassDeclarationStmt)theEObject;
                 T result = caseLocalClassDeclarationStmt(localClassDeclarationStmt);
                 if (result == null) result = caseStatement(localClassDeclarationStmt);
+                if (result == null) result = caseJavaNode(localClassDeclarationStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1138,18 +1223,21 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseReturnStmt(returnStmt);
                 if (result == null) result = caseStatement(returnStmt);
                 if (result == null) result = caseNodeWithExpression(returnStmt);
+                if (result == null) result = caseJavaNode(returnStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.STATEMENT: {
                 Statement statement = (Statement)theEObject;
                 T result = caseStatement(statement);
+                if (result == null) result = caseJavaNode(statement);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.SWITCH_ENTRY: {
                 SwitchEntry switchEntry = (SwitchEntry)theEObject;
                 T result = caseSwitchEntry(switchEntry);
+                if (result == null) result = caseJavaNode(switchEntry);
                 if (result == null) result = caseNodeWithStatements(switchEntry);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -1159,6 +1247,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseSwitchStmt(switchStmt);
                 if (result == null) result = caseStatement(switchStmt);
                 if (result == null) result = caseSwitchNode(switchStmt);
+                if (result == null) result = caseJavaNode(switchStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1168,6 +1257,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseStatement(synchronizedStmt);
                 if (result == null) result = caseNodeWithBlockStmt(synchronizedStmt);
                 if (result == null) result = caseNodeWithExpression(synchronizedStmt);
+                if (result == null) result = caseJavaNode(synchronizedStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1176,6 +1266,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseThrowStmt(throwStmt);
                 if (result == null) result = caseStatement(throwStmt);
                 if (result == null) result = caseNodeWithExpression(throwStmt);
+                if (result == null) result = caseJavaNode(throwStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1183,6 +1274,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 TryStmt tryStmt = (TryStmt)theEObject;
                 T result = caseTryStmt(tryStmt);
                 if (result == null) result = caseStatement(tryStmt);
+                if (result == null) result = caseJavaNode(tryStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1192,6 +1284,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseStatement(whileStmt);
                 if (result == null) result = caseNodeWithBody(whileStmt);
                 if (result == null) result = caseNodeWithCondition(whileStmt);
+                if (result == null) result = caseJavaNode(whileStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1200,6 +1293,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseYieldStmt(yieldStmt);
                 if (result == null) result = caseStatement(yieldStmt);
                 if (result == null) result = caseNodeWithExpression(yieldStmt);
+                if (result == null) result = caseJavaNode(yieldStmt);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1209,6 +1303,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseReferenceType(arrayType);
                 if (result == null) result = caseNodeWithAnnotations(arrayType);
                 if (result == null) result = caseType(arrayType);
+                if (result == null) result = caseJavaNode(arrayType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1221,6 +1316,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithTypeArguments(classOrInterfaceType);
                 if (result == null) result = caseNodeWithScope(classOrInterfaceType);
                 if (result == null) result = caseType(classOrInterfaceType);
+                if (result == null) result = caseJavaNode(classOrInterfaceType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1229,6 +1325,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseIntersectionType(intersectionType);
                 if (result == null) result = caseType(intersectionType);
                 if (result == null) result = caseNodeWithAnnotations(intersectionType);
+                if (result == null) result = caseJavaNode(intersectionType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1237,6 +1334,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = casePrimitiveType(primitiveType);
                 if (result == null) result = caseType(primitiveType);
                 if (result == null) result = caseNodeWithAnnotations(primitiveType);
+                if (result == null) result = caseJavaNode(primitiveType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1244,12 +1342,14 @@ public class JavaSwitch<T> extends Switch<T> {
                 ReferenceType referenceType = (ReferenceType)theEObject;
                 T result = caseReferenceType(referenceType);
                 if (result == null) result = caseType(referenceType);
+                if (result == null) result = caseJavaNode(referenceType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case JavaPackage.TYPE: {
                 Type type = (Type)theEObject;
                 T result = caseType(type);
+                if (result == null) result = caseJavaNode(type);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1260,6 +1360,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 if (result == null) result = caseNodeWithSimpleName(typeParameter);
                 if (result == null) result = caseNodeWithAnnotations(typeParameter);
                 if (result == null) result = caseType(typeParameter);
+                if (result == null) result = caseJavaNode(typeParameter);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1268,6 +1369,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseUnionType(unionType);
                 if (result == null) result = caseType(unionType);
                 if (result == null) result = caseNodeWithAnnotations(unionType);
+                if (result == null) result = caseJavaNode(unionType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1275,6 +1377,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 UnknownType unknownType = (UnknownType)theEObject;
                 T result = caseUnknownType(unknownType);
                 if (result == null) result = caseType(unknownType);
+                if (result == null) result = caseJavaNode(unknownType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1282,6 +1385,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 VarType varType = (VarType)theEObject;
                 T result = caseVarType(varType);
                 if (result == null) result = caseType(varType);
+                if (result == null) result = caseJavaNode(varType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1290,6 +1394,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseVoidType(voidType);
                 if (result == null) result = caseType(voidType);
                 if (result == null) result = caseNodeWithAnnotations(voidType);
+                if (result == null) result = caseJavaNode(voidType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1298,6 +1403,7 @@ public class JavaSwitch<T> extends Switch<T> {
                 T result = caseWildcardType(wildcardType);
                 if (result == null) result = caseType(wildcardType);
                 if (result == null) result = caseNodeWithAnnotations(wildcardType);
+                if (result == null) result = caseJavaNode(wildcardType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1347,21 +1453,6 @@ public class JavaSwitch<T> extends Switch<T> {
      * @generated
      */
 	public T caseImportDeclaration(ImportDeclaration object) {
-        return null;
-    }
-
-	/**
-     * Returns the result of interpreting the object as an instance of '<em>Modifier</em>'.
-     * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Modifier</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-	public T caseModifier(Modifier object) {
         return null;
     }
 
@@ -2911,6 +3002,21 @@ public class JavaSwitch<T> extends Switch<T> {
     }
 
 	/**
+     * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Node</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseJavaNode(JavaNode object) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
      * <!-- begin-user-doc -->
 	 * This implementation returns null;

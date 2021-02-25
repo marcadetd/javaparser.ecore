@@ -4,8 +4,6 @@ package fr.centralesupelec.csd.java;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Compilation Unit</b></em>'.
@@ -25,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface CompilationUnit extends EObject {
+public interface CompilationUnit extends JavaNode {
 	/**
      * Returns the value of the '<em><b>Package Declaration</b></em>' containment reference.
      * <!-- begin-user-doc -->

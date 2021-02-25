@@ -20,7 +20,7 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface ImportDeclaration extends NodeWithName {
+public interface ImportDeclaration extends JavaNode, NodeWithName {
 	/**
      * Returns the value of the '<em><b>Static</b></em>' attribute.
      * <!-- begin-user-doc -->

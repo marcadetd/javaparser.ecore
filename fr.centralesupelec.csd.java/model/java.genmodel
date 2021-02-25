@@ -87,6 +87,10 @@
       <genEnumLiterals ecoreEnumLiteral="java.ecore#//Primitive/FLOAT"/>
       <genEnumLiterals ecoreEnumLiteral="java.ecore#//Primitive/DOUBLE"/>
     </genEnums>
+    <genClasses image="false" ecoreClass="java.ecore#//JavaNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//JavaNode/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//JavaNode/orphanComments"/>
+    </genClasses>
     <genClasses ecoreClass="java.ecore#//ArrayCreationLevel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//ArrayCreationLevel/dimension"/>
     </genClasses>
@@ -99,9 +103,6 @@
     <genClasses ecoreClass="java.ecore#//ImportDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute java.ecore#//ImportDeclaration/static"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute java.ecore#//ImportDeclaration/asterisk"/>
-    </genClasses>
-    <genClasses ecoreClass="java.ecore#//Modifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute java.ecore#//Modifier/keyword"/>
     </genClasses>
     <genClasses ecoreClass="java.ecore#//PackageDeclaration"/>
     <genClasses ecoreClass="java.ecore#//AnnotationDeclaration"/>
@@ -273,9 +274,7 @@
     <genClasses image="false" ecoreClass="java.ecore#//NodeWithImplements">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//NodeWithImplements/implementedTypes"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="java.ecore#//NodeWithJavadoc">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//NodeWithJavadoc/comment"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="java.ecore#//NodeWithJavadoc"/>
     <genClasses image="false" ecoreClass="java.ecore#//NodeWithMembers">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference java.ecore#//NodeWithMembers/members"/>
     </genClasses>

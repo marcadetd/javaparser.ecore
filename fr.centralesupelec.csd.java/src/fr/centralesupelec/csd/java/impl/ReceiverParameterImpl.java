@@ -7,6 +7,7 @@ import fr.centralesupelec.csd.java.JavaPackage;
 import fr.centralesupelec.csd.java.Name;
 import fr.centralesupelec.csd.java.NodeWithAnnotations;
 import fr.centralesupelec.csd.java.NodeWithName;
+import fr.centralesupelec.csd.java.NodeWithType;
 import fr.centralesupelec.csd.java.ReceiverParameter;
 import fr.centralesupelec.csd.java.Type;
 
@@ -21,8 +22,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ReceiverParameterImpl extends MinimalEObjectImpl.Container implements ReceiverParameter {
+public class ReceiverParameterImpl extends JavaNodeImpl implements ReceiverParameter {
 	/**
      * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -299,6 +298,12 @@ public class ReceiverParameterImpl extends MinimalEObjectImpl.Container implemen
      */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithType.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.RECEIVER_PARAMETER__TYPE: return JavaPackage.NODE_WITH_TYPE__TYPE;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithAnnotations.class) {
             switch (derivedFeatureID) {
                 case JavaPackage.RECEIVER_PARAMETER__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
@@ -321,6 +326,12 @@ public class ReceiverParameterImpl extends MinimalEObjectImpl.Container implemen
      */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithType.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_TYPE__TYPE: return JavaPackage.RECEIVER_PARAMETER__TYPE;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithAnnotations.class) {
             switch (baseFeatureID) {
                 case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.RECEIVER_PARAMETER__ANNOTATIONS;

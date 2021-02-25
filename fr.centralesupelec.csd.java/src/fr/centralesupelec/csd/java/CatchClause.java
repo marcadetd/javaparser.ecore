@@ -19,7 +19,7 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface CatchClause extends NodeWithBlockStmt {
+public interface CatchClause extends JavaNode, NodeWithBlockStmt {
 	/**
      * Returns the value of the '<em><b>Parameter</b></em>' containment reference.
      * <!-- begin-user-doc -->

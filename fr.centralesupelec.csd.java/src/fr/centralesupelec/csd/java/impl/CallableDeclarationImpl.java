@@ -4,7 +4,6 @@ package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.CallableDeclaration;
 import fr.centralesupelec.csd.java.JavaPackage;
-import fr.centralesupelec.csd.java.JavadocComment;
 import fr.centralesupelec.csd.java.ModifierKeyword;
 import fr.centralesupelec.csd.java.NodeWithAbstractModifier;
 import fr.centralesupelec.csd.java.NodeWithAccessModifiers;
@@ -58,7 +57,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#getThrownExceptions <em>Thrown Exceptions</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#getTypeParameters <em>Type Parameters</em>}</li>
- *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.CallableDeclarationImpl#isFinal <em>Final</em>}</li>
@@ -148,16 +146,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
      * @ordered
      */
 	protected EList<TypeParameter> typeParameters;
-
-	/**
-     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getComment()
-     * @generated
-     * @ordered
-     */
-	protected JavadocComment comment;
 
 	/**
      * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
@@ -262,7 +250,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setPublic(boolean newPublic) {
         // TODO: implement this method to set the 'Public' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -286,7 +274,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setPrivate(boolean newPrivate) {
         // TODO: implement this method to set the 'Private' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -310,7 +298,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setProtected(boolean newProtected) {
         // TODO: implement this method to set the 'Protected' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -324,51 +312,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
             typeParameters = new EObjectContainmentEList<TypeParameter>(TypeParameter.class, this, JavaPackage.CALLABLE_DECLARATION__TYPE_PARAMETERS);
         }
         return typeParameters;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public JavadocComment getComment() {
-        return comment;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public NotificationChain basicSetComment(JavadocComment newComment, NotificationChain msgs) {
-        JavadocComment oldComment = comment;
-        comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.CALLABLE_DECLARATION__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void setComment(JavadocComment newComment) {
-        if (newComment != comment) {
-            NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.CALLABLE_DECLARATION__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.CALLABLE_DECLARATION__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.CALLABLE_DECLARATION__COMMENT, newComment, newComment));
     }
 
 	/**
@@ -392,7 +335,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setAbstract(boolean newAbstract) {
         // TODO: implement this method to set the 'Abstract' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -416,7 +359,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setStatic(boolean newStatic) {
         // TODO: implement this method to set the 'Static' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -440,7 +383,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setFinal(boolean newFinal) {
         // TODO: implement this method to set the 'Final' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -464,7 +407,7 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
 	public void setStrictfp(boolean newStrictfp) {
         // TODO: implement this method to set the 'Strictfp' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -599,8 +542,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
                 return ((InternalEList<?>)getThrownExceptions()).basicRemove(otherEnd, msgs);
             case JavaPackage.CALLABLE_DECLARATION__TYPE_PARAMETERS:
                 return ((InternalEList<?>)getTypeParameters()).basicRemove(otherEnd, msgs);
-            case JavaPackage.CALLABLE_DECLARATION__COMMENT:
-                return basicSetComment(null, msgs);
             case JavaPackage.CALLABLE_DECLARATION__RECEIVER_PARAMETER:
                 return basicSetReceiverParameter(null, msgs);
         }
@@ -631,8 +572,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
                 return getThrownExceptions();
             case JavaPackage.CALLABLE_DECLARATION__TYPE_PARAMETERS:
                 return getTypeParameters();
-            case JavaPackage.CALLABLE_DECLARATION__COMMENT:
-                return getComment();
             case JavaPackage.CALLABLE_DECLARATION__ABSTRACT:
                 return isAbstract();
             case JavaPackage.CALLABLE_DECLARATION__STATIC:
@@ -683,9 +622,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
             case JavaPackage.CALLABLE_DECLARATION__TYPE_PARAMETERS:
                 getTypeParameters().clear();
                 getTypeParameters().addAll((Collection<? extends TypeParameter>)newValue);
-                return;
-            case JavaPackage.CALLABLE_DECLARATION__COMMENT:
-                setComment((JavadocComment)newValue);
                 return;
             case JavaPackage.CALLABLE_DECLARATION__ABSTRACT:
                 setAbstract((Boolean)newValue);
@@ -738,9 +674,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
             case JavaPackage.CALLABLE_DECLARATION__TYPE_PARAMETERS:
                 getTypeParameters().clear();
                 return;
-            case JavaPackage.CALLABLE_DECLARATION__COMMENT:
-                setComment((JavadocComment)null);
-                return;
             case JavaPackage.CALLABLE_DECLARATION__ABSTRACT:
                 setAbstract(ABSTRACT_EDEFAULT);
                 return;
@@ -784,8 +717,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
                 return thrownExceptions != null && !thrownExceptions.isEmpty();
             case JavaPackage.CALLABLE_DECLARATION__TYPE_PARAMETERS:
                 return typeParameters != null && !typeParameters.isEmpty();
-            case JavaPackage.CALLABLE_DECLARATION__COMMENT:
-                return comment != null;
             case JavaPackage.CALLABLE_DECLARATION__ABSTRACT:
                 return isAbstract() != ABSTRACT_EDEFAULT;
             case JavaPackage.CALLABLE_DECLARATION__STATIC:
@@ -862,7 +793,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
         }
         if (baseClass == NodeWithJavadoc.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.CALLABLE_DECLARATION__COMMENT: return JavaPackage.NODE_WITH_JAVADOC__COMMENT;
                 default: return -1;
             }
         }
@@ -955,7 +885,6 @@ public abstract class CallableDeclarationImpl extends BodyDeclarationImpl implem
         }
         if (baseClass == NodeWithJavadoc.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_JAVADOC__COMMENT: return JavaPackage.CALLABLE_DECLARATION__COMMENT;
                 default: return -1;
             }
         }

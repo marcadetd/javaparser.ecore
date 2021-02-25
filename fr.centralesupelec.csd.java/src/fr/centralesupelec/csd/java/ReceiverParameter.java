@@ -12,6 +12,6 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface ReceiverParameter extends NodeWithType<Type>, NodeWithAnnotations, NodeWithName {
+public interface ReceiverParameter extends JavaNode, NodeWithType<Type>, NodeWithAnnotations, NodeWithName {
 
 } // ReceiverParameter

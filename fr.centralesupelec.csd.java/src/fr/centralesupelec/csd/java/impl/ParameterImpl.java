@@ -9,6 +9,7 @@ import fr.centralesupelec.csd.java.NodeWithAnnotations;
 import fr.centralesupelec.csd.java.NodeWithFinalModifier;
 import fr.centralesupelec.csd.java.NodeWithModifiers;
 import fr.centralesupelec.csd.java.NodeWithSimpleName;
+import fr.centralesupelec.csd.java.NodeWithType;
 import fr.centralesupelec.csd.java.Parameter;
 import fr.centralesupelec.csd.java.SimpleName;
 import fr.centralesupelec.csd.java.Type;
@@ -24,8 +25,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -49,7 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter {
+public class ParameterImpl extends JavaNodeImpl implements Parameter {
 	/**
      * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -264,7 +263,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	public void setFinal(boolean newFinal) {
         // TODO: implement this method to set the 'Final' attribute
         // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+//        throw new UnsupportedOperationException();
     }
 
 	/**
@@ -474,6 +473,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
      */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithType.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.PARAMETER__TYPE: return JavaPackage.NODE_WITH_TYPE__TYPE;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithAnnotations.class) {
             switch (derivedFeatureID) {
                 case JavaPackage.PARAMETER__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
@@ -508,6 +513,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
      */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithType.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_TYPE__TYPE: return JavaPackage.PARAMETER__TYPE;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithAnnotations.class) {
             switch (baseFeatureID) {
                 case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.PARAMETER__ANNOTATIONS;

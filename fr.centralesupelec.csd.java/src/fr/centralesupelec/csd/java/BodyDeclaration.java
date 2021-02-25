@@ -12,6 +12,6 @@ package fr.centralesupelec.csd.java;
  * @model abstract="true"
  * @generated
  */
-public interface BodyDeclaration extends NodeWithAnnotations {
+public interface BodyDeclaration extends JavaNode, NodeWithAnnotations {
 
 } // BodyDeclaration

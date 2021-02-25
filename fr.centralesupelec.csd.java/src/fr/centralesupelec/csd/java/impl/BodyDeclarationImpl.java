@@ -6,6 +6,7 @@ import fr.centralesupelec.csd.java.AnnotationExpr;
 import fr.centralesupelec.csd.java.BodyDeclaration;
 import fr.centralesupelec.csd.java.JavaPackage;
 
+import fr.centralesupelec.csd.java.NodeWithAnnotations;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,9 +15,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class BodyDeclarationImpl extends MinimalEObjectImpl.Container implements BodyDeclaration {
+public abstract class BodyDeclarationImpl extends JavaNodeImpl implements BodyDeclaration {
 	/**
      * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -148,6 +146,38 @@ public abstract class BodyDeclarationImpl extends MinimalEObjectImpl.Container i
                 return annotations != null && !annotations.isEmpty();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithAnnotations.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.BODY_DECLARATION__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithAnnotations.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.BODY_DECLARATION__ANNOTATIONS;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
 } //BodyDeclarationImpl

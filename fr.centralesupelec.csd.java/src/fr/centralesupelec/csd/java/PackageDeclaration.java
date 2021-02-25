@@ -13,5 +13,5 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface PackageDeclaration extends NodeWithAnnotations, NodeWithName {
+public interface PackageDeclaration extends JavaNode, NodeWithAnnotations, NodeWithName {
 } // PackageDeclaration

@@ -46,13 +46,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * <!-- end-user-doc -->
      * @generated
      */
-	private EClass modifierEClass = null;
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
 	private EClass packageDeclarationEClass = null;
 
 	/**
@@ -771,6 +764,13 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 
 	/**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass javaNodeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -1257,26 +1257,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	@Override
 	public EAttribute getImportDeclaration_Asterisk() {
         return (EAttribute)importDeclarationEClass.getEStructuralFeatures().get(1);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public EClass getModifier() {
-        return modifierEClass;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public EAttribute getModifier_Keyword() {
-        return (EAttribute)modifierEClass.getEStructuralFeatures().get(0);
     }
 
 	/**
@@ -2565,16 +2545,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
      * @generated
      */
 	@Override
-	public EReference getNodeWithJavadoc_Comment() {
-        return (EReference)nodeWithJavadocEClass.getEStructuralFeatures().get(0);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
 	public EClass getNodeWithMembers() {
         return nodeWithMembersEClass;
     }
@@ -3050,6 +3020,36 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getJavaNode() {
+        return javaNodeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getJavaNode_Comment() {
+        return (EReference)javaNodeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getJavaNode_OrphanComments() {
+        return (EReference)javaNodeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -3888,6 +3888,10 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         isCreated = true;
 
         // Create classes and their features
+        javaNodeEClass = createEClass(JAVA_NODE);
+        createEReference(javaNodeEClass, JAVA_NODE__COMMENT);
+        createEReference(javaNodeEClass, JAVA_NODE__ORPHAN_COMMENTS);
+
         arrayCreationLevelEClass = createEClass(ARRAY_CREATION_LEVEL);
         createEReference(arrayCreationLevelEClass, ARRAY_CREATION_LEVEL__DIMENSION);
 
@@ -3900,9 +3904,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         importDeclarationEClass = createEClass(IMPORT_DECLARATION);
         createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__STATIC);
         createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__ASTERISK);
-
-        modifierEClass = createEClass(MODIFIER);
-        createEAttribute(modifierEClass, MODIFIER__KEYWORD);
 
         packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
 
@@ -4111,7 +4112,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         createEReference(nodeWithImplementsEClass, NODE_WITH_IMPLEMENTS__IMPLEMENTED_TYPES);
 
         nodeWithJavadocEClass = createEClass(NODE_WITH_JAVADOC);
-        createEReference(nodeWithJavadocEClass, NODE_WITH_JAVADOC__COMMENT);
 
         nodeWithMembersEClass = createEClass(NODE_WITH_MEMBERS);
         createEReference(nodeWithMembersEClass, NODE_WITH_MEMBERS__MEMBERS);
@@ -4338,8 +4338,12 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         // Set bounds for type parameters
 
         // Add supertypes to classes
+        arrayCreationLevelEClass.getESuperTypes().add(this.getJavaNode());
         arrayCreationLevelEClass.getESuperTypes().add(this.getNodeWithAnnotations());
+        compilationUnitEClass.getESuperTypes().add(this.getJavaNode());
+        importDeclarationEClass.getESuperTypes().add(this.getJavaNode());
         importDeclarationEClass.getESuperTypes().add(this.getNodeWithName());
+        packageDeclarationEClass.getESuperTypes().add(this.getJavaNode());
         packageDeclarationEClass.getESuperTypes().add(this.getNodeWithAnnotations());
         packageDeclarationEClass.getESuperTypes().add(this.getNodeWithName());
         annotationDeclarationEClass.getESuperTypes().add(this.getTypeDeclaration());
@@ -4358,6 +4362,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         annotationMemberDeclarationEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithAbstractModifier());
         annotationMemberDeclarationEClass.getEGenericSuperTypes().add(g1);
+        bodyDeclarationEClass.getESuperTypes().add(this.getJavaNode());
         bodyDeclarationEClass.getESuperTypes().add(this.getNodeWithAnnotations());
         callableDeclarationEClass.getESuperTypes().add(this.getBodyDeclaration());
         callableDeclarationEClass.getESuperTypes().add(this.getNodeWithAccessModifiers());
@@ -4408,6 +4413,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         methodDeclarationEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithDefaultModifier());
         methodDeclarationEClass.getEGenericSuperTypes().add(g1);
+        g1 = createEGenericType(this.getJavaNode());
+        parameterEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithType());
         g2 = createEGenericType(this.getType());
         g1.getETypeArguments().add(g2);
@@ -4418,6 +4425,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         parameterEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithFinalModifier());
         parameterEClass.getEGenericSuperTypes().add(g1);
+        g1 = createEGenericType(this.getJavaNode());
+        receiverParameterEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithType());
         g2 = createEGenericType(this.getType());
         g1.getETypeArguments().add(g2);
@@ -4433,6 +4442,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         typeDeclarationEClass.getESuperTypes().add(this.getNodeWithAccessModifiers());
         typeDeclarationEClass.getESuperTypes().add(this.getNodeWithStaticModifier());
         typeDeclarationEClass.getESuperTypes().add(this.getNodeWithStrictfpModifier());
+        g1 = createEGenericType(this.getJavaNode());
+        variableDeclaratorEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithType());
         g2 = createEGenericType(this.getType());
         g1.getETypeArguments().add(g2);
@@ -4440,6 +4451,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         g1 = createEGenericType(this.getNodeWithSimpleName());
         variableDeclaratorEClass.getEGenericSuperTypes().add(g1);
         blockCommentEClass.getESuperTypes().add(this.getComment());
+        commentEClass.getESuperTypes().add(this.getJavaNode());
         javadocCommentEClass.getESuperTypes().add(this.getComment());
         lineCommentEClass.getESuperTypes().add(this.getComment());
         annotationExprEClass.getESuperTypes().add(this.getExpression());
@@ -4469,6 +4481,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         conditionalExprEClass.getESuperTypes().add(this.getNodeWithCondition());
         doubleLiteralExprEClass.getESuperTypes().add(this.getLiteralStringValueExpr());
         enclosedExprEClass.getESuperTypes().add(this.getExpression());
+        expressionEClass.getESuperTypes().add(this.getJavaNode());
         g1 = createEGenericType(this.getExpression());
         fieldAccessExprEClass.getEGenericSuperTypes().add(g1);
         g1 = createEGenericType(this.getNodeWithSimpleName());
@@ -4494,6 +4507,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         literalStringValueExprEClass.getESuperTypes().add(this.getLiteralExpr());
         longLiteralExprEClass.getESuperTypes().add(this.getLiteralStringValueExpr());
         markerAnnotationExprEClass.getESuperTypes().add(this.getAnnotationExpr());
+        memberValuePairEClass.getESuperTypes().add(this.getJavaNode());
         memberValuePairEClass.getESuperTypes().add(this.getNodeWithSimpleName());
         g1 = createEGenericType(this.getExpression());
         methodCallExprEClass.getEGenericSuperTypes().add(g1);
@@ -4517,6 +4531,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         g2 = createEGenericType(this.getExpression());
         g1.getETypeArguments().add(g2);
         methodReferenceExprEClass.getEGenericSuperTypes().add(g1);
+        nameEClass.getESuperTypes().add(this.getJavaNode());
         nameEClass.getESuperTypes().add(this.getNodeWithIdentifier());
         nameExprEClass.getESuperTypes().add(this.getExpression());
         nameExprEClass.getESuperTypes().add(this.getNodeWithSimpleName());
@@ -4544,6 +4559,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         g2 = createEGenericType(this.getReferenceType());
         g1.getETypeArguments().add(g2);
         patternExprEClass.getEGenericSuperTypes().add(g1);
+        simpleNameEClass.getESuperTypes().add(this.getJavaNode());
         simpleNameEClass.getESuperTypes().add(this.getNodeWithIdentifier());
         singleMemberAnnotationExprEClass.getESuperTypes().add(this.getAnnotationExpr());
         stringLiteralExprEClass.getESuperTypes().add(this.getLiteralStringValueExpr());
@@ -4564,8 +4580,10 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         variableDeclarationExprEClass.getESuperTypes().add(this.getNodeWithFinalModifier());
         variableDeclarationExprEClass.getESuperTypes().add(this.getNodeWithAnnotations());
         variableDeclarationExprEClass.getESuperTypes().add(this.getNodeWithVariables());
+        moduleDeclarationEClass.getESuperTypes().add(this.getJavaNode());
         moduleDeclarationEClass.getESuperTypes().add(this.getNodeWithName());
         moduleDeclarationEClass.getESuperTypes().add(this.getNodeWithAnnotations());
+        moduleDirectiveEClass.getESuperTypes().add(this.getJavaNode());
         moduleExportsDirectiveEClass.getESuperTypes().add(this.getModuleDirective());
         moduleExportsDirectiveEClass.getESuperTypes().add(this.getNodeWithName());
         moduleOpensDirectiveEClass.getESuperTypes().add(this.getModuleDirective());
@@ -4598,6 +4616,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         blockStmtEClass.getESuperTypes().add(this.getNodeWithStatements());
         breakStmtEClass.getESuperTypes().add(this.getStatement());
         breakStmtEClass.getESuperTypes().add(this.getNodeWithLabel());
+        catchClauseEClass.getESuperTypes().add(this.getJavaNode());
         catchClauseEClass.getESuperTypes().add(this.getNodeWithBlockStmt());
         continueStmtEClass.getESuperTypes().add(this.getStatement());
         continueStmtEClass.getESuperTypes().add(this.getNodeWithLabel());
@@ -4622,6 +4641,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         localClassDeclarationStmtEClass.getESuperTypes().add(this.getStatement());
         returnStmtEClass.getESuperTypes().add(this.getStatement());
         returnStmtEClass.getESuperTypes().add(this.getNodeWithExpression());
+        statementEClass.getESuperTypes().add(this.getJavaNode());
+        switchEntryEClass.getESuperTypes().add(this.getJavaNode());
         switchEntryEClass.getESuperTypes().add(this.getNodeWithStatements());
         switchStmtEClass.getESuperTypes().add(this.getStatement());
         switchStmtEClass.getESuperTypes().add(this.getSwitchNode());
@@ -4655,6 +4676,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         primitiveTypeEClass.getESuperTypes().add(this.getType());
         primitiveTypeEClass.getESuperTypes().add(this.getNodeWithAnnotations());
         referenceTypeEClass.getESuperTypes().add(this.getType());
+        typeEClass.getESuperTypes().add(this.getJavaNode());
         typeParameterEClass.getESuperTypes().add(this.getReferenceType());
         typeParameterEClass.getESuperTypes().add(this.getNodeWithSimpleName());
         typeParameterEClass.getESuperTypes().add(this.getNodeWithAnnotations());
@@ -4668,6 +4690,10 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         wildcardTypeEClass.getESuperTypes().add(this.getNodeWithAnnotations());
 
         // Initialize classes, features, and operations; add parameters
+        initEClass(javaNodeEClass, JavaNode.class, "JavaNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getJavaNode_Comment(), this.getComment(), null, "comment", null, 0, 1, JavaNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getJavaNode_OrphanComments(), this.getComment(), null, "orphanComments", null, 0, -1, JavaNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
         initEClass(arrayCreationLevelEClass, ArrayCreationLevel.class, "ArrayCreationLevel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getArrayCreationLevel_Dimension(), this.getExpression(), null, "dimension", null, 0, 1, ArrayCreationLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4680,9 +4706,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         initEClass(importDeclarationEClass, ImportDeclaration.class, "ImportDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getImportDeclaration_Static(), ecorePackage.getEBoolean(), "static", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getImportDeclaration_Asterisk(), ecorePackage.getEBoolean(), "asterisk", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(modifierEClass, Modifier.class, "Modifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getModifier_Keyword(), this.getModifierKeyword(), "keyword", null, 0, 1, Modifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4891,7 +4914,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         initEReference(getNodeWithImplements_ImplementedTypes(), this.getClassOrInterfaceType(), null, "implementedTypes", null, 0, -1, NodeWithImplements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(nodeWithJavadocEClass, NodeWithJavadoc.class, "NodeWithJavadoc", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getNodeWithJavadoc_Comment(), this.getJavadocComment(), null, "comment", null, 0, 1, NodeWithJavadoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(nodeWithMembersEClass, NodeWithMembers.class, "NodeWithMembers", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getNodeWithMembers_Members(), this.getBodyDeclaration(), null, "members", null, 0, -1, NodeWithMembers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

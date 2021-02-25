@@ -5,7 +5,6 @@ package fr.centralesupelec.csd.java.impl;
 import fr.centralesupelec.csd.java.AnnotationMemberDeclaration;
 import fr.centralesupelec.csd.java.Expression;
 import fr.centralesupelec.csd.java.JavaPackage;
-import fr.centralesupelec.csd.java.JavadocComment;
 import fr.centralesupelec.csd.java.ModifierKeyword;
 import fr.centralesupelec.csd.java.NodeWithAbstractModifier;
 import fr.centralesupelec.csd.java.NodeWithJavadoc;
@@ -38,7 +37,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.csd.java.impl.AnnotationMemberDeclarationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.AnnotationMemberDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.AnnotationMemberDeclarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.AnnotationMemberDeclarationImpl#getModifiers <em>Modifiers</em>}</li>
@@ -50,16 +48,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * @generated
  */
 public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl implements AnnotationMemberDeclaration {
-	/**
-     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getComment()
-     * @generated
-     * @ordered
-     */
-	protected JavadocComment comment;
-
 	/**
      * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -137,51 +125,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	@Override
 	protected EClass eStaticClass() {
         return JavaPackage.Literals.ANNOTATION_MEMBER_DECLARATION;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public JavadocComment getComment() {
-        return comment;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	public NotificationChain basicSetComment(JavadocComment newComment, NotificationChain msgs) {
-        JavadocComment oldComment = comment;
-        comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void setComment(JavadocComment newComment) {
-        if (newComment != comment) {
-            NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT, newComment, newComment));
     }
 
 	/**
@@ -388,8 +331,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT:
-                return basicSetComment(null, msgs);
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__NAME:
                 return basicSetName(null, msgs);
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__TYPE:
@@ -408,8 +349,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT:
-                return getComment();
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__NAME:
                 return getName();
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__TYPE:
@@ -435,9 +374,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT:
-                setComment((JavadocComment)newValue);
-                return;
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__NAME:
                 setName((SimpleName)newValue);
                 return;
@@ -469,9 +405,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	@Override
 	public void eUnset(int featureID) {
         switch (featureID) {
-            case JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT:
-                setComment((JavadocComment)null);
-                return;
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__NAME:
                 setName((SimpleName)null);
                 return;
@@ -502,8 +435,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT:
-                return comment != null;
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__NAME:
                 return name != null;
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION__TYPE:
@@ -529,7 +460,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT: return JavaPackage.NODE_WITH_JAVADOC__COMMENT;
                 default: return -1;
             }
         }
@@ -575,7 +505,6 @@ public class AnnotationMemberDeclarationImpl extends BodyDeclarationImpl impleme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
         if (baseClass == NodeWithJavadoc.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_JAVADOC__COMMENT: return JavaPackage.ANNOTATION_MEMBER_DECLARATION__COMMENT;
                 default: return -1;
             }
         }

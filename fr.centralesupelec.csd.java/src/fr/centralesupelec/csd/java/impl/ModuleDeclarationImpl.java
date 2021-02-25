@@ -9,6 +9,7 @@ import fr.centralesupelec.csd.java.ModuleDirective;
 import fr.centralesupelec.csd.java.Name;
 
 import fr.centralesupelec.csd.java.NodeWithAnnotations;
+import fr.centralesupelec.csd.java.NodeWithName;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,8 +21,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ModuleDeclarationImpl extends MinimalEObjectImpl.Container implements ModuleDeclaration {
+public class ModuleDeclarationImpl extends JavaNodeImpl implements ModuleDeclaration {
 	/**
      * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -321,6 +320,12 @@ public class ModuleDeclarationImpl extends MinimalEObjectImpl.Container implemen
      */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithName.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.MODULE_DECLARATION__NAME: return JavaPackage.NODE_WITH_NAME__NAME;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithAnnotations.class) {
             switch (derivedFeatureID) {
                 case JavaPackage.MODULE_DECLARATION__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
@@ -337,6 +342,12 @@ public class ModuleDeclarationImpl extends MinimalEObjectImpl.Container implemen
      */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithName.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_NAME__NAME: return JavaPackage.MODULE_DECLARATION__NAME;
+                default: return -1;
+            }
+        }
         if (baseClass == NodeWithAnnotations.class) {
             switch (baseFeatureID) {
                 case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.MODULE_DECLARATION__ANNOTATIONS;

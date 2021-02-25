@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SwitchEntry extends NodeWithStatements {
+public interface SwitchEntry extends JavaNode, NodeWithStatements {
 
 	/**
      * Returns the value of the '<em><b>Labels</b></em>' containment reference list.

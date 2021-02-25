@@ -60,7 +60,6 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
             case JavaPackage.ARRAY_CREATION_LEVEL: return createArrayCreationLevel();
             case JavaPackage.COMPILATION_UNIT: return createCompilationUnit();
             case JavaPackage.IMPORT_DECLARATION: return createImportDeclaration();
-            case JavaPackage.MODIFIER: return createModifier();
             case JavaPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
             case JavaPackage.ANNOTATION_DECLARATION: return createAnnotationDeclaration();
             case JavaPackage.ANNOTATION_MEMBER_DECLARATION: return createAnnotationMemberDeclaration();
@@ -243,17 +242,6 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	public ImportDeclaration createImportDeclaration() {
         ImportDeclarationImpl importDeclaration = new ImportDeclarationImpl();
         return importDeclaration;
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Modifier createModifier() {
-        ModifierImpl modifier = new ModifierImpl();
-        return modifier;
     }
 
 	/**

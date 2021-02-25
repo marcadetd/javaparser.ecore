@@ -7,8 +7,6 @@ import fr.centralesupelec.csd.java.Type;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Type</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class TypeImpl extends MinimalEObjectImpl.Container implements Type {
+public abstract class TypeImpl extends JavaNodeImpl implements Type {
 	/**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

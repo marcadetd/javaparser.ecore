@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="java" nsURI="http://csd.centralesupelec.fr/java" nsPrefix="java">
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayCreationLevel" eSuperTypes="#//NodeWithAnnotations">
+  <eClassifiers xsi:type="ecore:EClass" name="JavaNode" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" eType="#//Comment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orphanComments" upperBound="-1"
+        eType="#//Comment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayCreationLevel" eSuperTypes="#//JavaNode #//NodeWithAnnotations">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit" eSuperTypes="#//JavaNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="packageDeclaration" eType="#//PackageDeclaration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
@@ -15,14 +21,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//ModuleDeclaration"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImportDeclaration" eSuperTypes="#//NodeWithName">
+  <eClassifiers xsi:type="ecore:EClass" name="ImportDeclaration" eSuperTypes="#//JavaNode #//NodeWithName">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="asterisk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Modifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="#//ModifierKeyword"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageDeclaration" eSuperTypes="#//NodeWithAnnotations #//NodeWithName"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageDeclaration" eSuperTypes="#//JavaNode #//NodeWithAnnotations #//NodeWithName"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationDeclaration" eSuperTypes="#//TypeDeclaration #//NodeWithAbstractModifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" eType="#//Expression"
@@ -51,7 +54,7 @@
     <eLiterals name="TRANSITIVE" value="12"/>
     <eLiterals name="DEFAULT" value="13"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BodyDeclaration" abstract="true" eSuperTypes="#//NodeWithAnnotations"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BodyDeclaration" abstract="true" eSuperTypes="#//JavaNode #//NodeWithAnnotations"/>
   <eClassifiers xsi:type="ecore:EClass" name="CallableDeclaration" abstract="true"
       eSuperTypes="#//BodyDeclaration #//NodeWithAccessModifiers #//NodeWithSimpleName #//NodeWithParameters #//NodeWithThrownExceptions #//NodeWithTypeParameters #//NodeWithJavadoc #//NodeWithAbstractModifier #//NodeWithStaticModifier #//NodeWithFinalModifier #//NodeWithStrictfpModifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiverParameter" eType="#//ReceiverParameter"
@@ -87,6 +90,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="varArgs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="varArgsAnnotations" upperBound="-1"
         eType="#//AnnotationExpr" containment="true"/>
+    <eGenericSuperTypes eClassifier="#//JavaNode"/>
     <eGenericSuperTypes eClassifier="#//NodeWithType">
       <eTypeArguments eClassifier="#//Type"/>
     </eGenericSuperTypes>
@@ -95,6 +99,7 @@
     <eGenericSuperTypes eClassifier="#//NodeWithFinalModifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReceiverParameter">
+    <eGenericSuperTypes eClassifier="#//JavaNode"/>
     <eGenericSuperTypes eClassifier="#//NodeWithType">
       <eTypeArguments eClassifier="#//Type"/>
     </eGenericSuperTypes>
@@ -105,13 +110,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="initializer" eType="#//Expression"
         containment="true"/>
+    <eGenericSuperTypes eClassifier="#//JavaNode"/>
     <eGenericSuperTypes eClassifier="#//NodeWithType">
       <eTypeArguments eClassifier="#//Type"/>
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="#//NodeWithSimpleName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockComment" eSuperTypes="#//Comment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" abstract="true" eSuperTypes="#//JavaNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavadocComment" eSuperTypes="#//Comment"/>
@@ -211,7 +217,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inner" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//JavaNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="FieldAccessExpr">
     <eGenericSuperTypes eClassifier="#//Expression"/>
     <eGenericSuperTypes eClassifier="#//NodeWithSimpleName"/>
@@ -241,7 +247,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LongLiteralExpr" eSuperTypes="#//LiteralStringValueExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="MarkerAnnotationExpr" eSuperTypes="#//AnnotationExpr"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MemberValuePair" eSuperTypes="#//NodeWithSimpleName">
+  <eClassifiers xsi:type="ecore:EClass" name="MemberValuePair" eSuperTypes="#//JavaNode #//NodeWithSimpleName">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
@@ -262,7 +268,7 @@
       <eTypeArguments eClassifier="#//Expression"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//NodeWithIdentifier">
+  <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//JavaNode #//NodeWithIdentifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifier" eType="#//Name"
         containment="true"/>
   </eClassifiers>
@@ -292,7 +298,7 @@
       <eTypeArguments eClassifier="#//ReferenceType"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleName" eSuperTypes="#//NodeWithIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleName" eSuperTypes="#//JavaNode #//NodeWithIdentifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="SingleMemberAnnotationExpr" eSuperTypes="#//AnnotationExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="memberValue" eType="#//Expression"
         containment="true"/>
@@ -328,12 +334,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//UnaryOperator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationExpr" eSuperTypes="#//Expression #//NodeWithFinalModifier #//NodeWithAnnotations #//NodeWithVariables"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ModuleDeclaration" eSuperTypes="#//NodeWithName #//NodeWithAnnotations">
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleDeclaration" eSuperTypes="#//JavaNode #//NodeWithName #//NodeWithAnnotations">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="open" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="directives" upperBound="-1"
         eType="#//ModuleDirective" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModuleDirective" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleDirective" abstract="true" eSuperTypes="#//JavaNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleExportsDirective" eSuperTypes="#//ModuleDirective #//NodeWithName">
     <eStructuralFeatures xsi:type="ecore:EReference" name="moduleNames" upperBound="-1"
         eType="#//Name" containment="true"/>
@@ -387,10 +393,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementedTypes" upperBound="-1"
         eType="#//ClassOrInterfaceType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NodeWithJavadoc" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" eType="#//JavadocComment"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeWithJavadoc" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="NodeWithMembers" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//BodyDeclaration" containment="true"/>
@@ -536,7 +539,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockStmt" eSuperTypes="#//Statement #//NodeWithStatements"/>
   <eClassifiers xsi:type="ecore:EClass" name="BreakStmt" eSuperTypes="#//Statement #//NodeWithLabel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CatchClause" eSuperTypes="#//NodeWithBlockStmt">
+  <eClassifiers xsi:type="ecore:EClass" name="CatchClause" eSuperTypes="#//JavaNode #//NodeWithBlockStmt">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter"
         containment="true"/>
   </eClassifiers>
@@ -576,14 +579,14 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnStmt" eSuperTypes="#//Statement #//NodeWithExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" eSuperTypes="#//JavaNode"/>
   <eClassifiers xsi:type="ecore:EEnum" name="SwitchEntryType">
     <eLiterals name="STATEMENT_GROUP" value="1"/>
     <eLiterals name="EXPRESSION" value="2"/>
     <eLiterals name="BLOCK" value="3"/>
     <eLiterals name="THROWS_STATEMENT" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SwitchEntry" eSuperTypes="#//NodeWithStatements">
+  <eClassifiers xsi:type="ecore:EClass" name="SwitchEntry" eSuperTypes="#//JavaNode #//NodeWithStatements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
         eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//SwitchEntryType"/>
@@ -639,7 +642,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Primitive"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceType" abstract="true" eSuperTypes="#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" eSuperTypes="#//JavaNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameter" eSuperTypes="#//ReferenceType #//NodeWithSimpleName #//NodeWithAnnotations">
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeBound" upperBound="-1"
         eType="#//ClassOrInterfaceType" containment="true"/>

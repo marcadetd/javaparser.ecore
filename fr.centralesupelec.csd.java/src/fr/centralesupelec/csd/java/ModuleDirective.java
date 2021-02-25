@@ -2,8 +2,6 @@
  */
 package fr.centralesupelec.csd.java;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Module Directive</b></em>'.
@@ -14,5 +12,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface ModuleDirective extends EObject {
+public interface ModuleDirective extends JavaNode {
 } // ModuleDirective

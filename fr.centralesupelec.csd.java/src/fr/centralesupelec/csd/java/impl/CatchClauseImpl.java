@@ -5,6 +5,7 @@ package fr.centralesupelec.csd.java.impl;
 import fr.centralesupelec.csd.java.BlockStmt;
 import fr.centralesupelec.csd.java.CatchClause;
 import fr.centralesupelec.csd.java.JavaPackage;
+import fr.centralesupelec.csd.java.NodeWithBlockStmt;
 import fr.centralesupelec.csd.java.Parameter;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,7 +15,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CatchClauseImpl extends MinimalEObjectImpl.Container implements CatchClause {
+public class CatchClauseImpl extends JavaNodeImpl implements CatchClause {
 	/**
      * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -242,6 +242,38 @@ public class CatchClauseImpl extends MinimalEObjectImpl.Container implements Cat
                 return parameter != null;
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithBlockStmt.class) {
+            switch (derivedFeatureID) {
+                case JavaPackage.CATCH_CLAUSE__BODY: return JavaPackage.NODE_WITH_BLOCK_STMT__BODY;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == NodeWithBlockStmt.class) {
+            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_BLOCK_STMT__BODY: return JavaPackage.CATCH_CLAUSE__BODY;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
 } //CatchClauseImpl

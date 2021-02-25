@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -23,60 +36,60 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface ArrayCreationExpr extends Expression {
-	/**
+    /**
      * Returns the value of the '<em><b>Levels</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.ArrayCreationLevel}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Levels</em>' containment reference list.
      * @see fr.centralesupelec.csd.java.JavaPackage#getArrayCreationExpr_Levels()
      * @model containment="true"
      * @generated
      */
-	EList<ArrayCreationLevel> getLevels();
+    EList< ArrayCreationLevel > getLevels();
 
-	/**
+    /**
      * Returns the value of the '<em><b>Element Type</b></em>' reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Element Type</em>' reference.
      * @see #setElementType(Type)
      * @see fr.centralesupelec.csd.java.JavaPackage#getArrayCreationExpr_ElementType()
      * @model
      * @generated
      */
-	Type getElementType();
+    Type getElementType();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.ArrayCreationExpr#getElementType <em>Element Type</em>}' reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Element Type</em>' reference.
      * @see #getElementType()
      * @generated
      */
-	void setElementType(Type value);
+    void setElementType( Type value );
 
-	/**
+    /**
      * Returns the value of the '<em><b>Initializer</b></em>' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Initializer</em>' containment reference.
      * @see #setInitializer(ArrayInitializerExpr)
      * @see fr.centralesupelec.csd.java.JavaPackage#getArrayCreationExpr_Initializer()
      * @model containment="true"
      * @generated
      */
-	ArrayInitializerExpr getInitializer();
+    ArrayInitializerExpr getInitializer();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.ArrayCreationExpr#getInitializer <em>Initializer</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Initializer</em>' containment reference.
      * @see #getInitializer()
      * @generated
      */
-	void setInitializer(ArrayInitializerExpr value);
+    void setInitializer( ArrayInitializerExpr value );
 
 } // ArrayCreationExpr

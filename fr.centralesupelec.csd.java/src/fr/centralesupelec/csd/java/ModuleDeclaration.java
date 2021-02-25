@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -22,38 +35,38 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface ModuleDeclaration extends JavaNode, NodeWithName, NodeWithAnnotations {
-	/**
+    /**
      * Returns the value of the '<em><b>Open</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Open</em>' attribute.
      * @see #setOpen(boolean)
      * @see fr.centralesupelec.csd.java.JavaPackage#getModuleDeclaration_Open()
      * @model
      * @generated
      */
-	boolean isOpen();
+    boolean isOpen();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.ModuleDeclaration#isOpen <em>Open</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Open</em>' attribute.
      * @see #isOpen()
      * @generated
      */
-	void setOpen(boolean value);
+    void setOpen( boolean value );
 
-	/**
+    /**
      * Returns the value of the '<em><b>Directives</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.ModuleDirective}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Directives</em>' containment reference list.
      * @see fr.centralesupelec.csd.java.JavaPackage#getModuleDeclaration_Directives()
      * @model containment="true"
      * @generated
      */
-	EList<ModuleDirective> getDirectives();
+    EList< ModuleDirective > getDirectives();
 
 } // ModuleDeclaration

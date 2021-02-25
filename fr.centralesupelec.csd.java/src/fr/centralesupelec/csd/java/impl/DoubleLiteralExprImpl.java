@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -15,22 +28,22 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class DoubleLiteralExprImpl extends LiteralStringValueExprImpl implements DoubleLiteralExpr {
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected DoubleLiteralExprImpl() {
+    protected DoubleLiteralExprImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.DOUBLE_LITERAL_EXPR;
     }
 

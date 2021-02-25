@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -29,217 +42,231 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ArrayAccessExprImpl extends ExpressionImpl implements ArrayAccessExpr {
-	/**
+    /**
      * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getName()
      * @generated
      * @ordered
      */
-	protected Expression name;
+    protected Expression name;
 
-	/**
+    /**
      * The cached value of the '{@link #getIndex() <em>Index</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getIndex()
      * @generated
      * @ordered
      */
-	protected Expression index;
+    protected Expression index;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected ArrayAccessExprImpl() {
+    protected ArrayAccessExprImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.ARRAY_ACCESS_EXPR;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Expression getName() {
+    @Override
+    public Expression getName() {
         return name;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetName(Expression newName, NotificationChain msgs) {
+    public NotificationChain basicSetName( Expression newName, NotificationChain msgs ) {
         Expression oldName = name;
         name = newName;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_ACCESS_EXPR__NAME, oldName, newName);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.ARRAY_ACCESS_EXPR__NAME, oldName, newName );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setName(Expression newName) {
-        if (newName != name) {
+    @Override
+    public void setName( Expression newName ) {
+        if( newName != name ) {
             NotificationChain msgs = null;
-            if (name != null)
-                msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__NAME, null, msgs);
-            if (newName != null)
-                msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__NAME, null, msgs);
-            msgs = basicSetName(newName, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( name != null )
+                msgs = ( ( InternalEObject ) name ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__NAME, null, msgs );
+            if( newName != null )
+                msgs = ( ( InternalEObject ) newName ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__NAME, null, msgs );
+            msgs = basicSetName( newName, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_ACCESS_EXPR__NAME, newName, newName));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.ARRAY_ACCESS_EXPR__NAME, newName,
+                    newName ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Expression getIndex() {
+    @Override
+    public Expression getIndex() {
         return index;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetIndex(Expression newIndex, NotificationChain msgs) {
+    public NotificationChain basicSetIndex( Expression newIndex, NotificationChain msgs ) {
         Expression oldIndex = index;
         index = newIndex;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_ACCESS_EXPR__INDEX, oldIndex, newIndex);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.ARRAY_ACCESS_EXPR__INDEX, oldIndex, newIndex );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setIndex(Expression newIndex) {
-        if (newIndex != index) {
+    @Override
+    public void setIndex( Expression newIndex ) {
+        if( newIndex != index ) {
             NotificationChain msgs = null;
-            if (index != null)
-                msgs = ((InternalEObject)index).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__INDEX, null, msgs);
-            if (newIndex != null)
-                msgs = ((InternalEObject)newIndex).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__INDEX, null, msgs);
-            msgs = basicSetIndex(newIndex, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( index != null )
+                msgs = ( ( InternalEObject ) index ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__INDEX, null, msgs );
+            if( newIndex != null )
+                msgs = ( ( InternalEObject ) newIndex ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_ACCESS_EXPR__INDEX, null, msgs );
+            msgs = basicSetIndex( newIndex, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_ACCESS_EXPR__INDEX, newIndex, newIndex));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.ARRAY_ACCESS_EXPR__INDEX, newIndex,
+                    newIndex ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
-                return basicSetName(null, msgs);
-            case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
-                return basicSetIndex(null, msgs);
+    @Override
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
+            return basicSetName( null, msgs );
+        case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
+            return basicSetIndex( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
-                return getName();
-            case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
-                return getIndex();
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
+            return getName();
+        case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
+            return getIndex();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
-                setName((Expression)newValue);
-                return;
-            case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
-                setIndex((Expression)newValue);
-                return;
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
+            setName( ( Expression ) newValue );
+            return;
+        case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
+            setIndex( ( Expression ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
-                setName((Expression)null);
-                return;
-            case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
-                setIndex((Expression)null);
-                return;
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
+            setName( ( Expression ) null );
+            return;
+        case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
+            setIndex( ( Expression ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
-                return name != null;
-            case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
-                return index != null;
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_ACCESS_EXPR__NAME:
+            return name != null;
+        case JavaPackage.ARRAY_ACCESS_EXPR__INDEX:
+            return index != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //ArrayAccessExprImpl

@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -35,188 +48,194 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class UnionTypeImpl extends TypeImpl implements UnionType {
-	/**
+    /**
      * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getAnnotations()
      * @generated
      * @ordered
      */
-	protected EList<AnnotationExpr> annotations;
+    protected EList< AnnotationExpr > annotations;
 
-	/**
+    /**
      * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getElements()
      * @generated
      * @ordered
      */
-	protected EList<ReferenceType> elements;
+    protected EList< ReferenceType > elements;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected UnionTypeImpl() {
+    protected UnionTypeImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.UNION_TYPE;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public EList<AnnotationExpr> getAnnotations() {
-        if (annotations == null) {
-            annotations = new EObjectContainmentEList<AnnotationExpr>(AnnotationExpr.class, this, JavaPackage.UNION_TYPE__ANNOTATIONS);
+    @Override
+    public EList< AnnotationExpr > getAnnotations() {
+        if( annotations == null ) {
+            annotations = new EObjectContainmentEList< AnnotationExpr >( AnnotationExpr.class, this,
+                    JavaPackage.UNION_TYPE__ANNOTATIONS );
         }
         return annotations;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public EList<ReferenceType> getElements() {
-        if (elements == null) {
-            elements = new EObjectContainmentEList<ReferenceType>(ReferenceType.class, this, JavaPackage.UNION_TYPE__ELEMENTS);
+    @Override
+    public EList< ReferenceType > getElements() {
+        if( elements == null ) {
+            elements = new EObjectContainmentEList< ReferenceType >( ReferenceType.class, this,
+                    JavaPackage.UNION_TYPE__ELEMENTS );
         }
         return elements;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case JavaPackage.UNION_TYPE__ANNOTATIONS:
-                return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-            case JavaPackage.UNION_TYPE__ELEMENTS:
-                return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    @Override
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.UNION_TYPE__ANNOTATIONS:
+            return ( ( InternalEList< ? > ) getAnnotations() ).basicRemove( otherEnd, msgs );
+        case JavaPackage.UNION_TYPE__ELEMENTS:
+            return ( ( InternalEList< ? > ) getElements() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.UNION_TYPE__ANNOTATIONS:
-                return getAnnotations();
-            case JavaPackage.UNION_TYPE__ELEMENTS:
-                return getElements();
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.UNION_TYPE__ANNOTATIONS:
+            return getAnnotations();
+        case JavaPackage.UNION_TYPE__ELEMENTS:
+            return getElements();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.UNION_TYPE__ANNOTATIONS:
-                getAnnotations().clear();
-                getAnnotations().addAll((Collection<? extends AnnotationExpr>)newValue);
-                return;
-            case JavaPackage.UNION_TYPE__ELEMENTS:
-                getElements().clear();
-                getElements().addAll((Collection<? extends ReferenceType>)newValue);
-                return;
+    @SuppressWarnings( "unchecked" )
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.UNION_TYPE__ANNOTATIONS:
+            getAnnotations().clear();
+            getAnnotations().addAll( ( Collection< ? extends AnnotationExpr > ) newValue );
+            return;
+        case JavaPackage.UNION_TYPE__ELEMENTS:
+            getElements().clear();
+            getElements().addAll( ( Collection< ? extends ReferenceType > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.UNION_TYPE__ANNOTATIONS:
-                getAnnotations().clear();
-                return;
-            case JavaPackage.UNION_TYPE__ELEMENTS:
-                getElements().clear();
-                return;
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.UNION_TYPE__ANNOTATIONS:
+            getAnnotations().clear();
+            return;
+        case JavaPackage.UNION_TYPE__ELEMENTS:
+            getElements().clear();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.UNION_TYPE__ANNOTATIONS:
-                return annotations != null && !annotations.isEmpty();
-            case JavaPackage.UNION_TYPE__ELEMENTS:
-                return elements != null && !elements.isEmpty();
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.UNION_TYPE__ANNOTATIONS:
+            return annotations != null && !annotations.isEmpty();
+        case JavaPackage.UNION_TYPE__ELEMENTS:
+            return elements != null && !elements.isEmpty();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithAnnotations.class) {
-            switch (derivedFeatureID) {
-                case JavaPackage.UNION_TYPE__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
-                default: return -1;
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithAnnotations.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.UNION_TYPE__ANNOTATIONS:
+                return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithAnnotations.class) {
-            switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.UNION_TYPE__ANNOTATIONS;
-                default: return -1;
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithAnnotations.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS:
+                return JavaPackage.UNION_TYPE__ANNOTATIONS;
+            default:
+                return -1;
             }
         }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
 } //UnionTypeImpl

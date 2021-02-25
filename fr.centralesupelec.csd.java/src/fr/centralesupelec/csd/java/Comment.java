@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -19,26 +32,26 @@ package fr.centralesupelec.csd.java;
  * @generated
  */
 public interface Comment extends JavaNode {
-	/**
+    /**
      * Returns the value of the '<em><b>Content</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Content</em>' attribute.
      * @see #setContent(String)
      * @see fr.centralesupelec.csd.java.JavaPackage#getComment_Content()
      * @model
      * @generated
      */
-	String getContent();
+    String getContent();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.Comment#getContent <em>Content</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Content</em>' attribute.
      * @see #getContent()
      * @generated
      */
-	void setContent(String value);
+    void setContent( String value );
 
 } // Comment

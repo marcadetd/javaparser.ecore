@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -31,217 +44,147 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CatchClauseImpl extends JavaNodeImpl implements CatchClause {
-	/**
+    /**
      * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getBody()
      * @generated
      * @ordered
      */
-	protected BlockStmt body;
+    protected BlockStmt body;
 
-	/**
+    /**
      * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getParameter()
      * @generated
      * @ordered
      */
-	protected Parameter parameter;
+    protected Parameter parameter;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected CatchClauseImpl() {
+    protected CatchClauseImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.CATCH_CLAUSE;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public BlockStmt getBody() {
+    @Override
+    public BlockStmt getBody() {
         return body;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetBody(BlockStmt newBody, NotificationChain msgs) {
+    public NotificationChain basicSetBody( BlockStmt newBody, NotificationChain msgs ) {
         BlockStmt oldBody = body;
         body = newBody;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.CATCH_CLAUSE__BODY, oldBody, newBody);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.CATCH_CLAUSE__BODY, oldBody, newBody );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setBody(BlockStmt newBody) {
-        if (newBody != body) {
+    @Override
+    public void setBody( BlockStmt newBody ) {
+        if( newBody != body ) {
             NotificationChain msgs = null;
-            if (body != null)
-                msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__BODY, null, msgs);
-            if (newBody != null)
-                msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__BODY, null, msgs);
-            msgs = basicSetBody(newBody, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( body != null )
+                msgs = ( ( InternalEObject ) body ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__BODY, null, msgs );
+            if( newBody != null )
+                msgs = ( ( InternalEObject ) newBody ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__BODY, null, msgs );
+            msgs = basicSetBody( newBody, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.CATCH_CLAUSE__BODY, newBody, newBody));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.CATCH_CLAUSE__BODY, newBody,
+                    newBody ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Parameter getParameter() {
+    @Override
+    public Parameter getParameter() {
         return parameter;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetParameter(Parameter newParameter, NotificationChain msgs) {
+    public NotificationChain basicSetParameter( Parameter newParameter, NotificationChain msgs ) {
         Parameter oldParameter = parameter;
         parameter = newParameter;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.CATCH_CLAUSE__PARAMETER, oldParameter, newParameter);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.CATCH_CLAUSE__PARAMETER, oldParameter, newParameter );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setParameter(Parameter newParameter) {
-        if (newParameter != parameter) {
+    @Override
+    public void setParameter( Parameter newParameter ) {
+        if( newParameter != parameter ) {
             NotificationChain msgs = null;
-            if (parameter != null)
-                msgs = ((InternalEObject)parameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__PARAMETER, null, msgs);
-            if (newParameter != null)
-                msgs = ((InternalEObject)newParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__PARAMETER, null, msgs);
-            msgs = basicSetParameter(newParameter, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( parameter != null )
+                msgs = ( ( InternalEObject ) parameter ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__PARAMETER, null, msgs );
+            if( newParameter != null )
+                msgs = ( ( InternalEObject ) newParameter ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.CATCH_CLAUSE__PARAMETER, null, msgs );
+            msgs = basicSetParameter( newParameter, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.CATCH_CLAUSE__PARAMETER, newParameter, newParameter));
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case JavaPackage.CATCH_CLAUSE__BODY:
-                return basicSetBody(null, msgs);
-            case JavaPackage.CATCH_CLAUSE__PARAMETER:
-                return basicSetParameter(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.CATCH_CLAUSE__BODY:
-                return getBody();
-            case JavaPackage.CATCH_CLAUSE__PARAMETER:
-                return getParameter();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.CATCH_CLAUSE__BODY:
-                setBody((BlockStmt)newValue);
-                return;
-            case JavaPackage.CATCH_CLAUSE__PARAMETER:
-                setParameter((Parameter)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.CATCH_CLAUSE__BODY:
-                setBody((BlockStmt)null);
-                return;
-            case JavaPackage.CATCH_CLAUSE__PARAMETER:
-                setParameter((Parameter)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.CATCH_CLAUSE__BODY:
-                return body != null;
-            case JavaPackage.CATCH_CLAUSE__PARAMETER:
-                return parameter != null;
-        }
-        return super.eIsSet(featureID);
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.CATCH_CLAUSE__PARAMETER, newParameter,
+                    newParameter ) );
     }
 
     /**
@@ -250,14 +193,14 @@ public class CatchClauseImpl extends JavaNodeImpl implements CatchClause {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithBlockStmt.class) {
-            switch (derivedFeatureID) {
-                case JavaPackage.CATCH_CLAUSE__BODY: return JavaPackage.NODE_WITH_BLOCK_STMT__BODY;
-                default: return -1;
-            }
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.CATCH_CLAUSE__BODY:
+            return basicSetBody( null, msgs );
+        case JavaPackage.CATCH_CLAUSE__PARAMETER:
+            return basicSetParameter( null, msgs );
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -266,14 +209,102 @@ public class CatchClauseImpl extends JavaNodeImpl implements CatchClause {
      * @generated
      */
     @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithBlockStmt.class) {
-            switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_BLOCK_STMT__BODY: return JavaPackage.CATCH_CLAUSE__BODY;
-                default: return -1;
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.CATCH_CLAUSE__BODY:
+            return getBody();
+        case JavaPackage.CATCH_CLAUSE__PARAMETER:
+            return getParameter();
+        }
+        return super.eGet( featureID, resolve, coreType );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.CATCH_CLAUSE__BODY:
+            setBody( ( BlockStmt ) newValue );
+            return;
+        case JavaPackage.CATCH_CLAUSE__PARAMETER:
+            setParameter( ( Parameter ) newValue );
+            return;
+        }
+        super.eSet( featureID, newValue );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.CATCH_CLAUSE__BODY:
+            setBody( ( BlockStmt ) null );
+            return;
+        case JavaPackage.CATCH_CLAUSE__PARAMETER:
+            setParameter( ( Parameter ) null );
+            return;
+        }
+        super.eUnset( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.CATCH_CLAUSE__BODY:
+            return body != null;
+        case JavaPackage.CATCH_CLAUSE__PARAMETER:
+            return parameter != null;
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithBlockStmt.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.CATCH_CLAUSE__BODY:
+                return JavaPackage.NODE_WITH_BLOCK_STMT__BODY;
+            default:
+                return -1;
             }
         }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithBlockStmt.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_BLOCK_STMT__BODY:
+                return JavaPackage.CATCH_CLAUSE__BODY;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
 } //CatchClauseImpl

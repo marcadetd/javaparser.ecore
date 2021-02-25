@@ -1,7 +1,19 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -20,26 +32,26 @@ package fr.centralesupelec.csd.java;
  * @generated
  */
 public interface NodeWithPublicModifier extends NodeWithModifiers {
-	/**
+    /**
      * Returns the value of the '<em><b>Public</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Public</em>' attribute.
      * @see #setPublic(boolean)
      * @see fr.centralesupelec.csd.java.JavaPackage#getNodeWithPublicModifier_Public()
      * @model transient="true" volatile="true" derived="true"
      * @generated
      */
-	boolean isPublic();
+    boolean isPublic();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.NodeWithPublicModifier#isPublic <em>Public</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Public</em>' attribute.
      * @see #isPublic()
      * @generated
      */
-	void setPublic(boolean value);
+    void setPublic( boolean value );
 
 } // NodeWithPublicModifier

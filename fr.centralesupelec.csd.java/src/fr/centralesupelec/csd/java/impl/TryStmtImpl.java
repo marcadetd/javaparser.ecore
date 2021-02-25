@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -40,290 +53,306 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class TryStmtImpl extends StatementImpl implements TryStmt {
-	/**
+    /**
      * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getResources()
      * @generated
      * @ordered
      */
-	protected EList<Expression> resources;
+    protected EList< Expression > resources;
 
-	/**
+    /**
      * The cached value of the '{@link #getTryBlock() <em>Try Block</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getTryBlock()
      * @generated
      * @ordered
      */
-	protected BlockStmt tryBlock;
+    protected BlockStmt tryBlock;
 
-	/**
+    /**
      * The cached value of the '{@link #getCatchClauses() <em>Catch Clauses</em>}' containment reference list.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getCatchClauses()
      * @generated
      * @ordered
      */
-	protected EList<CatchClause> catchClauses;
+    protected EList< CatchClause > catchClauses;
 
-	/**
+    /**
      * The cached value of the '{@link #getFinallyBlock() <em>Finally Block</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getFinallyBlock()
      * @generated
      * @ordered
      */
-	protected BlockStmt finallyBlock;
+    protected BlockStmt finallyBlock;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected TryStmtImpl() {
+    protected TryStmtImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.TRY_STMT;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public EList<Expression> getResources() {
-        if (resources == null) {
-            resources = new EObjectContainmentEList<Expression>(Expression.class, this, JavaPackage.TRY_STMT__RESOURCES);
+    @Override
+    public EList< Expression > getResources() {
+        if( resources == null ) {
+            resources = new EObjectContainmentEList< Expression >( Expression.class, this,
+                    JavaPackage.TRY_STMT__RESOURCES );
         }
         return resources;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public BlockStmt getTryBlock() {
+    @Override
+    public BlockStmt getTryBlock() {
         return tryBlock;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetTryBlock(BlockStmt newTryBlock, NotificationChain msgs) {
+    public NotificationChain basicSetTryBlock( BlockStmt newTryBlock, NotificationChain msgs ) {
         BlockStmt oldTryBlock = tryBlock;
         tryBlock = newTryBlock;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.TRY_STMT__TRY_BLOCK, oldTryBlock, newTryBlock);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.TRY_STMT__TRY_BLOCK, oldTryBlock, newTryBlock );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setTryBlock(BlockStmt newTryBlock) {
-        if (newTryBlock != tryBlock) {
+    @Override
+    public void setTryBlock( BlockStmt newTryBlock ) {
+        if( newTryBlock != tryBlock ) {
             NotificationChain msgs = null;
-            if (tryBlock != null)
-                msgs = ((InternalEObject)tryBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__TRY_BLOCK, null, msgs);
-            if (newTryBlock != null)
-                msgs = ((InternalEObject)newTryBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__TRY_BLOCK, null, msgs);
-            msgs = basicSetTryBlock(newTryBlock, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( tryBlock != null )
+                msgs = ( ( InternalEObject ) tryBlock ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__TRY_BLOCK, null, msgs );
+            if( newTryBlock != null )
+                msgs = ( ( InternalEObject ) newTryBlock ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__TRY_BLOCK, null, msgs );
+            msgs = basicSetTryBlock( newTryBlock, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.TRY_STMT__TRY_BLOCK, newTryBlock, newTryBlock));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.TRY_STMT__TRY_BLOCK, newTryBlock,
+                    newTryBlock ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public EList<CatchClause> getCatchClauses() {
-        if (catchClauses == null) {
-            catchClauses = new EObjectContainmentEList<CatchClause>(CatchClause.class, this, JavaPackage.TRY_STMT__CATCH_CLAUSES);
+    @Override
+    public EList< CatchClause > getCatchClauses() {
+        if( catchClauses == null ) {
+            catchClauses = new EObjectContainmentEList< CatchClause >( CatchClause.class, this,
+                    JavaPackage.TRY_STMT__CATCH_CLAUSES );
         }
         return catchClauses;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public BlockStmt getFinallyBlock() {
+    @Override
+    public BlockStmt getFinallyBlock() {
         return finallyBlock;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetFinallyBlock(BlockStmt newFinallyBlock, NotificationChain msgs) {
+    public NotificationChain basicSetFinallyBlock( BlockStmt newFinallyBlock, NotificationChain msgs ) {
         BlockStmt oldFinallyBlock = finallyBlock;
         finallyBlock = newFinallyBlock;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.TRY_STMT__FINALLY_BLOCK, oldFinallyBlock, newFinallyBlock);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.TRY_STMT__FINALLY_BLOCK, oldFinallyBlock, newFinallyBlock );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setFinallyBlock(BlockStmt newFinallyBlock) {
-        if (newFinallyBlock != finallyBlock) {
+    @Override
+    public void setFinallyBlock( BlockStmt newFinallyBlock ) {
+        if( newFinallyBlock != finallyBlock ) {
             NotificationChain msgs = null;
-            if (finallyBlock != null)
-                msgs = ((InternalEObject)finallyBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__FINALLY_BLOCK, null, msgs);
-            if (newFinallyBlock != null)
-                msgs = ((InternalEObject)newFinallyBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__FINALLY_BLOCK, null, msgs);
-            msgs = basicSetFinallyBlock(newFinallyBlock, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( finallyBlock != null )
+                msgs = ( ( InternalEObject ) finallyBlock ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__FINALLY_BLOCK, null, msgs );
+            if( newFinallyBlock != null )
+                msgs = ( ( InternalEObject ) newFinallyBlock ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.TRY_STMT__FINALLY_BLOCK, null, msgs );
+            msgs = basicSetFinallyBlock( newFinallyBlock, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.TRY_STMT__FINALLY_BLOCK, newFinallyBlock, newFinallyBlock));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.TRY_STMT__FINALLY_BLOCK,
+                    newFinallyBlock, newFinallyBlock ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case JavaPackage.TRY_STMT__RESOURCES:
-                return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
-            case JavaPackage.TRY_STMT__TRY_BLOCK:
-                return basicSetTryBlock(null, msgs);
-            case JavaPackage.TRY_STMT__CATCH_CLAUSES:
-                return ((InternalEList<?>)getCatchClauses()).basicRemove(otherEnd, msgs);
-            case JavaPackage.TRY_STMT__FINALLY_BLOCK:
-                return basicSetFinallyBlock(null, msgs);
+    @Override
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.TRY_STMT__RESOURCES:
+            return ( ( InternalEList< ? > ) getResources() ).basicRemove( otherEnd, msgs );
+        case JavaPackage.TRY_STMT__TRY_BLOCK:
+            return basicSetTryBlock( null, msgs );
+        case JavaPackage.TRY_STMT__CATCH_CLAUSES:
+            return ( ( InternalEList< ? > ) getCatchClauses() ).basicRemove( otherEnd, msgs );
+        case JavaPackage.TRY_STMT__FINALLY_BLOCK:
+            return basicSetFinallyBlock( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.TRY_STMT__RESOURCES:
-                return getResources();
-            case JavaPackage.TRY_STMT__TRY_BLOCK:
-                return getTryBlock();
-            case JavaPackage.TRY_STMT__CATCH_CLAUSES:
-                return getCatchClauses();
-            case JavaPackage.TRY_STMT__FINALLY_BLOCK:
-                return getFinallyBlock();
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.TRY_STMT__RESOURCES:
+            return getResources();
+        case JavaPackage.TRY_STMT__TRY_BLOCK:
+            return getTryBlock();
+        case JavaPackage.TRY_STMT__CATCH_CLAUSES:
+            return getCatchClauses();
+        case JavaPackage.TRY_STMT__FINALLY_BLOCK:
+            return getFinallyBlock();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.TRY_STMT__RESOURCES:
-                getResources().clear();
-                getResources().addAll((Collection<? extends Expression>)newValue);
-                return;
-            case JavaPackage.TRY_STMT__TRY_BLOCK:
-                setTryBlock((BlockStmt)newValue);
-                return;
-            case JavaPackage.TRY_STMT__CATCH_CLAUSES:
-                getCatchClauses().clear();
-                getCatchClauses().addAll((Collection<? extends CatchClause>)newValue);
-                return;
-            case JavaPackage.TRY_STMT__FINALLY_BLOCK:
-                setFinallyBlock((BlockStmt)newValue);
-                return;
+    @SuppressWarnings( "unchecked" )
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.TRY_STMT__RESOURCES:
+            getResources().clear();
+            getResources().addAll( ( Collection< ? extends Expression > ) newValue );
+            return;
+        case JavaPackage.TRY_STMT__TRY_BLOCK:
+            setTryBlock( ( BlockStmt ) newValue );
+            return;
+        case JavaPackage.TRY_STMT__CATCH_CLAUSES:
+            getCatchClauses().clear();
+            getCatchClauses().addAll( ( Collection< ? extends CatchClause > ) newValue );
+            return;
+        case JavaPackage.TRY_STMT__FINALLY_BLOCK:
+            setFinallyBlock( ( BlockStmt ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.TRY_STMT__RESOURCES:
-                getResources().clear();
-                return;
-            case JavaPackage.TRY_STMT__TRY_BLOCK:
-                setTryBlock((BlockStmt)null);
-                return;
-            case JavaPackage.TRY_STMT__CATCH_CLAUSES:
-                getCatchClauses().clear();
-                return;
-            case JavaPackage.TRY_STMT__FINALLY_BLOCK:
-                setFinallyBlock((BlockStmt)null);
-                return;
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.TRY_STMT__RESOURCES:
+            getResources().clear();
+            return;
+        case JavaPackage.TRY_STMT__TRY_BLOCK:
+            setTryBlock( ( BlockStmt ) null );
+            return;
+        case JavaPackage.TRY_STMT__CATCH_CLAUSES:
+            getCatchClauses().clear();
+            return;
+        case JavaPackage.TRY_STMT__FINALLY_BLOCK:
+            setFinallyBlock( ( BlockStmt ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.TRY_STMT__RESOURCES:
-                return resources != null && !resources.isEmpty();
-            case JavaPackage.TRY_STMT__TRY_BLOCK:
-                return tryBlock != null;
-            case JavaPackage.TRY_STMT__CATCH_CLAUSES:
-                return catchClauses != null && !catchClauses.isEmpty();
-            case JavaPackage.TRY_STMT__FINALLY_BLOCK:
-                return finallyBlock != null;
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.TRY_STMT__RESOURCES:
+            return resources != null && !resources.isEmpty();
+        case JavaPackage.TRY_STMT__TRY_BLOCK:
+            return tryBlock != null;
+        case JavaPackage.TRY_STMT__CATCH_CLAUSES:
+            return catchClauses != null && !catchClauses.isEmpty();
+        case JavaPackage.TRY_STMT__FINALLY_BLOCK:
+            return finallyBlock != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //TryStmtImpl

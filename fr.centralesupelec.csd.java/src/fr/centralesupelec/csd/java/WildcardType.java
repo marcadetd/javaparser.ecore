@@ -1,7 +1,19 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -21,48 +33,48 @@ package fr.centralesupelec.csd.java;
  * @generated
  */
 public interface WildcardType extends Type, NodeWithAnnotations {
-	/**
+    /**
      * Returns the value of the '<em><b>Extended Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Extended Type</em>' containment reference.
      * @see #setExtendedType(ReferenceType)
      * @see fr.centralesupelec.csd.java.JavaPackage#getWildcardType_ExtendedType()
      * @model containment="true"
      * @generated
      */
-	ReferenceType getExtendedType();
+    ReferenceType getExtendedType();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.WildcardType#getExtendedType <em>Extended Type</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Extended Type</em>' containment reference.
      * @see #getExtendedType()
      * @generated
      */
-	void setExtendedType(ReferenceType value);
+    void setExtendedType( ReferenceType value );
 
-	/**
+    /**
      * Returns the value of the '<em><b>Super Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Super Type</em>' containment reference.
      * @see #setSuperType(ReferenceType)
      * @see fr.centralesupelec.csd.java.JavaPackage#getWildcardType_SuperType()
      * @model containment="true"
      * @generated
      */
-	ReferenceType getSuperType();
+    ReferenceType getSuperType();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.WildcardType#getSuperType <em>Super Type</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Super Type</em>' containment reference.
      * @see #getSuperType()
      * @generated
      */
-	void setSuperType(ReferenceType value);
+    void setSuperType( ReferenceType value );
 
 } // WildcardType

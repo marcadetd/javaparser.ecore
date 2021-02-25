@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -31,249 +44,267 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class LabeledStmtImpl extends StatementImpl implements LabeledStmt {
-	/**
+    /**
      * The cached value of the '{@link #getLabel() <em>Label</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getLabel()
      * @generated
      * @ordered
      */
-	protected SimpleName label;
+    protected SimpleName label;
 
-	/**
+    /**
      * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getStatement()
      * @generated
      * @ordered
      */
-	protected Statement statement;
+    protected Statement statement;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected LabeledStmtImpl() {
+    protected LabeledStmtImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.LABELED_STMT;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public SimpleName getLabel() {
+    @Override
+    public SimpleName getLabel() {
         return label;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetLabel(SimpleName newLabel, NotificationChain msgs) {
+    public NotificationChain basicSetLabel( SimpleName newLabel, NotificationChain msgs ) {
         SimpleName oldLabel = label;
         label = newLabel;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.LABELED_STMT__LABEL, oldLabel, newLabel);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.LABELED_STMT__LABEL, oldLabel, newLabel );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setLabel(SimpleName newLabel) {
-        if (newLabel != label) {
+    @Override
+    public void setLabel( SimpleName newLabel ) {
+        if( newLabel != label ) {
             NotificationChain msgs = null;
-            if (label != null)
-                msgs = ((InternalEObject)label).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__LABEL, null, msgs);
-            if (newLabel != null)
-                msgs = ((InternalEObject)newLabel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__LABEL, null, msgs);
-            msgs = basicSetLabel(newLabel, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( label != null )
+                msgs = ( ( InternalEObject ) label ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__LABEL, null, msgs );
+            if( newLabel != null )
+                msgs = ( ( InternalEObject ) newLabel ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__LABEL, null, msgs );
+            msgs = basicSetLabel( newLabel, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.LABELED_STMT__LABEL, newLabel, newLabel));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.LABELED_STMT__LABEL, newLabel,
+                    newLabel ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Statement getStatement() {
+    @Override
+    public Statement getStatement() {
         return statement;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs) {
+    public NotificationChain basicSetStatement( Statement newStatement, NotificationChain msgs ) {
         Statement oldStatement = statement;
         statement = newStatement;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.LABELED_STMT__STATEMENT, oldStatement, newStatement);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.LABELED_STMT__STATEMENT, oldStatement, newStatement );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setStatement(Statement newStatement) {
-        if (newStatement != statement) {
+    @Override
+    public void setStatement( Statement newStatement ) {
+        if( newStatement != statement ) {
             NotificationChain msgs = null;
-            if (statement != null)
-                msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__STATEMENT, null, msgs);
-            if (newStatement != null)
-                msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__STATEMENT, null, msgs);
-            msgs = basicSetStatement(newStatement, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( statement != null )
+                msgs = ( ( InternalEObject ) statement ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__STATEMENT, null, msgs );
+            if( newStatement != null )
+                msgs = ( ( InternalEObject ) newStatement ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.LABELED_STMT__STATEMENT, null, msgs );
+            msgs = basicSetStatement( newStatement, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.LABELED_STMT__STATEMENT, newStatement, newStatement));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.LABELED_STMT__STATEMENT, newStatement,
+                    newStatement ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    @Override
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.LABELED_STMT__LABEL:
+            return basicSetLabel( null, msgs );
+        case JavaPackage.LABELED_STMT__STATEMENT:
+            return basicSetStatement( null, msgs );
+        }
+        return super.eInverseRemove( otherEnd, featureID, msgs );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.LABELED_STMT__LABEL:
+            return getLabel();
+        case JavaPackage.LABELED_STMT__STATEMENT:
+            return getStatement();
+        }
+        return super.eGet( featureID, resolve, coreType );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.LABELED_STMT__LABEL:
+            setLabel( ( SimpleName ) newValue );
+            return;
+        case JavaPackage.LABELED_STMT__STATEMENT:
+            setStatement( ( Statement ) newValue );
+            return;
+        }
+        super.eSet( featureID, newValue );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.LABELED_STMT__LABEL:
+            setLabel( ( SimpleName ) null );
+            return;
+        case JavaPackage.LABELED_STMT__STATEMENT:
+            setStatement( ( Statement ) null );
+            return;
+        }
+        super.eUnset( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.LABELED_STMT__LABEL:
+            return label != null;
+        case JavaPackage.LABELED_STMT__STATEMENT:
+            return statement != null;
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithLabel.class ) {
+            switch( derivedFeatureID ) {
             case JavaPackage.LABELED_STMT__LABEL:
-                return basicSetLabel(null, msgs);
-            case JavaPackage.LABELED_STMT__STATEMENT:
-                return basicSetStatement(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.LABELED_STMT__LABEL:
-                return getLabel();
-            case JavaPackage.LABELED_STMT__STATEMENT:
-                return getStatement();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.LABELED_STMT__LABEL:
-                setLabel((SimpleName)newValue);
-                return;
-            case JavaPackage.LABELED_STMT__STATEMENT:
-                setStatement((Statement)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.LABELED_STMT__LABEL:
-                setLabel((SimpleName)null);
-                return;
-            case JavaPackage.LABELED_STMT__STATEMENT:
-                setStatement((Statement)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.LABELED_STMT__LABEL:
-                return label != null;
-            case JavaPackage.LABELED_STMT__STATEMENT:
-                return statement != null;
-        }
-        return super.eIsSet(featureID);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithLabel.class) {
-            switch (derivedFeatureID) {
-                case JavaPackage.LABELED_STMT__LABEL: return JavaPackage.NODE_WITH_LABEL__LABEL;
-                default: return -1;
+                return JavaPackage.NODE_WITH_LABEL__LABEL;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithLabel.class) {
-            switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_LABEL__LABEL: return JavaPackage.LABELED_STMT__LABEL;
-                default: return -1;
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithLabel.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_LABEL__LABEL:
+                return JavaPackage.LABELED_STMT__LABEL;
+            default:
+                return -1;
             }
         }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
 } //LabeledStmtImpl

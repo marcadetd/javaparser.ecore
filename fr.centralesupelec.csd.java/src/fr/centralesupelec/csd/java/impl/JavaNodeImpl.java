@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -7,15 +20,18 @@ import fr.centralesupelec.csd.java.JavaNode;
 import fr.centralesupelec.csd.java.JavaPackage;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -52,7 +68,7 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      * @ordered
      */
-    protected EList<Comment> orphanComments;
+    protected EList< Comment > orphanComments;
 
     /**
      * <!-- begin-user-doc -->
@@ -88,12 +104,16 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs) {
+    public NotificationChain basicSetComment( Comment newComment, NotificationChain msgs ) {
         Comment oldComment = comment;
         comment = newComment;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NODE__COMMENT, oldComment, newComment);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.JAVA_NODE__COMMENT, oldComment, newComment );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -104,18 +124,21 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     @Override
-    public void setComment(Comment newComment) {
-        if (newComment != comment) {
+    public void setComment( Comment newComment ) {
+        if( newComment != comment ) {
             NotificationChain msgs = null;
-            if (comment != null)
-                msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.JAVA_NODE__COMMENT, null, msgs);
-            if (newComment != null)
-                msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.JAVA_NODE__COMMENT, null, msgs);
-            msgs = basicSetComment(newComment, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( comment != null )
+                msgs = ( ( InternalEObject ) comment ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.JAVA_NODE__COMMENT, null, msgs );
+            if( newComment != null )
+                msgs = ( ( InternalEObject ) newComment ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.JAVA_NODE__COMMENT, null, msgs );
+            msgs = basicSetComment( newComment, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NODE__COMMENT, newComment, newComment));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.JAVA_NODE__COMMENT, newComment,
+                    newComment ) );
     }
 
     /**
@@ -124,9 +147,10 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     @Override
-    public EList<Comment> getOrphanComments() {
-        if (orphanComments == null) {
-            orphanComments = new EObjectContainmentEList<Comment>(Comment.class, this, JavaPackage.JAVA_NODE__ORPHAN_COMMENTS);
+    public EList< Comment > getOrphanComments() {
+        if( orphanComments == null ) {
+            orphanComments = new EObjectContainmentEList< Comment >( Comment.class, this,
+                    JavaPackage.JAVA_NODE__ORPHAN_COMMENTS );
         }
         return orphanComments;
     }
@@ -137,14 +161,14 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case JavaPackage.JAVA_NODE__COMMENT:
-                return basicSetComment(null, msgs);
-            case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
-                return ((InternalEList<?>)getOrphanComments()).basicRemove(otherEnd, msgs);
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.JAVA_NODE__COMMENT:
+            return basicSetComment( null, msgs );
+        case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
+            return ( ( InternalEList< ? > ) getOrphanComments() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -153,14 +177,14 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.JAVA_NODE__COMMENT:
-                return getComment();
-            case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
-                return getOrphanComments();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.JAVA_NODE__COMMENT:
+            return getComment();
+        case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
+            return getOrphanComments();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -168,37 +192,19 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.JAVA_NODE__COMMENT:
-                setComment((Comment)newValue);
-                return;
-            case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
-                getOrphanComments().clear();
-                getOrphanComments().addAll((Collection<? extends Comment>)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.JAVA_NODE__COMMENT:
+            setComment( ( Comment ) newValue );
+            return;
+        case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
+            getOrphanComments().clear();
+            getOrphanComments().addAll( ( Collection< ? extends Comment > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.JAVA_NODE__COMMENT:
-                setComment((Comment)null);
-                return;
-            case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
-                getOrphanComments().clear();
-                return;
-        }
-        super.eUnset(featureID);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -207,14 +213,32 @@ public abstract class JavaNodeImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.JAVA_NODE__COMMENT:
-                return comment != null;
-            case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
-                return orphanComments != null && !orphanComments.isEmpty();
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.JAVA_NODE__COMMENT:
+            setComment( ( Comment ) null );
+            return;
+        case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
+            getOrphanComments().clear();
+            return;
         }
-        return super.eIsSet(featureID);
+        super.eUnset( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.JAVA_NODE__COMMENT:
+            return comment != null;
+        case JavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
+            return orphanComments != null && !orphanComments.isEmpty();
+        }
+        return super.eIsSet( featureID );
     }
 
 } //JavaNodeImpl

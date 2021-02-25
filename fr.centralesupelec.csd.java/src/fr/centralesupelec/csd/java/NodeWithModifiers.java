@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -23,18 +36,18 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface NodeWithModifiers extends EObject {
-	/**
+    /**
      * Returns the value of the '<em><b>Modifiers</b></em>' attribute list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.ModifierKeyword}.
      * The literals are from the enumeration {@link fr.centralesupelec.csd.java.ModifierKeyword}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Modifiers</em>' attribute list.
      * @see fr.centralesupelec.csd.java.ModifierKeyword
      * @see fr.centralesupelec.csd.java.JavaPackage#getNodeWithModifiers_Modifiers()
      * @model
      * @generated
      */
-	EList<ModifierKeyword> getModifiers();
+    EList< ModifierKeyword > getModifiers();
 
 } // NodeWithModifiers

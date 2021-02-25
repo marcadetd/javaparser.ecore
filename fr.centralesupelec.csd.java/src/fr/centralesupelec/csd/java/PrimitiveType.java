@@ -1,7 +1,19 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -20,11 +32,11 @@ package fr.centralesupelec.csd.java;
  * @generated
  */
 public interface PrimitiveType extends Type, NodeWithAnnotations {
-	/**
+    /**
      * Returns the value of the '<em><b>Type</b></em>' attribute.
      * The literals are from the enumeration {@link fr.centralesupelec.csd.java.Primitive}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Type</em>' attribute.
      * @see fr.centralesupelec.csd.java.Primitive
      * @see #setType(Primitive)
@@ -32,17 +44,17 @@ public interface PrimitiveType extends Type, NodeWithAnnotations {
      * @model
      * @generated
      */
-	Primitive getType();
+    Primitive getType();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.PrimitiveType#getType <em>Type</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Type</em>' attribute.
      * @see fr.centralesupelec.csd.java.Primitive
      * @see #getType()
      * @generated
      */
-	void setType(Primitive value);
+    void setType( Primitive value );
 
 } // PrimitiveType

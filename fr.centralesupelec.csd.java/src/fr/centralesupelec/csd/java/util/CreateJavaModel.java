@@ -1,8 +1,22 @@
-package fr.centralesupelec.csd.java.test;
+/**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
+ */
+package fr.centralesupelec.csd.java.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -18,51 +32,47 @@ import com.github.javaparser.ast.visitor.GenericVisitorAdapter;
 import fr.centralesupelec.csd.java.*;
 
 public class CreateJavaModel {
+    
+    public CreateJavaModel() {
 
-    //private static final String FILE_PATH = "/Users/marcadet/Desktop/Essai.java";
-    private static final String FILE_PATH = "src/fr/centralesupelec/csd/java/test/CreateJavaModel.java";
+    }
 
-    public static void main( String[] args ) {
+    public Resource createJavaModel( File file ) {
         // Create a resource set to hold the resources.
-        //
         ResourceSet resourceSet = new ResourceSetImpl();
 
         // Register the appropriate resource factory to handle all file extensions.
-        //
         resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
                 Resource.Factory.Registry.DEFAULT_EXTENSION,
                 new XMIResourceFactoryImpl()
         );
 
         // Register the package to ensure it is available during loading.
-        //
         resourceSet.getPackageRegistry().put( JavaPackage.eNS_URI, JavaPackage.eINSTANCE );
 
         try {
             JavaParser javaParser = new JavaParser();
             javaParser.getParserConfiguration().setLanguageLevel( LanguageLevel.JAVA_15 );
-            ParseResult< com.github.javaparser.ast.CompilationUnit > result = javaParser.parse( new File( FILE_PATH ));
+            ParseResult< com.github.javaparser.ast.CompilationUnit > result = javaParser.parse( file );
             
+            Resource resource = resourceSet.createResource ( URI.createURI( "http://csd.centralesupelec.fr/java/resource.java" ));
+
             result.ifSuccessful(
                     cu -> {
-                        System.out.println( cu );
                         CompilationUnitVisitor cuv = new CompilationUnitVisitor();
                         CompilationUnit compilationUnit = cuv.visit( cu, JavaFactory.eINSTANCE );
 
-                        Resource resource = resourceSet.createResource( URI.createURI( "http:///My.java" ));
                         resource.getContents().add( compilationUnit );
-                        try {
-                            resource.save( System.out, null );
-                        }
-                        catch( IOException e ) {
-                            e.printStackTrace();
-                        }
                     }
             );
+            
+            return resource;
         }
         catch( FileNotFoundException e ) {
             e.printStackTrace();
         }
+        
+        return null;
     }
     
     private static class JavaNodeVisitor extends GenericVisitorAdapter< JavaNode, JavaFactory > {
@@ -3411,5 +3421,4 @@ public class CreateJavaModel {
         }
 
     }
-
 }

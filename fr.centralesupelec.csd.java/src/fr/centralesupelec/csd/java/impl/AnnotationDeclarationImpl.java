@@ -1,9 +1,23 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.AnnotationDeclaration;
 import fr.centralesupelec.csd.java.JavaPackage;
+import fr.centralesupelec.csd.java.ModifierKeyword;
 import fr.centralesupelec.csd.java.NodeWithAbstractModifier;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,147 +36,150 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class AnnotationDeclarationImpl extends TypeDeclarationImpl implements AnnotationDeclaration {
-	/**
+    /**
      * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #isAbstract()
      * @generated
      * @ordered
      */
-	protected static final boolean ABSTRACT_EDEFAULT = false;
+    protected static final boolean ABSTRACT_EDEFAULT = false;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected AnnotationDeclarationImpl() {
+    protected AnnotationDeclarationImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.ANNOTATION_DECLARATION;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
+     * <!-- end-user-doc -->
+     * @generated NOT
      */
-	@Override
-	public boolean isAbstract() {
-        // TODO: implement this method to return the 'Abstract' attribute
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+    @Override
+    public boolean isAbstract() {
+        return getModifiers().contains( ModifierKeyword.ABSTRACT );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
+     * <!-- end-user-doc -->
+     * @generated NOT
      */
-	@Override
-	public void setAbstract(boolean newAbstract) {
-        // TODO: implement this method to set the 'Abstract' attribute
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+    @Override
+    public void setAbstract( boolean newAbstract ) {
+        if( newAbstract )
+            getModifiers().add( ModifierKeyword.ABSTRACT );
+        else
+            getModifiers().remove( ModifierKeyword.ABSTRACT );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
-                return isAbstract();
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
+            return isAbstract();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
-                setAbstract((Boolean)newValue);
-                return;
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
+            setAbstract( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
-                setAbstract(ABSTRACT_EDEFAULT);
-                return;
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
+            setAbstract( ABSTRACT_EDEFAULT );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
-                return isAbstract() != ABSTRACT_EDEFAULT;
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
+            return isAbstract() != ABSTRACT_EDEFAULT;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithAbstractModifier.class) {
-            switch (derivedFeatureID) {
-                case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT: return JavaPackage.NODE_WITH_ABSTRACT_MODIFIER__ABSTRACT;
-                default: return -1;
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithAbstractModifier.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.ANNOTATION_DECLARATION__ABSTRACT:
+                return JavaPackage.NODE_WITH_ABSTRACT_MODIFIER__ABSTRACT;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithAbstractModifier.class) {
-            switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_ABSTRACT_MODIFIER__ABSTRACT: return JavaPackage.ANNOTATION_DECLARATION__ABSTRACT;
-                default: return -1;
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithAbstractModifier.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_ABSTRACT_MODIFIER__ABSTRACT:
+                return JavaPackage.ANNOTATION_DECLARATION__ABSTRACT;
+            default:
+                return -1;
             }
         }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
 } //AnnotationDeclarationImpl

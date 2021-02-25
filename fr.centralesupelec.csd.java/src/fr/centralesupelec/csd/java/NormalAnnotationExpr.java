@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -21,16 +34,16 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface NormalAnnotationExpr extends AnnotationExpr {
-	/**
+    /**
      * Returns the value of the '<em><b>Pairs</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.MemberValuePair}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Pairs</em>' containment reference list.
      * @see fr.centralesupelec.csd.java.JavaPackage#getNormalAnnotationExpr_Pairs()
      * @model containment="true"
      * @generated
      */
-	EList<MemberValuePair> getPairs();
+    EList< MemberValuePair > getPairs();
 
 } // NormalAnnotationExpr

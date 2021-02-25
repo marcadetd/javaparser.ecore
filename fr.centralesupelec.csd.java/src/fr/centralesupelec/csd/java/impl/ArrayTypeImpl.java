@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java.impl;
 
@@ -40,287 +53,300 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ArrayTypeImpl extends ReferenceTypeImpl implements ArrayType {
-	/**
+    /**
      * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getAnnotations()
      * @generated
      * @ordered
      */
-	protected EList<AnnotationExpr> annotations;
+    protected EList< AnnotationExpr > annotations;
 
-	/**
+    /**
      * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getComponentType()
      * @generated
      * @ordered
      */
-	protected Type componentType;
+    protected Type componentType;
 
-	/**
+    /**
      * The default value of the '{@link #getOrigin() <em>Origin</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getOrigin()
      * @generated
      * @ordered
      */
-	protected static final ArrayTypeOrigin ORIGIN_EDEFAULT = ArrayTypeOrigin.NAME;
+    protected static final ArrayTypeOrigin ORIGIN_EDEFAULT = ArrayTypeOrigin.NAME;
 
-	/**
+    /**
      * The cached value of the '{@link #getOrigin() <em>Origin</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #getOrigin()
      * @generated
      * @ordered
      */
-	protected ArrayTypeOrigin origin = ORIGIN_EDEFAULT;
+    protected ArrayTypeOrigin origin = ORIGIN_EDEFAULT;
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	protected ArrayTypeImpl() {
+    protected ArrayTypeImpl() {
         super();
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	protected EClass eStaticClass() {
+    @Override
+    protected EClass eStaticClass() {
         return JavaPackage.Literals.ARRAY_TYPE;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public EList<AnnotationExpr> getAnnotations() {
-        if (annotations == null) {
-            annotations = new EObjectContainmentEList<AnnotationExpr>(AnnotationExpr.class, this, JavaPackage.ARRAY_TYPE__ANNOTATIONS);
+    @Override
+    public EList< AnnotationExpr > getAnnotations() {
+        if( annotations == null ) {
+            annotations = new EObjectContainmentEList< AnnotationExpr >( AnnotationExpr.class, this,
+                    JavaPackage.ARRAY_TYPE__ANNOTATIONS );
         }
         return annotations;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Type getComponentType() {
+    @Override
+    public Type getComponentType() {
         return componentType;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public NotificationChain basicSetComponentType(Type newComponentType, NotificationChain msgs) {
+    public NotificationChain basicSetComponentType( Type newComponentType, NotificationChain msgs ) {
         Type oldComponentType = componentType;
         componentType = newComponentType;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, oldComponentType, newComponentType);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, oldComponentType, newComponentType );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setComponentType(Type newComponentType) {
-        if (newComponentType != componentType) {
+    @Override
+    public void setComponentType( Type newComponentType ) {
+        if( newComponentType != componentType ) {
             NotificationChain msgs = null;
-            if (componentType != null)
-                msgs = ((InternalEObject)componentType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, null, msgs);
-            if (newComponentType != null)
-                msgs = ((InternalEObject)newComponentType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, null, msgs);
-            msgs = basicSetComponentType(newComponentType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( componentType != null )
+                msgs = ( ( InternalEObject ) componentType ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, null, msgs );
+            if( newComponentType != null )
+                msgs = ( ( InternalEObject ) newComponentType ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, null, msgs );
+            msgs = basicSetComponentType( newComponentType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_TYPE__COMPONENT_TYPE, newComponentType, newComponentType));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.ARRAY_TYPE__COMPONENT_TYPE,
+                    newComponentType, newComponentType ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public ArrayTypeOrigin getOrigin() {
+    @Override
+    public ArrayTypeOrigin getOrigin() {
         return origin;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setOrigin(ArrayTypeOrigin newOrigin) {
+    @Override
+    public void setOrigin( ArrayTypeOrigin newOrigin ) {
         ArrayTypeOrigin oldOrigin = origin;
         origin = newOrigin == null ? ORIGIN_EDEFAULT : newOrigin;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.ARRAY_TYPE__ORIGIN, oldOrigin, origin));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, JavaPackage.ARRAY_TYPE__ORIGIN, oldOrigin,
+                    origin ) );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
-                return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-            case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
-                return basicSetComponentType(null, msgs);
+    @Override
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
+            return ( ( InternalEList< ? > ) getAnnotations() ).basicRemove( otherEnd, msgs );
+        case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
+            return basicSetComponentType( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
-                return getAnnotations();
-            case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
-                return getComponentType();
-            case JavaPackage.ARRAY_TYPE__ORIGIN:
-                return getOrigin();
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
+            return getAnnotations();
+        case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
+            return getComponentType();
+        case JavaPackage.ARRAY_TYPE__ORIGIN:
+            return getOrigin();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
-                getAnnotations().clear();
-                getAnnotations().addAll((Collection<? extends AnnotationExpr>)newValue);
-                return;
-            case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
-                setComponentType((Type)newValue);
-                return;
-            case JavaPackage.ARRAY_TYPE__ORIGIN:
-                setOrigin((ArrayTypeOrigin)newValue);
-                return;
+    @SuppressWarnings( "unchecked" )
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
+            getAnnotations().clear();
+            getAnnotations().addAll( ( Collection< ? extends AnnotationExpr > ) newValue );
+            return;
+        case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
+            setComponentType( ( Type ) newValue );
+            return;
+        case JavaPackage.ARRAY_TYPE__ORIGIN:
+            setOrigin( ( ArrayTypeOrigin ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void eUnset(int featureID) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
-                getAnnotations().clear();
-                return;
-            case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
-                setComponentType((Type)null);
-                return;
-            case JavaPackage.ARRAY_TYPE__ORIGIN:
-                setOrigin(ORIGIN_EDEFAULT);
-                return;
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
+            getAnnotations().clear();
+            return;
+        case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
+            setComponentType( ( Type ) null );
+            return;
+        case JavaPackage.ARRAY_TYPE__ORIGIN:
+            setOrigin( ORIGIN_EDEFAULT );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
-                return annotations != null && !annotations.isEmpty();
-            case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
-                return componentType != null;
-            case JavaPackage.ARRAY_TYPE__ORIGIN:
-                return origin != ORIGIN_EDEFAULT;
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
+            return annotations != null && !annotations.isEmpty();
+        case JavaPackage.ARRAY_TYPE__COMPONENT_TYPE:
+            return componentType != null;
+        case JavaPackage.ARRAY_TYPE__ORIGIN:
+            return origin != ORIGIN_EDEFAULT;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithAnnotations.class) {
-            switch (derivedFeatureID) {
-                case JavaPackage.ARRAY_TYPE__ANNOTATIONS: return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
-                default: return -1;
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithAnnotations.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.ARRAY_TYPE__ANNOTATIONS:
+                return JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithAnnotations.class) {
-            switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS: return JavaPackage.ARRAY_TYPE__ANNOTATIONS;
-                default: return -1;
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == NodeWithAnnotations.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_ANNOTATIONS__ANNOTATIONS:
+                return JavaPackage.ARRAY_TYPE__ANNOTATIONS;
+            default:
+                return -1;
             }
         }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public String toString() {
-        if (eIsProxy()) return super.toString();
+    @Override
+    public String toString() {
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (origin: ");
-        result.append(origin);
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (origin: " );
+        result.append( origin );
+        result.append( ')' );
         return result.toString();
     }
 

@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -24,72 +37,72 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface TryStmt extends Statement {
-	/**
+    /**
      * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.Expression}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Resources</em>' containment reference list.
      * @see fr.centralesupelec.csd.java.JavaPackage#getTryStmt_Resources()
      * @model containment="true"
      * @generated
      */
-	EList<Expression> getResources();
+    EList< Expression > getResources();
 
-	/**
+    /**
      * Returns the value of the '<em><b>Try Block</b></em>' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Try Block</em>' containment reference.
      * @see #setTryBlock(BlockStmt)
      * @see fr.centralesupelec.csd.java.JavaPackage#getTryStmt_TryBlock()
      * @model containment="true"
      * @generated
      */
-	BlockStmt getTryBlock();
+    BlockStmt getTryBlock();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.TryStmt#getTryBlock <em>Try Block</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Try Block</em>' containment reference.
      * @see #getTryBlock()
      * @generated
      */
-	void setTryBlock(BlockStmt value);
+    void setTryBlock( BlockStmt value );
 
-	/**
+    /**
      * Returns the value of the '<em><b>Catch Clauses</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.CatchClause}.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Catch Clauses</em>' containment reference list.
      * @see fr.centralesupelec.csd.java.JavaPackage#getTryStmt_CatchClauses()
      * @model containment="true"
      * @generated
      */
-	EList<CatchClause> getCatchClauses();
+    EList< CatchClause > getCatchClauses();
 
-	/**
+    /**
      * Returns the value of the '<em><b>Finally Block</b></em>' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Finally Block</em>' containment reference.
      * @see #setFinallyBlock(BlockStmt)
      * @see fr.centralesupelec.csd.java.JavaPackage#getTryStmt_FinallyBlock()
      * @model containment="true"
      * @generated
      */
-	BlockStmt getFinallyBlock();
+    BlockStmt getFinallyBlock();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.TryStmt#getFinallyBlock <em>Finally Block</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Finally Block</em>' containment reference.
      * @see #getFinallyBlock()
      * @generated
      */
-	void setFinallyBlock(BlockStmt value);
+    void setFinallyBlock( BlockStmt value );
 
 } // TryStmt

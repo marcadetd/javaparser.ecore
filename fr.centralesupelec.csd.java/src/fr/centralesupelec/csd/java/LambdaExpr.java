@@ -1,4 +1,17 @@
 /**
+ *  Copyright (c) 2021 CentraleSupélec.
+ *  This program and the accompanying materials are made
+ *  available under the terms of the Apache License version 2.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *  Web site:
+ *      https://github.com/marcadetd/javaparser.ecore
+ * 
  */
 package fr.centralesupelec.csd.java;
 
@@ -20,48 +33,48 @@ package fr.centralesupelec.csd.java;
  * @generated
  */
 public interface LambdaExpr extends Expression, NodeWithParameters {
-	/**
+    /**
      * Returns the value of the '<em><b>Enclosing Parameters</b></em>' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Enclosing Parameters</em>' attribute.
      * @see #setEnclosingParameters(boolean)
      * @see fr.centralesupelec.csd.java.JavaPackage#getLambdaExpr_EnclosingParameters()
      * @model
      * @generated
      */
-	boolean isEnclosingParameters();
+    boolean isEnclosingParameters();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.LambdaExpr#isEnclosingParameters <em>Enclosing Parameters</em>}' attribute.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Enclosing Parameters</em>' attribute.
      * @see #isEnclosingParameters()
      * @generated
      */
-	void setEnclosingParameters(boolean value);
+    void setEnclosingParameters( boolean value );
 
-	/**
+    /**
      * Returns the value of the '<em><b>Body</b></em>' reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @return the value of the '<em>Body</em>' reference.
      * @see #setBody(Statement)
      * @see fr.centralesupelec.csd.java.JavaPackage#getLambdaExpr_Body()
      * @model
      * @generated
      */
-	Statement getBody();
+    Statement getBody();
 
-	/**
+    /**
      * Sets the value of the '{@link fr.centralesupelec.csd.java.LambdaExpr#getBody <em>Body</em>}' reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @param value the new value of the '<em>Body</em>' reference.
      * @see #getBody()
      * @generated
      */
-	void setBody(Statement value);
+    void setBody( Statement value );
 
 } // LambdaExpr

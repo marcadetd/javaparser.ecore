@@ -33,8 +33,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ObjectCreationExpr extends Expression, NodeWithTypeArguments,
-        NodeWithType< ClassOrInterfaceDeclaration >, NodeWithArguments, NodeWithScope< Expression > {
+public interface ObjectCreationExpr extends Expression, NodeWithTypeArguments, NodeWithType< ClassOrInterfaceType >,
+        NodeWithArguments, NodeWithScope< Expression > {
     /**
      * Returns the value of the '<em><b>Anonymous Class Body</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.BodyDeclaration}.

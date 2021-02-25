@@ -1688,13 +1688,31 @@ public interface JavaPackage extends EPackage {
     int FIELD_DECLARATION__FINAL = BODY_DECLARATION_FEATURE_COUNT + 6;
 
     /**
+     * The feature id for the '<em><b>Transient</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_DECLARATION__TRANSIENT = BODY_DECLARATION_FEATURE_COUNT + 7;
+
+    /**
+     * The feature id for the '<em><b>Volatile</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FIELD_DECLARATION__VOLATILE = BODY_DECLARATION_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>Field Declaration</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FIELD_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 7;
+    int FIELD_DECLARATION_FEATURE_COUNT = BODY_DECLARATION_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>Field Declaration</em>' class.
@@ -5389,13 +5407,22 @@ public interface JavaPackage extends EPackage {
     int MODULE_REQUIRES_DIRECTIVE__NAME = MODULE_DIRECTIVE_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Transitive</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MODULE_REQUIRES_DIRECTIVE__TRANSITIVE = MODULE_DIRECTIVE_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Module Requires Directive</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MODULE_REQUIRES_DIRECTIVE_FEATURE_COUNT = MODULE_DIRECTIVE_FEATURE_COUNT + 3;
+    int MODULE_REQUIRES_DIRECTIVE_FEATURE_COUNT = MODULE_DIRECTIVE_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>Module Requires Directive</em>' class.

@@ -26,7 +26,9 @@ import fr.centralesupelec.csd.java.NodeWithPrivateModifier;
 import fr.centralesupelec.csd.java.NodeWithProtectedModifier;
 import fr.centralesupelec.csd.java.NodeWithPublicModifier;
 import fr.centralesupelec.csd.java.NodeWithStaticModifier;
+import fr.centralesupelec.csd.java.NodeWithTransientModifier;
 import fr.centralesupelec.csd.java.NodeWithVariables;
+import fr.centralesupelec.csd.java.NodeWithVolatileModifier;
 import fr.centralesupelec.csd.java.VariableDeclarator;
 
 import java.util.Collection;
@@ -57,6 +59,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#isProtected <em>Protected</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#isFinal <em>Final</em>}</li>
+ *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#isTransient <em>Transient</em>}</li>
+ *   <li>{@link fr.centralesupelec.csd.java.impl.FieldDeclarationImpl#isVolatile <em>Volatile</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +135,26 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
      * @ordered
      */
     protected static final boolean FINAL_EDEFAULT = false;
+
+    /**
+     * The default value of the '{@link #isTransient() <em>Transient</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isTransient()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean TRANSIENT_EDEFAULT = false;
+
+    /**
+     * The default value of the '{@link #isVolatile() <em>Volatile</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isVolatile()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean VOLATILE_EDEFAULT = false;
 
     /**
      * <!-- begin-user-doc -->
@@ -297,6 +321,52 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public boolean isTransient() {
+        return getModifiers().contains( ModifierKeyword.TRANSIENT );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public void setTransient( boolean newTransient ) {
+        if( newTransient )
+            getModifiers().add( ModifierKeyword.TRANSIENT );
+        else
+            getModifiers().remove( ModifierKeyword.TRANSIENT );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public boolean isVolatile() {
+        return getModifiers().contains( ModifierKeyword.VOLATILE );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public void setVolatile( boolean newVolatile ) {
+        if( newVolatile )
+            getModifiers().add( ModifierKeyword.VOLATILE );
+        else
+            getModifiers().remove( ModifierKeyword.VOLATILE );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -330,6 +400,10 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
             return isStatic();
         case JavaPackage.FIELD_DECLARATION__FINAL:
             return isFinal();
+        case JavaPackage.FIELD_DECLARATION__TRANSIENT:
+            return isTransient();
+        case JavaPackage.FIELD_DECLARATION__VOLATILE:
+            return isVolatile();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -366,6 +440,12 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
         case JavaPackage.FIELD_DECLARATION__FINAL:
             setFinal( ( Boolean ) newValue );
             return;
+        case JavaPackage.FIELD_DECLARATION__TRANSIENT:
+            setTransient( ( Boolean ) newValue );
+            return;
+        case JavaPackage.FIELD_DECLARATION__VOLATILE:
+            setVolatile( ( Boolean ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -399,6 +479,12 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
         case JavaPackage.FIELD_DECLARATION__FINAL:
             setFinal( FINAL_EDEFAULT );
             return;
+        case JavaPackage.FIELD_DECLARATION__TRANSIENT:
+            setTransient( TRANSIENT_EDEFAULT );
+            return;
+        case JavaPackage.FIELD_DECLARATION__VOLATILE:
+            setVolatile( VOLATILE_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -425,6 +511,10 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
             return isStatic() != STATIC_EDEFAULT;
         case JavaPackage.FIELD_DECLARATION__FINAL:
             return isFinal() != FINAL_EDEFAULT;
+        case JavaPackage.FIELD_DECLARATION__TRANSIENT:
+            return isTransient() != TRANSIENT_EDEFAULT;
+        case JavaPackage.FIELD_DECLARATION__VOLATILE:
+            return isVolatile() != VOLATILE_EDEFAULT;
         }
         return super.eIsSet( featureID );
     }
@@ -504,6 +594,22 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
                 return -1;
             }
         }
+        if( baseClass == NodeWithTransientModifier.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.FIELD_DECLARATION__TRANSIENT:
+                return JavaPackage.NODE_WITH_TRANSIENT_MODIFIER__TRANSIENT;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == NodeWithVolatileModifier.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.FIELD_DECLARATION__VOLATILE:
+                return JavaPackage.NODE_WITH_VOLATILE_MODIFIER__VOLATILE;
+            default:
+                return -1;
+            }
+        }
         return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
@@ -578,6 +684,22 @@ public class FieldDeclarationImpl extends BodyDeclarationImpl implements FieldDe
             switch( baseFeatureID ) {
             case JavaPackage.NODE_WITH_FINAL_MODIFIER__FINAL:
                 return JavaPackage.FIELD_DECLARATION__FINAL;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == NodeWithTransientModifier.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_TRANSIENT_MODIFIER__TRANSIENT:
+                return JavaPackage.FIELD_DECLARATION__TRANSIENT;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == NodeWithVolatileModifier.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_VOLATILE_MODIFIER__VOLATILE:
+                return JavaPackage.FIELD_DECLARATION__VOLATILE;
             default:
                 return -1;
             }

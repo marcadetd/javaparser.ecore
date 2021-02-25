@@ -26,5 +26,5 @@ package fr.centralesupelec.csd.java;
  * @generated
  */
 public interface FieldDeclaration extends BodyDeclaration, NodeWithJavadoc, NodeWithVariables, NodeWithAccessModifiers,
-        NodeWithStaticModifier, NodeWithFinalModifier {
+        NodeWithStaticModifier, NodeWithFinalModifier, NodeWithTransientModifier, NodeWithVolatileModifier {
 } // FieldDeclaration

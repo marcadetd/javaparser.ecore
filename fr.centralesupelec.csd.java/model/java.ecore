@@ -72,7 +72,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
         eType="#//EnumConstantDeclaration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldDeclaration" eSuperTypes="#//BodyDeclaration #//NodeWithJavadoc #//NodeWithVariables #//NodeWithAccessModifiers #//NodeWithStaticModifier #//NodeWithFinalModifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldDeclaration" eSuperTypes="#//BodyDeclaration #//NodeWithJavadoc #//NodeWithVariables #//NodeWithAccessModifiers #//NodeWithStaticModifier #//NodeWithFinalModifier #//NodeWithTransientModifier #//NodeWithVolatileModifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="InitializerDeclaration" eSuperTypes="#//BodyDeclaration #//NodeWithJavadoc #//NodeWithBlockStmt">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
@@ -284,7 +284,7 @@
     <eGenericSuperTypes eClassifier="#//Expression"/>
     <eGenericSuperTypes eClassifier="#//NodeWithTypeArguments"/>
     <eGenericSuperTypes eClassifier="#//NodeWithType">
-      <eTypeArguments eClassifier="#//ClassOrInterfaceDeclaration"/>
+      <eTypeArguments eClassifier="#//ClassOrInterfaceType"/>
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="#//NodeWithArguments"/>
     <eGenericSuperTypes eClassifier="#//NodeWithScope">
@@ -352,7 +352,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="with" upperBound="-1" eType="#//Name"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModuleRequiresDirective" eSuperTypes="#//ModuleDirective #//NodeWithStaticModifier #//NodeWithName"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleRequiresDirective" eSuperTypes="#//ModuleDirective #//NodeWithStaticModifier #//NodeWithName #//NodeWithTransitiveModifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleUsesDirective" eSuperTypes="#//ModuleDirective #//NodeWithName"/>
   <eClassifiers xsi:type="ecore:EClass" name="NodeWithAnnotations" abstract="true"
       interface="true">

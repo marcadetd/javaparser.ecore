@@ -257,7 +257,7 @@ public class CreateJavaModel {
             new NodeWithSimpleNameVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType< Type >
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithPublicModifier
             new NodeWithPublicModifierVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -344,7 +344,7 @@ public class CreateJavaModel {
             // implements NodeWithAccessModifiers
             new NodeWithAccessModifiersVisitor().visit( javaParserObject, factory, ecoreObject );
             
-            // implements NodeWithDeclaration
+            // implements NodeWithDeclaration: not sure it is useful
             //new NodeWithDeclarationVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithSimpleName
@@ -375,10 +375,8 @@ public class CreateJavaModel {
             new NodeWithStrictfpModifierVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // ReceiverParameter receiverParameter
-            // Local variable ecoreObject defined in an enclosing scope must be final or effectively final
-            final CallableDeclaration eo = ecoreObject;
             javaParserObject.getReceiverParameter().ifPresent(
-                    rp -> eo.setReceiverParameter( new ReceiverParameterVisitor().visit( rp, factory ))
+                    rp -> ecoreObject.setReceiverParameter( new ReceiverParameterVisitor().visit( rp, factory ))
             );
 
             return ecoreObject;
@@ -532,6 +530,12 @@ public class CreateJavaModel {
             // implements NodeWithFinalModifier
             new NodeWithFinalModifierVisitor().visit( javaParserObject, factory, ecoreObject );
             
+            // NOT in JavaParser: implements NodeWithTransientModifier
+            new NodeWithTransientModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // NOT in JavaParser: implements NodeWithVolatileModifier
+            new NodeWithVolatileModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -572,7 +576,7 @@ public class CreateJavaModel {
             new CallableDeclarationVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithOptionalBlockStmt
             new NodeWithBlockStmtVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -580,7 +584,7 @@ public class CreateJavaModel {
             // implements NodeWithJavadoc
             new NodeWithJavadocVisitor().visit( javaParserObject, factory, ecoreObject );
             
-            // implements NodeWithDeclaration
+            // implements NodeWithDeclaration: not sure it is useful
             //new NodeWithDeclarationVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithSimpleName
@@ -610,6 +614,15 @@ public class CreateJavaModel {
             // implements NodeWithStrictfpModifier
             new NodeWithStrictfpModifierVisitor().visit( javaParserObject, factory, ecoreObject );
             
+            // NOT in JavaParser: implements NodeWithSynchronizedModifier
+            new NodeWithSynchronizedModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // NOT in JavaParser: implements NodeWithNativeModifier
+            new NodeWithNativeModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // NOT in JavaParser: implements NodeWithDefaultModifier
+            new NodeWithDefaultModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -626,7 +639,7 @@ public class CreateJavaModel {
             new JavaNodeVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithAnnotations
             new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -656,7 +669,7 @@ public class CreateJavaModel {
             new JavaNodeVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithAnnotations
             new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -727,7 +740,7 @@ public class CreateJavaModel {
             new JavaNodeVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithSimpleName
             new NodeWithSimpleNameVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -1034,7 +1047,7 @@ public class CreateJavaModel {
             new ExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithExpression
             new NodeWithExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -1070,7 +1083,7 @@ public class CreateJavaModel {
             new ExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -1202,6 +1215,10 @@ public class CreateJavaModel {
                 return new LambdaExprVisitor().visit( ( com.github.javaparser.ast.expr.LambdaExpr ) javaParserObject, factory );
             }
             
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.LiteralExpr ) {
+                return new LiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.LiteralExpr ) javaParserObject, factory );
+            }
+            
             if( javaParserObject instanceof com.github.javaparser.ast.expr.MethodCallExpr ) {
                 return new MethodCallExprVisitor().visit( ( com.github.javaparser.ast.expr.MethodCallExpr ) javaParserObject, factory );
             }
@@ -1294,7 +1311,7 @@ public class CreateJavaModel {
             new ExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< ReferenceType >().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithExpression
             new NodeWithExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -1350,23 +1367,22 @@ public class CreateJavaModel {
 
     private static class LiteralExprVisitor extends GenericVisitorAdapter< LiteralExpr, JavaFactory > {
 
-// Not needed ?
-//        public LiteralExpr visit( com.github.javaparser.ast.expr.LiteralExpr javaParserObject, JavaFactory factory ) {
-//
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.BooleanLiteralExpr ) {
-//                return new BooleanLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.BooleanLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.LiteralStringValueExpr ) {
-//                return new LiteralStringValueExprVisitor().visit( ( com.github.javaparser.ast.expr.LiteralStringValueExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.NullLiteralExpr ) {
-//                return new NullLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.NullLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            return null;
-//        }
+        public LiteralExpr visit( com.github.javaparser.ast.expr.LiteralExpr javaParserObject, JavaFactory factory ) {
+
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.BooleanLiteralExpr ) {
+                return new BooleanLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.BooleanLiteralExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.LiteralStringValueExpr ) {
+                return new LiteralStringValueExprVisitor().visit( ( com.github.javaparser.ast.expr.LiteralStringValueExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.NullLiteralExpr ) {
+                return new NullLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.NullLiteralExpr ) javaParserObject, factory );
+            }
+            
+            return null;
+        }
 
 
         public LiteralExpr visit( com.github.javaparser.ast.expr.LiteralExpr javaParserObject, JavaFactory factory, LiteralExpr ecoreObject ) {
@@ -1380,35 +1396,34 @@ public class CreateJavaModel {
 
     private static class LiteralStringValueExprVisitor extends GenericVisitorAdapter< LiteralStringValueExpr, JavaFactory > {
 
-// Not needed ?
-//        public LiteralStringValueExpr visit( com.github.javaparser.ast.expr.LiteralStringValueExpr javaParserObject, JavaFactory factory ) {
-//
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.CharLiteralExpr ) {
-//                return new CharLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.CharLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.DoubleLiteralExpr ) {
-//                return new DoubleLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.DoubleLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.IntegerLiteralExpr ) {
-//                return new IntegerLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.IntegerLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.LongLiteralExpr ) {
-//                return new LongLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.LongLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.StringLiteralExpr ) {
-//                return new StringLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.StringLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            if( javaParserObject instanceof com.github.javaparser.ast.expr.TextBlockLiteralExpr ) {
-//                return new TextBlockLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.TextBlockLiteralExpr ) javaParserObject, factory );
-//            }
-//            
-//            return null;
-//        }
+        public LiteralStringValueExpr visit( com.github.javaparser.ast.expr.LiteralStringValueExpr javaParserObject, JavaFactory factory ) {
+
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.CharLiteralExpr ) {
+                return new CharLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.CharLiteralExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.DoubleLiteralExpr ) {
+                return new DoubleLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.DoubleLiteralExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.IntegerLiteralExpr ) {
+                return new IntegerLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.IntegerLiteralExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.LongLiteralExpr ) {
+                return new LongLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.LongLiteralExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.StringLiteralExpr ) {
+                return new StringLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.StringLiteralExpr ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.expr.TextBlockLiteralExpr ) {
+                return new TextBlockLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.TextBlockLiteralExpr ) javaParserObject, factory );
+            }
+            
+            return null;
+        }
 
 
         public LiteralStringValueExpr visit( com.github.javaparser.ast.expr.LiteralStringValueExpr javaParserObject, JavaFactory factory, LiteralStringValueExpr ecoreObject ) {
@@ -1611,7 +1626,7 @@ public class CreateJavaModel {
             new NodeWithTypeArgumentsVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType<ClassOrInterfaceType>
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< ClassOrInterfaceType >().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithArguments
             new NodeWithArgumentsVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -1645,7 +1660,7 @@ public class CreateJavaModel {
             new NodeWithSimpleNameVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< ReferenceType >().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -1787,7 +1802,7 @@ public class CreateJavaModel {
             new ExpressionVisitor().visit( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithType
-            new NodeWithTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            new NodeWithTypeVisitor< Type >().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -2000,6 +2015,9 @@ public class CreateJavaModel {
             // implements NodeWithName
             new NodeWithNameVisitor().visit( javaParserObject, factory, ecoreObject );
             
+            // NOT in JavaParser: implements NodeWithTransitiveModifier
+            new NodeWithTransitiveModifierVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -2143,7 +2161,8 @@ public class CreateJavaModel {
 
         public NodeWithJavadoc visit( com.github.javaparser.ast.nodeTypes.NodeWithJavadoc< ? > javaParserObject, JavaFactory factory, NodeWithJavadoc ecoreObject ) {
 
-            // TODO
+            // Not sure about its usefulness
+            // And we don't have to check that Javadoc comments are used only when it is allowed, JavaParser has already done this
 //            javaParserObject.getJavadocComment().ifPresent( 
 //                    cm -> ecoreObject.setComment( new JavadocCommentVisitor().visit( cm, factory ))
 //            );
@@ -2291,12 +2310,12 @@ public class CreateJavaModel {
 //
 //    }
 
-    private static class NodeWithTypeVisitor extends GenericVisitorAdapter< NodeWithType< ? >, JavaFactory > {
+    private static class NodeWithTypeVisitor< T > extends GenericVisitorAdapter< NodeWithType< T >, JavaFactory > {
 
-        public NodeWithType visit( com.github.javaparser.ast.nodeTypes.NodeWithType< ?, ? > javaParserObject, JavaFactory factory, NodeWithType< ? > ecoreObject ) {
+        @SuppressWarnings( "unchecked" )
+        public NodeWithType< T > visit( com.github.javaparser.ast.nodeTypes.NodeWithType< ?, ? > javaParserObject, JavaFactory factory, NodeWithType< T > ecoreObject ) {
             
-            // TODO
-            //ecoreObject.setType( javaParserObject.getType() );
+            ecoreObject.setType( ( T ) new TypeVisitor().visit( javaParserObject.getType(), factory ));
             
             return ecoreObject;
         }

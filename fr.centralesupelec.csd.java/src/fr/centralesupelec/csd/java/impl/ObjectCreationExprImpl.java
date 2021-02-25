@@ -16,7 +16,7 @@
 package fr.centralesupelec.csd.java.impl;
 
 import fr.centralesupelec.csd.java.BodyDeclaration;
-import fr.centralesupelec.csd.java.ClassOrInterfaceDeclaration;
+import fr.centralesupelec.csd.java.ClassOrInterfaceType;
 import fr.centralesupelec.csd.java.Expression;
 import fr.centralesupelec.csd.java.JavaPackage;
 import fr.centralesupelec.csd.java.NodeWithArguments;
@@ -77,7 +77,7 @@ public class ObjectCreationExprImpl extends ExpressionImpl implements ObjectCrea
      * @generated
      * @ordered
      */
-    protected ClassOrInterfaceDeclaration type;
+    protected ClassOrInterfaceType type;
 
     /**
      * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
@@ -148,7 +148,7 @@ public class ObjectCreationExprImpl extends ExpressionImpl implements ObjectCrea
      * @generated
      */
     @Override
-    public ClassOrInterfaceDeclaration getType() {
+    public ClassOrInterfaceType getType() {
         return type;
     }
 
@@ -157,8 +157,8 @@ public class ObjectCreationExprImpl extends ExpressionImpl implements ObjectCrea
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetType( ClassOrInterfaceDeclaration newType, NotificationChain msgs ) {
-        ClassOrInterfaceDeclaration oldType = type;
+    public NotificationChain basicSetType( ClassOrInterfaceType newType, NotificationChain msgs ) {
+        ClassOrInterfaceType oldType = type;
         type = newType;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
@@ -177,7 +177,7 @@ public class ObjectCreationExprImpl extends ExpressionImpl implements ObjectCrea
      * @generated
      */
     @Override
-    public void setType( ClassOrInterfaceDeclaration newType ) {
+    public void setType( ClassOrInterfaceType newType ) {
         if( newType != type ) {
             NotificationChain msgs = null;
             if( type != null )
@@ -332,7 +332,7 @@ public class ObjectCreationExprImpl extends ExpressionImpl implements ObjectCrea
             getTypeArguments().addAll( ( Collection< ? extends Type > ) newValue );
             return;
         case JavaPackage.OBJECT_CREATION_EXPR__TYPE:
-            setType( ( ClassOrInterfaceDeclaration ) newValue );
+            setType( ( ClassOrInterfaceType ) newValue );
             return;
         case JavaPackage.OBJECT_CREATION_EXPR__ARGUMENTS:
             getArguments().clear();
@@ -361,7 +361,7 @@ public class ObjectCreationExprImpl extends ExpressionImpl implements ObjectCrea
             getTypeArguments().clear();
             return;
         case JavaPackage.OBJECT_CREATION_EXPR__TYPE:
-            setType( ( ClassOrInterfaceDeclaration ) null );
+            setType( ( ClassOrInterfaceType ) null );
             return;
         case JavaPackage.OBJECT_CREATION_EXPR__ARGUMENTS:
             getArguments().clear();

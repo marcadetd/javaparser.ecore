@@ -24,7 +24,8 @@ import fr.centralesupelec.csd.java.util.CreateJavaModel;
 
 public class TestCreateJavaModel {
 
-    private static final String FILE_PATH = "src/fr/centralesupelec/csd/java/test/TestCreateJavaModel.java";
+    //private static final String FILE_PATH = "src/fr/centralesupelec/csd/java/test/TestCreateJavaModel.java";
+    private static final String FILE_PATH = "/Users/marcadet/Desktop/Essai.java";
 
     public static void main( String[] args ) {
         try {

@@ -23,6 +23,7 @@ import fr.centralesupelec.csd.java.NodeWithModifiers;
 import fr.centralesupelec.csd.java.NodeWithName;
 import fr.centralesupelec.csd.java.NodeWithStaticModifier;
 
+import fr.centralesupelec.csd.java.NodeWithTransitiveModifier;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -48,6 +49,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link fr.centralesupelec.csd.java.impl.ModuleRequiresDirectiveImpl#getModifiers <em>Modifiers</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.ModuleRequiresDirectiveImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.ModuleRequiresDirectiveImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.csd.java.impl.ModuleRequiresDirectiveImpl#isTransitive <em>Transitive</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,6 +84,16 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
      * @ordered
      */
     protected Name name;
+
+    /**
+     * The default value of the '{@link #isTransitive() <em>Transitive</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isTransitive()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean TRANSITIVE_EDEFAULT = false;
 
     /**
      * <!-- begin-user-doc -->
@@ -194,6 +206,29 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public boolean isTransitive() {
+        return getModifiers().contains( ModifierKeyword.TRANSITIVE );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public void setTransitive( boolean newTransitive ) {
+        if( newTransitive )
+            getModifiers().add( ModifierKeyword.TRANSITIVE );
+        else
+            getModifiers().remove( ModifierKeyword.TRANSITIVE );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -219,6 +254,8 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
             return isStatic();
         case JavaPackage.MODULE_REQUIRES_DIRECTIVE__NAME:
             return getName();
+        case JavaPackage.MODULE_REQUIRES_DIRECTIVE__TRANSITIVE:
+            return isTransitive();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -242,6 +279,9 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
         case JavaPackage.MODULE_REQUIRES_DIRECTIVE__NAME:
             setName( ( Name ) newValue );
             return;
+        case JavaPackage.MODULE_REQUIRES_DIRECTIVE__TRANSITIVE:
+            setTransitive( ( Boolean ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -263,6 +303,9 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
         case JavaPackage.MODULE_REQUIRES_DIRECTIVE__NAME:
             setName( ( Name ) null );
             return;
+        case JavaPackage.MODULE_REQUIRES_DIRECTIVE__TRANSITIVE:
+            setTransitive( TRANSITIVE_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -281,6 +324,8 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
             return isStatic() != STATIC_EDEFAULT;
         case JavaPackage.MODULE_REQUIRES_DIRECTIVE__NAME:
             return name != null;
+        case JavaPackage.MODULE_REQUIRES_DIRECTIVE__TRANSITIVE:
+            return isTransitive() != TRANSITIVE_EDEFAULT;
         }
         return super.eIsSet( featureID );
     }
@@ -316,6 +361,14 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
                 return -1;
             }
         }
+        if( baseClass == NodeWithTransitiveModifier.class ) {
+            switch( derivedFeatureID ) {
+            case JavaPackage.MODULE_REQUIRES_DIRECTIVE__TRANSITIVE:
+                return JavaPackage.NODE_WITH_TRANSITIVE_MODIFIER__TRANSITIVE;
+            default:
+                return -1;
+            }
+        }
         return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
@@ -346,6 +399,14 @@ public class ModuleRequiresDirectiveImpl extends ModuleDirectiveImpl implements 
             switch( baseFeatureID ) {
             case JavaPackage.NODE_WITH_NAME__NAME:
                 return JavaPackage.MODULE_REQUIRES_DIRECTIVE__NAME;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == NodeWithTransitiveModifier.class ) {
+            switch( baseFeatureID ) {
+            case JavaPackage.NODE_WITH_TRANSITIVE_MODIFIER__TRANSITIVE:
+                return JavaPackage.MODULE_REQUIRES_DIRECTIVE__TRANSITIVE;
             default:
                 return -1;
             }

@@ -25,5 +25,6 @@ package fr.centralesupelec.csd.java;
  * @model
  * @generated
  */
-public interface ModuleRequiresDirective extends ModuleDirective, NodeWithStaticModifier, NodeWithName {
+public interface ModuleRequiresDirective
+        extends ModuleDirective, NodeWithStaticModifier, NodeWithName, NodeWithTransitiveModifier {
 } // ModuleRequiresDirective

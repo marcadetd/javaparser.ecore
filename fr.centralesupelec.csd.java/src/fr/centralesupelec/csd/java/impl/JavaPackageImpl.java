@@ -4567,6 +4567,8 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         fieldDeclarationEClass.getESuperTypes().add( this.getNodeWithAccessModifiers() );
         fieldDeclarationEClass.getESuperTypes().add( this.getNodeWithStaticModifier() );
         fieldDeclarationEClass.getESuperTypes().add( this.getNodeWithFinalModifier() );
+        fieldDeclarationEClass.getESuperTypes().add( this.getNodeWithTransientModifier() );
+        fieldDeclarationEClass.getESuperTypes().add( this.getNodeWithVolatileModifier() );
         initializerDeclarationEClass.getESuperTypes().add( this.getBodyDeclaration() );
         initializerDeclarationEClass.getESuperTypes().add( this.getNodeWithJavadoc() );
         initializerDeclarationEClass.getESuperTypes().add( this.getNodeWithBlockStmt() );
@@ -4713,7 +4715,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         g1 = createEGenericType( this.getNodeWithTypeArguments() );
         objectCreationExprEClass.getEGenericSuperTypes().add( g1 );
         g1 = createEGenericType( this.getNodeWithType() );
-        g2 = createEGenericType( this.getClassOrInterfaceDeclaration() );
+        g2 = createEGenericType( this.getClassOrInterfaceType() );
         g1.getETypeArguments().add( g2 );
         objectCreationExprEClass.getEGenericSuperTypes().add( g1 );
         g1 = createEGenericType( this.getNodeWithArguments() );
@@ -4764,6 +4766,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         moduleRequiresDirectiveEClass.getESuperTypes().add( this.getModuleDirective() );
         moduleRequiresDirectiveEClass.getESuperTypes().add( this.getNodeWithStaticModifier() );
         moduleRequiresDirectiveEClass.getESuperTypes().add( this.getNodeWithName() );
+        moduleRequiresDirectiveEClass.getESuperTypes().add( this.getNodeWithTransitiveModifier() );
         moduleUsesDirectiveEClass.getESuperTypes().add( this.getModuleDirective() );
         moduleUsesDirectiveEClass.getESuperTypes().add( this.getNodeWithName() );
         nodeWithAbstractModifierEClass.getESuperTypes().add( this.getNodeWithModifiers() );

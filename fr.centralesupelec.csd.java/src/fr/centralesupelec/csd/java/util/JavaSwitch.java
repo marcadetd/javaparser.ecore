@@ -276,6 +276,8 @@ public class JavaSwitch< T > extends Switch< T > {
             if( result == null ) result = caseNodeWithAccessModifiers( fieldDeclaration );
             if( result == null ) result = caseNodeWithStaticModifier( fieldDeclaration );
             if( result == null ) result = caseNodeWithFinalModifier( fieldDeclaration );
+            if( result == null ) result = caseNodeWithTransientModifier( fieldDeclaration );
+            if( result == null ) result = caseNodeWithVolatileModifier( fieldDeclaration );
             if( result == null ) result = caseJavaNode( fieldDeclaration );
             if( result == null ) result = caseNodeWithAnnotations( fieldDeclaration );
             if( result == null ) result = caseNodeWithPublicModifier( fieldDeclaration );
@@ -835,6 +837,7 @@ public class JavaSwitch< T > extends Switch< T > {
             if( result == null ) result = caseModuleDirective( moduleRequiresDirective );
             if( result == null ) result = caseNodeWithStaticModifier( moduleRequiresDirective );
             if( result == null ) result = caseNodeWithName( moduleRequiresDirective );
+            if( result == null ) result = caseNodeWithTransitiveModifier( moduleRequiresDirective );
             if( result == null ) result = caseJavaNode( moduleRequiresDirective );
             if( result == null ) result = caseNodeWithModifiers( moduleRequiresDirective );
             if( result == null ) result = defaultCase( theEObject );

@@ -4656,7 +4656,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         primitiveTypeEClass.getESuperTypes().add(this.getNodeWithAnnotations());
         referenceTypeEClass.getESuperTypes().add(this.getType());
         typeParameterEClass.getESuperTypes().add(this.getReferenceType());
-        typeParameterEClass.getESuperTypes().add(this.getSimpleName());
+        typeParameterEClass.getESuperTypes().add(this.getNodeWithSimpleName());
         typeParameterEClass.getESuperTypes().add(this.getNodeWithAnnotations());
         unionTypeEClass.getESuperTypes().add(this.getType());
         unionTypeEClass.getESuperTypes().add(this.getNodeWithAnnotations());

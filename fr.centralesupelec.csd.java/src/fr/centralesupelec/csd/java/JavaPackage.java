@@ -7233,14 +7233,14 @@ public interface JavaPackage extends EPackage {
      */
 	int PRIMITIVE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
-	/**
-     * The feature id for the '<em><b>Identifier</b></em>' attribute.
+    /**
+     * The feature id for the '<em><b>Name</b></em>' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int TYPE_PARAMETER__IDENTIFIER = REFERENCE_TYPE_FEATURE_COUNT + 0;
+    int TYPE_PARAMETER__NAME = REFERENCE_TYPE_FEATURE_COUNT + 0;
 
 	/**
      * The feature id for the '<em><b>Annotations</b></em>' containment reference list.

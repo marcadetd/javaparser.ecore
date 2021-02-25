@@ -1257,10 +1257,9 @@ public class JavaSwitch<T> extends Switch<T> {
                 TypeParameter typeParameter = (TypeParameter)theEObject;
                 T result = caseTypeParameter(typeParameter);
                 if (result == null) result = caseReferenceType(typeParameter);
-                if (result == null) result = caseSimpleName(typeParameter);
+                if (result == null) result = caseNodeWithSimpleName(typeParameter);
                 if (result == null) result = caseNodeWithAnnotations(typeParameter);
                 if (result == null) result = caseType(typeParameter);
-                if (result == null) result = caseNodeWithIdentifier(typeParameter);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }

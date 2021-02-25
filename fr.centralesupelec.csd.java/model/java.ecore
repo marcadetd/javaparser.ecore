@@ -640,7 +640,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceType" abstract="true" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeParameter" eSuperTypes="#//ReferenceType #//SimpleName #//NodeWithAnnotations">
+  <eClassifiers xsi:type="ecore:EClass" name="TypeParameter" eSuperTypes="#//ReferenceType #//NodeWithSimpleName #//NodeWithAnnotations">
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeBound" upperBound="-1"
         eType="#//ClassOrInterfaceType" containment="true"/>
   </eClassifiers>

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TypeParameter extends ReferenceType, SimpleName, NodeWithAnnotations {
+public interface TypeParameter extends ReferenceType, NodeWithSimpleName, NodeWithAnnotations {
 	/**
      * Returns the value of the '<em><b>Type Bound</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.csd.java.ClassOrInterfaceType}.

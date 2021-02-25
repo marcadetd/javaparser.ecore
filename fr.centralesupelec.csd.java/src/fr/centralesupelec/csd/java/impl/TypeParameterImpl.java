@@ -6,7 +6,7 @@ import fr.centralesupelec.csd.java.AnnotationExpr;
 import fr.centralesupelec.csd.java.ClassOrInterfaceType;
 import fr.centralesupelec.csd.java.JavaPackage;
 import fr.centralesupelec.csd.java.NodeWithAnnotations;
-import fr.centralesupelec.csd.java.NodeWithIdentifier;
+import fr.centralesupelec.csd.java.NodeWithSimpleName;
 import fr.centralesupelec.csd.java.SimpleName;
 import fr.centralesupelec.csd.java.TypeParameter;
 
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.csd.java.impl.TypeParameterImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link fr.centralesupelec.csd.java.impl.TypeParameterImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.TypeParameterImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.java.impl.TypeParameterImpl#getTypeBound <em>Type Bound</em>}</li>
  * </ul>
@@ -41,26 +41,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParameter {
 	/**
-     * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+     * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getIdentifier()
+     * <!-- end-user-doc -->
+     * @see #getName()
      * @generated
      * @ordered
      */
-	protected static final String IDENTIFIER_EDEFAULT = null;
+    protected SimpleName name;
 
-	/**
-     * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @see #getIdentifier()
-     * @generated
-     * @ordered
-     */
-	protected String identifier = IDENTIFIER_EDEFAULT;
-
-	/**
+    /**
      * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,28 +91,50 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public String getIdentifier() {
-        return identifier;
+    @Override
+    public SimpleName getName() {
+        return name;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	@Override
-	public void setIdentifier(String newIdentifier) {
-        String oldIdentifier = identifier;
-        identifier = newIdentifier;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.TYPE_PARAMETER__IDENTIFIER, oldIdentifier, identifier));
+    public NotificationChain basicSetName(SimpleName newName, NotificationChain msgs) {
+        SimpleName oldName = name;
+        name = newName;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JavaPackage.TYPE_PARAMETER__NAME, oldName, newName);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
     }
 
-	/**
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setName(SimpleName newName) {
+        if (newName != name) {
+            NotificationChain msgs = null;
+            if (name != null)
+                msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TYPE_PARAMETER__NAME, null, msgs);
+            if (newName != null)
+                msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JavaPackage.TYPE_PARAMETER__NAME, null, msgs);
+            msgs = basicSetName(newName, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.TYPE_PARAMETER__NAME, newName, newName));
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -156,6 +168,8 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
+            case JavaPackage.TYPE_PARAMETER__NAME:
+                return basicSetName(null, msgs);
             case JavaPackage.TYPE_PARAMETER__ANNOTATIONS:
                 return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
             case JavaPackage.TYPE_PARAMETER__TYPE_BOUND:
@@ -172,8 +186,8 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case JavaPackage.TYPE_PARAMETER__IDENTIFIER:
-                return getIdentifier();
+            case JavaPackage.TYPE_PARAMETER__NAME:
+                return getName();
             case JavaPackage.TYPE_PARAMETER__ANNOTATIONS:
                 return getAnnotations();
             case JavaPackage.TYPE_PARAMETER__TYPE_BOUND:
@@ -191,8 +205,8 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
 	@Override
 	public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case JavaPackage.TYPE_PARAMETER__IDENTIFIER:
-                setIdentifier((String)newValue);
+            case JavaPackage.TYPE_PARAMETER__NAME:
+                setName((SimpleName)newValue);
                 return;
             case JavaPackage.TYPE_PARAMETER__ANNOTATIONS:
                 getAnnotations().clear();
@@ -214,8 +228,8 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
 	@Override
 	public void eUnset(int featureID) {
         switch (featureID) {
-            case JavaPackage.TYPE_PARAMETER__IDENTIFIER:
-                setIdentifier(IDENTIFIER_EDEFAULT);
+            case JavaPackage.TYPE_PARAMETER__NAME:
+                setName((SimpleName)null);
                 return;
             case JavaPackage.TYPE_PARAMETER__ANNOTATIONS:
                 getAnnotations().clear();
@@ -235,8 +249,8 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
 	@Override
 	public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case JavaPackage.TYPE_PARAMETER__IDENTIFIER:
-                return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+            case JavaPackage.TYPE_PARAMETER__NAME:
+                return name != null;
             case JavaPackage.TYPE_PARAMETER__ANNOTATIONS:
                 return annotations != null && !annotations.isEmpty();
             case JavaPackage.TYPE_PARAMETER__TYPE_BOUND:
@@ -252,14 +266,9 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
      */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithIdentifier.class) {
+        if (baseClass == NodeWithSimpleName.class) {
             switch (derivedFeatureID) {
-                case JavaPackage.TYPE_PARAMETER__IDENTIFIER: return JavaPackage.NODE_WITH_IDENTIFIER__IDENTIFIER;
-                default: return -1;
-            }
-        }
-        if (baseClass == SimpleName.class) {
-            switch (derivedFeatureID) {
+                case JavaPackage.TYPE_PARAMETER__NAME: return JavaPackage.NODE_WITH_SIMPLE_NAME__NAME;
                 default: return -1;
             }
         }
@@ -279,14 +288,9 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
      */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == NodeWithIdentifier.class) {
+        if (baseClass == NodeWithSimpleName.class) {
             switch (baseFeatureID) {
-                case JavaPackage.NODE_WITH_IDENTIFIER__IDENTIFIER: return JavaPackage.TYPE_PARAMETER__IDENTIFIER;
-                default: return -1;
-            }
-        }
-        if (baseClass == SimpleName.class) {
-            switch (baseFeatureID) {
+                case JavaPackage.NODE_WITH_SIMPLE_NAME__NAME: return JavaPackage.TYPE_PARAMETER__NAME;
                 default: return -1;
             }
         }
@@ -297,22 +301,6 @@ public class TypeParameterImpl extends ReferenceTypeImpl implements TypeParamete
             }
         }
         return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-    }
-
-	/**
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	@Override
-	public String toString() {
-        if (eIsProxy()) return super.toString();
-
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (identifier: ");
-        result.append(identifier);
-        result.append(')');
-        return result.toString();
     }
 
 } //TypeParameterImpl

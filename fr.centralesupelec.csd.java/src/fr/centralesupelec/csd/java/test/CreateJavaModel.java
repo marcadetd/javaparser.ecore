@@ -226,8 +226,12 @@ public class CreateJavaModel {
 
     private static class BodyDeclarationVisitor extends GenericVisitorAdapter< BodyDeclaration, JavaFactory > {
 
-        public BodyDeclaration visit( com.github.javaparser.ast.body.BodyDeclaration javaParserObject, JavaFactory factory ) {
+        public BodyDeclaration visit( com.github.javaparser.ast.body.BodyDeclaration< ? > javaParserObject, JavaFactory factory ) {
 
+            if( javaParserObject instanceof AnnotationMemberDeclaration ) {
+                return new AnnotationMemberDeclarationVisitor().visit(( com.github.javaparser.ast.body.AnnotationMemberDeclaration ) javaParserObject, factory );
+            }
+            
             if( javaParserObject instanceof CallableDeclaration ) {
                 return new CallableDeclarationVisitor().visit(( com.github.javaparser.ast.body.CallableDeclaration< ? > ) javaParserObject, factory );
             }
@@ -251,7 +255,7 @@ public class CreateJavaModel {
             return null;
         }
         
-        public BodyDeclaration visit( com.github.javaparser.ast.body.BodyDeclaration javaParserObject, JavaFactory factory, BodyDeclaration ecoreObject ) {
+        public BodyDeclaration visit( com.github.javaparser.ast.body.BodyDeclaration< ? > javaParserObject, JavaFactory factory, BodyDeclaration ecoreObject ) {
             
             // implements NodeWithAnnotations
             new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
@@ -1279,22 +1283,23 @@ public class CreateJavaModel {
 
     private static class LiteralExprVisitor extends GenericVisitorAdapter< LiteralExpr, JavaFactory > {
 
-        public LiteralExpr visit( com.github.javaparser.ast.expr.LiteralExpr javaParserObject, JavaFactory factory ) {
-
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.BooleanLiteralExpr ) {
-                return new BooleanLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.BooleanLiteralExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.LiteralStringValueExpr ) {
-                return new LiteralStringValueExprVisitor().visit( ( com.github.javaparser.ast.expr.LiteralStringValueExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.NullLiteralExpr ) {
-                return new NullLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.NullLiteralExpr ) javaParserObject, factory );
-            }
-            
-            return null;
-        }
+// Not needed ?
+//        public LiteralExpr visit( com.github.javaparser.ast.expr.LiteralExpr javaParserObject, JavaFactory factory ) {
+//
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.BooleanLiteralExpr ) {
+//                return new BooleanLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.BooleanLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.LiteralStringValueExpr ) {
+//                return new LiteralStringValueExprVisitor().visit( ( com.github.javaparser.ast.expr.LiteralStringValueExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.NullLiteralExpr ) {
+//                return new NullLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.NullLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            return null;
+//        }
 
 
         public LiteralExpr visit( com.github.javaparser.ast.expr.LiteralExpr javaParserObject, JavaFactory factory, LiteralExpr ecoreObject ) {
@@ -1308,34 +1313,35 @@ public class CreateJavaModel {
 
     private static class LiteralStringValueExprVisitor extends GenericVisitorAdapter< LiteralStringValueExpr, JavaFactory > {
 
-        public LiteralStringValueExpr visit( com.github.javaparser.ast.expr.LiteralStringValueExpr javaParserObject, JavaFactory factory ) {
-
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.CharLiteralExpr ) {
-                return new CharLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.CharLiteralExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.DoubleLiteralExpr ) {
-                return new DoubleLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.DoubleLiteralExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.IntegerLiteralExpr ) {
-                return new IntegerLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.IntegerLiteralExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.LongLiteralExpr ) {
-                return new LongLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.LongLiteralExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.StringLiteralExpr ) {
-                return new StringLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.StringLiteralExpr ) javaParserObject, factory );
-            }
-            
-            if( javaParserObject instanceof com.github.javaparser.ast.expr.TextBlockLiteralExpr ) {
-                return new TextBlockLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.TextBlockLiteralExpr ) javaParserObject, factory );
-            }
-            
-            return null;
-        }
+// Not needed ?
+//        public LiteralStringValueExpr visit( com.github.javaparser.ast.expr.LiteralStringValueExpr javaParserObject, JavaFactory factory ) {
+//
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.CharLiteralExpr ) {
+//                return new CharLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.CharLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.DoubleLiteralExpr ) {
+//                return new DoubleLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.DoubleLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.IntegerLiteralExpr ) {
+//                return new IntegerLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.IntegerLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.LongLiteralExpr ) {
+//                return new LongLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.LongLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.StringLiteralExpr ) {
+//                return new StringLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.StringLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            if( javaParserObject instanceof com.github.javaparser.ast.expr.TextBlockLiteralExpr ) {
+//                return new TextBlockLiteralExprVisitor().visit( ( com.github.javaparser.ast.expr.TextBlockLiteralExpr ) javaParserObject, factory );
+//            }
+//            
+//            return null;
+//        }
 
 
         public LiteralStringValueExpr visit( com.github.javaparser.ast.expr.LiteralStringValueExpr javaParserObject, JavaFactory factory, LiteralStringValueExpr ecoreObject ) {
@@ -1996,7 +2002,7 @@ public class CreateJavaModel {
 
     private static class NodeWithConditionVisitor extends GenericVisitorAdapter< NodeWithCondition, JavaFactory > {
 
-        public NodeWithCondition visit( com.github.javaparser.ast.nodeTypes.NodeWithCondition javaParserObject, JavaFactory factory, NodeWithCondition ecoreObject ) {
+        public NodeWithCondition visit( com.github.javaparser.ast.nodeTypes.NodeWithCondition< ? > javaParserObject, JavaFactory factory, NodeWithCondition ecoreObject ) {
 
             ecoreObject.setCondition( new ExpressionVisitor().visit( javaParserObject.getCondition(), factory ));
             
@@ -2820,6 +2826,10 @@ public class CreateJavaModel {
                 return new LocalClassDeclarationStmtVisitor().visit( ( com.github.javaparser.ast.stmt.LocalClassDeclarationStmt ) javaParserObject, factory );
             }
             
+            if( javaParserObject instanceof com.github.javaparser.ast.stmt.ReturnStmt ) {
+                return new ReturnStmtVisitor().visit( ( com.github.javaparser.ast.stmt.ReturnStmt ) javaParserObject, factory );
+            }
+            
             if( javaParserObject instanceof com.github.javaparser.ast.stmt.SwitchStmt ) {
                 return new SwitchStmtVisitor().visit( ( com.github.javaparser.ast.stmt.SwitchStmt ) javaParserObject, factory );
             }
@@ -3019,6 +3029,21 @@ public class CreateJavaModel {
 
             ArrayType ecoreObject = factory.createArrayType();
             
+            // extends ReferenceType
+            new ReferenceTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Type componentType;
+            ecoreObject.setComponentType( new TypeVisitor().visit( javaParserObject.getComponentType(), factory ));
+            
+            // Origin origin;
+            ecoreObject.setOrigin( switch( javaParserObject.getOrigin() ) {
+                case NAME -> ArrayTypeOrigin.NAME;
+                case TYPE -> ArrayTypeOrigin.TYPE;
+            });
+           
             return ecoreObject;
         }
 
@@ -3031,6 +3056,23 @@ public class CreateJavaModel {
 
             ClassOrInterfaceType ecoreObject = factory.createClassOrInterfaceType();
 
+            // extends ReferenceType
+            new ReferenceTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithSimpleName
+            new NodeWithSimpleNameVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithTypeArguments
+            new NodeWithTypeArgumentsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // ClassOrInterfaceType scope;
+            javaParserObject.getScope().ifPresent(
+                    sc -> ecoreObject.setScope( new ClassOrInterfaceTypeVisitor().visit( sc, factory ))
+            );
+            
             return ecoreObject;
         }
 
@@ -3042,6 +3084,17 @@ public class CreateJavaModel {
         public IntersectionType visit( com.github.javaparser.ast.type.IntersectionType javaParserObject, JavaFactory factory ) {
 
             IntersectionType ecoreObject = factory.createIntersectionType();
+            
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // NodeList<ReferenceType> elements;
+            javaParserObject.getElements().forEach(
+                    el -> ecoreObject.getElements().add( new ReferenceTypeVisitor().visit( el, factory ))
+            );
             
             return ecoreObject;
         }
@@ -3055,6 +3108,24 @@ public class CreateJavaModel {
 
             PrimitiveType ecoreObject = factory.createPrimitiveType();
             
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // Primitive type;
+            ecoreObject.setType( switch( javaParserObject.getType() ) {
+                case BOOLEAN -> Primitive.BOOLEAN;
+                case BYTE    -> Primitive.BYTE;
+                case CHAR    -> Primitive.CHAR;
+                case DOUBLE  -> Primitive.DOUBLE;
+                case FLOAT   -> Primitive.FLOAT;
+                case INT     -> Primitive.INT;
+                case LONG    -> Primitive.LONG;
+                case SHORT   -> Primitive.SHORT;
+            });
+            
             return ecoreObject;
         }
 
@@ -3062,24 +3133,77 @@ public class CreateJavaModel {
 
     private static class ReferenceTypeVisitor extends GenericVisitorAdapter< ReferenceType, JavaFactory > {
 
-//        @Override
         public ReferenceType visit( com.github.javaparser.ast.type.ReferenceType javaParserObject, JavaFactory factory ) {
 
-//            ReferenceType ecoreObject = factory.createReferenceType();
+            if( javaParserObject instanceof com.github.javaparser.ast.type.ArrayType ) {
+                return new ArrayTypeVisitor().visit( ( com.github.javaparser.ast.type.ArrayType ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.type.ClassOrInterfaceType ) {
+                return new ClassOrInterfaceTypeVisitor().visit( ( com.github.javaparser.ast.type.ClassOrInterfaceType ) javaParserObject, factory );
+            }
+            
+            if( javaParserObject instanceof com.github.javaparser.ast.type.TypeParameter ) {
+                return new TypeParameterVisitor().visit( ( com.github.javaparser.ast.type.TypeParameter ) javaParserObject, factory );
+            }
             
             return null;
+        }
+
+        public ReferenceType visit( com.github.javaparser.ast.type.ReferenceType javaParserObject, JavaFactory factory, ReferenceType ecoreObject ) {
+    
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            return ecoreObject;
         }
 
     }
 
     private static class TypeVisitor extends GenericVisitorAdapter< Type, JavaFactory > {
 
-//        @Override
         public Type visit( com.github.javaparser.ast.type.Type javaParserObject, JavaFactory factory ) {
 
-//            Type ecoreObject = factory.createType();
+            if( javaParserObject instanceof com.github.javaparser.ast.type.IntersectionType ) {
+                return new IntersectionTypeVisitor().visit( ( com.github.javaparser.ast.type.IntersectionType ) javaParserObject, factory );
+            }
+
+            if( javaParserObject instanceof com.github.javaparser.ast.type.PrimitiveType ) {
+                return new PrimitiveTypeVisitor().visit( ( com.github.javaparser.ast.type.PrimitiveType ) javaParserObject, factory );
+            }
             
+            if( javaParserObject instanceof com.github.javaparser.ast.type.ReferenceType ) {
+                return new ReferenceTypeVisitor().visit( ( com.github.javaparser.ast.type.ReferenceType ) javaParserObject, factory );
+            }
+
+            if( javaParserObject instanceof com.github.javaparser.ast.type.UnionType ) {
+                return new UnionTypeVisitor().visit( ( com.github.javaparser.ast.type.UnionType ) javaParserObject, factory );
+            }
+
+            if( javaParserObject instanceof com.github.javaparser.ast.type.UnknownType ) {
+                return new UnknownTypeVisitor().visit( ( com.github.javaparser.ast.type.UnknownType ) javaParserObject, factory );
+            }
+
+            if( javaParserObject instanceof com.github.javaparser.ast.type.VarType ) {
+                return new VarTypeVisitor().visit( ( com.github.javaparser.ast.type.VarType ) javaParserObject, factory );
+            }
+
+            if( javaParserObject instanceof com.github.javaparser.ast.type.VoidType ) {
+                return new VoidTypeVisitor().visit( ( com.github.javaparser.ast.type.VoidType ) javaParserObject, factory );
+            }
+
+            if( javaParserObject instanceof com.github.javaparser.ast.type.WildcardType ) {
+                return new WildcardTypeVisitor().visit( ( com.github.javaparser.ast.type.WildcardType ) javaParserObject, factory );
+            }
+
             return null;
+        }
+
+        public Type visit( com.github.javaparser.ast.type.Type javaParserObject, JavaFactory factory, Type ecoreObject ) {
+    
+            // Nothing
+            
+            return ecoreObject;
         }
 
     }
@@ -3091,12 +3215,19 @@ public class CreateJavaModel {
 
             TypeParameter ecoreObject = factory.createTypeParameter();
 
-            // SimpleName
-            //          typeParameter.setName(tp.getNameAsString());
-
+            // extends ReferenceType
+            new ReferenceTypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithSimpleName
+            new NodeWithSimpleNameVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             // NodeList<ClassOrInterfaceType> typeBound
             javaParserObject.getTypeBound().forEach(
-                    tb -> ecoreObject.getTypeBound().add( new ClassOrInterfaceTypeVisitor().visit( tb, factory ) ) );
+                    tb -> ecoreObject.getTypeBound().add( new ClassOrInterfaceTypeVisitor().visit( tb, factory ))
+            );
 
             return ecoreObject;
         }
@@ -3110,6 +3241,17 @@ public class CreateJavaModel {
 
             UnionType ecoreObject = factory.createUnionType();
             
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // NodeList<ReferenceType> elements;
+            javaParserObject.getElements().forEach(
+                    el -> ecoreObject.getElements().add( new ReferenceTypeVisitor().visit( el, factory ))
+            );
+            
             return ecoreObject;
         }
 
@@ -3121,6 +3263,9 @@ public class CreateJavaModel {
         public UnknownType visit( com.github.javaparser.ast.type.UnknownType javaParserObject, JavaFactory factory ) {
 
             UnknownType ecoreObject = factory.createUnknownType();
+            
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
             
             return ecoreObject;
         }
@@ -3134,6 +3279,9 @@ public class CreateJavaModel {
 
             VarType ecoreObject = factory.createVarType();
             
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -3146,6 +3294,12 @@ public class CreateJavaModel {
 
             VoidType ecoreObject = factory.createVoidType();
             
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
             return ecoreObject;
         }
 
@@ -3157,6 +3311,22 @@ public class CreateJavaModel {
         public WildcardType visit( com.github.javaparser.ast.type.WildcardType javaParserObject, JavaFactory factory ) {
 
             WildcardType ecoreObject = factory.createWildcardType();
+            
+            // extends Type
+            new TypeVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // implements NodeWithAnnotations
+            new NodeWithAnnotationsVisitor().visit( javaParserObject, factory, ecoreObject );
+            
+            // ReferenceType extendedType;
+            javaParserObject.getExtendedType().ifPresent(
+                    et -> ecoreObject.setExtendedType( new ReferenceTypeVisitor().visit( et, factory ))
+            );
+            
+            // ReferenceType superType;
+            javaParserObject.getSuperType().ifPresent(
+                    et -> ecoreObject.setSuperType( new ReferenceTypeVisitor().visit( et, factory ))
+            );
             
             return ecoreObject;
         }

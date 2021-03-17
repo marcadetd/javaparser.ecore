@@ -15,7 +15,6 @@
  */
 package fr.centralesupelec.csd.java.util;
 
-import com.github.javaparser.ast.Node;
 import fr.centralesupelec.csd.java.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -813,11 +812,6 @@ public class JavaAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseWildcardType( WildcardType object ) {
             return createWildcardTypeAdapter();
-        }
-
-        @Override
-        public Adapter caseJavaParserObject( Node object ) {
-            return createJavaParserObjectAdapter();
         }
 
         @Override
@@ -2894,20 +2888,6 @@ public class JavaAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createWildcardTypeAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link com.github.javaparser.ast.Node <em>Parser Object</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see com.github.javaparser.ast.Node
-     * @generated
-     */
-    public Adapter createJavaParserObjectAdapter() {
         return null;
     }
 

@@ -15,7 +15,6 @@
  */
 package fr.centralesupelec.csd.java.impl;
 
-import com.github.javaparser.ast.Node;
 import fr.centralesupelec.csd.java.AnnotationDeclaration;
 import fr.centralesupelec.csd.java.AnnotationExpr;
 import fr.centralesupelec.csd.java.AnnotationMemberDeclaration;
@@ -1224,13 +1223,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass javaParserObjectEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EEnum modifierKeywordEEnum = null;
 
     /**
@@ -1366,16 +1358,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
     @Override
     public EReference getJavaNode_OrphanComments() {
         return ( EReference ) javaNodeEClass.getEStructuralFeatures().get( 1 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getJavaNode_JavaParserObject() {
-        return ( EReference ) javaNodeEClass.getEStructuralFeatures().get( 2 );
     }
 
     /**
@@ -3984,16 +3966,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
      * @generated
      */
     @Override
-    public EClass getJavaParserObject() {
-        return javaParserObjectEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EEnum getModifierKeyword() {
         return modifierKeywordEEnum;
     }
@@ -4090,7 +4062,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         javaNodeEClass = createEClass( JAVA_NODE );
         createEReference( javaNodeEClass, JAVA_NODE__COMMENT );
         createEReference( javaNodeEClass, JAVA_NODE__ORPHAN_COMMENTS );
-        createEReference( javaNodeEClass, JAVA_NODE__JAVA_PARSER_OBJECT );
 
         arrayCreationLevelEClass = createEClass( ARRAY_CREATION_LEVEL );
         createEReference( arrayCreationLevelEClass, ARRAY_CREATION_LEVEL__DIMENSION );
@@ -4498,8 +4469,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         createEReference( wildcardTypeEClass, WILDCARD_TYPE__EXTENDED_TYPE );
         createEReference( wildcardTypeEClass, WILDCARD_TYPE__SUPER_TYPE );
 
-        javaParserObjectEClass = createEClass( JAVA_PARSER_OBJECT );
-
         // Create enums
         modifierKeywordEEnum = createEEnum( MODIFIER_KEYWORD );
         assignOperatorEEnum = createEEnum( ASSIGN_OPERATOR );
@@ -4902,9 +4871,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
         initEReference( getJavaNode_OrphanComments(), this.getComment(), null, "orphanComments", null, 0, -1,
                 JavaNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
-        initEReference( getJavaNode_JavaParserObject(), this.getJavaParserObject(), null, "javaParserObject", null, 0,
-                1, JavaNode.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
 
         initEClass( arrayCreationLevelEClass, ArrayCreationLevel.class, "ArrayCreationLevel", !IS_ABSTRACT,
@@ -5680,9 +5646,6 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
         initEReference( getWildcardType_SuperType(), this.getReferenceType(), null, "superType", null, 0, 1,
                 WildcardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
-
-        initEClass( javaParserObjectEClass, Node.class, "JavaParserObject", IS_ABSTRACT, IS_INTERFACE,
-                !IS_GENERATED_INSTANCE_CLASS );
 
         // Initialize enums and add enum literals
         initEEnum( modifierKeywordEEnum, ModifierKeyword.class, "ModifierKeyword" );

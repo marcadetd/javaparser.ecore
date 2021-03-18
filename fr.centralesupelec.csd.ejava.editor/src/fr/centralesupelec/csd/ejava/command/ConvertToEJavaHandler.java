@@ -9,7 +9,6 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jface.viewers.ISelection;
@@ -27,9 +26,10 @@ public class ConvertToEJavaHandler extends AbstractHandler {
             Object selected = (( TreeSelection ) sel ).getFirstElement();
             if( selected instanceof ICompilationUnit ) {
                 ICompilationUnit cu = ( ICompilationUnit ) selected;
+                
                 try {
                     CreateEJavaModel createEJavaModel = new CreateEJavaModel();
-                    IPath path = Platform.getLocation().append( cu.getPath() );
+                    IPath path = cu.getJavaProject().getProject().getLocation().append( cu.getPath().removeFirstSegments( 1 ));
                     Resource resource = createEJavaModel.createEJavaModel( path.toFile() );
                     BufferedOutputStream output = new BufferedOutputStream( new FileOutputStream( path.removeFileExtension().addFileExtension( "ejava" ).toFile() ));
                     resource.save( output, null );

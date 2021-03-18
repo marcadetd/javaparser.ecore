@@ -28,6 +28,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -98,7 +99,6 @@ public class VariableDeclaratorItemProvider extends JavaNodeItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.VARIABLE_DECLARATOR__INITIALIZER );
         }
         return childrenFeatures;
@@ -132,11 +132,18 @@ public class VariableDeclaratorItemProvider extends JavaNodeItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        return getString( "_UI_VariableDeclarator_type" );
+        //        return getString( "_UI_VariableDeclarator_type" );
+        VariableDeclarator variableDeclarator = ( VariableDeclarator ) object;
+        IItemLabelProvider typeLabelProvider = ( IItemLabelProvider ) getAdapterFactory()
+                .adapt( variableDeclarator.getType(), IItemLabelProvider.class );
+        IItemLabelProvider nameLabelProvider = ( IItemLabelProvider ) getAdapterFactory()
+                .adapt( variableDeclarator.getName(), IItemLabelProvider.class );
+        return typeLabelProvider.getText( variableDeclarator.getType() ) + " "
+                + nameLabelProvider.getText( variableDeclarator.getName() );
     }
 
     /**
@@ -151,10 +158,10 @@ public class VariableDeclaratorItemProvider extends JavaNodeItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( VariableDeclarator.class ) ) {
+        case EJavaPackage.VARIABLE_DECLARATOR__TYPE:
         case EJavaPackage.VARIABLE_DECLARATOR__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
-        case EJavaPackage.VARIABLE_DECLARATOR__TYPE:
         case EJavaPackage.VARIABLE_DECLARATOR__INITIALIZER:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;

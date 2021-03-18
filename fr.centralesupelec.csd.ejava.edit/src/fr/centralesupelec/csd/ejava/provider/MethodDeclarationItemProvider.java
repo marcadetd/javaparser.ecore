@@ -28,6 +28,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -146,7 +147,6 @@ public class MethodDeclarationItemProvider extends CallableDeclarationItemProvid
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_BLOCK_STMT__BODY );
         }
         return childrenFeatures;
@@ -180,12 +180,16 @@ public class MethodDeclarationItemProvider extends CallableDeclarationItemProvid
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
         MethodDeclaration methodDeclaration = ( MethodDeclaration ) object;
-        return getString( "_UI_MethodDeclaration_type" ) + " " + methodDeclaration.isPublic();
+        //        return getString( "_UI_MethodDeclaration_type" ) + " " + methodDeclaration.isPublic();
+        IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
+                methodDeclaration.getName(),
+                IItemLabelProvider.class );
+        return labelProvider.getText( methodDeclaration.getName() ) + "()";
     }
 
     /**
@@ -200,12 +204,12 @@ public class MethodDeclarationItemProvider extends CallableDeclarationItemProvid
         updateChildren( notification );
 
         switch( notification.getFeatureID( MethodDeclaration.class ) ) {
+        case EJavaPackage.METHOD_DECLARATION__TYPE:
         case EJavaPackage.METHOD_DECLARATION__NATIVE:
         case EJavaPackage.METHOD_DECLARATION__SYNCHRONIZED:
         case EJavaPackage.METHOD_DECLARATION__DEFAULT:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
-        case EJavaPackage.METHOD_DECLARATION__TYPE:
         case EJavaPackage.METHOD_DECLARATION__BODY:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;

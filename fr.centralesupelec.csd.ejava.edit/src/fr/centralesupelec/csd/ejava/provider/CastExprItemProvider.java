@@ -74,7 +74,6 @@ public class CastExprItemProvider extends ExpressionItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_EXPRESSION__EXPRESSION );
         }
         return childrenFeatures;
@@ -128,6 +127,8 @@ public class CastExprItemProvider extends ExpressionItemProvider {
 
         switch( notification.getFeatureID( CastExpr.class ) ) {
         case EJavaPackage.CAST_EXPR__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         case EJavaPackage.CAST_EXPR__EXPRESSION:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;

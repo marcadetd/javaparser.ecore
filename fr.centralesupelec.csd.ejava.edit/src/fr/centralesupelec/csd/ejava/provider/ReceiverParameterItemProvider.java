@@ -74,9 +74,7 @@ public class ReceiverParameterItemProvider extends JavaNodeItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_ANNOTATIONS__ANNOTATIONS );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_NAME__NAME );
         }
         return childrenFeatures;
     }
@@ -129,8 +127,10 @@ public class ReceiverParameterItemProvider extends JavaNodeItemProvider {
 
         switch( notification.getFeatureID( ReceiverParameter.class ) ) {
         case EJavaPackage.RECEIVER_PARAMETER__TYPE:
-        case EJavaPackage.RECEIVER_PARAMETER__ANNOTATIONS:
         case EJavaPackage.RECEIVER_PARAMETER__NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case EJavaPackage.RECEIVER_PARAMETER__ANNOTATIONS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }

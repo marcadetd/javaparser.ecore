@@ -26,7 +26,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -108,12 +108,16 @@ public class EnumDeclarationItemProvider extends TypeDeclarationItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
+        //        EnumDeclaration enumDeclaration = ( EnumDeclaration ) object;
+        //        return getString( "_UI_EnumDeclaration_type" ) + " " + enumDeclaration.isPublic();
         EnumDeclaration enumDeclaration = ( EnumDeclaration ) object;
-        return getString( "_UI_EnumDeclaration_type" ) + " " + enumDeclaration.isPublic();
+        IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt( enumDeclaration.getName(),
+                IItemLabelProvider.class );
+        return "enum " + labelProvider.getText( enumDeclaration.getName() );
     }
 
     /**

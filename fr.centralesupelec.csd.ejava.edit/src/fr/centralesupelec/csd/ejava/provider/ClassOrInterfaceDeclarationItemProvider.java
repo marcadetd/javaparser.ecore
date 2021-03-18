@@ -28,6 +28,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -180,12 +181,17 @@ public class ClassOrInterfaceDeclarationItemProvider extends TypeDeclarationItem
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
         ClassOrInterfaceDeclaration classOrInterfaceDeclaration = ( ClassOrInterfaceDeclaration ) object;
-        return getString( "_UI_ClassOrInterfaceDeclaration_type" ) + " " + classOrInterfaceDeclaration.isPublic();
+        //        return getString( "_UI_ClassOrInterfaceDeclaration_type" ) + " " + classOrInterfaceDeclaration.isPublic();
+        IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
+                classOrInterfaceDeclaration.getName(),
+                IItemLabelProvider.class );
+        return ( classOrInterfaceDeclaration.isInterface() ? "interface " : "class " )
+                + labelProvider.getText( classOrInterfaceDeclaration.getName() );
     }
 
     /**

@@ -75,7 +75,6 @@ public class ObjectCreationExprItemProvider extends ExpressionItemProvider {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE_ARGUMENTS__TYPE_ARGUMENTS );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_ARGUMENTS__ARGUMENTS );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_SCOPE__SCOPE );
             childrenFeatures.add( EJavaPackage.Literals.OBJECT_CREATION_EXPR__ANONYMOUS_CLASS_BODY );
@@ -130,8 +129,10 @@ public class ObjectCreationExprItemProvider extends ExpressionItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( ObjectCreationExpr.class ) ) {
-        case EJavaPackage.OBJECT_CREATION_EXPR__TYPE_ARGUMENTS:
         case EJavaPackage.OBJECT_CREATION_EXPR__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case EJavaPackage.OBJECT_CREATION_EXPR__TYPE_ARGUMENTS:
         case EJavaPackage.OBJECT_CREATION_EXPR__ARGUMENTS:
         case EJavaPackage.OBJECT_CREATION_EXPR__SCOPE:
         case EJavaPackage.OBJECT_CREATION_EXPR__ANONYMOUS_CLASS_BODY:

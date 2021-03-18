@@ -99,7 +99,6 @@ public class ModuleDeclarationItemProvider extends JavaNodeItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_NAME__NAME );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_ANNOTATIONS__ANNOTATIONS );
             childrenFeatures.add( EJavaPackage.Literals.MODULE_DECLARATION__DIRECTIVES );
         }
@@ -154,10 +153,10 @@ public class ModuleDeclarationItemProvider extends JavaNodeItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( ModuleDeclaration.class ) ) {
+        case EJavaPackage.MODULE_DECLARATION__NAME:
         case EJavaPackage.MODULE_DECLARATION__OPEN:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
-        case EJavaPackage.MODULE_DECLARATION__NAME:
         case EJavaPackage.MODULE_DECLARATION__ANNOTATIONS:
         case EJavaPackage.MODULE_DECLARATION__DIRECTIVES:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );

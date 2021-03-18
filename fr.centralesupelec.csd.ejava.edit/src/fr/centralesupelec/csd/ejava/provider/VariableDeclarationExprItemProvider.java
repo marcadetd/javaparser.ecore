@@ -123,7 +123,6 @@ public class VariableDeclarationExprItemProvider extends ExpressionItemProvider 
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_ANNOTATIONS__ANNOTATIONS );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_VARIABLES__VARIABLES );
         }
         return childrenFeatures;
     }
@@ -178,10 +177,10 @@ public class VariableDeclarationExprItemProvider extends ExpressionItemProvider 
         switch( notification.getFeatureID( VariableDeclarationExpr.class ) ) {
         case EJavaPackage.VARIABLE_DECLARATION_EXPR__MODIFIERS:
         case EJavaPackage.VARIABLE_DECLARATION_EXPR__FINAL:
+        case EJavaPackage.VARIABLE_DECLARATION_EXPR__VARIABLES:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case EJavaPackage.VARIABLE_DECLARATION_EXPR__ANNOTATIONS:
-        case EJavaPackage.VARIABLE_DECLARATION_EXPR__VARIABLES:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }

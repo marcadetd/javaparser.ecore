@@ -26,7 +26,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -75,7 +75,6 @@ public class PackageDeclarationItemProvider extends JavaNodeItemProvider {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_ANNOTATIONS__ANNOTATIONS );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_NAME__NAME );
         }
         return childrenFeatures;
     }
@@ -108,11 +107,16 @@ public class PackageDeclarationItemProvider extends JavaNodeItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        return getString( "_UI_PackageDeclaration_type" );
+        //        return getString( "_UI_PackageDeclaration_type" );
+        PackageDeclaration packageDeclaration = ( PackageDeclaration ) object;
+        IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
+                packageDeclaration.getName(),
+                IItemLabelProvider.class );
+        return "package " + labelProvider.getText( packageDeclaration.getName() );
     }
 
     /**
@@ -127,8 +131,10 @@ public class PackageDeclarationItemProvider extends JavaNodeItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( PackageDeclaration.class ) ) {
-        case EJavaPackage.PACKAGE_DECLARATION__ANNOTATIONS:
         case EJavaPackage.PACKAGE_DECLARATION__NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case EJavaPackage.PACKAGE_DECLARATION__ANNOTATIONS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }

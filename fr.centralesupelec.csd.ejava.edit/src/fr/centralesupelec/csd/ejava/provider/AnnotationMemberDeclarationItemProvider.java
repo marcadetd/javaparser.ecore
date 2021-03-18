@@ -168,7 +168,6 @@ public class AnnotationMemberDeclarationItemProvider extends BodyDeclarationItem
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.ANNOTATION_MEMBER_DECLARATION__DEFAULT_VALUE );
         }
         return childrenFeatures;
@@ -223,12 +222,12 @@ public class AnnotationMemberDeclarationItemProvider extends BodyDeclarationItem
 
         switch( notification.getFeatureID( AnnotationMemberDeclaration.class ) ) {
         case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__NAME:
+        case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__TYPE:
         case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__MODIFIERS:
         case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__PUBLIC:
         case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__ABSTRACT:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
-        case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__TYPE:
         case EJavaPackage.ANNOTATION_MEMBER_DECLARATION__DEFAULT_VALUE:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;

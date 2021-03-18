@@ -74,7 +74,6 @@ public class ModuleOpensDirectiveItemProvider extends ModuleDirectiveItemProvide
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_NAME__NAME );
             childrenFeatures.add( EJavaPackage.Literals.MODULE_OPENS_DIRECTIVE__MODULE_NAMES );
         }
         return childrenFeatures;
@@ -128,6 +127,8 @@ public class ModuleOpensDirectiveItemProvider extends ModuleDirectiveItemProvide
 
         switch( notification.getFeatureID( ModuleOpensDirective.class ) ) {
         case EJavaPackage.MODULE_OPENS_DIRECTIVE__NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         case EJavaPackage.MODULE_OPENS_DIRECTIVE__MODULE_NAMES:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;

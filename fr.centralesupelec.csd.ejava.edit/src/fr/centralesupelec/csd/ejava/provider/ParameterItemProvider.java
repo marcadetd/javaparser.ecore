@@ -168,7 +168,6 @@ public class ParameterItemProvider extends JavaNodeItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_ANNOTATIONS__ANNOTATIONS );
             childrenFeatures.add( EJavaPackage.Literals.PARAMETER__VAR_ARGS_ANNOTATIONS );
         }
@@ -223,13 +222,13 @@ public class ParameterItemProvider extends JavaNodeItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( Parameter.class ) ) {
+        case EJavaPackage.PARAMETER__TYPE:
         case EJavaPackage.PARAMETER__NAME:
         case EJavaPackage.PARAMETER__MODIFIERS:
         case EJavaPackage.PARAMETER__FINAL:
         case EJavaPackage.PARAMETER__VAR_ARGS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
-        case EJavaPackage.PARAMETER__TYPE:
         case EJavaPackage.PARAMETER__ANNOTATIONS:
         case EJavaPackage.PARAMETER__VAR_ARGS_ANNOTATIONS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );

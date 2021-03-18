@@ -74,7 +74,6 @@ public class InstanceOfExprItemProvider extends ExpressionItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE );
             childrenFeatures.add( EJavaPackage.Literals.NODE_WITH_EXPRESSION__EXPRESSION );
             childrenFeatures.add( EJavaPackage.Literals.INSTANCE_OF_EXPR__PATTERN );
         }
@@ -129,6 +128,8 @@ public class InstanceOfExprItemProvider extends ExpressionItemProvider {
 
         switch( notification.getFeatureID( InstanceOfExpr.class ) ) {
         case EJavaPackage.INSTANCE_OF_EXPR__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         case EJavaPackage.INSTANCE_OF_EXPR__EXPRESSION:
         case EJavaPackage.INSTANCE_OF_EXPR__PATTERN:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );

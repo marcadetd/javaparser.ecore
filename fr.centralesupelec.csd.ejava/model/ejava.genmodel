@@ -203,7 +203,7 @@
     <genClasses ecoreClass="ejava.ecore#//MethodCallExpr"/>
     <genClasses ecoreClass="ejava.ecore#//MethodReferenceExpr"/>
     <genClasses ecoreClass="ejava.ecore#//Name">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//Name/qualifier"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//Name/qualifier"/>
     </genClasses>
     <genClasses ecoreClass="ejava.ecore#//NameExpr"/>
     <genClasses ecoreClass="ejava.ecore#//NormalAnnotationExpr">
@@ -283,7 +283,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithModifiers/modifiers"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithName">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithName/name"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithName/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithLabel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithLabel/label"/>
@@ -308,7 +308,7 @@
     <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTokenRange"/>
     <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithType">
       <genTypeParameters ecoreTypeParameter="ejava.ecore#//NodeWithType/TypeUsed"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithType/type"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithType/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTypeArguments">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithTypeArguments/typeArguments"/>
@@ -317,7 +317,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithTypeParameters/typeParameters"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithVariables">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithVariables/variables"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithVariables/variables"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ejava.ecore#//SwitchNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//SwitchNode/selector"/>

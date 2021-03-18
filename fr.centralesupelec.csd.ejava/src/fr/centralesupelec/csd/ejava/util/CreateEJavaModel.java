@@ -424,22 +424,28 @@ public class CreateEJavaModel {
             new NodeWithBlockStmtVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithAccessModifiers
-            new NodeWithAccessModifiersVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithAccessModifiersVisitor().collect( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithJavadoc
-            new NodeWithJavadocVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithJavadocVisitor().collect( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithSimpleName
-            new NodeWithSimpleNameVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithSimpleNameVisitor().collect( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithParameters
-            new NodeWithParametersVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithParametersVisitor().collect( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithThrownExceptions
-            new NodeWithThrownExceptionsVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithThrownExceptionsVisitor().collect( javaParserObject, factory, ecoreObject );
 
             // implements NodeWithTypeParameters
-            new NodeWithTypeParametersVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithTypeParametersVisitor().collect( javaParserObject, factory, ecoreObject );
 
             return ecoreObject;
         }
@@ -575,37 +581,46 @@ public class CreateEJavaModel {
             new NodeWithBlockStmtVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithJavadoc
-            new NodeWithJavadocVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithJavadocVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithDeclaration: not sure it is useful
             //new NodeWithDeclarationVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithSimpleName
-            new NodeWithSimpleNameVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithSimpleNameVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithParameters
-            new NodeWithParametersVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithParametersVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithThrownExceptions
-            new NodeWithThrownExceptionsVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithThrownExceptionsVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithTypeParameters
-            new NodeWithTypeParametersVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithTypeParametersVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithAccessModifiers
             new NodeWithAccessModifiersVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithAbstractModifier
-            new NodeWithAbstractModifierVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithAbstractModifierVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithStaticModifier
-            new NodeWithStaticModifierVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithStaticModifierVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithFinalModifier
-            new NodeWithFinalModifierVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithFinalModifierVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // implements NodeWithStrictfpModifier
-            new NodeWithStrictfpModifierVisitor().collect( javaParserObject, factory, ecoreObject );
+            // in CallableDeclarationVisitor
+            //new NodeWithStrictfpModifierVisitor().collect( javaParserObject, factory, ecoreObject );
             
             // NOT in JavaParser: implements NodeWithSynchronizedModifier
             new NodeWithSynchronizedModifierVisitor().collect( javaParserObject, factory, ecoreObject );

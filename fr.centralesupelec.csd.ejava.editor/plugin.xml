@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+  Copyright (c) 2021 CentraleSupélec.
+  This program and the accompanying materials are made
+  available under the terms of the Apache License version 2.0
+  which accompanies this distribution, and is available at
+  http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Contributors:
+      Computer Science Department, CentraleSupélec
+  Contacts:
+      dominique.marcadet@centralesupelec.fr
+  Web site:
+      https://github.com/marcadetd/javaparser.ecore
+ 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ejava -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.centralesupelec.csd.ejava.presentation.EJavaModelWizardID"
+            name="%_UI_EJavaModelWizard_label"
+            class="fr.centralesupelec.csd.ejava.presentation.EJavaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EJavaModelFile.gif">
+         <description>%_UI_EJavaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ejava -->
+      <editor
+            id="fr.centralesupelec.csd.ejava.presentation.EJavaEditorID"
+            name="%_UI_EJavaEditor_label"
+            icon="icons/full/obj16/EJavaModelFile.gif"
+            extensions="ejava"
+            class="fr.centralesupelec.csd.ejava.presentation.EJavaEditor"
+            contributorClass="fr.centralesupelec.csd.ejava.presentation.EJavaActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <command
+               commandId="fr.centralesupelec.csd.ejava.command.convertToEJava"
+               label="Convert to EJava"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="fr.centralesupelec.csd.ejava.command.convertToEJava"
+            name="Convert to EJava">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="fr.centralesupelec.csd.ejava.command.ConvertToEJavaHandler"
+            commandId="fr.centralesupelec.csd.ejava.command.convertToEJava">
+      </handler>
+   </extension>
+
+</plugin>

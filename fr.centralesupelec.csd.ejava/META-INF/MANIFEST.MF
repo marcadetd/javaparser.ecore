@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: fr.centralesupelec.csd.ejava;singleton:=true
 Automatic-Module-Name: fr.centralesupelec.csd.ejava
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/javaparser-core-3.19.1-SNAPSHOT.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

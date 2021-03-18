@@ -7,7 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="lib/javaparser-core-3.19.1-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/javaparser-core-3.19.1-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="lib/javaparser-symbol-solver-core-3.19.1-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

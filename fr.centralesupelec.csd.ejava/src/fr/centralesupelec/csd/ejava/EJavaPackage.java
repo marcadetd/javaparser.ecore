@@ -2691,7 +2691,7 @@ public interface EJavaPackage extends EPackage {
     int ARRAY_CREATION_EXPR__LEVELS = EXPRESSION_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Element Type</b></em>' reference.
+     * The feature id for the '<em><b>Element Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -9854,10 +9854,10 @@ public interface EJavaPackage extends EPackage {
     EReference getArrayCreationExpr_Levels();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.csd.ejava.ArrayCreationExpr#getElementType <em>Element Type</em>}'.
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.csd.ejava.ArrayCreationExpr#getElementType <em>Element Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Element Type</em>'.
+     * @return the meta object for the containment reference '<em>Element Type</em>'.
      * @see fr.centralesupelec.csd.ejava.ArrayCreationExpr#getElementType()
      * @see #getArrayCreationExpr()
      * @generated
@@ -12628,7 +12628,7 @@ public interface EJavaPackage extends EPackage {
         EReference ARRAY_CREATION_EXPR__LEVELS = eINSTANCE.getArrayCreationExpr_Levels();
 
         /**
-         * The meta object literal for the '<em><b>Element Type</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated

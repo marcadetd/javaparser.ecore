@@ -132,7 +132,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArrayCreationExpr" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="levels" upperBound="-1"
         eType="#//ArrayCreationLevel" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" eType="#//Type"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initializer" eType="#//ArrayInitializerExpr"
         containment="true"/>
   </eClassifiers>

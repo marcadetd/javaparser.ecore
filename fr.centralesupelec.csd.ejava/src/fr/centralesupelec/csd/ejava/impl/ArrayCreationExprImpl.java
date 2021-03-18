@@ -63,7 +63,7 @@ public class ArrayCreationExprImpl extends ExpressionImpl implements ArrayCreati
     protected EList< ArrayCreationLevel > levels;
 
     /**
-     * The cached value of the '{@link #getElementType() <em>Element Type</em>}' reference.
+     * The cached value of the '{@link #getElementType() <em>Element Type</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getElementType()
@@ -122,15 +122,6 @@ public class ArrayCreationExprImpl extends ExpressionImpl implements ArrayCreati
      */
     @Override
     public Type getElementType() {
-        if( elementType != null && elementType.eIsProxy() ) {
-            InternalEObject oldElementType = ( InternalEObject ) elementType;
-            elementType = ( Type ) eResolveProxy( oldElementType );
-            if( elementType != oldElementType ) {
-                if( eNotificationRequired() )
-                    eNotify( new ENotificationImpl( this, Notification.RESOLVE,
-                            EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE, oldElementType, elementType ) );
-            }
-        }
         return elementType;
     }
 
@@ -139,8 +130,18 @@ public class ArrayCreationExprImpl extends ExpressionImpl implements ArrayCreati
      * <!-- end-user-doc -->
      * @generated
      */
-    public Type basicGetElementType() {
-        return elementType;
+    public NotificationChain basicSetElementType( Type newElementType, NotificationChain msgs ) {
+        Type oldElementType = elementType;
+        elementType = newElementType;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE, oldElementType, newElementType );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
     }
 
     /**
@@ -150,11 +151,20 @@ public class ArrayCreationExprImpl extends ExpressionImpl implements ArrayCreati
      */
     @Override
     public void setElementType( Type newElementType ) {
-        Type oldElementType = elementType;
-        elementType = newElementType;
-        if( eNotificationRequired() )
+        if( newElementType != elementType ) {
+            NotificationChain msgs = null;
+            if( elementType != null )
+                msgs = ( ( InternalEObject ) elementType ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE, null, msgs );
+            if( newElementType != null )
+                msgs = ( ( InternalEObject ) newElementType ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE, null, msgs );
+            msgs = basicSetElementType( newElementType, msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else if( eNotificationRequired() )
             eNotify( new ENotificationImpl( this, Notification.SET, EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE,
-                    oldElementType, elementType ) );
+                    newElementType, newElementType ) );
     }
 
     /**
@@ -219,6 +229,8 @@ public class ArrayCreationExprImpl extends ExpressionImpl implements ArrayCreati
         switch( featureID ) {
         case EJavaPackage.ARRAY_CREATION_EXPR__LEVELS:
             return ( ( InternalEList< ? > ) getLevels() ).basicRemove( otherEnd, msgs );
+        case EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE:
+            return basicSetElementType( null, msgs );
         case EJavaPackage.ARRAY_CREATION_EXPR__INITIALIZER:
             return basicSetInitializer( null, msgs );
         }
@@ -236,8 +248,7 @@ public class ArrayCreationExprImpl extends ExpressionImpl implements ArrayCreati
         case EJavaPackage.ARRAY_CREATION_EXPR__LEVELS:
             return getLevels();
         case EJavaPackage.ARRAY_CREATION_EXPR__ELEMENT_TYPE:
-            if( resolve ) return getElementType();
-            return basicGetElementType();
+            return getElementType();
         case EJavaPackage.ARRAY_CREATION_EXPR__INITIALIZER:
             return getInitializer();
         }

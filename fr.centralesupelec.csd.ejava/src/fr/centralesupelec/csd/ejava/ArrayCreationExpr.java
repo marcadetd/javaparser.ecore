@@ -49,22 +49,22 @@ public interface ArrayCreationExpr extends Expression {
     EList< ArrayCreationLevel > getLevels();
 
     /**
-     * Returns the value of the '<em><b>Element Type</b></em>' reference.
+     * Returns the value of the '<em><b>Element Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Element Type</em>' reference.
+     * @return the value of the '<em>Element Type</em>' containment reference.
      * @see #setElementType(Type)
      * @see fr.centralesupelec.csd.ejava.EJavaPackage#getArrayCreationExpr_ElementType()
-     * @model
+     * @model containment="true"
      * @generated
      */
     Type getElementType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.csd.ejava.ArrayCreationExpr#getElementType <em>Element Type</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.csd.ejava.ArrayCreationExpr#getElementType <em>Element Type</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Element Type</em>' reference.
+     * @param value the new value of the '<em>Element Type</em>' containment reference.
      * @see #getElementType()
      * @generated
      */

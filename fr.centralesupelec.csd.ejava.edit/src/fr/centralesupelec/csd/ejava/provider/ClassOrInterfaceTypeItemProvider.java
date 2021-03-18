@@ -141,8 +141,7 @@ public class ClassOrInterfaceTypeItemProvider extends ReferenceTypeItemProvider 
         //        return getString( "_UI_ClassOrInterfaceType_type" );
         ClassOrInterfaceType classOrInterfaceType = ( ClassOrInterfaceType ) object;
         IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
-                classOrInterfaceType.getName(),
-                IItemLabelProvider.class );
+                classOrInterfaceType.getName(), IItemLabelProvider.class );
         return labelProvider.getText( classOrInterfaceType.getName() );
     }
 

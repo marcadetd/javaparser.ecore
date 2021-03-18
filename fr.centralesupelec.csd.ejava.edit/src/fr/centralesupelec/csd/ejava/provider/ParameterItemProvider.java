@@ -28,6 +28,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -202,12 +203,19 @@ public class ParameterItemProvider extends JavaNodeItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
         Parameter parameter = ( Parameter ) object;
-        return getString( "_UI_Parameter_type" ) + " " + parameter.isFinal();
+//        return getString( "_UI_Parameter_type" ) + " " + parameter.isFinal();
+        IItemLabelProvider typeLabelProvider = ( IItemLabelProvider ) getAdapterFactory()
+                .adapt( parameter.getType(), IItemLabelProvider.class );
+        IItemLabelProvider nameLabelProvider = ( IItemLabelProvider ) getAdapterFactory()
+                .adapt( parameter.getName(), IItemLabelProvider.class );
+        return getString( "_UI_Parameter_type" ) + " "
+                + typeLabelProvider.getText( parameter.getType() ) + " "
+                + nameLabelProvider.getText( parameter.getName() );
     }
 
     /**

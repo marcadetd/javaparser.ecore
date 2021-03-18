@@ -29,6 +29,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -134,14 +135,18 @@ public class ArrayTypeItemProvider extends ReferenceTypeItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        ArrayTypeOrigin labelValue = ( ( ArrayType ) object ).getOrigin();
-        String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ? getString( "_UI_ArrayType_type" )
-                : getString( "_UI_ArrayType_type" ) + " " + label;
+//        ArrayTypeOrigin labelValue = ( ( ArrayType ) object ).getOrigin();
+//        String label = labelValue == null ? null : labelValue.toString();
+//        return label == null || label.length() == 0 ? getString( "_UI_ArrayType_type" )
+//                : getString( "_UI_ArrayType_type" ) + " " + label;
+        ArrayType arrayType = ( ArrayType ) object;
+        IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
+                arrayType.getComponentType(), IItemLabelProvider.class );
+        return labelProvider.getText( arrayType.getComponentType() ) + "[]";
     }
 
     /**

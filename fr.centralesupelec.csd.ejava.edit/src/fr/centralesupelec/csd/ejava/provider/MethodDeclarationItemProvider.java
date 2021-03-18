@@ -186,10 +186,11 @@ public class MethodDeclarationItemProvider extends CallableDeclarationItemProvid
     public String getText( Object object ) {
         MethodDeclaration methodDeclaration = ( MethodDeclaration ) object;
         //        return getString( "_UI_MethodDeclaration_type" ) + " " + methodDeclaration.isPublic();
-        IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
-                methodDeclaration.getName(),
-                IItemLabelProvider.class );
-        return labelProvider.getText( methodDeclaration.getName() ) + "()";
+        IItemLabelProvider nameProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
+                methodDeclaration.getName(), IItemLabelProvider.class );
+        IItemLabelProvider returnProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
+                methodDeclaration.getType(), IItemLabelProvider.class );
+        return returnProvider.getText( methodDeclaration.getType() ) + " " + nameProvider.getText( methodDeclaration.getName() ) + "()";
     }
 
     /**

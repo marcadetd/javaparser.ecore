@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" Copyright (c) 2021 CentraleSupélec.&#xA; This program and the accompanying materials are made&#xA; available under the terms of the Apache License version 2.0&#xA; which accompanies this distribution, and is available at&#xA; http://www.apache.org/licenses/LICENSE-2.0&#xA;&#xA; Contributors:&#xA;     Computer Science Department, CentraleSupélec&#xA; Contacts:&#xA;     dominique.marcadet@centralesupelec.fr&#xA; Web site:&#xA;     https://github.com/marcadetd/javaparser.ecore&#xA;"
+    modelDirectory="/fr.centralesupelec.csd.ejava/src" modelPluginID="fr.centralesupelec.csd.ejava"
+    modelName="EJava" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true" cleanup="true">
+  <foreignModel>ejava.ecore</foreignModel>
+  <genPackages prefix="EJava" basePackage="fr.centralesupelec.csd" disposableProviderFactory="true"
+      ecorePackage="ejava.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//ModifierKeyword">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/STATIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/PROTECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/PRIVATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/FINAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/ABSTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/SYNCHRONIZED"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/NATIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/TRANSIENT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/VOLATILE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/STRICTFP"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/TRANSITIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ModifierKeyword/DEFAULT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//AssignOperator">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/ASSIGN"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/MULTIPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/DIVIDE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/BINARY_AND"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/BINARY_OR"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/XOR"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/REMAINDER"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/LEFT_SHIFT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/SIGNED_RIGHT_SHIFT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//AssignOperator/UNSIGNED_RIGHT_SHIFT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//BinaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/BINARY_OR"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/BINARY_AND"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/XOR"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/NOT_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/LESS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/GREATER"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/LESS_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/GREATER_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/LEFT_SHIFT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/SIGNED_RIGHT_SHIFT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/UNSIGNED_RIGHT_SHIFT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/MULTIPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/DIVIDE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//BinaryOperator/REMAINDER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//UnaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/PREFIX_INCREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/PREFIX_DECREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/LOGICAL_COMPLEMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/BITWISE_COMPLEMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/POSTFIX_INCREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//UnaryOperator/POSTFIX_DECREMENT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//SwitchEntryType">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//SwitchEntryType/STATEMENT_GROUP"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//SwitchEntryType/EXPRESSION"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//SwitchEntryType/BLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//SwitchEntryType/THROWS_STATEMENT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//ArrayTypeOrigin">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ArrayTypeOrigin/NAME"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//ArrayTypeOrigin/TYPE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejava.ecore#//Primitive">
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/BYTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/SHORT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="ejava.ecore#//Primitive/DOUBLE"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="ejava.ecore#//JavaNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//JavaNode/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//JavaNode/orphanComments"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ArrayCreationLevel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayCreationLevel/dimension"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//CompilationUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//CompilationUnit/packageDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//CompilationUnit/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//CompilationUnit/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//CompilationUnit/module"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ImportDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//ImportDeclaration/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//ImportDeclaration/asterisk"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//PackageDeclaration"/>
+    <genClasses ecoreClass="ejava.ecore#//AnnotationDeclaration"/>
+    <genClasses ecoreClass="ejava.ecore#//AnnotationMemberDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//AnnotationMemberDeclaration/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//BodyDeclaration"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//CallableDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//CallableDeclaration/receiverParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ClassOrInterfaceDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//ClassOrInterfaceDeclaration/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ConstructorDeclaration"/>
+    <genClasses ecoreClass="ejava.ecore#//EnumConstantDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//EnumConstantDeclaration/classBody"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//EnumDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//EnumDeclaration/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//FieldDeclaration"/>
+    <genClasses ecoreClass="ejava.ecore#//InitializerDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//InitializerDeclaration/static"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//MethodDeclaration"/>
+    <genClasses ecoreClass="ejava.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//Parameter/varArgs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//Parameter/varArgsAnnotations"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ReceiverParameter"/>
+    <genClasses ecoreClass="ejava.ecore#//TypeDeclaration"/>
+    <genClasses ecoreClass="ejava.ecore#//VariableDeclarator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//VariableDeclarator/initializer"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//BlockComment"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//Comment/content"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//JavadocComment"/>
+    <genClasses ecoreClass="ejava.ecore#//LineComment"/>
+    <genClasses ecoreClass="ejava.ecore#//AnnotationExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//ArrayAccessExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayAccessExpr/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayAccessExpr/index"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ArrayCreationExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayCreationExpr/levels"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayCreationExpr/elementType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayCreationExpr/initializer"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ArrayInitializerExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayInitializerExpr/values"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//AssignExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//AssignExpr/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//AssignExpr/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//AssignExpr/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//BinaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//BinaryExpr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//BinaryExpr/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//BinaryExpr/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//BooleanLiteralExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//BooleanLiteralExpr/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//CastExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//CharLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//ClassExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//ConditionalExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ConditionalExpr/thenExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ConditionalExpr/elseExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//DoubleLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//EnclosedExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//EnclosedExpr/inner"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//Expression"/>
+    <genClasses ecoreClass="ejava.ecore#//FieldAccessExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//InstanceOfExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//InstanceOfExpr/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//IntegerLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//LambdaExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//LambdaExpr/enclosingParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejava.ecore#//LambdaExpr/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//LiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//LiteralStringValueExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//LiteralStringValueExpr/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//LongLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//MarkerAnnotationExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//MemberValuePair">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//MemberValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//MethodCallExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//MethodReferenceExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//Name">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//Name/qualifier"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//NameExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//NormalAnnotationExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NormalAnnotationExpr/pairs"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//NullLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//ObjectCreationExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ObjectCreationExpr/anonymousClassBody"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//PatternExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//SimpleName"/>
+    <genClasses ecoreClass="ejava.ecore#//SingleMemberAnnotationExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//SingleMemberAnnotationExpr/memberValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//StringLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//SuperExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//SuperExpr/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//SwitchExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//TextBlockLiteralExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//ThisExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ThisExpr/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//TypeExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//UnaryExpr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute ejava.ecore#//UnaryExpr/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//VariableDeclarationExpr"/>
+    <genClasses ecoreClass="ejava.ecore#//ModuleDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//ModuleDeclaration/open"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ModuleDeclaration/directives"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//ModuleDirective"/>
+    <genClasses ecoreClass="ejava.ecore#//ModuleExportsDirective">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ModuleExportsDirective/moduleNames"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ModuleOpensDirective">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ModuleOpensDirective/moduleNames"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ModuleProvidesDirective">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ModuleProvidesDirective/with"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ModuleRequiresDirective"/>
+    <genClasses ecoreClass="ejava.ecore#//ModuleUsesDirective"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithAnnotations">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithAnnotations/annotations"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithArguments">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithArguments/arguments"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithBlockStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithBlockStmt/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithBody/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithCondition/condition"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithExpression/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithExtends">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithExtends/extendedTypes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithIdentifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithIdentifier/identifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithImplements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithImplements/implementedTypes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithJavadoc"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithMembers">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithMembers/members"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithModifiers">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithModifiers/modifiers"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithName/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithLabel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithLabel/label"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithParameters/parameters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithRange"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithScope">
+      <genTypeParameters ecoreTypeParameter="ejava.ecore#//NodeWithScope/ScopeType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithScope/scope"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithSimpleName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithSimpleName/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithStatements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithStatements/statements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithThrownExceptions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithThrownExceptions/thrownExceptions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTokenRange"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithType">
+      <genTypeParameters ecoreTypeParameter="ejava.ecore#//NodeWithType/TypeUsed"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithType/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTypeArguments">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithTypeArguments/typeArguments"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTypeParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithTypeParameters/typeParameters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithVariables">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//NodeWithVariables/variables"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//SwitchNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//SwitchNode/selector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//SwitchNode/entries"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithAbstractModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithAbstractModifier/abstract"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithAccessModifiers"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithDefaultModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithDefaultModifier/default"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithFinalModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithFinalModifier/final"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithNativeModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithNativeModifier/native"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithPrivateModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithPrivateModifier/private"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithProtectedModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithProtectedModifier/protected"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithPublicModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithPublicModifier/public"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithStaticModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithStaticModifier/static"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithSynchronizedModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithSynchronizedModifier/synchronized"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithStrictfpModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithStrictfpModifier/strictfp"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTransientModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithTransientModifier/transient"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithTransitiveModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithTransitiveModifier/transitive"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//NodeWithVolatileModifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//NodeWithVolatileModifier/volatile"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//AssertStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//AssertStmt/check"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//AssertStmt/message"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//BlockStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//BreakStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//CatchClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//CatchClause/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ContinueStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//DoStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//EmptyStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//ExplicitConstructorInvocationStmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//ExplicitConstructorInvocationStmt/isThis"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ExpressionStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//ForEachStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ForEachStmt/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ForEachStmt/iterable"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ForStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ForStmt/initialization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ForStmt/compare"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ForStmt/update"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//IfStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//IfStmt/thenStmt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//IfStmt/elseStmt"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//LabeledStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//LabeledStmt/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//LocalClassDeclarationStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//LocalClassDeclarationStmt/classDeclaration"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ReturnStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//Statement"/>
+    <genClasses ecoreClass="ejava.ecore#//SwitchEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//SwitchEntry/labels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//SwitchEntry/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//SwitchStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//SynchronizedStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//ThrowStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//TryStmt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//TryStmt/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//TryStmt/tryBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//TryStmt/catchClauses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//TryStmt/finallyBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//WhileStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//YieldStmt"/>
+    <genClasses ecoreClass="ejava.ecore#//ArrayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//ArrayType/componentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//ArrayType/origin"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//ClassOrInterfaceType"/>
+    <genClasses ecoreClass="ejava.ecore#//IntersectionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//IntersectionType/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//PrimitiveType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//PrimitiveType/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//ReferenceType"/>
+    <genClasses image="false" ecoreClass="ejava.ecore#//Type"/>
+    <genClasses ecoreClass="ejava.ecore#//TypeParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//TypeParameter/typeBound"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//UnionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//UnionType/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//UnknownType"/>
+    <genClasses ecoreClass="ejava.ecore#//VarType"/>
+    <genClasses ecoreClass="ejava.ecore#//VoidType"/>
+    <genClasses ecoreClass="ejava.ecore#//WildcardType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//WildcardType/extendedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//WildcardType/superType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

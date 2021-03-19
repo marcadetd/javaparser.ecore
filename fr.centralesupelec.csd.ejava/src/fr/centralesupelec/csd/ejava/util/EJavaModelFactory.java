@@ -17,6 +17,9 @@ package fr.centralesupelec.csd.ejava.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -30,16 +33,16 @@ import com.github.javaparser.ParserConfiguration.LanguageLevel;
 import com.github.javaparser.ast.visitor.GenericVisitorAdapter;
 
 import fr.centralesupelec.csd.ejava.*;
+import fr.centralesupelec.csd.ejava.Package;
 
-public class CreateEJavaModel {
+public class EJavaModelFactory {
     
-    public CreateEJavaModel() {
+    private ResourceSet resourceSet;
+    private JavaParser javaParser;
 
-    }
-
-    public Resource createEJavaModel( File file ) throws FileNotFoundException {
+    public EJavaModelFactory() {
         // Create a resource set to hold the resources.
-        ResourceSet resourceSet = new ResourceSetImpl();
+        resourceSet = new ResourceSetImpl();
 
         // Register the appropriate resource factory to handle all file extensions.
         resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
@@ -50,24 +53,67 @@ public class CreateEJavaModel {
         // Register the package to ensure it is available during loading.
         resourceSet.getPackageRegistry().put( EJavaPackage.eNS_URI, EJavaPackage.eINSTANCE );
 
-        JavaParser javaParser = new JavaParser();
+        javaParser = new JavaParser();
         javaParser.getParserConfiguration().setLanguageLevel( LanguageLevel.JAVA_15 );
-        ParseResult< com.github.javaparser.ast.CompilationUnit > result = javaParser.parse( file );
+    }
+    
+    public Resource createProjectResource( String name, File srcDirectory ) {
+        if( ! srcDirectory.isDirectory() ) {
+            return null;
+        }
 
-        Resource resource = resourceSet.createResource ( URI.createURI( "http://csd.centralesupelec.fr/ejava/resource.java" ));
+        Resource resource = resourceSet.createResource ( URI.createFileURI( srcDirectory.getPath() ));
+        Project project = EJavaFactory.eINSTANCE.createProject();
+        project.setName( name );
+        resource.getContents().add( project );
+        project.getElements().addAll( exploreDirectory( srcDirectory ));
+        
+        return resource;
+    }
 
-        result.ifSuccessful(
-                cu -> {
-                    CompilationUnitVisitor cuv = new CompilationUnitVisitor();
-                    CompilationUnit compilationUnit = cuv.visit( cu, EJavaFactory.eINSTANCE );
+    private List<Element > exploreDirectory( File directory ) {
+        List< Element > res = new ArrayList<>();
+        
+        for( File file : directory.listFiles() ) {
+            if( file.isDirectory() ) {
+                Package pack = EJavaFactory.eINSTANCE.createPackage();
+                pack.setName( file.getName() );
+                res.add( pack );
+                pack.getElements().addAll( exploreDirectory( file ));
+            }
+            else if( file.getName().endsWith( ".java" )) {
+                res.add( createCompilationUnit( file ));
+            }
+        }
+        
+        return res;
+    }
 
-                    resource.getContents().add( compilationUnit );
-                }
-        );
-
+    public Resource createCompilationUnitResource( File file ) throws FileNotFoundException {
+        CompilationUnit compilationUnit = createCompilationUnit( file );
+        if( compilationUnit == null ) return null;
+        
+        Resource resource = resourceSet.createResource ( URI.createFileURI( file.getPath() ));
+        resource.getContents().add( compilationUnit);
         return resource;
     }
     
+    private CompilationUnit createCompilationUnit( File file ) {
+        CompilationUnit compilationUnit = null;
+        try {
+            ParseResult< com.github.javaparser.ast.CompilationUnit > result = javaParser.parse( file );
+            if( result.isSuccessful() ) {
+                CompilationUnitVisitor cuv = new CompilationUnitVisitor();
+                compilationUnit = cuv.visit( result.getResult().get(), EJavaFactory.eINSTANCE );
+                compilationUnit.setName( file.getName() );
+            }
+        }
+        catch( FileNotFoundException e ) {
+            e.printStackTrace();
+        }
+        return compilationUnit;
+    }
+
     private static class JavaNodeVisitor extends GenericVisitorAdapter< JavaNode, EJavaFactory > {
         
         public JavaNode collect( com.github.javaparser.ast.Node javaParserObject, EJavaFactory factory, JavaNode ecoreObject ) {

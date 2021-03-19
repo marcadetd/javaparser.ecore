@@ -395,6 +395,12 @@ public class ClassExprItemProvider extends ExpressionItemProvider {
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
                 EJavaFactory.eINSTANCE.createWildcardType() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createProject() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createPackage() ) );
     }
 
     /**

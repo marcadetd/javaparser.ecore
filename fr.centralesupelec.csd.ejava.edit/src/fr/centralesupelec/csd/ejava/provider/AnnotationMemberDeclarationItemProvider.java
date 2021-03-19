@@ -531,6 +531,12 @@ public class AnnotationMemberDeclarationItemProvider extends BodyDeclarationItem
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
                 EJavaFactory.eINSTANCE.createWildcardType() ) );
 
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createProject() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createPackage() ) );
+
         newChildDescriptors
                 .add( createChildParameter( EJavaPackage.Literals.ANNOTATION_MEMBER_DECLARATION__DEFAULT_VALUE,
                         EJavaFactory.eINSTANCE.createArrayAccessExpr() ) );

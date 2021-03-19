@@ -487,6 +487,12 @@ public class FieldAccessExprItemProvider extends ExpressionItemProvider {
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_SCOPE__SCOPE,
                 EJavaFactory.eINSTANCE.createWildcardType() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_SCOPE__SCOPE,
+                EJavaFactory.eINSTANCE.createProject() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_SCOPE__SCOPE,
+                EJavaFactory.eINSTANCE.createPackage() ) );
     }
 
     /**

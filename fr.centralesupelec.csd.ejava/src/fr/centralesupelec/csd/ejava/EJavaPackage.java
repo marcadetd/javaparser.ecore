@@ -181,6 +181,43 @@ public interface EJavaPackage extends EPackage {
     int ARRAY_CREATION_LEVEL_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.csd.ejava.impl.ElementImpl <em>Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.csd.ejava.impl.ElementImpl
+     * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getElement()
+     * @generated
+     */
+    int ELEMENT = 149;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ELEMENT__NAME = 0;
+
+    /**
+     * The number of structural features of the '<em>Element</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ELEMENT_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Element</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ELEMENT_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.impl.CompilationUnitImpl <em>Compilation Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -191,13 +228,22 @@ public interface EJavaPackage extends EPackage {
     int COMPILATION_UNIT = 2;
 
     /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMPILATION_UNIT__NAME = ELEMENT__NAME;
+
+    /**
      * The feature id for the '<em><b>Comment</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT__COMMENT = JAVA_NODE__COMMENT;
+    int COMPILATION_UNIT__COMMENT = ELEMENT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Orphan Comments</b></em>' containment reference list.
@@ -206,7 +252,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT__ORPHAN_COMMENTS = JAVA_NODE__ORPHAN_COMMENTS;
+    int COMPILATION_UNIT__ORPHAN_COMMENTS = ELEMENT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Package Declaration</b></em>' containment reference.
@@ -215,7 +261,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT__PACKAGE_DECLARATION = JAVA_NODE_FEATURE_COUNT + 0;
+    int COMPILATION_UNIT__PACKAGE_DECLARATION = ELEMENT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -224,7 +270,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT__IMPORTS = JAVA_NODE_FEATURE_COUNT + 1;
+    int COMPILATION_UNIT__IMPORTS = ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Types</b></em>' containment reference list.
@@ -233,7 +279,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT__TYPES = JAVA_NODE_FEATURE_COUNT + 2;
+    int COMPILATION_UNIT__TYPES = ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Module</b></em>' containment reference.
@@ -242,7 +288,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT__MODULE = JAVA_NODE_FEATURE_COUNT + 3;
+    int COMPILATION_UNIT__MODULE = ELEMENT_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Compilation Unit</em>' class.
@@ -251,7 +297,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT_FEATURE_COUNT = JAVA_NODE_FEATURE_COUNT + 4;
+    int COMPILATION_UNIT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
 
     /**
      * The number of operations of the '<em>Compilation Unit</em>' class.
@@ -260,7 +306,7 @@ public interface EJavaPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int COMPILATION_UNIT_OPERATION_COUNT = JAVA_NODE_OPERATION_COUNT + 0;
+    int COMPILATION_UNIT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.impl.ImportDeclarationImpl <em>Import Declaration</em>}' class.
@@ -9272,6 +9318,98 @@ public interface EJavaPackage extends EPackage {
     int WILDCARD_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.csd.ejava.impl.ProjectImpl <em>Project</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.csd.ejava.impl.ProjectImpl
+     * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getProject()
+     * @generated
+     */
+    int PROJECT = 147;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROJECT__NAME = 0;
+
+    /**
+     * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROJECT__ELEMENTS = 1;
+
+    /**
+     * The number of structural features of the '<em>Project</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROJECT_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>Project</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROJECT_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.csd.ejava.impl.PackageImpl <em>Package</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.csd.ejava.impl.PackageImpl
+     * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getPackage()
+     * @generated
+     */
+    int PACKAGE = 148;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE__NAME = ELEMENT__NAME;
+
+    /**
+     * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE__ELEMENTS = ELEMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Package</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>Package</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PACKAGE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.ModifierKeyword <em>Modifier Keyword</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9279,7 +9417,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getModifierKeyword()
      * @generated
      */
-    int MODIFIER_KEYWORD = 147;
+    int MODIFIER_KEYWORD = 150;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.AssignOperator <em>Assign Operator</em>}' enum.
@@ -9289,7 +9427,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getAssignOperator()
      * @generated
      */
-    int ASSIGN_OPERATOR = 148;
+    int ASSIGN_OPERATOR = 151;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.BinaryOperator <em>Binary Operator</em>}' enum.
@@ -9299,7 +9437,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getBinaryOperator()
      * @generated
      */
-    int BINARY_OPERATOR = 149;
+    int BINARY_OPERATOR = 152;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.UnaryOperator <em>Unary Operator</em>}' enum.
@@ -9309,7 +9447,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getUnaryOperator()
      * @generated
      */
-    int UNARY_OPERATOR = 150;
+    int UNARY_OPERATOR = 153;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.SwitchEntryType <em>Switch Entry Type</em>}' enum.
@@ -9319,7 +9457,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getSwitchEntryType()
      * @generated
      */
-    int SWITCH_ENTRY_TYPE = 151;
+    int SWITCH_ENTRY_TYPE = 154;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.ArrayTypeOrigin <em>Array Type Origin</em>}' enum.
@@ -9329,7 +9467,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getArrayTypeOrigin()
      * @generated
      */
-    int ARRAY_TYPE_ORIGIN = 152;
+    int ARRAY_TYPE_ORIGIN = 155;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.csd.ejava.Primitive <em>Primitive</em>}' enum.
@@ -9339,7 +9477,7 @@ public interface EJavaPackage extends EPackage {
      * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getPrimitive()
      * @generated
      */
-    int PRIMITIVE = 153;
+    int PRIMITIVE = 156;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.csd.ejava.JavaNode <em>Java Node</em>}'.
@@ -12088,6 +12226,80 @@ public interface EJavaPackage extends EPackage {
     EReference getWildcardType_SuperType();
 
     /**
+     * Returns the meta object for class '{@link fr.centralesupelec.csd.ejava.Project <em>Project</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Project</em>'.
+     * @see fr.centralesupelec.csd.ejava.Project
+     * @generated
+     */
+    EClass getProject();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.csd.ejava.Project#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see fr.centralesupelec.csd.ejava.Project#getName()
+     * @see #getProject()
+     * @generated
+     */
+    EAttribute getProject_Name();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.csd.ejava.Project#getElements <em>Elements</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Elements</em>'.
+     * @see fr.centralesupelec.csd.ejava.Project#getElements()
+     * @see #getProject()
+     * @generated
+     */
+    EReference getProject_Elements();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.csd.ejava.Package <em>Package</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Package</em>'.
+     * @see fr.centralesupelec.csd.ejava.Package
+     * @generated
+     */
+    EClass getPackage();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.csd.ejava.Package#getElements <em>Elements</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Elements</em>'.
+     * @see fr.centralesupelec.csd.ejava.Package#getElements()
+     * @see #getPackage()
+     * @generated
+     */
+    EReference getPackage_Elements();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.csd.ejava.Element <em>Element</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Element</em>'.
+     * @see fr.centralesupelec.csd.ejava.Element
+     * @generated
+     */
+    EClass getElement();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.csd.ejava.Element#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see fr.centralesupelec.csd.ejava.Element#getName()
+     * @see #getElement()
+     * @generated
+     */
+    EAttribute getElement_Name();
+
+    /**
      * Returns the meta object for enum '{@link fr.centralesupelec.csd.ejava.ModifierKeyword <em>Modifier Keyword</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14582,6 +14794,68 @@ public interface EJavaPackage extends EPackage {
          * @generated
          */
         EReference WILDCARD_TYPE__SUPER_TYPE = eINSTANCE.getWildcardType_SuperType();
+
+        /**
+         * The meta object literal for the '{@link fr.centralesupelec.csd.ejava.impl.ProjectImpl <em>Project</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see fr.centralesupelec.csd.ejava.impl.ProjectImpl
+         * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getProject()
+         * @generated
+         */
+        EClass PROJECT = eINSTANCE.getProject();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PROJECT__NAME = eINSTANCE.getProject_Name();
+
+        /**
+         * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference PROJECT__ELEMENTS = eINSTANCE.getProject_Elements();
+
+        /**
+         * The meta object literal for the '{@link fr.centralesupelec.csd.ejava.impl.PackageImpl <em>Package</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see fr.centralesupelec.csd.ejava.impl.PackageImpl
+         * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getPackage()
+         * @generated
+         */
+        EClass PACKAGE = eINSTANCE.getPackage();
+
+        /**
+         * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference PACKAGE__ELEMENTS = eINSTANCE.getPackage_Elements();
+
+        /**
+         * The meta object literal for the '{@link fr.centralesupelec.csd.ejava.impl.ElementImpl <em>Element</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see fr.centralesupelec.csd.ejava.impl.ElementImpl
+         * @see fr.centralesupelec.csd.ejava.impl.EJavaPackageImpl#getElement()
+         * @generated
+         */
+        EClass ELEMENT = eINSTANCE.getElement();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
         /**
          * The meta object literal for the '{@link fr.centralesupelec.csd.ejava.ModifierKeyword <em>Modifier Keyword</em>}' enum.

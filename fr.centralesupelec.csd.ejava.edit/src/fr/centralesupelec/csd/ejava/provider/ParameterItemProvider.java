@@ -208,7 +208,7 @@ public class ParameterItemProvider extends JavaNodeItemProvider {
     @Override
     public String getText( Object object ) {
         Parameter parameter = ( Parameter ) object;
-//        return getString( "_UI_Parameter_type" ) + " " + parameter.isFinal();
+        //        return getString( "_UI_Parameter_type" ) + " " + parameter.isFinal();
         IItemLabelProvider typeLabelProvider = ( IItemLabelProvider ) getAdapterFactory()
                 .adapt( parameter.getType(), IItemLabelProvider.class );
         IItemLabelProvider nameLabelProvider = ( IItemLabelProvider ) getAdapterFactory()
@@ -540,6 +540,12 @@ public class ParameterItemProvider extends JavaNodeItemProvider {
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
                 EJavaFactory.eINSTANCE.createWildcardType() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createProject() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createPackage() ) );
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_ANNOTATIONS__ANNOTATIONS,
                 EJavaFactory.eINSTANCE.createMarkerAnnotationExpr() ) );

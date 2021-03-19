@@ -890,6 +890,24 @@ public interface EJavaFactory extends EFactory {
     WildcardType createWildcardType();
 
     /**
+     * Returns a new object of class '<em>Project</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Project</em>'.
+     * @generated
+     */
+    Project createProject();
+
+    /**
+     * Returns a new object of class '<em>Package</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Package</em>'.
+     * @generated
+     */
+    Package createPackage();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

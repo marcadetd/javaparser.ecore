@@ -15,6 +15,164 @@
  */
 package fr.centralesupelec.csd.ejava.impl;
 
+import fr.centralesupelec.csd.ejava.AnnotationDeclaration;
+import fr.centralesupelec.csd.ejava.AnnotationExpr;
+import fr.centralesupelec.csd.ejava.AnnotationMemberDeclaration;
+import fr.centralesupelec.csd.ejava.ArrayAccessExpr;
+import fr.centralesupelec.csd.ejava.ArrayCreationExpr;
+import fr.centralesupelec.csd.ejava.ArrayCreationLevel;
+import fr.centralesupelec.csd.ejava.ArrayInitializerExpr;
+import fr.centralesupelec.csd.ejava.ArrayType;
+import fr.centralesupelec.csd.ejava.ArrayTypeOrigin;
+import fr.centralesupelec.csd.ejava.AssertStmt;
+import fr.centralesupelec.csd.ejava.AssignExpr;
+import fr.centralesupelec.csd.ejava.AssignOperator;
+import fr.centralesupelec.csd.ejava.BinaryExpr;
+import fr.centralesupelec.csd.ejava.BinaryOperator;
+import fr.centralesupelec.csd.ejava.BlockComment;
+import fr.centralesupelec.csd.ejava.BlockStmt;
+import fr.centralesupelec.csd.ejava.BodyDeclaration;
+import fr.centralesupelec.csd.ejava.BooleanLiteralExpr;
+import fr.centralesupelec.csd.ejava.BreakStmt;
+import fr.centralesupelec.csd.ejava.CallableDeclaration;
+import fr.centralesupelec.csd.ejava.CastExpr;
+import fr.centralesupelec.csd.ejava.CatchClause;
+import fr.centralesupelec.csd.ejava.CharLiteralExpr;
+import fr.centralesupelec.csd.ejava.ClassExpr;
+import fr.centralesupelec.csd.ejava.ClassOrInterfaceDeclaration;
+import fr.centralesupelec.csd.ejava.ClassOrInterfaceType;
+import fr.centralesupelec.csd.ejava.Comment;
+import fr.centralesupelec.csd.ejava.CompilationUnit;
+import fr.centralesupelec.csd.ejava.ConditionalExpr;
+import fr.centralesupelec.csd.ejava.ConstructorDeclaration;
+import fr.centralesupelec.csd.ejava.ContinueStmt;
+import fr.centralesupelec.csd.ejava.DoStmt;
+import fr.centralesupelec.csd.ejava.DoubleLiteralExpr;
+import fr.centralesupelec.csd.ejava.EJavaFactory;
+import fr.centralesupelec.csd.ejava.EJavaPackage;
+import fr.centralesupelec.csd.ejava.Element;
+import fr.centralesupelec.csd.ejava.EmptyStmt;
+import fr.centralesupelec.csd.ejava.EnclosedExpr;
+import fr.centralesupelec.csd.ejava.EnumConstantDeclaration;
+import fr.centralesupelec.csd.ejava.EnumDeclaration;
+import fr.centralesupelec.csd.ejava.ExplicitConstructorInvocationStmt;
+import fr.centralesupelec.csd.ejava.Expression;
+import fr.centralesupelec.csd.ejava.ExpressionStmt;
+import fr.centralesupelec.csd.ejava.FieldAccessExpr;
+import fr.centralesupelec.csd.ejava.FieldDeclaration;
+import fr.centralesupelec.csd.ejava.ForEachStmt;
+import fr.centralesupelec.csd.ejava.ForStmt;
+import fr.centralesupelec.csd.ejava.IfStmt;
+import fr.centralesupelec.csd.ejava.ImportDeclaration;
+import fr.centralesupelec.csd.ejava.InitializerDeclaration;
+import fr.centralesupelec.csd.ejava.InstanceOfExpr;
+import fr.centralesupelec.csd.ejava.IntegerLiteralExpr;
+import fr.centralesupelec.csd.ejava.IntersectionType;
+import fr.centralesupelec.csd.ejava.JavaNode;
+import fr.centralesupelec.csd.ejava.JavadocComment;
+import fr.centralesupelec.csd.ejava.LabeledStmt;
+import fr.centralesupelec.csd.ejava.LambdaExpr;
+import fr.centralesupelec.csd.ejava.LineComment;
+import fr.centralesupelec.csd.ejava.LiteralExpr;
+import fr.centralesupelec.csd.ejava.LiteralStringValueExpr;
+import fr.centralesupelec.csd.ejava.LocalClassDeclarationStmt;
+import fr.centralesupelec.csd.ejava.LongLiteralExpr;
+import fr.centralesupelec.csd.ejava.MarkerAnnotationExpr;
+import fr.centralesupelec.csd.ejava.MemberValuePair;
+import fr.centralesupelec.csd.ejava.MethodCallExpr;
+import fr.centralesupelec.csd.ejava.MethodDeclaration;
+import fr.centralesupelec.csd.ejava.MethodReferenceExpr;
+import fr.centralesupelec.csd.ejava.ModifierKeyword;
+import fr.centralesupelec.csd.ejava.ModuleDeclaration;
+import fr.centralesupelec.csd.ejava.ModuleDirective;
+import fr.centralesupelec.csd.ejava.ModuleExportsDirective;
+import fr.centralesupelec.csd.ejava.ModuleOpensDirective;
+import fr.centralesupelec.csd.ejava.ModuleProvidesDirective;
+import fr.centralesupelec.csd.ejava.ModuleRequiresDirective;
+import fr.centralesupelec.csd.ejava.ModuleUsesDirective;
+import fr.centralesupelec.csd.ejava.Name;
+import fr.centralesupelec.csd.ejava.NameExpr;
+import fr.centralesupelec.csd.ejava.NodeWithAbstractModifier;
+import fr.centralesupelec.csd.ejava.NodeWithAccessModifiers;
+import fr.centralesupelec.csd.ejava.NodeWithAnnotations;
+import fr.centralesupelec.csd.ejava.NodeWithArguments;
+import fr.centralesupelec.csd.ejava.NodeWithBlockStmt;
+import fr.centralesupelec.csd.ejava.NodeWithBody;
+import fr.centralesupelec.csd.ejava.NodeWithCondition;
+import fr.centralesupelec.csd.ejava.NodeWithDefaultModifier;
+import fr.centralesupelec.csd.ejava.NodeWithExpression;
+import fr.centralesupelec.csd.ejava.NodeWithExtends;
+import fr.centralesupelec.csd.ejava.NodeWithFinalModifier;
+import fr.centralesupelec.csd.ejava.NodeWithIdentifier;
+import fr.centralesupelec.csd.ejava.NodeWithImplements;
+import fr.centralesupelec.csd.ejava.NodeWithJavadoc;
+import fr.centralesupelec.csd.ejava.NodeWithLabel;
+import fr.centralesupelec.csd.ejava.NodeWithMembers;
+import fr.centralesupelec.csd.ejava.NodeWithModifiers;
+import fr.centralesupelec.csd.ejava.NodeWithName;
+import fr.centralesupelec.csd.ejava.NodeWithNativeModifier;
+import fr.centralesupelec.csd.ejava.NodeWithParameters;
+import fr.centralesupelec.csd.ejava.NodeWithPrivateModifier;
+import fr.centralesupelec.csd.ejava.NodeWithProtectedModifier;
+import fr.centralesupelec.csd.ejava.NodeWithPublicModifier;
+import fr.centralesupelec.csd.ejava.NodeWithRange;
+import fr.centralesupelec.csd.ejava.NodeWithScope;
+import fr.centralesupelec.csd.ejava.NodeWithSimpleName;
+import fr.centralesupelec.csd.ejava.NodeWithStatements;
+import fr.centralesupelec.csd.ejava.NodeWithStaticModifier;
+import fr.centralesupelec.csd.ejava.NodeWithStrictfpModifier;
+import fr.centralesupelec.csd.ejava.NodeWithSynchronizedModifier;
+import fr.centralesupelec.csd.ejava.NodeWithThrownExceptions;
+import fr.centralesupelec.csd.ejava.NodeWithTokenRange;
+import fr.centralesupelec.csd.ejava.NodeWithTransientModifier;
+import fr.centralesupelec.csd.ejava.NodeWithTransitiveModifier;
+import fr.centralesupelec.csd.ejava.NodeWithType;
+import fr.centralesupelec.csd.ejava.NodeWithTypeArguments;
+import fr.centralesupelec.csd.ejava.NodeWithTypeParameters;
+import fr.centralesupelec.csd.ejava.NodeWithVariables;
+import fr.centralesupelec.csd.ejava.NodeWithVolatileModifier;
+import fr.centralesupelec.csd.ejava.NormalAnnotationExpr;
+import fr.centralesupelec.csd.ejava.NullLiteralExpr;
+import fr.centralesupelec.csd.ejava.ObjectCreationExpr;
+import fr.centralesupelec.csd.ejava.PackageDeclaration;
+import fr.centralesupelec.csd.ejava.Parameter;
+import fr.centralesupelec.csd.ejava.PatternExpr;
+import fr.centralesupelec.csd.ejava.Primitive;
+import fr.centralesupelec.csd.ejava.PrimitiveType;
+import fr.centralesupelec.csd.ejava.Project;
+import fr.centralesupelec.csd.ejava.ReceiverParameter;
+import fr.centralesupelec.csd.ejava.ReferenceType;
+import fr.centralesupelec.csd.ejava.ReturnStmt;
+import fr.centralesupelec.csd.ejava.SimpleName;
+import fr.centralesupelec.csd.ejava.SingleMemberAnnotationExpr;
+import fr.centralesupelec.csd.ejava.Statement;
+import fr.centralesupelec.csd.ejava.StringLiteralExpr;
+import fr.centralesupelec.csd.ejava.SuperExpr;
+import fr.centralesupelec.csd.ejava.SwitchEntry;
+import fr.centralesupelec.csd.ejava.SwitchEntryType;
+import fr.centralesupelec.csd.ejava.SwitchExpr;
+import fr.centralesupelec.csd.ejava.SwitchNode;
+import fr.centralesupelec.csd.ejava.SwitchStmt;
+import fr.centralesupelec.csd.ejava.SynchronizedStmt;
+import fr.centralesupelec.csd.ejava.TextBlockLiteralExpr;
+import fr.centralesupelec.csd.ejava.ThisExpr;
+import fr.centralesupelec.csd.ejava.ThrowStmt;
+import fr.centralesupelec.csd.ejava.TryStmt;
+import fr.centralesupelec.csd.ejava.Type;
+import fr.centralesupelec.csd.ejava.TypeDeclaration;
+import fr.centralesupelec.csd.ejava.TypeExpr;
+import fr.centralesupelec.csd.ejava.TypeParameter;
+import fr.centralesupelec.csd.ejava.UnaryExpr;
+import fr.centralesupelec.csd.ejava.UnaryOperator;
+import fr.centralesupelec.csd.ejava.UnionType;
+import fr.centralesupelec.csd.ejava.UnknownType;
+import fr.centralesupelec.csd.ejava.VarType;
+import fr.centralesupelec.csd.ejava.VariableDeclarationExpr;
+import fr.centralesupelec.csd.ejava.VariableDeclarator;
+import fr.centralesupelec.csd.ejava.VoidType;
+import fr.centralesupelec.csd.ejava.WhileStmt;
+import fr.centralesupelec.csd.ejava.WildcardType;
+import fr.centralesupelec.csd.ejava.YieldStmt;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -24,8 +182,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import fr.centralesupelec.csd.ejava.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -1062,6 +1218,27 @@ public class EJavaPackageImpl extends EPackageImpl implements EJavaPackage {
      * @generated
      */
     private EClass wildcardTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass projectEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass packageEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass elementEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -3811,6 +3988,76 @@ public class EJavaPackageImpl extends EPackageImpl implements EJavaPackage {
      * @generated
      */
     @Override
+    public EClass getProject() {
+        return projectEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getProject_Name() {
+        return ( EAttribute ) projectEClass.getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getProject_Elements() {
+        return ( EReference ) projectEClass.getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getPackage() {
+        return packageEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getPackage_Elements() {
+        return ( EReference ) packageEClass.getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getElement() {
+        return elementEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getElement_Name() {
+        return ( EAttribute ) elementEClass.getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EEnum getModifierKeyword() {
         return modifierKeywordEEnum;
     }
@@ -4314,6 +4561,16 @@ public class EJavaPackageImpl extends EPackageImpl implements EJavaPackage {
         createEReference( wildcardTypeEClass, WILDCARD_TYPE__EXTENDED_TYPE );
         createEReference( wildcardTypeEClass, WILDCARD_TYPE__SUPER_TYPE );
 
+        projectEClass = createEClass( PROJECT );
+        createEAttribute( projectEClass, PROJECT__NAME );
+        createEReference( projectEClass, PROJECT__ELEMENTS );
+
+        packageEClass = createEClass( PACKAGE );
+        createEReference( packageEClass, PACKAGE__ELEMENTS );
+
+        elementEClass = createEClass( ELEMENT );
+        createEAttribute( elementEClass, ELEMENT__NAME );
+
         // Create enums
         modifierKeywordEEnum = createEEnum( MODIFIER_KEYWORD );
         assignOperatorEEnum = createEEnum( ASSIGN_OPERATOR );
@@ -4356,6 +4613,7 @@ public class EJavaPackageImpl extends EPackageImpl implements EJavaPackage {
         // Add supertypes to classes
         arrayCreationLevelEClass.getESuperTypes().add( this.getJavaNode() );
         arrayCreationLevelEClass.getESuperTypes().add( this.getNodeWithAnnotations() );
+        compilationUnitEClass.getESuperTypes().add( this.getElement() );
         compilationUnitEClass.getESuperTypes().add( this.getJavaNode() );
         importDeclarationEClass.getESuperTypes().add( this.getJavaNode() );
         importDeclarationEClass.getESuperTypes().add( this.getNodeWithName() );
@@ -4707,6 +4965,7 @@ public class EJavaPackageImpl extends EPackageImpl implements EJavaPackage {
         voidTypeEClass.getESuperTypes().add( this.getNodeWithAnnotations() );
         wildcardTypeEClass.getESuperTypes().add( this.getType() );
         wildcardTypeEClass.getESuperTypes().add( this.getNodeWithAnnotations() );
+        packageEClass.getESuperTypes().add( this.getElement() );
 
         // Initialize classes, features, and operations; add parameters
         initEClass( javaNodeEClass, JavaNode.class, "JavaNode", IS_ABSTRACT, !IS_INTERFACE,
@@ -5491,6 +5750,23 @@ public class EJavaPackageImpl extends EPackageImpl implements EJavaPackage {
         initEReference( getWildcardType_SuperType(), this.getReferenceType(), null, "superType", null, 0, 1,
                 WildcardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
+
+        initEClass( projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS );
+        initEAttribute( getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
+        initEReference( getProject_Elements(), this.getElement(), null, "elements", null, 0, -1, Project.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
+
+        initEClass( packageEClass, fr.centralesupelec.csd.ejava.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS );
+        initEReference( getPackage_Elements(), this.getElement(), null, "elements", null, 0, -1,
+                fr.centralesupelec.csd.ejava.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
+
+        initEClass( elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS );
+        initEAttribute( getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT,
+                !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED );
 
         // Initialize enums and add enum literals
         initEEnum( modifierKeywordEEnum, ModifierKeyword.class, "ModifierKeyword" );

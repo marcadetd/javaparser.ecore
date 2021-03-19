@@ -16,7 +16,6 @@
 package fr.centralesupelec.csd.ejava.provider;
 
 import fr.centralesupelec.csd.ejava.ArrayType;
-import fr.centralesupelec.csd.ejava.ArrayTypeOrigin;
 import fr.centralesupelec.csd.ejava.EJavaFactory;
 import fr.centralesupelec.csd.ejava.EJavaPackage;
 
@@ -139,10 +138,10 @@ public class ArrayTypeItemProvider extends ReferenceTypeItemProvider {
      */
     @Override
     public String getText( Object object ) {
-//        ArrayTypeOrigin labelValue = ( ( ArrayType ) object ).getOrigin();
-//        String label = labelValue == null ? null : labelValue.toString();
-//        return label == null || label.length() == 0 ? getString( "_UI_ArrayType_type" )
-//                : getString( "_UI_ArrayType_type" ) + " " + label;
+        //        ArrayTypeOrigin labelValue = ( ( ArrayType ) object ).getOrigin();
+        //        String label = labelValue == null ? null : labelValue.toString();
+        //        return label == null || label.length() == 0 ? getString( "_UI_ArrayType_type" )
+        //                : getString( "_UI_ArrayType_type" ) + " " + label;
         ArrayType arrayType = ( ArrayType ) object;
         IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
                 arrayType.getComponentType(), IItemLabelProvider.class );

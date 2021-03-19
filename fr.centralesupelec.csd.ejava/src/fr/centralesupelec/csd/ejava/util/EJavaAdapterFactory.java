@@ -15,14 +15,162 @@
  */
 package fr.centralesupelec.csd.ejava.util;
 
+import fr.centralesupelec.csd.ejava.AnnotationDeclaration;
+import fr.centralesupelec.csd.ejava.AnnotationExpr;
+import fr.centralesupelec.csd.ejava.AnnotationMemberDeclaration;
+import fr.centralesupelec.csd.ejava.ArrayAccessExpr;
+import fr.centralesupelec.csd.ejava.ArrayCreationExpr;
+import fr.centralesupelec.csd.ejava.ArrayCreationLevel;
+import fr.centralesupelec.csd.ejava.ArrayInitializerExpr;
+import fr.centralesupelec.csd.ejava.ArrayType;
+import fr.centralesupelec.csd.ejava.AssertStmt;
+import fr.centralesupelec.csd.ejava.AssignExpr;
+import fr.centralesupelec.csd.ejava.BinaryExpr;
+import fr.centralesupelec.csd.ejava.BlockComment;
+import fr.centralesupelec.csd.ejava.BlockStmt;
+import fr.centralesupelec.csd.ejava.BodyDeclaration;
+import fr.centralesupelec.csd.ejava.BooleanLiteralExpr;
+import fr.centralesupelec.csd.ejava.BreakStmt;
+import fr.centralesupelec.csd.ejava.CallableDeclaration;
+import fr.centralesupelec.csd.ejava.CastExpr;
+import fr.centralesupelec.csd.ejava.CatchClause;
+import fr.centralesupelec.csd.ejava.CharLiteralExpr;
+import fr.centralesupelec.csd.ejava.ClassExpr;
+import fr.centralesupelec.csd.ejava.ClassOrInterfaceDeclaration;
+import fr.centralesupelec.csd.ejava.ClassOrInterfaceType;
+import fr.centralesupelec.csd.ejava.Comment;
+import fr.centralesupelec.csd.ejava.CompilationUnit;
+import fr.centralesupelec.csd.ejava.ConditionalExpr;
+import fr.centralesupelec.csd.ejava.ConstructorDeclaration;
+import fr.centralesupelec.csd.ejava.ContinueStmt;
+import fr.centralesupelec.csd.ejava.DoStmt;
+import fr.centralesupelec.csd.ejava.DoubleLiteralExpr;
+import fr.centralesupelec.csd.ejava.EJavaPackage;
+import fr.centralesupelec.csd.ejava.Element;
+import fr.centralesupelec.csd.ejava.EmptyStmt;
+import fr.centralesupelec.csd.ejava.EnclosedExpr;
+import fr.centralesupelec.csd.ejava.EnumConstantDeclaration;
+import fr.centralesupelec.csd.ejava.EnumDeclaration;
+import fr.centralesupelec.csd.ejava.ExplicitConstructorInvocationStmt;
+import fr.centralesupelec.csd.ejava.Expression;
+import fr.centralesupelec.csd.ejava.ExpressionStmt;
+import fr.centralesupelec.csd.ejava.FieldAccessExpr;
+import fr.centralesupelec.csd.ejava.FieldDeclaration;
+import fr.centralesupelec.csd.ejava.ForEachStmt;
+import fr.centralesupelec.csd.ejava.ForStmt;
+import fr.centralesupelec.csd.ejava.IfStmt;
+import fr.centralesupelec.csd.ejava.ImportDeclaration;
+import fr.centralesupelec.csd.ejava.InitializerDeclaration;
+import fr.centralesupelec.csd.ejava.InstanceOfExpr;
+import fr.centralesupelec.csd.ejava.IntegerLiteralExpr;
+import fr.centralesupelec.csd.ejava.IntersectionType;
+import fr.centralesupelec.csd.ejava.JavaNode;
+import fr.centralesupelec.csd.ejava.JavadocComment;
+import fr.centralesupelec.csd.ejava.LabeledStmt;
+import fr.centralesupelec.csd.ejava.LambdaExpr;
+import fr.centralesupelec.csd.ejava.LineComment;
+import fr.centralesupelec.csd.ejava.LiteralExpr;
+import fr.centralesupelec.csd.ejava.LiteralStringValueExpr;
+import fr.centralesupelec.csd.ejava.LocalClassDeclarationStmt;
+import fr.centralesupelec.csd.ejava.LongLiteralExpr;
+import fr.centralesupelec.csd.ejava.MarkerAnnotationExpr;
+import fr.centralesupelec.csd.ejava.MemberValuePair;
+import fr.centralesupelec.csd.ejava.MethodCallExpr;
+import fr.centralesupelec.csd.ejava.MethodDeclaration;
+import fr.centralesupelec.csd.ejava.MethodReferenceExpr;
+import fr.centralesupelec.csd.ejava.ModuleDeclaration;
+import fr.centralesupelec.csd.ejava.ModuleDirective;
+import fr.centralesupelec.csd.ejava.ModuleExportsDirective;
+import fr.centralesupelec.csd.ejava.ModuleOpensDirective;
+import fr.centralesupelec.csd.ejava.ModuleProvidesDirective;
+import fr.centralesupelec.csd.ejava.ModuleRequiresDirective;
+import fr.centralesupelec.csd.ejava.ModuleUsesDirective;
+import fr.centralesupelec.csd.ejava.Name;
+import fr.centralesupelec.csd.ejava.NameExpr;
+import fr.centralesupelec.csd.ejava.NodeWithAbstractModifier;
+import fr.centralesupelec.csd.ejava.NodeWithAccessModifiers;
+import fr.centralesupelec.csd.ejava.NodeWithAnnotations;
+import fr.centralesupelec.csd.ejava.NodeWithArguments;
+import fr.centralesupelec.csd.ejava.NodeWithBlockStmt;
+import fr.centralesupelec.csd.ejava.NodeWithBody;
+import fr.centralesupelec.csd.ejava.NodeWithCondition;
+import fr.centralesupelec.csd.ejava.NodeWithDefaultModifier;
+import fr.centralesupelec.csd.ejava.NodeWithExpression;
+import fr.centralesupelec.csd.ejava.NodeWithExtends;
+import fr.centralesupelec.csd.ejava.NodeWithFinalModifier;
+import fr.centralesupelec.csd.ejava.NodeWithIdentifier;
+import fr.centralesupelec.csd.ejava.NodeWithImplements;
+import fr.centralesupelec.csd.ejava.NodeWithJavadoc;
+import fr.centralesupelec.csd.ejava.NodeWithLabel;
+import fr.centralesupelec.csd.ejava.NodeWithMembers;
+import fr.centralesupelec.csd.ejava.NodeWithModifiers;
+import fr.centralesupelec.csd.ejava.NodeWithName;
+import fr.centralesupelec.csd.ejava.NodeWithNativeModifier;
+import fr.centralesupelec.csd.ejava.NodeWithParameters;
+import fr.centralesupelec.csd.ejava.NodeWithPrivateModifier;
+import fr.centralesupelec.csd.ejava.NodeWithProtectedModifier;
+import fr.centralesupelec.csd.ejava.NodeWithPublicModifier;
+import fr.centralesupelec.csd.ejava.NodeWithRange;
+import fr.centralesupelec.csd.ejava.NodeWithScope;
+import fr.centralesupelec.csd.ejava.NodeWithSimpleName;
+import fr.centralesupelec.csd.ejava.NodeWithStatements;
+import fr.centralesupelec.csd.ejava.NodeWithStaticModifier;
+import fr.centralesupelec.csd.ejava.NodeWithStrictfpModifier;
+import fr.centralesupelec.csd.ejava.NodeWithSynchronizedModifier;
+import fr.centralesupelec.csd.ejava.NodeWithThrownExceptions;
+import fr.centralesupelec.csd.ejava.NodeWithTokenRange;
+import fr.centralesupelec.csd.ejava.NodeWithTransientModifier;
+import fr.centralesupelec.csd.ejava.NodeWithTransitiveModifier;
+import fr.centralesupelec.csd.ejava.NodeWithType;
+import fr.centralesupelec.csd.ejava.NodeWithTypeArguments;
+import fr.centralesupelec.csd.ejava.NodeWithTypeParameters;
+import fr.centralesupelec.csd.ejava.NodeWithVariables;
+import fr.centralesupelec.csd.ejava.NodeWithVolatileModifier;
+import fr.centralesupelec.csd.ejava.NormalAnnotationExpr;
+import fr.centralesupelec.csd.ejava.NullLiteralExpr;
+import fr.centralesupelec.csd.ejava.ObjectCreationExpr;
+import fr.centralesupelec.csd.ejava.PackageDeclaration;
+import fr.centralesupelec.csd.ejava.Parameter;
+import fr.centralesupelec.csd.ejava.PatternExpr;
+import fr.centralesupelec.csd.ejava.PrimitiveType;
+import fr.centralesupelec.csd.ejava.Project;
+import fr.centralesupelec.csd.ejava.ReceiverParameter;
+import fr.centralesupelec.csd.ejava.ReferenceType;
+import fr.centralesupelec.csd.ejava.ReturnStmt;
+import fr.centralesupelec.csd.ejava.SimpleName;
+import fr.centralesupelec.csd.ejava.SingleMemberAnnotationExpr;
+import fr.centralesupelec.csd.ejava.Statement;
+import fr.centralesupelec.csd.ejava.StringLiteralExpr;
+import fr.centralesupelec.csd.ejava.SuperExpr;
+import fr.centralesupelec.csd.ejava.SwitchEntry;
+import fr.centralesupelec.csd.ejava.SwitchExpr;
+import fr.centralesupelec.csd.ejava.SwitchNode;
+import fr.centralesupelec.csd.ejava.SwitchStmt;
+import fr.centralesupelec.csd.ejava.SynchronizedStmt;
+import fr.centralesupelec.csd.ejava.TextBlockLiteralExpr;
+import fr.centralesupelec.csd.ejava.ThisExpr;
+import fr.centralesupelec.csd.ejava.ThrowStmt;
+import fr.centralesupelec.csd.ejava.TryStmt;
+import fr.centralesupelec.csd.ejava.Type;
+import fr.centralesupelec.csd.ejava.TypeDeclaration;
+import fr.centralesupelec.csd.ejava.TypeExpr;
+import fr.centralesupelec.csd.ejava.TypeParameter;
+import fr.centralesupelec.csd.ejava.UnaryExpr;
+import fr.centralesupelec.csd.ejava.UnionType;
+import fr.centralesupelec.csd.ejava.UnknownType;
+import fr.centralesupelec.csd.ejava.VarType;
+import fr.centralesupelec.csd.ejava.VariableDeclarationExpr;
+import fr.centralesupelec.csd.ejava.VariableDeclarator;
+import fr.centralesupelec.csd.ejava.VoidType;
+import fr.centralesupelec.csd.ejava.WhileStmt;
+import fr.centralesupelec.csd.ejava.WildcardType;
+import fr.centralesupelec.csd.ejava.YieldStmt;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import fr.centralesupelec.csd.ejava.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -812,6 +960,21 @@ public class EJavaAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseWildcardType( WildcardType object ) {
             return createWildcardTypeAdapter();
+        }
+
+        @Override
+        public Adapter caseProject( Project object ) {
+            return createProjectAdapter();
+        }
+
+        @Override
+        public Adapter casePackage( fr.centralesupelec.csd.ejava.Package object ) {
+            return createPackageAdapter();
+        }
+
+        @Override
+        public Adapter caseElement( Element object ) {
+            return createElementAdapter();
         }
 
         @Override
@@ -2888,6 +3051,48 @@ public class EJavaAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createWildcardTypeAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.csd.ejava.Project <em>Project</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.csd.ejava.Project
+     * @generated
+     */
+    public Adapter createProjectAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.csd.ejava.Package <em>Package</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.csd.ejava.Package
+     * @generated
+     */
+    public Adapter createPackageAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.csd.ejava.Element <em>Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.csd.ejava.Element
+     * @generated
+     */
+    public Adapter createElementAdapter() {
         return null;
     }
 

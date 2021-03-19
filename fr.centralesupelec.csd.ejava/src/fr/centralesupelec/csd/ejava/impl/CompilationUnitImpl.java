@@ -15,6 +15,7 @@
  */
 package fr.centralesupelec.csd.ejava.impl;
 
+import fr.centralesupelec.csd.ejava.Comment;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.csd.ejava.CompilationUnit;
 import fr.centralesupelec.csd.ejava.ImportDeclaration;
+import fr.centralesupelec.csd.ejava.JavaNode;
 import fr.centralesupelec.csd.ejava.EJavaPackage;
 import fr.centralesupelec.csd.ejava.ModuleDeclaration;
 import fr.centralesupelec.csd.ejava.PackageDeclaration;
@@ -45,6 +47,8 @@ import fr.centralesupelec.csd.ejava.TypeDeclaration;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.csd.ejava.impl.CompilationUnitImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link fr.centralesupelec.csd.ejava.impl.CompilationUnitImpl#getOrphanComments <em>Orphan Comments</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.ejava.impl.CompilationUnitImpl#getPackageDeclaration <em>Package Declaration</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.ejava.impl.CompilationUnitImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link fr.centralesupelec.csd.ejava.impl.CompilationUnitImpl#getTypes <em>Types</em>}</li>
@@ -53,7 +57,27 @@ import fr.centralesupelec.csd.ejava.TypeDeclaration;
  *
  * @generated
  */
-public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit {
+public class CompilationUnitImpl extends ElementImpl implements CompilationUnit {
+    /**
+     * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getComment()
+     * @generated
+     * @ordered
+     */
+    protected Comment comment;
+
+    /**
+     * The cached value of the '{@link #getOrphanComments() <em>Orphan Comments</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOrphanComments()
+     * @generated
+     * @ordered
+     */
+    protected EList< Comment > orphanComments;
+
     /**
      * The cached value of the '{@link #getPackageDeclaration() <em>Package Declaration</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -111,6 +135,72 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
     @Override
     protected EClass eStaticClass() {
         return EJavaPackage.Literals.COMPILATION_UNIT;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Comment getComment() {
+        return comment;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetComment( Comment newComment, NotificationChain msgs ) {
+        Comment oldComment = comment;
+        comment = newComment;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    EJavaPackage.COMPILATION_UNIT__COMMENT, oldComment, newComment );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setComment( Comment newComment ) {
+        if( newComment != comment ) {
+            NotificationChain msgs = null;
+            if( comment != null )
+                msgs = ( ( InternalEObject ) comment ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - EJavaPackage.COMPILATION_UNIT__COMMENT, null, msgs );
+            if( newComment != null )
+                msgs = ( ( InternalEObject ) newComment ).eInverseAdd( this,
+                        EOPPOSITE_FEATURE_BASE - EJavaPackage.COMPILATION_UNIT__COMMENT, null, msgs );
+            msgs = basicSetComment( newComment, msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, EJavaPackage.COMPILATION_UNIT__COMMENT, newComment,
+                    newComment ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< Comment > getOrphanComments() {
+        if( orphanComments == null ) {
+            orphanComments = new EObjectContainmentEList< Comment >( Comment.class, this,
+                    EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS );
+        }
+        return orphanComments;
     }
 
     /**
@@ -254,6 +344,10 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
+        case EJavaPackage.COMPILATION_UNIT__COMMENT:
+            return basicSetComment( null, msgs );
+        case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
+            return ( ( InternalEList< ? > ) getOrphanComments() ).basicRemove( otherEnd, msgs );
         case EJavaPackage.COMPILATION_UNIT__PACKAGE_DECLARATION:
             return basicSetPackageDeclaration( null, msgs );
         case EJavaPackage.COMPILATION_UNIT__IMPORTS:
@@ -274,6 +368,10 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case EJavaPackage.COMPILATION_UNIT__COMMENT:
+            return getComment();
+        case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
+            return getOrphanComments();
         case EJavaPackage.COMPILATION_UNIT__PACKAGE_DECLARATION:
             return getPackageDeclaration();
         case EJavaPackage.COMPILATION_UNIT__IMPORTS:
@@ -295,6 +393,13 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case EJavaPackage.COMPILATION_UNIT__COMMENT:
+            setComment( ( Comment ) newValue );
+            return;
+        case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
+            getOrphanComments().clear();
+            getOrphanComments().addAll( ( Collection< ? extends Comment > ) newValue );
+            return;
         case EJavaPackage.COMPILATION_UNIT__PACKAGE_DECLARATION:
             setPackageDeclaration( ( PackageDeclaration ) newValue );
             return;
@@ -321,6 +426,12 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case EJavaPackage.COMPILATION_UNIT__COMMENT:
+            setComment( ( Comment ) null );
+            return;
+        case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
+            getOrphanComments().clear();
+            return;
         case EJavaPackage.COMPILATION_UNIT__PACKAGE_DECLARATION:
             setPackageDeclaration( ( PackageDeclaration ) null );
             return;
@@ -345,6 +456,10 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case EJavaPackage.COMPILATION_UNIT__COMMENT:
+            return comment != null;
+        case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
+            return orphanComments != null && !orphanComments.isEmpty();
         case EJavaPackage.COMPILATION_UNIT__PACKAGE_DECLARATION:
             return packageDeclaration != null;
         case EJavaPackage.COMPILATION_UNIT__IMPORTS:
@@ -355,6 +470,46 @@ public class CompilationUnitImpl extends JavaNodeImpl implements CompilationUnit
             return module != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == JavaNode.class ) {
+            switch( derivedFeatureID ) {
+            case EJavaPackage.COMPILATION_UNIT__COMMENT:
+                return EJavaPackage.JAVA_NODE__COMMENT;
+            case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
+                return EJavaPackage.JAVA_NODE__ORPHAN_COMMENTS;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == JavaNode.class ) {
+            switch( baseFeatureID ) {
+            case EJavaPackage.JAVA_NODE__COMMENT:
+                return EJavaPackage.COMPILATION_UNIT__COMMENT;
+            case EJavaPackage.JAVA_NODE__ORPHAN_COMMENTS:
+                return EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
 } //CompilationUnitImpl

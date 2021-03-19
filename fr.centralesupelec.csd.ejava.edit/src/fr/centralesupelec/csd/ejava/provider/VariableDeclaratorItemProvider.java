@@ -465,6 +465,12 @@ public class VariableDeclaratorItemProvider extends JavaNodeItemProvider {
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
                 EJavaFactory.eINSTANCE.createWildcardType() ) );
 
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createProject() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createPackage() ) );
+
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.VARIABLE_DECLARATOR__INITIALIZER,
                 EJavaFactory.eINSTANCE.createArrayAccessExpr() ) );
 

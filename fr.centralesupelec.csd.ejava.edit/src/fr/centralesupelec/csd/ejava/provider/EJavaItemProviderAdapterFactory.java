@@ -2271,6 +2271,52 @@ public class EJavaItemProviderAdapterFactory extends EJavaAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.csd.ejava.Project} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ProjectItemProvider projectItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.csd.ejava.Project}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createProjectAdapter() {
+        if( projectItemProvider == null ) {
+            projectItemProvider = new ProjectItemProvider( this );
+        }
+
+        return projectItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.csd.ejava.Package} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected PackageItemProvider packageItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.csd.ejava.Package}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createPackageAdapter() {
+        if( packageItemProvider == null ) {
+            packageItemProvider = new PackageItemProvider( this );
+        }
+
+        return packageItemProvider;
+    }
+
+    /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2471,6 +2517,8 @@ public class EJavaItemProviderAdapterFactory extends EJavaAdapterFactory
         if( varTypeItemProvider != null ) varTypeItemProvider.dispose();
         if( voidTypeItemProvider != null ) voidTypeItemProvider.dispose();
         if( wildcardTypeItemProvider != null ) wildcardTypeItemProvider.dispose();
+        if( projectItemProvider != null ) projectItemProvider.dispose();
+        if( packageItemProvider != null ) packageItemProvider.dispose();
     }
 
 }

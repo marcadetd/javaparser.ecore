@@ -36,7 +36,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface CompilationUnit extends JavaNode {
+public interface CompilationUnit extends Element, JavaNode {
     /**
      * Returns the value of the '<em><b>Package Declaration</b></em>' containment reference.
      * <!-- begin-user-doc -->

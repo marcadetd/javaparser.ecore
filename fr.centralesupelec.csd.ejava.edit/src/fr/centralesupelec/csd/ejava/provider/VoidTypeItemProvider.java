@@ -111,7 +111,7 @@ public class VoidTypeItemProvider extends TypeItemProvider {
      */
     @Override
     public String getText( Object object ) {
-//        return getString( "_UI_VoidType_type" );
+        //        return getString( "_UI_VoidType_type" );
         return "void ";
     }
 

@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" Copyright (c) 2021 CentraleSupélec.&#xA; This program and the accompanying materials are made&#xA; available under the terms of the Apache License version 2.0&#xA; which accompanies this distribution, and is available at&#xA; http://www.apache.org/licenses/LICENSE-2.0&#xA;&#xA; Contributors:&#xA;     Computer Science Department, CentraleSupélec&#xA; Contacts:&#xA;     dominique.marcadet@centralesupelec.fr&#xA; Web site:&#xA;     https://github.com/marcadetd/javaparser.ecore&#xA;"
     modelDirectory="/fr.centralesupelec.csd.ejava/src" modelPluginID="fr.centralesupelec.csd.ejava"
     modelName="EJava" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="15.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true" cleanup="true">
   <foreignModel>ejava.ecore</foreignModel>
   <genPackages prefix="EJava" basePackage="fr.centralesupelec.csd" disposableProviderFactory="true"
@@ -440,6 +440,16 @@
     <genClasses ecoreClass="ejava.ecore#//WildcardType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//WildcardType/extendedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//WildcardType/superType"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//Project/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//Project/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="ejava.ecore#//Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejava.ecore#//Package/elements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ejava.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejava.ecore#//Element/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

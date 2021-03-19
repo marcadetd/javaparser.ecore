@@ -15,6 +15,111 @@
  */
 package fr.centralesupelec.csd.ejava.impl;
 
+import fr.centralesupelec.csd.ejava.AnnotationDeclaration;
+import fr.centralesupelec.csd.ejava.AnnotationMemberDeclaration;
+import fr.centralesupelec.csd.ejava.ArrayAccessExpr;
+import fr.centralesupelec.csd.ejava.ArrayCreationExpr;
+import fr.centralesupelec.csd.ejava.ArrayCreationLevel;
+import fr.centralesupelec.csd.ejava.ArrayInitializerExpr;
+import fr.centralesupelec.csd.ejava.ArrayType;
+import fr.centralesupelec.csd.ejava.ArrayTypeOrigin;
+import fr.centralesupelec.csd.ejava.AssertStmt;
+import fr.centralesupelec.csd.ejava.AssignExpr;
+import fr.centralesupelec.csd.ejava.AssignOperator;
+import fr.centralesupelec.csd.ejava.BinaryExpr;
+import fr.centralesupelec.csd.ejava.BinaryOperator;
+import fr.centralesupelec.csd.ejava.BlockComment;
+import fr.centralesupelec.csd.ejava.BlockStmt;
+import fr.centralesupelec.csd.ejava.BooleanLiteralExpr;
+import fr.centralesupelec.csd.ejava.BreakStmt;
+import fr.centralesupelec.csd.ejava.CastExpr;
+import fr.centralesupelec.csd.ejava.CatchClause;
+import fr.centralesupelec.csd.ejava.CharLiteralExpr;
+import fr.centralesupelec.csd.ejava.ClassExpr;
+import fr.centralesupelec.csd.ejava.ClassOrInterfaceDeclaration;
+import fr.centralesupelec.csd.ejava.ClassOrInterfaceType;
+import fr.centralesupelec.csd.ejava.CompilationUnit;
+import fr.centralesupelec.csd.ejava.ConditionalExpr;
+import fr.centralesupelec.csd.ejava.ConstructorDeclaration;
+import fr.centralesupelec.csd.ejava.ContinueStmt;
+import fr.centralesupelec.csd.ejava.DoStmt;
+import fr.centralesupelec.csd.ejava.DoubleLiteralExpr;
+import fr.centralesupelec.csd.ejava.EJavaFactory;
+import fr.centralesupelec.csd.ejava.EJavaPackage;
+import fr.centralesupelec.csd.ejava.EmptyStmt;
+import fr.centralesupelec.csd.ejava.EnclosedExpr;
+import fr.centralesupelec.csd.ejava.EnumConstantDeclaration;
+import fr.centralesupelec.csd.ejava.EnumDeclaration;
+import fr.centralesupelec.csd.ejava.ExplicitConstructorInvocationStmt;
+import fr.centralesupelec.csd.ejava.ExpressionStmt;
+import fr.centralesupelec.csd.ejava.FieldAccessExpr;
+import fr.centralesupelec.csd.ejava.FieldDeclaration;
+import fr.centralesupelec.csd.ejava.ForEachStmt;
+import fr.centralesupelec.csd.ejava.ForStmt;
+import fr.centralesupelec.csd.ejava.IfStmt;
+import fr.centralesupelec.csd.ejava.ImportDeclaration;
+import fr.centralesupelec.csd.ejava.InitializerDeclaration;
+import fr.centralesupelec.csd.ejava.InstanceOfExpr;
+import fr.centralesupelec.csd.ejava.IntegerLiteralExpr;
+import fr.centralesupelec.csd.ejava.IntersectionType;
+import fr.centralesupelec.csd.ejava.JavadocComment;
+import fr.centralesupelec.csd.ejava.LabeledStmt;
+import fr.centralesupelec.csd.ejava.LambdaExpr;
+import fr.centralesupelec.csd.ejava.LineComment;
+import fr.centralesupelec.csd.ejava.LocalClassDeclarationStmt;
+import fr.centralesupelec.csd.ejava.LongLiteralExpr;
+import fr.centralesupelec.csd.ejava.MarkerAnnotationExpr;
+import fr.centralesupelec.csd.ejava.MemberValuePair;
+import fr.centralesupelec.csd.ejava.MethodCallExpr;
+import fr.centralesupelec.csd.ejava.MethodDeclaration;
+import fr.centralesupelec.csd.ejava.MethodReferenceExpr;
+import fr.centralesupelec.csd.ejava.ModifierKeyword;
+import fr.centralesupelec.csd.ejava.ModuleDeclaration;
+import fr.centralesupelec.csd.ejava.ModuleExportsDirective;
+import fr.centralesupelec.csd.ejava.ModuleOpensDirective;
+import fr.centralesupelec.csd.ejava.ModuleProvidesDirective;
+import fr.centralesupelec.csd.ejava.ModuleRequiresDirective;
+import fr.centralesupelec.csd.ejava.ModuleUsesDirective;
+import fr.centralesupelec.csd.ejava.Name;
+import fr.centralesupelec.csd.ejava.NameExpr;
+import fr.centralesupelec.csd.ejava.NormalAnnotationExpr;
+import fr.centralesupelec.csd.ejava.NullLiteralExpr;
+import fr.centralesupelec.csd.ejava.ObjectCreationExpr;
+import fr.centralesupelec.csd.ejava.PackageDeclaration;
+import fr.centralesupelec.csd.ejava.Parameter;
+import fr.centralesupelec.csd.ejava.PatternExpr;
+import fr.centralesupelec.csd.ejava.Primitive;
+import fr.centralesupelec.csd.ejava.PrimitiveType;
+import fr.centralesupelec.csd.ejava.Project;
+import fr.centralesupelec.csd.ejava.ReceiverParameter;
+import fr.centralesupelec.csd.ejava.ReturnStmt;
+import fr.centralesupelec.csd.ejava.SimpleName;
+import fr.centralesupelec.csd.ejava.SingleMemberAnnotationExpr;
+import fr.centralesupelec.csd.ejava.Statement;
+import fr.centralesupelec.csd.ejava.StringLiteralExpr;
+import fr.centralesupelec.csd.ejava.SuperExpr;
+import fr.centralesupelec.csd.ejava.SwitchEntry;
+import fr.centralesupelec.csd.ejava.SwitchEntryType;
+import fr.centralesupelec.csd.ejava.SwitchExpr;
+import fr.centralesupelec.csd.ejava.SwitchStmt;
+import fr.centralesupelec.csd.ejava.SynchronizedStmt;
+import fr.centralesupelec.csd.ejava.TextBlockLiteralExpr;
+import fr.centralesupelec.csd.ejava.ThisExpr;
+import fr.centralesupelec.csd.ejava.ThrowStmt;
+import fr.centralesupelec.csd.ejava.TryStmt;
+import fr.centralesupelec.csd.ejava.TypeExpr;
+import fr.centralesupelec.csd.ejava.TypeParameter;
+import fr.centralesupelec.csd.ejava.UnaryExpr;
+import fr.centralesupelec.csd.ejava.UnaryOperator;
+import fr.centralesupelec.csd.ejava.UnionType;
+import fr.centralesupelec.csd.ejava.UnknownType;
+import fr.centralesupelec.csd.ejava.VarType;
+import fr.centralesupelec.csd.ejava.VariableDeclarationExpr;
+import fr.centralesupelec.csd.ejava.VariableDeclarator;
+import fr.centralesupelec.csd.ejava.VoidType;
+import fr.centralesupelec.csd.ejava.WhileStmt;
+import fr.centralesupelec.csd.ejava.WildcardType;
+import fr.centralesupelec.csd.ejava.YieldStmt;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -23,8 +128,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import fr.centralesupelec.csd.ejava.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -261,6 +364,10 @@ public class EJavaFactoryImpl extends EFactoryImpl implements EJavaFactory {
             return createVoidType();
         case EJavaPackage.WILDCARD_TYPE:
             return createWildcardType();
+        case EJavaPackage.PROJECT:
+            return createProject();
+        case EJavaPackage.PACKAGE:
+            return createPackage();
         default:
             throw new IllegalArgumentException( "The class '" + eClass.getName() + "' is not a valid classifier" );
         }
@@ -1365,6 +1472,28 @@ public class EJavaFactoryImpl extends EFactoryImpl implements EJavaFactory {
     public WildcardType createWildcardType() {
         WildcardTypeImpl wildcardType = new WildcardTypeImpl();
         return wildcardType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Project createProject() {
+        ProjectImpl project = new ProjectImpl();
+        return project;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public fr.centralesupelec.csd.ejava.Package createPackage() {
+        PackageImpl package_ = new PackageImpl();
+        return package_;
     }
 
     /**

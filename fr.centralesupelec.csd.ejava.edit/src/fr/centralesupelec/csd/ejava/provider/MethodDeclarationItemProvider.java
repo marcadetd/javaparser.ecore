@@ -190,7 +190,8 @@ public class MethodDeclarationItemProvider extends CallableDeclarationItemProvid
                 methodDeclaration.getName(), IItemLabelProvider.class );
         IItemLabelProvider returnProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
                 methodDeclaration.getType(), IItemLabelProvider.class );
-        return returnProvider.getText( methodDeclaration.getType() ) + " " + nameProvider.getText( methodDeclaration.getName() ) + "()";
+        return returnProvider.getText( methodDeclaration.getType() ) + " "
+                + nameProvider.getText( methodDeclaration.getName() ) + "()";
     }
 
     /**
@@ -513,6 +514,12 @@ public class MethodDeclarationItemProvider extends CallableDeclarationItemProvid
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
                 EJavaFactory.eINSTANCE.createWildcardType() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createProject() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_TYPE__TYPE,
+                EJavaFactory.eINSTANCE.createPackage() ) );
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.NODE_WITH_BLOCK_STMT__BODY,
                 EJavaFactory.eINSTANCE.createBlockStmt() ) );

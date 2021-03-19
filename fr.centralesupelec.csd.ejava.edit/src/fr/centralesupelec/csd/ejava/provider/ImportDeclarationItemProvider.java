@@ -128,7 +128,7 @@ public class ImportDeclarationItemProvider extends JavaNodeItemProvider {
     @Override
     public String getText( Object object ) {
         ImportDeclaration importDeclaration = ( ImportDeclaration ) object;
-//        return getString( "_UI_ImportDeclaration_type" ) + " " + importDeclaration.isStatic();
+        //        return getString( "_UI_ImportDeclaration_type" ) + " " + importDeclaration.isStatic();
         IItemLabelProvider labelProvider = ( IItemLabelProvider ) getAdapterFactory().adapt(
                 importDeclaration.getName(), IItemLabelProvider.class );
         return "import " + labelProvider.getText( importDeclaration.getName() );

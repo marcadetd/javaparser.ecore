@@ -36,7 +36,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CompilationUnitItemProvider extends JavaNodeItemProvider {
+public class CompilationUnitItemProvider extends ElementItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -74,6 +74,8 @@ public class CompilationUnitItemProvider extends JavaNodeItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
+            childrenFeatures.add( EJavaPackage.Literals.JAVA_NODE__COMMENT );
+            childrenFeatures.add( EJavaPackage.Literals.JAVA_NODE__ORPHAN_COMMENTS );
             childrenFeatures.add( EJavaPackage.Literals.COMPILATION_UNIT__PACKAGE_DECLARATION );
             childrenFeatures.add( EJavaPackage.Literals.COMPILATION_UNIT__IMPORTS );
             childrenFeatures.add( EJavaPackage.Literals.COMPILATION_UNIT__TYPES );
@@ -114,7 +116,9 @@ public class CompilationUnitItemProvider extends JavaNodeItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getString( "_UI_CompilationUnit_type" );
+        String label = ( ( CompilationUnit ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_CompilationUnit_type" )
+                : getString( "_UI_CompilationUnit_type" ) + " " + label;
     }
 
     /**
@@ -129,6 +133,8 @@ public class CompilationUnitItemProvider extends JavaNodeItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( CompilationUnit.class ) ) {
+        case EJavaPackage.COMPILATION_UNIT__COMMENT:
+        case EJavaPackage.COMPILATION_UNIT__ORPHAN_COMMENTS:
         case EJavaPackage.COMPILATION_UNIT__PACKAGE_DECLARATION:
         case EJavaPackage.COMPILATION_UNIT__IMPORTS:
         case EJavaPackage.COMPILATION_UNIT__TYPES:
@@ -149,6 +155,24 @@ public class CompilationUnitItemProvider extends JavaNodeItemProvider {
     @Override
     protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
         super.collectNewChildDescriptors( newChildDescriptors, object );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.JAVA_NODE__COMMENT,
+                EJavaFactory.eINSTANCE.createBlockComment() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.JAVA_NODE__COMMENT,
+                EJavaFactory.eINSTANCE.createJavadocComment() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.JAVA_NODE__COMMENT,
+                EJavaFactory.eINSTANCE.createLineComment() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.JAVA_NODE__ORPHAN_COMMENTS,
+                EJavaFactory.eINSTANCE.createBlockComment() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.JAVA_NODE__ORPHAN_COMMENTS,
+                EJavaFactory.eINSTANCE.createJavadocComment() ) );
+
+        newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.JAVA_NODE__ORPHAN_COMMENTS,
+                EJavaFactory.eINSTANCE.createLineComment() ) );
 
         newChildDescriptors.add( createChildParameter( EJavaPackage.Literals.COMPILATION_UNIT__PACKAGE_DECLARATION,
                 EJavaFactory.eINSTANCE.createPackageDeclaration() ) );
